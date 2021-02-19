@@ -1,85 +1,45 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "target": "es5",
-    "rootDirs": [
-      "src"
-    ],
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": false,
-    "allowJs": false,
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "incremental": false,
+    "declaration": false,
+    "module": "commonjs",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "noUnusedLocals": true,
-    "module": "esnext",
-    "incremental": true,
+    "rootDir": "./",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "jsx": "preserve",
+    "noUnusedLocals": false,
+    "outDir": "dist",
+    "removeComments": true,
+    "allowJs": true,
     "resolveJsonModule": true,
-    "types": [
-      "jest",
-      "react",
-      "node"
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "target": "es6",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "lib": [
+      "es6"
     ],
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": [
-      "dom",
-      "es5",
-      "es6",
-      "es7",
-      "es2017.object"
+    "types": [
+      "@types/node"
     ],
-    "baseUrl": "./src",
-    "paths": {
-      "assets/*": [
-        "assets/*"
-      ],
-      "store/*": [
-        "store/*"
-      ],
-      "utils/*": [
-        "utils/*"
-      ],
-      "components/*": [
-        "components/*"
-      ],
-      "config/*": [
-        "config/*"
-      ],
-      "features/*": [
-        "features/*"
-      ],
-      "constants/*": [
-        "constants/*"
-      ],
-      "locale/*": [
-        "locale/*"
-      ],
-      "gql/*": [
-        "gql/*"
-      ]
-    },
-    "plugins": [
-      {
-        "name": "@divyenduz/ts-graphql-plugin"
-      }
-    ],
-    "skipLibCheck": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "include": [
-    "./src/**/*"
+    "./aws/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "./node_modules/**/*",
+    "cdk.out"
   ]
 }
