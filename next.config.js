@@ -1,3 +1,5 @@
-module.exports = (phase, { defaultConfig }) => {
-    return { target: 'serverless' }
+module.exports = () => {
+    return { 
+        target: 'serverless',
+    }
 }
