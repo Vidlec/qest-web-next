@@ -4,12 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o build",
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.5.0",
     "next": "^10.0.0",
+    "next-with-apollo": "^5.1.1",
+    "node-fetch": "^2.6.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@babel/plugin-proposal-export-namespace-from": "^7.12.13",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.17",
+    "@types/node": "^14.14.30",
+    "@types/react": "^17.0.2",
+    "@types/styled-components": "^5.1.7",
+    "babel-plugin-styled-components": "^1.12.0",
+    "typescript": "^4.1.5"
   }
 }
