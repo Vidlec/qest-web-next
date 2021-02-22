@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build && next export -o build && node index.js",
     "build-handler": "ts-node index.ts",
-    "deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=./config/.env' deploy 'QestWebAppStack' --progress events --require-approval never",
+    "deploy:cdn": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy-cdn.ts dotenv_config_path=./config/.env' deploy 'QestWebCdnEnvironment' --progress events --require-approval never",
+    "deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=./config/.env' deploy 'QestWebAppStackDev' --progress events --require-approval never",
+    "deploy:prod": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=./config/.env' deploy 'QestWebAppStackProd' --progress events --require-approval never",
     "start": "next start"
   },
   "dependencies": {
@@ -25,7 +27,9 @@
   "devDependencies": {
     "@aws-cdk/aws-apigateway": "1.89.0",
     "@aws-cdk/aws-cloudfront": "1.89.0",
+    "@aws-cdk/aws-cloudfront-origins": "1.89.0",
     "@aws-cdk/aws-lambda": "1.89.0",
+    "@aws-cdk/aws-route53-targets": "1.89.0",
     "@aws-cdk/aws-s3": "1.89.0",
     "@aws-cdk/aws-s3-deployment": "1.89.0",
     "@aws-cdk/core": "1.89.0",

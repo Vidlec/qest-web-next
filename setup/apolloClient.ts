@@ -4,7 +4,7 @@ import { InMemoryCache } from "apollo-cache-inmemory"
 
 const apolloClient = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://dev.cms.qestapp.net/graphql',
+    uri: process.env.CMS_GRAPHQL_URL,
   }),
   cache: new InMemoryCache()
 })
