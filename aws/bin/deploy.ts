@@ -12,11 +12,13 @@ const cdnDomainName = `web-dev.${domainName}`
 const domainNameProd = 'qestapp.net'
 const cdnDomainNameProd = `web.${domainNameProd}`
 
+const cdnCertificateArn = 'arn:aws:acm:us-east-1:318137197756:certificate/665b4089-09ab-437c-a81d-998acb00238b'
+
 const app = new cdk.App();
 new WebStack(app, 'QestWebAppStackDev', {
     env,
     webBucketLibraryOptions: {
-        cdnCertificateArn: 'arn:aws:acm:us-east-1:562155573784:certificate/7d3b3c1b-b4b9-40ee-9ae8-00ce4888bf5b',
+        cdnCertificateArn,
         cdnDomainName: cdnDomainName,
         bucketName: process.env.WEB_BUCKET_NAME || 'qest-web-next-dev',
     },
@@ -25,7 +27,7 @@ new WebStack(app, 'QestWebAppStackDev', {
 new WebStack(app, 'QestWebAppStackProd', {
     env,
     webBucketLibraryOptions: {
-        cdnCertificateArn: 'arn:aws:acm:us-east-1:562155573784:certificate/7d3b3c1b-b4b9-40ee-9ae8-00ce4888bf5b',
+        cdnCertificateArn,
         cdnDomainName: cdnDomainNameProd,
         bucketName: process.env.WEB_BUCKET_NAME || 'qest-web-next-prod',
     },
