@@ -18,7 +18,7 @@ export interface WebBucketLibraryProps {
 
     removalPolicy?: RemovalPolicy
 
-    cdnCustomDomain?: {
+    cdnCustomDomain: {
         domainName: string
         hostedZone: IHostedZone
         certificate: ICertificate
@@ -31,7 +31,7 @@ export class WebBucketLibrary extends Construct {
 
     public readonly cdnBaseUrl: string
 
-    public constructor(scope: Construct, id: string, props?: WebBucketLibraryProps) {
+    public constructor(scope: Construct, id: string, props: WebBucketLibraryProps) {
         super(scope, id)
 
         const mediaManagerPolicy = new ManagedPolicy(this, 'MediaManagerPolicy', {
@@ -66,22 +66,20 @@ export class WebBucketLibrary extends Construct {
             }),
         })
 
-        if (props?.cdnCustomDomain) {
-            const { domainName, hostedZone } = props.cdnCustomDomain
+        const { domainName, hostedZone } = props.cdnCustomDomain
 
-            const cloudFrontAlias = RecordTarget.fromAlias(new CloudFrontTarget(distribution))
+        const cloudFrontAlias = RecordTarget.fromAlias(new CloudFrontTarget(distribution))
 
-            new ARecord(this, 'CdnARecord', {
-                zone: hostedZone,
-                target: cloudFrontAlias,
-                recordName: domainName,
-            })
-            new AaaaRecord(this, 'CdnAAAARecord', {
-                zone: hostedZone,
-                target: cloudFrontAlias,
-                recordName: domainName,
-            })
-        }
+        new ARecord(this, 'CdnARecord', {
+            zone: hostedZone,
+            target: cloudFrontAlias,
+            recordName: domainName,
+        })
+        new AaaaRecord(this, 'CdnAAAARecord', {
+            zone: hostedZone,
+            target: cloudFrontAlias,
+            recordName: domainName,
+        })
 
         this.mediaManagerPolicy = mediaManagerPolicy
         this.distribution = distribution

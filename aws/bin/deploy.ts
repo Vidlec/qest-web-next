@@ -6,18 +6,20 @@ const env = {
     region: process.env.CDK_DEFAULT_REGION,
 }
 
-const domainName = 'qestapp.net'
-const cdnDomainName = `web-dev.${domainName}`
+// reused hosted zone and certificate
+const hostedZone = 'web.qestapp.net'
+const hostedZoneId = 'Z07696653PLRSUVHDNRBE'
+const cdnCertificateArn = 'arn:aws:acm:us-east-1:318137197756:certificate/33d2f598-3ae3-4ae2-b7ca-9a54871ca4a5'
 
-const domainNameProd = 'qestapp.net'
-const cdnDomainNameProd = `web.${domainNameProd}`
-
-const cdnCertificateArn = 'arn:aws:acm:us-east-1:318137197756:certificate/665b4089-09ab-437c-a81d-998acb00238b'
+const cdnDomainName = `dev.${hostedZone}`
+const cdnDomainNameProd = hostedZone
 
 const app = new cdk.App();
 new WebStack(app, 'QestWebAppStackDev', {
     env,
     webBucketLibraryOptions: {
+        hostedZone,
+        hostedZoneId,
         cdnCertificateArn,
         cdnDomainName: cdnDomainName,
         bucketName: process.env.WEB_BUCKET_NAME || 'qest-web-next-dev',
@@ -27,6 +29,8 @@ new WebStack(app, 'QestWebAppStackDev', {
 new WebStack(app, 'QestWebAppStackProd', {
     env,
     webBucketLibraryOptions: {
+        hostedZone,
+        hostedZoneId,
         cdnCertificateArn,
         cdnDomainName: cdnDomainNameProd,
         bucketName: process.env.WEB_BUCKET_NAME || 'qest-web-next-prod',

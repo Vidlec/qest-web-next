@@ -9,6 +9,8 @@ import { WebBucketLibrary } from '../constructs/WebBucketLibrary';
 
 export interface WebStackProps extends StackProps {
   webBucketLibraryOptions: {
+    hostedZone: string
+    hostedZoneId: string
     cdnCertificateArn: string
     cdnDomainName: string
     bucketName: string
@@ -35,7 +37,7 @@ export class WebStack extends cdk.Stack {
       destinationBucket: webSiteBucket
     });
 
-    const hostedZoneForCdn = new HostedZone(this, `HostedZoneCdn-${webBucketLibraryOptions.cdnDomainName}`, { zoneName: webBucketLibraryOptions.cdnDomainName })
+    const hostedZoneForCdn = HostedZone.fromHostedZoneAttributes(this, 'CdnHostedZone', { hostedZoneId: webBucketLibraryOptions.hostedZoneId, zoneName: webBucketLibraryOptions.hostedZone  })
 
     const cdnCertificate = Certificate.fromCertificateArn(this, 'CdnCertificate', webBucketLibraryOptions.cdnCertificateArn)
     const webBucketLibrary = new WebBucketLibrary(this, 'WebBucketLibrary', {
