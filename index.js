@@ -1,8 +1,9 @@
+// script for build project also into next serverless shape (prepare for AWS lambda deploy)
 const path = require('path');
-const { Builder } = require("@sls-next/lambda-at-edge");
+const { Builder } = require('@sls-next/lambda-at-edge');
 
 const nextConfigDir = './';
-const outputDir = path.join(nextConfigDir, ".serverless_nextjs");
+const outputDir = path.join(nextConfigDir, '.serverless_nextjs');
 
 const builder = new Builder(
     nextConfigDir,

@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o build && node index.js",
-    "build-handler": "ts-node index.ts",
     "deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackDev' --progress events --require-approval never",
     "deploy:prod": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackProd' --progress events --require-approval never",
     "start": "next start"
