@@ -1,0 +1,15 @@
+overwrite: true
+schema:
+    - 'https://cms-dev.web.qestapp.net/graphql'
+documents: './gql/**/*.ts'
+generates:
+    ./gql/generated/types.ts:
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+    ./graphql.schema.json:
+        plugins:
+            - 'introspection'
+    ./gql/generated/fragmentTypes.json:
+        plugins:
+            - fragment-matcher
