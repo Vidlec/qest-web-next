@@ -1,0 +1,14 @@
+{
+	"translation": {
+		"homepage": {
+			"language": "en",
+			"aboutUs": "about us",
+			"reference": "reference",
+			"career": "career",
+			"contact": "contact",
+			"clickToStop": "click to stop",
+			"descriptionAboveLine": "There is more going on",
+			"descriptionBellowLine": "Under the surface"
+		}
+	}
+}

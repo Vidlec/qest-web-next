@@ -3,6 +3,9 @@ import App from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
+import { I18nextProvider } from 'react-i18next'
+
+import i18n from '../locale'
 
 export interface ITheme {
 	niceBlack: string
@@ -41,8 +44,10 @@ class QestWeb extends App<IProps> {
 					/>
 				</Head>
 				<ThemeProvider theme={theme}>
-					<GlobalStyle />
-					<Component {...pageProps} />
+					<I18nextProvider i18n={i18n}>
+						<GlobalStyle />
+						<Component {...pageProps} />
+					</I18nextProvider>
 				</ThemeProvider>
 			</React.Fragment>
 		)

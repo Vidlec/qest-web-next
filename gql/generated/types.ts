@@ -74,6 +74,193 @@ export type UserPermissionsPasswordPayload = {
 	ok: Scalars['Boolean']
 }
 
+export type Homepage = {
+	__typename?: 'Homepage'
+	id: Scalars['ID']
+	created_at: Scalars['DateTime']
+	updated_at: Scalars['DateTime']
+	language?: Maybe<Scalars['String']>
+	aboutUs?: Maybe<Scalars['String']>
+	reference?: Maybe<Scalars['String']>
+	career?: Maybe<Scalars['String']>
+	contact?: Maybe<Scalars['String']>
+	clickToStop?: Maybe<Scalars['String']>
+	descriptionAboveLine?: Maybe<Scalars['String']>
+	descriptionBellowLine?: Maybe<Scalars['String']>
+	published_at?: Maybe<Scalars['DateTime']>
+	logo?: Maybe<Array<Maybe<UploadFile>>>
+}
+
+export type HomepageLogoArgs = {
+	sort?: Maybe<Scalars['String']>
+	limit?: Maybe<Scalars['Int']>
+	start?: Maybe<Scalars['Int']>
+	where?: Maybe<Scalars['JSON']>
+}
+
+export type HomepageConnection = {
+	__typename?: 'HomepageConnection'
+	values?: Maybe<Array<Maybe<Homepage>>>
+	groupBy?: Maybe<HomepageGroupBy>
+	aggregate?: Maybe<HomepageAggregator>
+}
+
+export type HomepageAggregator = {
+	__typename?: 'HomepageAggregator'
+	count?: Maybe<Scalars['Int']>
+	totalCount?: Maybe<Scalars['Int']>
+}
+
+export type HomepageGroupBy = {
+	__typename?: 'HomepageGroupBy'
+	id?: Maybe<Array<Maybe<HomepageConnectionId>>>
+	created_at?: Maybe<Array<Maybe<HomepageConnectionCreated_At>>>
+	updated_at?: Maybe<Array<Maybe<HomepageConnectionUpdated_At>>>
+	language?: Maybe<Array<Maybe<HomepageConnectionLanguage>>>
+	aboutUs?: Maybe<Array<Maybe<HomepageConnectionAboutUs>>>
+	reference?: Maybe<Array<Maybe<HomepageConnectionReference>>>
+	career?: Maybe<Array<Maybe<HomepageConnectionCareer>>>
+	contact?: Maybe<Array<Maybe<HomepageConnectionContact>>>
+	clickToStop?: Maybe<Array<Maybe<HomepageConnectionClickToStop>>>
+	descriptionAboveLine?: Maybe<
+		Array<Maybe<HomepageConnectionDescriptionAboveLine>>
+	>
+	descriptionBellowLine?: Maybe<
+		Array<Maybe<HomepageConnectionDescriptionBellowLine>>
+	>
+	published_at?: Maybe<Array<Maybe<HomepageConnectionPublished_At>>>
+}
+
+export type HomepageConnectionId = {
+	__typename?: 'HomepageConnectionId'
+	key?: Maybe<Scalars['ID']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionCreated_At = {
+	__typename?: 'HomepageConnectionCreated_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionUpdated_At = {
+	__typename?: 'HomepageConnectionUpdated_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionLanguage = {
+	__typename?: 'HomepageConnectionLanguage'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionAboutUs = {
+	__typename?: 'HomepageConnectionAboutUs'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionReference = {
+	__typename?: 'HomepageConnectionReference'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionCareer = {
+	__typename?: 'HomepageConnectionCareer'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionContact = {
+	__typename?: 'HomepageConnectionContact'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionClickToStop = {
+	__typename?: 'HomepageConnectionClickToStop'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionDescriptionAboveLine = {
+	__typename?: 'HomepageConnectionDescriptionAboveLine'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionDescriptionBellowLine = {
+	__typename?: 'HomepageConnectionDescriptionBellowLine'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageConnectionPublished_At = {
+	__typename?: 'HomepageConnectionPublished_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<HomepageConnection>
+}
+
+export type HomepageInput = {
+	language?: Maybe<Scalars['String']>
+	aboutUs?: Maybe<Scalars['String']>
+	reference?: Maybe<Scalars['String']>
+	career?: Maybe<Scalars['String']>
+	contact?: Maybe<Scalars['String']>
+	clickToStop?: Maybe<Scalars['String']>
+	descriptionAboveLine?: Maybe<Scalars['String']>
+	descriptionBellowLine?: Maybe<Scalars['String']>
+	logo?: Maybe<Array<Maybe<Scalars['ID']>>>
+	published_at?: Maybe<Scalars['DateTime']>
+	created_by?: Maybe<Scalars['ID']>
+	updated_by?: Maybe<Scalars['ID']>
+}
+
+export type EditHomepageInput = {
+	language?: Maybe<Scalars['String']>
+	aboutUs?: Maybe<Scalars['String']>
+	reference?: Maybe<Scalars['String']>
+	career?: Maybe<Scalars['String']>
+	contact?: Maybe<Scalars['String']>
+	clickToStop?: Maybe<Scalars['String']>
+	descriptionAboveLine?: Maybe<Scalars['String']>
+	descriptionBellowLine?: Maybe<Scalars['String']>
+	logo?: Maybe<Array<Maybe<Scalars['ID']>>>
+	published_at?: Maybe<Scalars['DateTime']>
+	created_by?: Maybe<Scalars['ID']>
+	updated_by?: Maybe<Scalars['ID']>
+}
+
+export type CreateHomepageInput = {
+	data?: Maybe<HomepageInput>
+}
+
+export type CreateHomepagePayload = {
+	__typename?: 'createHomepagePayload'
+	homepage?: Maybe<Homepage>
+}
+
+export type UpdateHomepageInput = {
+	where?: Maybe<InputId>
+	data?: Maybe<EditHomepageInput>
+}
+
+export type UpdateHomepagePayload = {
+	__typename?: 'updateHomepagePayload'
+	homepage?: Maybe<Homepage>
+}
+
+export type DeleteHomepageInput = {
+	where?: Maybe<InputId>
+}
+
+export type DeleteHomepagePayload = {
+	__typename?: 'deleteHomepagePayload'
+	homepage?: Maybe<Homepage>
+}
+
 export type TechList = {
 	__typename?: 'TechList'
 	id: Scalars['ID']
@@ -810,6 +997,25 @@ export type Morph =
 	| UsersPermissionsMeRole
 	| UsersPermissionsLoginPayload
 	| UserPermissionsPasswordPayload
+	| Homepage
+	| HomepageConnection
+	| HomepageAggregator
+	| HomepageGroupBy
+	| HomepageConnectionId
+	| HomepageConnectionCreated_At
+	| HomepageConnectionUpdated_At
+	| HomepageConnectionLanguage
+	| HomepageConnectionAboutUs
+	| HomepageConnectionReference
+	| HomepageConnectionCareer
+	| HomepageConnectionContact
+	| HomepageConnectionClickToStop
+	| HomepageConnectionDescriptionAboveLine
+	| HomepageConnectionDescriptionBellowLine
+	| HomepageConnectionPublished_At
+	| CreateHomepagePayload
+	| UpdateHomepagePayload
+	| DeleteHomepagePayload
 	| TechList
 	| TechListConnection
 	| TechListAggregator
@@ -908,6 +1114,9 @@ export type AdminUser = {
 
 export type Query = {
 	__typename?: 'Query'
+	homepage?: Maybe<Homepage>
+	homepages?: Maybe<Array<Maybe<Homepage>>>
+	homepagesConnection?: Maybe<HomepageConnection>
 	techList?: Maybe<TechList>
 	techLists?: Maybe<Array<Maybe<TechList>>>
 	techListsConnection?: Maybe<TechListConnection>
@@ -924,6 +1133,26 @@ export type Query = {
 	users?: Maybe<Array<Maybe<UsersPermissionsUser>>>
 	usersConnection?: Maybe<UsersPermissionsUserConnection>
 	me?: Maybe<UsersPermissionsMe>
+}
+
+export type QueryHomepageArgs = {
+	id: Scalars['ID']
+	publicationState?: Maybe<PublicationState>
+}
+
+export type QueryHomepagesArgs = {
+	sort?: Maybe<Scalars['String']>
+	limit?: Maybe<Scalars['Int']>
+	start?: Maybe<Scalars['Int']>
+	where?: Maybe<Scalars['JSON']>
+	publicationState?: Maybe<PublicationState>
+}
+
+export type QueryHomepagesConnectionArgs = {
+	sort?: Maybe<Scalars['String']>
+	limit?: Maybe<Scalars['Int']>
+	start?: Maybe<Scalars['Int']>
+	where?: Maybe<Scalars['JSON']>
 }
 
 export type QueryTechListArgs = {
@@ -1023,6 +1252,9 @@ export type QueryUsersConnectionArgs = {
 
 export type Mutation = {
 	__typename?: 'Mutation'
+	createHomepage?: Maybe<CreateHomepagePayload>
+	updateHomepage?: Maybe<UpdateHomepagePayload>
+	deleteHomepage?: Maybe<DeleteHomepagePayload>
 	createTechList?: Maybe<CreateTechListPayload>
 	updateTechList?: Maybe<UpdateTechListPayload>
 	deleteTechList?: Maybe<DeleteTechListPayload>
@@ -1051,6 +1283,18 @@ export type Mutation = {
 	forgotPassword?: Maybe<UserPermissionsPasswordPayload>
 	resetPassword?: Maybe<UsersPermissionsLoginPayload>
 	emailConfirmation?: Maybe<UsersPermissionsLoginPayload>
+}
+
+export type MutationCreateHomepageArgs = {
+	input?: Maybe<CreateHomepageInput>
+}
+
+export type MutationUpdateHomepageArgs = {
+	input?: Maybe<UpdateHomepageInput>
+}
+
+export type MutationDeleteHomepageArgs = {
+	input?: Maybe<DeleteHomepageInput>
 }
 
 export type MutationCreateTechListArgs = {

@@ -1,0 +1,14 @@
+{
+	"translation": {
+		"homepage": {
+			"language": "cs",
+			"aboutUs": "o nás",
+			"reference": "reference",
+			"career": "kariéra",
+			"contact": "kontakt",
+			"clickToStop": "zastavte kliknutím",
+			"descriptionAboveLine": "Děje se toho víc",
+			"descriptionBellowLine": "Pod povrchem"
+		}
+	}
+}
