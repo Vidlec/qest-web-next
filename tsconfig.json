@@ -7,7 +7,8 @@
     "module": "commonjs",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "rootDir": "./",
+    "rootDir": ".",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "outDir": "dist",
@@ -33,10 +34,16 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "components/*": ["components/*"],
+      "pages/*": ["pages/*"],
+      "theme/*": ["theme/*"]
+    }
   },
   "include": [
-    "./aws/**/*.ts"
+    "./aws/**/*.ts",
+    "./**/*",
   ],
   "exclude": [
     "./node_modules/**/*",

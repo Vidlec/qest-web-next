@@ -1,0 +1,14 @@
+[
+	{
+		"id": "1",
+		"languageCode": "cs",
+		"displayName": "CZ",
+		"__typename": "Language"
+	},
+	{
+		"id": "2",
+		"languageCode": "en",
+		"displayName": "EN",
+		"__typename": "Language"
+	}
+]

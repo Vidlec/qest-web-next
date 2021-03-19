@@ -2,45 +2,62 @@ import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
-import { I18nextProvider } from 'react-i18next'
+import {
+	I18nextProvider,
+	withTranslation,
+	WithTranslation,
+} from 'react-i18next'
 
 import i18n from '../locale'
+import theme from '../theme'
 
-export interface ITheme {
-	niceBlack: string
-}
-
-export interface IThemeWrapper {
-	theme: ITheme
-}
-
-export const theme: ITheme = {
-	niceBlack: '#001F3F',
-}
-
-const GlobalStyle = createGlobalStyle<IThemeWrapper>`
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+  	font-family: sportingGrotesque;
+  	src: url("/assets/fonts/SportingGrotesque-Bold.otf");
+	font-weight: bold;
+  }
+  @font-face {
+  	font-family: sportingGrotesque;
+  	src: url("/assets/fonts/SportingGrotesque-Regular.otf");
+	font-weight: normal;
+  }
+  @font-face {
+  	font-family: wingdings2;
+  	src: url("/assets/fonts/Wingdings2.ttf")
+  }
   body {
     margin: 0 auto;
-    color: ${(props) => props.theme.niceBlack}; 
+    color: ${({ theme }) => theme.colors.niceBlack};
+	background-color: ${({ theme }) => theme.colors.softBlack};
+	font-family: sportingGrotesque, Tahoma, Sans-Serif;
+	* {
+		box-sizing: border-box;
+	}
+	a {
+		text-decoration: none; 
+	}
+	button {
+		outline: none;
+	}
   }
 `
 
-interface IProps {
-	apollo: ApolloClient<NormalizedCacheObject>
-}
-
-class QestWeb extends App<IProps> {
+class QestWeb extends App<WithTranslation> {
 	render() {
-		const { Component, pageProps, apollo } = this.props
+		const { Component, pageProps, t } = this.props
 
 		return (
-			<React.Fragment>
+			<>
 				<Head>
-					<title>QEST</title>
+					<title>{t('header.title')}</title>
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1"
+					/>
+					<meta
+						name="description"
+						content={t('header.description')}
 					/>
 				</Head>
 				<ThemeProvider theme={theme}>
@@ -49,9 +66,9 @@ class QestWeb extends App<IProps> {
 						<Component {...pageProps} />
 					</I18nextProvider>
 				</ThemeProvider>
-			</React.Fragment>
+			</>
 		)
 	}
 }
 
-export default QestWeb
+export default withTranslation()(QestWeb)

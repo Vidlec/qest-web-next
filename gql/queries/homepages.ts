@@ -5,13 +5,12 @@ export const HOMEPAGE_QUERY = gql`
 		homepages {
 			id
 			language
-			aboutUs
-			reference
-			career
-			contact
 			clickToStop
 			descriptionAboveLine
 			descriptionBellowLine
+			logo {
+				url
+			}
 		}
 	}
 `

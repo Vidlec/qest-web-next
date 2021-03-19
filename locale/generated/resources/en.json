@@ -2,13 +2,27 @@
 	"translation": {
 		"homepage": {
 			"language": "en",
-			"aboutUs": "about us",
-			"reference": "reference",
-			"career": "career",
-			"contact": "contact",
 			"clickToStop": "click to stop",
 			"descriptionAboveLine": "There is more going on",
-			"descriptionBellowLine": "Under the surface"
+			"descriptionBellowLine": "Under the surface",
+			"logo": {
+				"url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+				"__typename": "UploadFile"
+			}
+		},
+		"menu": {
+			"aboutUs": "about us",
+			"career": "career",
+			"contact": "contact",
+			"homePage": "home page",
+			"language": "en",
+			"menu": "menu",
+			"reference": "reference"
+		},
+		"header": {
+			"language": "en",
+			"title": "QEST | Qest",
+			"description": "V Qest navrhujeme a vyvíjíme softwarové, mobilní i webové aplikace."
 		}
 	}
 }
