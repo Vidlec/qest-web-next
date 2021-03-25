@@ -22,6 +22,7 @@ export const MenuButton = styled.button`
 	background-color: transparent;
 	border: none;
 `
+
 export const Menu = styled.div<{ isOpen: boolean }>`
 	width: 100%;
 	height: 100vh;
@@ -99,28 +100,4 @@ export const Item = styled.li`
 			text-align: right;
 		}
 	}
-`
-
-export const BasicLink = styled.a`
-	text-decoration: none;
-`
-
-export const AboutUs = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.poolBlue};
-`
-
-export const Reference = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.orchidPink};
-`
-
-export const Career = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.merigoldOrange};
-`
-
-export const Contact = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.mintGreen};
-`
-
-export const MainMenu = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.roseRed};
 `
