@@ -3,7 +3,6 @@ import i18next from 'i18next'
 
 import { ActiveLanguage, InactiveLanguage, Wrapper } from './styled'
 import languages from '../../locale/generated/languages.json'
-import { useTranslation } from 'react-i18next'
 
 const SelectLanguage: React.FC = () => {
 	return (

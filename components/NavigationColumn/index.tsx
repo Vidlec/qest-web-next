@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavigationColumnContainer, MenuButton, CloseButton } from './styled'
 
-const NavigationColumn = () => {
+const NavigationColumn: React.FC = () => {
 	const { t } = useTranslation()
 	const [open, setOpen] = useState(false)
 

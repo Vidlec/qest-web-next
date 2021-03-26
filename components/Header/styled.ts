@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  padding-top: 1vh;
+	padding-top: 1vh;
 `
 
 export const Logo = styled.img`
