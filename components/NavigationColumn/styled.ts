@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const NavigationColumnContainer = styled.div`
 	position: absolute;
-	right: 5vw;
-	top: 5vh;
+	right: 2vw;
+	top: 4vh;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -14,7 +14,6 @@ export const MenuButton = styled.button`
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
-	margin-right: 1vw;
 	font-size: 1.75rem;
 	text-decoration: none;
 `
@@ -22,8 +21,8 @@ export const MenuButton = styled.button`
 export const CloseButton = styled.button`
 	background-color: transparent;
 	border: none;
-	margin-right: 1vw;
 	font-size: 1.75rem;
 	cursor: pointer;
+	align-self: center;
 `
 

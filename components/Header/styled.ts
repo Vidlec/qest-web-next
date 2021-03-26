@@ -20,6 +20,7 @@ export const StyledMainMenu = styled(MainMenu)`
 
 export const LanguageSwitcherWrapper = styled.div`
 	position: absolute;
-	top: 1vh;
+	top: 4vh;
 	left: 50%;
+	right: 50%;
 `
