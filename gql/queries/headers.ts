@@ -7,7 +7,7 @@ export const HEADER_QUERY = gql`
 			language
 			title
 			description
-			logo { 
+			logo {
 				url
 			}
 		}

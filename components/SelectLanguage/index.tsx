@@ -14,7 +14,9 @@ const SelectLanguage: React.FC = () => {
 						<ActiveLanguage>{language.displayName}</ActiveLanguage>
 					) : (
 						<InactiveLanguage
-							onClick={() => i18next.changeLanguage(language.languageCode)}
+							onClick={() =>
+								i18next.changeLanguage(language.languageCode)
+							}
 						>
 							{language.displayName}
 						</InactiveLanguage>

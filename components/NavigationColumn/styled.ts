@@ -25,4 +25,3 @@ export const CloseButton = styled.button`
 	cursor: pointer;
 	align-self: center;
 `
-

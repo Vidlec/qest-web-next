@@ -12,7 +12,6 @@ import {
 	Menu,
 } from './styled'
 
-
 const Navigation: React.FC = () => {
 	const { t } = useTranslation()
 	const [isOpen, setIsOpen] = useState(false)
