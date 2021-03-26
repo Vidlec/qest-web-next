@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -8,4 +8,11 @@ const Wrapper = styled.div`
 	justify-content: center;
 `
 
-export default Wrapper
+export const WrapperContent = styled.div`
+	display: flex;
+	width: 85%;
+	flex-direction: column;
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		width: 71.25rem;
+	}
+`

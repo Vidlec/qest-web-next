@@ -2,9 +2,9 @@
 	"possibleTypes": {
 		"CaseStudyContentDynamicZone": [
 			"ComponentContentImage",
-			"ComponentContentChallenge",
-			"ComponentContentAboutExtended",
-			"ComponentContentInfoColumn"
+			"ComponentContentInfoColumn",
+			"ComponentContentRichText",
+			"ComponentContentTechnologies"
 		],
 		"Morph": [
 			"UsersPermissionsMe",
@@ -44,6 +44,9 @@
 			"CaseStudyConnectionIndustry",
 			"CaseStudyConnectionClient",
 			"CaseStudyConnectionSystem",
+			"CaseStudyConnectionMainImage",
+			"CaseStudyConnectionLanguage",
+			"CaseStudyConnectionProjectId",
 			"CaseStudyConnectionPublished_at",
 			"createCaseStudyPayload",
 			"updateCaseStudyPayload",
@@ -76,6 +79,7 @@
 			"HeaderConnectionTitle",
 			"HeaderConnectionDescription",
 			"HeaderConnectionLanguage",
+			"HeaderConnectionLogo",
 			"HeaderConnectionPublished_at",
 			"createHeaderPayload",
 			"updateHeaderPayload",
@@ -127,6 +131,19 @@
 			"createMenuPayload",
 			"updateMenuPayload",
 			"deleteMenuPayload",
+			"SocialNetwork",
+			"SocialNetworkConnection",
+			"SocialNetworkAggregator",
+			"SocialNetworkGroupBy",
+			"SocialNetworkConnectionId",
+			"SocialNetworkConnectionCreated_at",
+			"SocialNetworkConnectionUpdated_at",
+			"SocialNetworkConnectionName",
+			"SocialNetworkConnectionUrl",
+			"SocialNetworkConnectionPublished_at",
+			"createSocialNetworkPayload",
+			"updateSocialNetworkPayload",
+			"deleteSocialNetworkPayload",
 			"TechList",
 			"TechListConnection",
 			"TechListAggregator",
@@ -205,10 +222,10 @@
 			"createUserPayload",
 			"updateUserPayload",
 			"deleteUserPayload",
-			"ComponentContentAboutExtended",
-			"ComponentContentChallenge",
 			"ComponentContentImage",
-			"ComponentContentInfoColumn"
+			"ComponentContentInfoColumn",
+			"ComponentContentRichText",
+			"ComponentContentTechnologies"
 		]
 	}
 }

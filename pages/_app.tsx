@@ -33,12 +33,20 @@ const GlobalStyle = createGlobalStyle`
 	font-family: sportingGrotesque, Tahoma, Sans-Serif;
 	* {
 		box-sizing: border-box;
+		font-size: 1.5rem;
+		color: ${({ theme }) => theme.colors.porcelainWhite};
 	}
 	a {
-		text-decoration: none; 
+		text-decoration: none;
 	}
 	button {
 		outline: none;
+	}
+	h3 {
+		margin: 0;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		color: ${({ theme }) => theme.colors.merigoldOrange};
 	}
   }
 `

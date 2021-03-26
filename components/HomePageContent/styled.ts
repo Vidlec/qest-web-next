@@ -10,7 +10,6 @@ export const WrapperLogoTexts = styled.div`
 	margin-left: 0;
 	z-index: 1;
 	font-size: 1rem;
-	color: ${({ theme }) => theme.colors.porcelainWhite};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		top: 10rem;
@@ -30,7 +29,6 @@ export const WrapperLogoTexts = styled.div`
 export const TextLogo = styled.p`
 	font-size: 1.3rem;
 	margin: 0;
-	color: ${({ theme }) => theme.colors.porcelainWhite};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		font-size: 1rem;
@@ -88,7 +86,6 @@ export const Button = styled.button`
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	color: ${({ theme }) => theme.colors.porcelainWhite};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		font-size: 5rem;
@@ -99,7 +96,6 @@ export const ClickText = styled.a`
 	font-weight: bold;
 	cursor: pointer;
 	font-size: 1rem;
-	color: ${({ theme }) => theme.colors.porcelainWhite};
 	margin: 0;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {

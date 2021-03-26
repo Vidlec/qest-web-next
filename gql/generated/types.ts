@@ -263,31 +263,26 @@ export type DeleteCaseStudyMetaPayload = {
 
 export type CaseStudyContentDynamicZone =
 	| ComponentContentImage
-	| ComponentContentChallenge
-	| ComponentContentAboutExtended
 	| ComponentContentInfoColumn
+	| ComponentContentRichText
+	| ComponentContentTechnologies
 
 export type CaseStudy = {
 	__typename?: 'CaseStudy'
 	id: Scalars['ID']
 	created_at: Scalars['DateTime']
 	updated_at: Scalars['DateTime']
-	title?: Maybe<Scalars['String']>
+	title: Scalars['String']
 	subtitle?: Maybe<Scalars['String']>
 	about?: Maybe<Scalars['String']>
 	industry?: Maybe<Scalars['String']>
 	client?: Maybe<Scalars['String']>
 	system?: Maybe<Scalars['String']>
+	mainImage?: Maybe<UploadFile>
 	content?: Maybe<Array<Maybe<CaseStudyContentDynamicZone>>>
+	language: Scalars['String']
+	projectId: Scalars['String']
 	published_at?: Maybe<Scalars['DateTime']>
-	mainImage?: Maybe<Array<Maybe<UploadFile>>>
-}
-
-export type CaseStudyMainImageArgs = {
-	sort?: Maybe<Scalars['String']>
-	limit?: Maybe<Scalars['Int']>
-	start?: Maybe<Scalars['Int']>
-	where?: Maybe<Scalars['JSON']>
 }
 
 export type CaseStudyConnection = {
@@ -314,6 +309,9 @@ export type CaseStudyGroupBy = {
 	industry?: Maybe<Array<Maybe<CaseStudyConnectionIndustry>>>
 	client?: Maybe<Array<Maybe<CaseStudyConnectionClient>>>
 	system?: Maybe<Array<Maybe<CaseStudyConnectionSystem>>>
+	mainImage?: Maybe<Array<Maybe<CaseStudyConnectionMainImage>>>
+	language?: Maybe<Array<Maybe<CaseStudyConnectionLanguage>>>
+	projectId?: Maybe<Array<Maybe<CaseStudyConnectionProjectId>>>
 	published_at?: Maybe<Array<Maybe<CaseStudyConnectionPublished_At>>>
 }
 
@@ -371,6 +369,24 @@ export type CaseStudyConnectionSystem = {
 	connection?: Maybe<CaseStudyConnection>
 }
 
+export type CaseStudyConnectionMainImage = {
+	__typename?: 'CaseStudyConnectionMainImage'
+	key?: Maybe<Scalars['ID']>
+	connection?: Maybe<CaseStudyConnection>
+}
+
+export type CaseStudyConnectionLanguage = {
+	__typename?: 'CaseStudyConnectionLanguage'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<CaseStudyConnection>
+}
+
+export type CaseStudyConnectionProjectId = {
+	__typename?: 'CaseStudyConnectionProjectId'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<CaseStudyConnection>
+}
+
 export type CaseStudyConnectionPublished_At = {
 	__typename?: 'CaseStudyConnectionPublished_at'
 	key?: Maybe<Scalars['DateTime']>
@@ -378,14 +394,16 @@ export type CaseStudyConnectionPublished_At = {
 }
 
 export type CaseStudyInput = {
-	title?: Maybe<Scalars['String']>
+	title: Scalars['String']
 	subtitle?: Maybe<Scalars['String']>
 	about?: Maybe<Scalars['String']>
 	industry?: Maybe<Scalars['String']>
 	client?: Maybe<Scalars['String']>
 	system?: Maybe<Scalars['String']>
-	mainImage?: Maybe<Array<Maybe<Scalars['ID']>>>
+	mainImage?: Maybe<Scalars['ID']>
 	content?: Maybe<Array<Scalars['CaseStudyContentDynamicZoneInput']>>
+	language: Scalars['String']
+	projectId: Scalars['String']
 	published_at?: Maybe<Scalars['DateTime']>
 	created_by?: Maybe<Scalars['ID']>
 	updated_by?: Maybe<Scalars['ID']>
@@ -398,8 +416,10 @@ export type EditCaseStudyInput = {
 	industry?: Maybe<Scalars['String']>
 	client?: Maybe<Scalars['String']>
 	system?: Maybe<Scalars['String']>
-	mainImage?: Maybe<Array<Maybe<Scalars['ID']>>>
+	mainImage?: Maybe<Scalars['ID']>
 	content?: Maybe<Array<Scalars['CaseStudyContentDynamicZoneInput']>>
+	language?: Maybe<Scalars['String']>
+	projectId?: Maybe<Scalars['String']>
 	published_at?: Maybe<Scalars['DateTime']>
 	created_by?: Maybe<Scalars['ID']>
 	updated_by?: Maybe<Scalars['ID']>
@@ -608,6 +628,7 @@ export type Header = {
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
 	language?: Maybe<Scalars['String']>
+	logo?: Maybe<UploadFile>
 	published_at?: Maybe<Scalars['DateTime']>
 }
 
@@ -632,6 +653,7 @@ export type HeaderGroupBy = {
 	title?: Maybe<Array<Maybe<HeaderConnectionTitle>>>
 	description?: Maybe<Array<Maybe<HeaderConnectionDescription>>>
 	language?: Maybe<Array<Maybe<HeaderConnectionLanguage>>>
+	logo?: Maybe<Array<Maybe<HeaderConnectionLogo>>>
 	published_at?: Maybe<Array<Maybe<HeaderConnectionPublished_At>>>
 }
 
@@ -671,6 +693,12 @@ export type HeaderConnectionLanguage = {
 	connection?: Maybe<HeaderConnection>
 }
 
+export type HeaderConnectionLogo = {
+	__typename?: 'HeaderConnectionLogo'
+	key?: Maybe<Scalars['ID']>
+	connection?: Maybe<HeaderConnection>
+}
+
 export type HeaderConnectionPublished_At = {
 	__typename?: 'HeaderConnectionPublished_at'
 	key?: Maybe<Scalars['DateTime']>
@@ -681,6 +709,7 @@ export type HeaderInput = {
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
 	language?: Maybe<Scalars['String']>
+	logo?: Maybe<Scalars['ID']>
 	published_at?: Maybe<Scalars['DateTime']>
 	created_by?: Maybe<Scalars['ID']>
 	updated_by?: Maybe<Scalars['ID']>
@@ -690,6 +719,7 @@ export type EditHeaderInput = {
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
 	language?: Maybe<Scalars['String']>
+	logo?: Maybe<Scalars['ID']>
 	published_at?: Maybe<Scalars['DateTime']>
 	created_by?: Maybe<Scalars['ID']>
 	updated_by?: Maybe<Scalars['ID']>
@@ -1144,6 +1174,119 @@ export type DeleteMenuInput = {
 export type DeleteMenuPayload = {
 	__typename?: 'deleteMenuPayload'
 	menu?: Maybe<Menu>
+}
+
+export type SocialNetwork = {
+	__typename?: 'SocialNetwork'
+	id: Scalars['ID']
+	created_at: Scalars['DateTime']
+	updated_at: Scalars['DateTime']
+	name?: Maybe<Scalars['String']>
+	url?: Maybe<Scalars['String']>
+	published_at?: Maybe<Scalars['DateTime']>
+}
+
+export type SocialNetworkConnection = {
+	__typename?: 'SocialNetworkConnection'
+	values?: Maybe<Array<Maybe<SocialNetwork>>>
+	groupBy?: Maybe<SocialNetworkGroupBy>
+	aggregate?: Maybe<SocialNetworkAggregator>
+}
+
+export type SocialNetworkAggregator = {
+	__typename?: 'SocialNetworkAggregator'
+	count?: Maybe<Scalars['Int']>
+	totalCount?: Maybe<Scalars['Int']>
+}
+
+export type SocialNetworkGroupBy = {
+	__typename?: 'SocialNetworkGroupBy'
+	id?: Maybe<Array<Maybe<SocialNetworkConnectionId>>>
+	created_at?: Maybe<Array<Maybe<SocialNetworkConnectionCreated_At>>>
+	updated_at?: Maybe<Array<Maybe<SocialNetworkConnectionUpdated_At>>>
+	name?: Maybe<Array<Maybe<SocialNetworkConnectionName>>>
+	url?: Maybe<Array<Maybe<SocialNetworkConnectionUrl>>>
+	published_at?: Maybe<Array<Maybe<SocialNetworkConnectionPublished_At>>>
+}
+
+export type SocialNetworkConnectionId = {
+	__typename?: 'SocialNetworkConnectionId'
+	key?: Maybe<Scalars['ID']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkConnectionCreated_At = {
+	__typename?: 'SocialNetworkConnectionCreated_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkConnectionUpdated_At = {
+	__typename?: 'SocialNetworkConnectionUpdated_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkConnectionName = {
+	__typename?: 'SocialNetworkConnectionName'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkConnectionUrl = {
+	__typename?: 'SocialNetworkConnectionUrl'
+	key?: Maybe<Scalars['String']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkConnectionPublished_At = {
+	__typename?: 'SocialNetworkConnectionPublished_at'
+	key?: Maybe<Scalars['DateTime']>
+	connection?: Maybe<SocialNetworkConnection>
+}
+
+export type SocialNetworkInput = {
+	name?: Maybe<Scalars['String']>
+	url?: Maybe<Scalars['String']>
+	published_at?: Maybe<Scalars['DateTime']>
+	created_by?: Maybe<Scalars['ID']>
+	updated_by?: Maybe<Scalars['ID']>
+}
+
+export type EditSocialNetworkInput = {
+	name?: Maybe<Scalars['String']>
+	url?: Maybe<Scalars['String']>
+	published_at?: Maybe<Scalars['DateTime']>
+	created_by?: Maybe<Scalars['ID']>
+	updated_by?: Maybe<Scalars['ID']>
+}
+
+export type CreateSocialNetworkInput = {
+	data?: Maybe<SocialNetworkInput>
+}
+
+export type CreateSocialNetworkPayload = {
+	__typename?: 'createSocialNetworkPayload'
+	socialNetwork?: Maybe<SocialNetwork>
+}
+
+export type UpdateSocialNetworkInput = {
+	where?: Maybe<InputId>
+	data?: Maybe<EditSocialNetworkInput>
+}
+
+export type UpdateSocialNetworkPayload = {
+	__typename?: 'updateSocialNetworkPayload'
+	socialNetwork?: Maybe<SocialNetwork>
+}
+
+export type DeleteSocialNetworkInput = {
+	where?: Maybe<InputId>
+}
+
+export type DeleteSocialNetworkPayload = {
+	__typename?: 'deleteSocialNetworkPayload'
+	socialNetwork?: Maybe<SocialNetwork>
 }
 
 export type TechList = {
@@ -1877,86 +2020,21 @@ export type DeleteUserPayload = {
 	user?: Maybe<UsersPermissionsUser>
 }
 
-export type ComponentContentAboutExtended = {
-	__typename?: 'ComponentContentAboutExtended'
-	id: Scalars['ID']
-	technologies?: Maybe<Scalars['String']>
-	description?: Maybe<Scalars['String']>
-}
-
-export type ComponentContentAboutExtendedInput = {
-	technologies?: Maybe<Scalars['String']>
-	description?: Maybe<Scalars['String']>
-}
-
-export type EditComponentContentAboutExtendedInput = {
-	id?: Maybe<Scalars['ID']>
-	technologies?: Maybe<Scalars['String']>
-	description?: Maybe<Scalars['String']>
-}
-
-export type ComponentContentChallenge = {
-	__typename?: 'ComponentContentChallenge'
-	id: Scalars['ID']
-	title?: Maybe<Scalars['String']>
-	desciption?: Maybe<Scalars['String']>
-	desciptionLevel2?: Maybe<Scalars['String']>
-	desciptionLevel3?: Maybe<Scalars['String']>
-	subtitle?: Maybe<Scalars['String']>
-	widthPercent?: Maybe<Scalars['Float']>
-	image?: Maybe<Array<Maybe<UploadFile>>>
-}
-
-export type ComponentContentChallengeImageArgs = {
-	sort?: Maybe<Scalars['String']>
-	limit?: Maybe<Scalars['Int']>
-	start?: Maybe<Scalars['Int']>
-	where?: Maybe<Scalars['JSON']>
-}
-
-export type ComponentContentChallengeInput = {
-	title?: Maybe<Scalars['String']>
-	desciption?: Maybe<Scalars['String']>
-	desciptionLevel2?: Maybe<Scalars['String']>
-	desciptionLevel3?: Maybe<Scalars['String']>
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
-	subtitle?: Maybe<Scalars['String']>
-	widthPercent?: Maybe<Scalars['Float']>
-}
-
-export type EditComponentContentChallengeInput = {
-	id?: Maybe<Scalars['ID']>
-	title?: Maybe<Scalars['String']>
-	desciption?: Maybe<Scalars['String']>
-	desciptionLevel2?: Maybe<Scalars['String']>
-	desciptionLevel3?: Maybe<Scalars['String']>
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
-	subtitle?: Maybe<Scalars['String']>
-	widthPercent?: Maybe<Scalars['Float']>
-}
-
 export type ComponentContentImage = {
 	__typename?: 'ComponentContentImage'
 	id: Scalars['ID']
+	image?: Maybe<UploadFile>
 	widthPercent?: Maybe<Scalars['Float']>
-	image?: Maybe<Array<Maybe<UploadFile>>>
-}
-
-export type ComponentContentImageImageArgs = {
-	sort?: Maybe<Scalars['String']>
-	limit?: Maybe<Scalars['Int']>
-	start?: Maybe<Scalars['Int']>
-	where?: Maybe<Scalars['JSON']>
 }
 
 export type ComponentContentImageInput = {
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
+	image?: Maybe<Scalars['ID']>
 	widthPercent?: Maybe<Scalars['Float']>
 }
 
 export type EditComponentContentImageInput = {
 	id?: Maybe<Scalars['ID']>
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
+	image?: Maybe<Scalars['ID']>
 	widthPercent?: Maybe<Scalars['Float']>
 }
 
@@ -1966,22 +2044,15 @@ export type ComponentContentInfoColumn = {
 	number?: Maybe<Scalars['String']>
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
+	infoColumnImage?: Maybe<UploadFile>
 	widthPercent?: Maybe<Scalars['Float']>
-	image?: Maybe<Array<Maybe<UploadFile>>>
-}
-
-export type ComponentContentInfoColumnImageArgs = {
-	sort?: Maybe<Scalars['String']>
-	limit?: Maybe<Scalars['Int']>
-	start?: Maybe<Scalars['Int']>
-	where?: Maybe<Scalars['JSON']>
 }
 
 export type ComponentContentInfoColumnInput = {
 	number?: Maybe<Scalars['String']>
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
+	infoColumnImage?: Maybe<Scalars['ID']>
 	widthPercent?: Maybe<Scalars['Float']>
 }
 
@@ -1990,8 +2061,59 @@ export type EditComponentContentInfoColumnInput = {
 	number?: Maybe<Scalars['String']>
 	title?: Maybe<Scalars['String']>
 	description?: Maybe<Scalars['String']>
-	image?: Maybe<Array<Maybe<Scalars['ID']>>>
+	infoColumnImage?: Maybe<Scalars['ID']>
 	widthPercent?: Maybe<Scalars['Float']>
+}
+
+export type ComponentContentRichText = {
+	__typename?: 'ComponentContentRichText'
+	id: Scalars['ID']
+	title?: Maybe<Scalars['String']>
+	desciption?: Maybe<Scalars['String']>
+	desciptionLevel2?: Maybe<Scalars['String']>
+	desciptionLevel3?: Maybe<Scalars['String']>
+	richTextImage?: Maybe<UploadFile>
+	subtitle?: Maybe<Scalars['String']>
+	widthPercent?: Maybe<Scalars['Float']>
+}
+
+export type ComponentContentRichTextInput = {
+	title?: Maybe<Scalars['String']>
+	desciption?: Maybe<Scalars['String']>
+	desciptionLevel2?: Maybe<Scalars['String']>
+	desciptionLevel3?: Maybe<Scalars['String']>
+	richTextImage?: Maybe<Scalars['ID']>
+	subtitle?: Maybe<Scalars['String']>
+	widthPercent?: Maybe<Scalars['Float']>
+}
+
+export type EditComponentContentRichTextInput = {
+	id?: Maybe<Scalars['ID']>
+	title?: Maybe<Scalars['String']>
+	desciption?: Maybe<Scalars['String']>
+	desciptionLevel2?: Maybe<Scalars['String']>
+	desciptionLevel3?: Maybe<Scalars['String']>
+	richTextImage?: Maybe<Scalars['ID']>
+	subtitle?: Maybe<Scalars['String']>
+	widthPercent?: Maybe<Scalars['Float']>
+}
+
+export type ComponentContentTechnologies = {
+	__typename?: 'ComponentContentTechnologies'
+	id: Scalars['ID']
+	technologies?: Maybe<Scalars['String']>
+	description?: Maybe<Scalars['String']>
+}
+
+export type ComponentContentTechnologyInput = {
+	technologies?: Maybe<Scalars['String']>
+	description?: Maybe<Scalars['String']>
+}
+
+export type EditComponentContentTechnologyInput = {
+	id?: Maybe<Scalars['ID']>
+	technologies?: Maybe<Scalars['String']>
+	description?: Maybe<Scalars['String']>
 }
 
 export type Morph =
@@ -2032,6 +2154,9 @@ export type Morph =
 	| CaseStudyConnectionIndustry
 	| CaseStudyConnectionClient
 	| CaseStudyConnectionSystem
+	| CaseStudyConnectionMainImage
+	| CaseStudyConnectionLanguage
+	| CaseStudyConnectionProjectId
 	| CaseStudyConnectionPublished_At
 	| CreateCaseStudyPayload
 	| UpdateCaseStudyPayload
@@ -2064,6 +2189,7 @@ export type Morph =
 	| HeaderConnectionTitle
 	| HeaderConnectionDescription
 	| HeaderConnectionLanguage
+	| HeaderConnectionLogo
 	| HeaderConnectionPublished_At
 	| CreateHeaderPayload
 	| UpdateHeaderPayload
@@ -2115,6 +2241,19 @@ export type Morph =
 	| CreateMenuPayload
 	| UpdateMenuPayload
 	| DeleteMenuPayload
+	| SocialNetwork
+	| SocialNetworkConnection
+	| SocialNetworkAggregator
+	| SocialNetworkGroupBy
+	| SocialNetworkConnectionId
+	| SocialNetworkConnectionCreated_At
+	| SocialNetworkConnectionUpdated_At
+	| SocialNetworkConnectionName
+	| SocialNetworkConnectionUrl
+	| SocialNetworkConnectionPublished_At
+	| CreateSocialNetworkPayload
+	| UpdateSocialNetworkPayload
+	| DeleteSocialNetworkPayload
 	| TechList
 	| TechListConnection
 	| TechListAggregator
@@ -2193,10 +2332,10 @@ export type Morph =
 	| CreateUserPayload
 	| UpdateUserPayload
 	| DeleteUserPayload
-	| ComponentContentAboutExtended
-	| ComponentContentChallenge
 	| ComponentContentImage
 	| ComponentContentInfoColumn
+	| ComponentContentRichText
+	| ComponentContentTechnologies
 
 export type InputId = {
 	id: Scalars['ID']
@@ -2238,6 +2377,9 @@ export type Query = {
 	menu?: Maybe<Menu>
 	menus?: Maybe<Array<Maybe<Menu>>>
 	menusConnection?: Maybe<MenuConnection>
+	socialNetwork?: Maybe<SocialNetwork>
+	socialNetworks?: Maybe<Array<Maybe<SocialNetwork>>>
+	socialNetworksConnection?: Maybe<SocialNetworkConnection>
 	techList?: Maybe<TechList>
 	techLists?: Maybe<Array<Maybe<TechList>>>
 	techListsConnection?: Maybe<TechListConnection>
@@ -2396,6 +2538,26 @@ export type QueryMenusConnectionArgs = {
 	where?: Maybe<Scalars['JSON']>
 }
 
+export type QuerySocialNetworkArgs = {
+	id: Scalars['ID']
+	publicationState?: Maybe<PublicationState>
+}
+
+export type QuerySocialNetworksArgs = {
+	sort?: Maybe<Scalars['String']>
+	limit?: Maybe<Scalars['Int']>
+	start?: Maybe<Scalars['Int']>
+	where?: Maybe<Scalars['JSON']>
+	publicationState?: Maybe<PublicationState>
+}
+
+export type QuerySocialNetworksConnectionArgs = {
+	sort?: Maybe<Scalars['String']>
+	limit?: Maybe<Scalars['Int']>
+	start?: Maybe<Scalars['Int']>
+	where?: Maybe<Scalars['JSON']>
+}
+
 export type QueryTechListArgs = {
 	id: Scalars['ID']
 	publicationState?: Maybe<PublicationState>
@@ -2514,6 +2676,9 @@ export type Mutation = {
 	createMenu?: Maybe<CreateMenuPayload>
 	updateMenu?: Maybe<UpdateMenuPayload>
 	deleteMenu?: Maybe<DeleteMenuPayload>
+	createSocialNetwork?: Maybe<CreateSocialNetworkPayload>
+	updateSocialNetwork?: Maybe<UpdateSocialNetworkPayload>
+	deleteSocialNetwork?: Maybe<DeleteSocialNetworkPayload>
 	createTechList?: Maybe<CreateTechListPayload>
 	updateTechList?: Maybe<UpdateTechListPayload>
 	deleteTechList?: Maybe<DeleteTechListPayload>
@@ -2628,6 +2793,18 @@ export type MutationDeleteMenuArgs = {
 	input?: Maybe<DeleteMenuInput>
 }
 
+export type MutationCreateSocialNetworkArgs = {
+	input?: Maybe<CreateSocialNetworkInput>
+}
+
+export type MutationUpdateSocialNetworkArgs = {
+	input?: Maybe<UpdateSocialNetworkInput>
+}
+
+export type MutationDeleteSocialNetworkArgs = {
+	input?: Maybe<DeleteSocialNetworkInput>
+}
+
 export type MutationCreateTechListArgs = {
 	input?: Maybe<CreateTechListInput>
 }
@@ -2727,6 +2904,28 @@ export type MutationEmailConfirmationArgs = {
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
 
 export type Unnamed_1_Query = { __typename?: 'Query' } & {
+	contacts?: Maybe<
+		Array<
+			Maybe<
+				{ __typename?: 'Contact' } & Pick<
+					Contact,
+					| 'id'
+					| 'language'
+					| 'title'
+					| 'address'
+					| 'taxIdentificationNumbers'
+					| 'taxIdentificationDescription'
+					| 'email'
+					| 'phoneNumber'
+				>
+			>
+		>
+	>
+}
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>
+
+export type Unnamed_2_Query = { __typename?: 'Query' } & {
 	headers?: Maybe<
 		Array<
 			Maybe<
@@ -2739,9 +2938,9 @@ export type Unnamed_1_Query = { __typename?: 'Query' } & {
 	>
 }
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never }>
 
-export type Unnamed_2_Query = { __typename?: 'Query' } & {
+export type Unnamed_3_Query = { __typename?: 'Query' } & {
 	homepages?: Maybe<
 		Array<
 			Maybe<
@@ -2765,9 +2964,9 @@ export type Unnamed_2_Query = { __typename?: 'Query' } & {
 	>
 }
 
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never }>
+export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never }>
 
-export type Unnamed_3_Query = { __typename?: 'Query' } & {
+export type Unnamed_4_Query = { __typename?: 'Query' } & {
 	languages?: Maybe<
 		Array<
 			Maybe<
@@ -2780,9 +2979,9 @@ export type Unnamed_3_Query = { __typename?: 'Query' } & {
 	>
 }
 
-export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never }>
+export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never }>
 
-export type Unnamed_4_Query = { __typename?: 'Query' } & {
+export type Unnamed_5_Query = { __typename?: 'Query' } & {
 	menus?: Maybe<
 		Array<
 			Maybe<
@@ -2802,12 +3001,17 @@ export type Unnamed_4_Query = { __typename?: 'Query' } & {
 	>
 }
 
-export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never }>
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never }>
 
-export type Unnamed_5_Query = { __typename?: 'Query' } & {
-	techLists?: Maybe<
+export type Unnamed_6_Query = { __typename?: 'Query' } & {
+	socialNetworks?: Maybe<
 		Array<
-			Maybe<{ __typename?: 'TechList' } & Pick<TechList, 'id' | 'name'>>
+			Maybe<
+				{ __typename?: 'SocialNetwork' } & Pick<
+					SocialNetwork,
+					'id' | 'name' | 'url'
+				>
+			>
 		>
 	>
 }

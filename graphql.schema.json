@@ -1852,17 +1852,17 @@
 					},
 					{
 						"kind": "OBJECT",
-						"name": "ComponentContentChallenge",
-						"ofType": null
-					},
-					{
-						"kind": "OBJECT",
-						"name": "ComponentContentAboutExtended",
-						"ofType": null
-					},
-					{
-						"kind": "OBJECT",
 						"name": "ComponentContentInfoColumn",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "ComponentContentRichText",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "ComponentContentTechnologies",
 						"ofType": null
 					}
 				]
@@ -1935,9 +1935,13 @@
 						"description": null,
 						"args": [],
 						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							}
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -2003,6 +2007,18 @@
 						"deprecationReason": null
 					},
 					{
+						"name": "mainImage",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "UploadFile",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
 						"name": "content",
 						"description": null,
 						"args": [],
@@ -2019,6 +2035,38 @@
 						"deprecationReason": null
 					},
 					{
+						"name": "language",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "projectId",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
 						"name": "published_at",
 						"description": null,
 						"args": [],
@@ -2026,71 +2074,6 @@
 							"kind": "SCALAR",
 							"name": "DateTime",
 							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "mainImage",
-						"description": null,
-						"args": [
-							{
-								"name": "sort",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "String",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "limit",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "start",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "where",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "JSON",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							}
-						],
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "OBJECT",
-								"name": "UploadFile",
-								"ofType": null
-							}
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -2330,6 +2313,54 @@
 							"ofType": {
 								"kind": "OBJECT",
 								"name": "CaseStudyConnectionSystem",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "mainImage",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "CaseStudyConnectionMainImage",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "language",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "CaseStudyConnectionLanguage",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "projectId",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "CaseStudyConnectionProjectId",
 								"ofType": null
 							}
 						},
@@ -2675,6 +2706,111 @@
 			},
 			{
 				"kind": "OBJECT",
+				"name": "CaseStudyConnectionMainImage",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "CaseStudyConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "CaseStudyConnectionLanguage",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "CaseStudyConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "CaseStudyConnectionProjectId",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "CaseStudyConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
 				"name": "CaseStudyConnectionPublished_at",
 				"description": null,
 				"fields": [
@@ -2718,9 +2854,13 @@
 						"name": "title",
 						"description": null,
 						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							}
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -2790,13 +2930,9 @@
 						"name": "mainImage",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -2816,6 +2952,38 @@
 									"name": "CaseStudyContentDynamicZoneInput",
 									"ofType": null
 								}
+							}
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "language",
+						"description": null,
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
+							}
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "projectId",
+						"description": null,
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "String",
+								"ofType": null
 							}
 						},
 						"defaultValue": null,
@@ -2945,13 +3113,9 @@
 						"name": "mainImage",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -2972,6 +3136,30 @@
 									"ofType": null
 								}
 							}
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "language",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "projectId",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -4483,6 +4671,18 @@
 						"deprecationReason": null
 					},
 					{
+						"name": "logo",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "UploadFile",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
 						"name": "published_at",
 						"description": null,
 						"args": [],
@@ -4681,6 +4881,22 @@
 							"ofType": {
 								"kind": "OBJECT",
 								"name": "HeaderConnectionLanguage",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "logo",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "HeaderConnectionLogo",
 								"ofType": null
 							}
 						},
@@ -4921,6 +5137,41 @@
 			},
 			{
 				"kind": "OBJECT",
+				"name": "HeaderConnectionLogo",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "HeaderConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
 				"name": "HeaderConnectionPublished_at",
 				"description": null,
 				"fields": [
@@ -4990,6 +5241,18 @@
 						"type": {
 							"kind": "SCALAR",
 							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "logo",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
 							"ofType": null
 						},
 						"defaultValue": null,
@@ -5073,6 +5336,18 @@
 						"type": {
 							"kind": "SCALAR",
 							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "logo",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
 							"ofType": null
 						},
 						"defaultValue": null,
@@ -8325,6 +8600,796 @@
 						"type": {
 							"kind": "OBJECT",
 							"name": "Menu",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetwork",
+				"description": null,
+				"fields": [
+					{
+						"name": "id",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "ID",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "created_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "DateTime",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "updated_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "DateTime",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "name",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "url",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "published_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnection",
+				"description": null,
+				"fields": [
+					{
+						"name": "values",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetwork",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "groupBy",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkGroupBy",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "aggregate",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkAggregator",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkAggregator",
+				"description": null,
+				"fields": [
+					{
+						"name": "count",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "Int",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "totalCount",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "Int",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkGroupBy",
+				"description": null,
+				"fields": [
+					{
+						"name": "id",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionId",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "created_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionCreated_at",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "updated_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionUpdated_at",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "name",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionName",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "url",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionUrl",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "published_at",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetworkConnectionPublished_at",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionId",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionCreated_at",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionUpdated_at",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionName",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionUrl",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "SocialNetworkConnectionPublished_at",
+				"description": null,
+				"fields": [
+					{
+						"name": "key",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "connection",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "SocialNetworkInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "name",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "url",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "published_at",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "created_by",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "updated_by",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "editSocialNetworkInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "name",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "url",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "published_at",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "DateTime",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "created_by",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "updated_by",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "createSocialNetworkInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "data",
+						"description": null,
+						"type": {
+							"kind": "INPUT_OBJECT",
+							"name": "SocialNetworkInput",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "createSocialNetworkPayload",
+				"description": null,
+				"fields": [
+					{
+						"name": "socialNetwork",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetwork",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "updateSocialNetworkInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "where",
+						"description": null,
+						"type": {
+							"kind": "INPUT_OBJECT",
+							"name": "InputID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "data",
+						"description": null,
+						"type": {
+							"kind": "INPUT_OBJECT",
+							"name": "editSocialNetworkInput",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "updateSocialNetworkPayload",
+				"description": null,
+				"fields": [
+					{
+						"name": "socialNetwork",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetwork",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "deleteSocialNetworkInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "where",
+						"description": null,
+						"type": {
+							"kind": "INPUT_OBJECT",
+							"name": "InputID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "deleteSocialNetworkPayload",
+				"description": null,
+				"fields": [
+					{
+						"name": "socialNetwork",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetwork",
 							"ofType": null
 						},
 						"isDeprecated": false,
@@ -13898,513 +14963,6 @@
 			},
 			{
 				"kind": "OBJECT",
-				"name": "ComponentContentAboutExtended",
-				"description": null,
-				"fields": [
-					{
-						"name": "id",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "technologies",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "description",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"inputFields": null,
-				"interfaces": [],
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "INPUT_OBJECT",
-				"name": "ComponentContentAboutExtendedInput",
-				"description": null,
-				"fields": null,
-				"inputFields": [
-					{
-						"name": "technologies",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "description",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"interfaces": null,
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "INPUT_OBJECT",
-				"name": "editComponentContentAboutExtendedInput",
-				"description": null,
-				"fields": null,
-				"inputFields": [
-					{
-						"name": "id",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "ID",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "technologies",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "description",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"interfaces": null,
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "OBJECT",
-				"name": "ComponentContentChallenge",
-				"description": null,
-				"fields": [
-					{
-						"name": "id",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "NON_NULL",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "title",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciption",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel2",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel3",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "subtitle",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "widthPercent",
-						"description": null,
-						"args": [],
-						"type": {
-							"kind": "SCALAR",
-							"name": "Float",
-							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "image",
-						"description": null,
-						"args": [
-							{
-								"name": "sort",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "String",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "limit",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "start",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "where",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "JSON",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							}
-						],
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "OBJECT",
-								"name": "UploadFile",
-								"ofType": null
-							}
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"inputFields": null,
-				"interfaces": [],
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "INPUT_OBJECT",
-				"name": "ComponentContentChallengeInput",
-				"description": null,
-				"fields": null,
-				"inputFields": [
-					{
-						"name": "title",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciption",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel2",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel3",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "image",
-						"description": null,
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "subtitle",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "widthPercent",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "Float",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"interfaces": null,
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "INPUT_OBJECT",
-				"name": "editComponentContentChallengeInput",
-				"description": null,
-				"fields": null,
-				"inputFields": [
-					{
-						"name": "id",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "ID",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "title",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciption",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel2",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "desciptionLevel3",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "image",
-						"description": null,
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "subtitle",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "String",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "widthPercent",
-						"description": null,
-						"type": {
-							"kind": "SCALAR",
-							"name": "Float",
-							"ofType": null
-						},
-						"defaultValue": null,
-						"isDeprecated": false,
-						"deprecationReason": null
-					}
-				],
-				"interfaces": null,
-				"enumValues": null,
-				"possibleTypes": null
-			},
-			{
-				"kind": "OBJECT",
 				"name": "ComponentContentImage",
 				"description": null,
 				"fields": [
@@ -14425,6 +14983,18 @@
 						"deprecationReason": null
 					},
 					{
+						"name": "image",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "UploadFile",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
 						"name": "widthPercent",
 						"description": null,
 						"args": [],
@@ -14432,71 +15002,6 @@
 							"kind": "SCALAR",
 							"name": "Float",
 							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "image",
-						"description": null,
-						"args": [
-							{
-								"name": "sort",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "String",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "limit",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "start",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "where",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "JSON",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							}
-						],
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "OBJECT",
-								"name": "UploadFile",
-								"ofType": null
-							}
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -14517,13 +15022,9 @@
 						"name": "image",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -14568,13 +15069,9 @@
 						"name": "image",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -14655,6 +15152,18 @@
 						"deprecationReason": null
 					},
 					{
+						"name": "infoColumnImage",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "UploadFile",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
 						"name": "widthPercent",
 						"description": null,
 						"args": [],
@@ -14662,71 +15171,6 @@
 							"kind": "SCALAR",
 							"name": "Float",
 							"ofType": null
-						},
-						"isDeprecated": false,
-						"deprecationReason": null
-					},
-					{
-						"name": "image",
-						"description": null,
-						"args": [
-							{
-								"name": "sort",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "String",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "limit",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "start",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "Int",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							},
-							{
-								"name": "where",
-								"description": null,
-								"type": {
-									"kind": "SCALAR",
-									"name": "JSON",
-									"ofType": null
-								},
-								"defaultValue": null,
-								"isDeprecated": false,
-								"deprecationReason": null
-							}
-						],
-						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "OBJECT",
-								"name": "UploadFile",
-								"ofType": null
-							}
 						},
 						"isDeprecated": false,
 						"deprecationReason": null
@@ -14780,16 +15224,12 @@
 						"deprecationReason": null
 					},
 					{
-						"name": "image",
+						"name": "infoColumnImage",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -14867,16 +15307,12 @@
 						"deprecationReason": null
 					},
 					{
-						"name": "image",
+						"name": "infoColumnImage",
 						"description": null,
 						"type": {
-							"kind": "LIST",
-							"name": null,
-							"ofType": {
-								"kind": "SCALAR",
-								"name": "ID",
-								"ofType": null
-							}
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
 						},
 						"defaultValue": null,
 						"isDeprecated": false,
@@ -14888,6 +15324,452 @@
 						"type": {
 							"kind": "SCALAR",
 							"name": "Float",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "ComponentContentRichText",
+				"description": null,
+				"fields": [
+					{
+						"name": "id",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "ID",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "title",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciption",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel2",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel3",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "richTextImage",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "OBJECT",
+							"name": "UploadFile",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "subtitle",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "widthPercent",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "Float",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "ComponentContentRichTextInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "title",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciption",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel2",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel3",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "richTextImage",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "subtitle",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "widthPercent",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "Float",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "editComponentContentRichTextInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "id",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "title",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciption",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel2",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "desciptionLevel3",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "richTextImage",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "subtitle",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "widthPercent",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "Float",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "OBJECT",
+				"name": "ComponentContentTechnologies",
+				"description": null,
+				"fields": [
+					{
+						"name": "id",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "NON_NULL",
+							"name": null,
+							"ofType": {
+								"kind": "SCALAR",
+								"name": "ID",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "technologies",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "description",
+						"description": null,
+						"args": [],
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"inputFields": null,
+				"interfaces": [],
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "ComponentContentTechnologyInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "technologies",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "description",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					}
+				],
+				"interfaces": null,
+				"enumValues": null,
+				"possibleTypes": null
+			},
+			{
+				"kind": "INPUT_OBJECT",
+				"name": "editComponentContentTechnologyInput",
+				"description": null,
+				"fields": null,
+				"inputFields": [
+					{
+						"name": "id",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "ID",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "technologies",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
+							"ofType": null
+						},
+						"defaultValue": null,
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "description",
+						"description": null,
+						"type": {
+							"kind": "SCALAR",
+							"name": "String",
 							"ofType": null
 						},
 						"defaultValue": null,
@@ -15095,6 +15977,21 @@
 					},
 					{
 						"kind": "OBJECT",
+						"name": "CaseStudyConnectionMainImage",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "CaseStudyConnectionLanguage",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "CaseStudyConnectionProjectId",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
 						"name": "CaseStudyConnectionPublished_at",
 						"ofType": null
 					},
@@ -15251,6 +16148,11 @@
 					{
 						"kind": "OBJECT",
 						"name": "HeaderConnectionLanguage",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "HeaderConnectionLogo",
 						"ofType": null
 					},
 					{
@@ -15506,6 +16408,71 @@
 					{
 						"kind": "OBJECT",
 						"name": "deleteMenuPayload",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetwork",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnection",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkAggregator",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkGroupBy",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionId",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionCreated_at",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionUpdated_at",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionName",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionUrl",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "SocialNetworkConnectionPublished_at",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "createSocialNetworkPayload",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "updateSocialNetworkPayload",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "deleteSocialNetworkPayload",
 						"ofType": null
 					},
 					{
@@ -15900,22 +16867,22 @@
 					},
 					{
 						"kind": "OBJECT",
-						"name": "ComponentContentAboutExtended",
-						"ofType": null
-					},
-					{
-						"kind": "OBJECT",
-						"name": "ComponentContentChallenge",
-						"ofType": null
-					},
-					{
-						"kind": "OBJECT",
 						"name": "ComponentContentImage",
 						"ofType": null
 					},
 					{
 						"kind": "OBJECT",
 						"name": "ComponentContentInfoColumn",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "ComponentContentRichText",
+						"ofType": null
+					},
+					{
+						"kind": "OBJECT",
+						"name": "ComponentContentTechnologies",
 						"ofType": null
 					}
 				]
@@ -17294,6 +18261,185 @@
 						"type": {
 							"kind": "OBJECT",
 							"name": "MenuConnection",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "socialNetwork",
+						"description": null,
+						"args": [
+							{
+								"name": "id",
+								"description": null,
+								"type": {
+									"kind": "NON_NULL",
+									"name": null,
+									"ofType": {
+										"kind": "SCALAR",
+										"name": "ID",
+										"ofType": null
+									}
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "publicationState",
+								"description": null,
+								"type": {
+									"kind": "ENUM",
+									"name": "PublicationState",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetwork",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "socialNetworks",
+						"description": null,
+						"args": [
+							{
+								"name": "sort",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "limit",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "start",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "where",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "JSON",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "publicationState",
+								"description": null,
+								"type": {
+									"kind": "ENUM",
+									"name": "PublicationState",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "LIST",
+							"name": null,
+							"ofType": {
+								"kind": "OBJECT",
+								"name": "SocialNetwork",
+								"ofType": null
+							}
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "socialNetworksConnection",
+						"description": null,
+						"args": [
+							{
+								"name": "sort",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "String",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "limit",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "start",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "Int",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							},
+							{
+								"name": "where",
+								"description": null,
+								"type": {
+									"kind": "SCALAR",
+									"name": "JSON",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "OBJECT",
+							"name": "SocialNetworkConnection",
 							"ofType": null
 						},
 						"isDeprecated": false,
@@ -18696,6 +19842,81 @@
 						"type": {
 							"kind": "OBJECT",
 							"name": "deleteMenuPayload",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "createSocialNetwork",
+						"description": null,
+						"args": [
+							{
+								"name": "input",
+								"description": null,
+								"type": {
+									"kind": "INPUT_OBJECT",
+									"name": "createSocialNetworkInput",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "OBJECT",
+							"name": "createSocialNetworkPayload",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "updateSocialNetwork",
+						"description": null,
+						"args": [
+							{
+								"name": "input",
+								"description": null,
+								"type": {
+									"kind": "INPUT_OBJECT",
+									"name": "updateSocialNetworkInput",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "OBJECT",
+							"name": "updateSocialNetworkPayload",
+							"ofType": null
+						},
+						"isDeprecated": false,
+						"deprecationReason": null
+					},
+					{
+						"name": "deleteSocialNetwork",
+						"description": null,
+						"args": [
+							{
+								"name": "input",
+								"description": null,
+								"type": {
+									"kind": "INPUT_OBJECT",
+									"name": "deleteSocialNetworkInput",
+									"ofType": null
+								},
+								"defaultValue": null,
+								"isDeprecated": false,
+								"deprecationReason": null
+							}
+						],
+						"type": {
+							"kind": "OBJECT",
+							"name": "deleteSocialNetworkPayload",
 							"ofType": null
 						},
 						"isDeprecated": false,

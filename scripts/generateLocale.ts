@@ -5,39 +5,51 @@ import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 import { HOMEPAGE_QUERY } from '../gql/queries/homepages'
-import { Homepage, Header, Menu, Language } from '../gql/generated/types'
+import {
+	Contact,
+	Homepage,
+	Header,
+	Menu,
+	Language,
+	SocialNetwork,
+} from '../gql/generated/types'
 import { MENU_QUERY } from '../gql/queries/menus'
 import { HEADER_QUERY } from '../gql/queries/headers'
 import { LANGUAGE_QUERY } from '../gql/queries/languages'
+import { CONTACT_QUERY } from '../gql/queries/contacts'
+import { SOCIAL_NETWORK_QUERY } from '../gql/queries/socialNetworks'
 
 type Resources = {
 	homepage: Homepage[]
 	menu: Menu[]
 	header: Header[]
+	contact: Contact[]
 }
 
-const removeUnnecessaryProperties = (
-	object: Homepage | Header | Menu | undefined
-) => ({
-	...object,
-	id: undefined,
-	__typename: undefined,
+const apolloClient = new ApolloClient({
+	link: createHttpLink({
+		uri: process.env.CMS_GRAPHQL_URL,
+		fetch: fetch as never,
+	}),
+	cache: new InMemoryCache(),
 })
 
 const toResource = (
-	{ homepage, menu, header }: Resources,
+	{ homepage, menu, header, contact }: Resources,
 	language: string
 ) => {
-	const translatedHomepage = removeUnnecessaryProperties(
-		homepage.find((homepage) => homepage?.language === language)
+	const translatedHomepage = homepage.find(
+		(homepage) => homepage?.language === language
 	)
 
-	const translatedMenu = removeUnnecessaryProperties(
-		menu.find((menu) => menu?.language === language)
+	const translatedMenu = menu.find((menu) => menu?.language === language)
+
+	const translatedHeader = header.find(
+		(header) => header?.language === language
 	)
 
-	const translatedHeader = removeUnnecessaryProperties(
-		header.find((header) => header?.language === language)
+	const translatedContact = contact.find(
+		(contact) => contact?.language === language
 	)
 
 	return {
@@ -45,42 +57,70 @@ const toResource = (
 			homepage: translatedHomepage,
 			menu: translatedMenu,
 			header: translatedHeader,
+			contact: translatedContact,
 		},
 	}
 }
 
 const main = async () => {
-	const apolloClient = new ApolloClient({
-		link: createHttpLink({
-			uri: process.env.CMS_GRAPHQL_URL,
-			fetch: fetch as never,
-		}),
-		cache: new InMemoryCache(),
-	})
+	const [
+		homepages,
+		menus,
+		headers,
+		languages,
+		contacts,
+		socialNetworks,
+	] = await Promise.all(
+		[
+			HOMEPAGE_QUERY,
+			MENU_QUERY,
+			HEADER_QUERY,
+			LANGUAGE_QUERY,
+			CONTACT_QUERY,
+			SOCIAL_NETWORK_QUERY,
+		].map(async (query) => apolloClient.query({ query }))
+	)
 
-	const homepages = await apolloClient.query({ query: HOMEPAGE_QUERY })
-	const menus = await apolloClient.query({ query: MENU_QUERY })
-	const headers = await apolloClient.query({ query: HEADER_QUERY })
-	const languages = await apolloClient.query({ query: LANGUAGE_QUERY })
+	const translatedResources = languages?.data?.languages.map(
+		(language: Language) => {
+			const translatedTexts = toResource(
+				{
+					homepage: homepages.data.homepages,
+					menu: menus.data.menus,
+					header: headers.data.headers,
+					contact: contacts.data.contacts,
+				},
+				language.languageCode!
+			)
 
-	const resources = languages?.data?.languages.map((language: Language) => ({
-		language: language.languageCode,
-		resource: toResource(
-			{
-				homepage: homepages?.data?.homepages || [],
-				menu: menus?.data?.menus || [],
-				header: headers?.data?.headers || [],
-			},
-			language.languageCode!
-		),
-	}))
+			return {
+				language: language.languageCode,
+				resource: {
+					...translatedTexts,
+					translation: {
+						...translatedTexts.translation,
+						socialNetworkUrls: socialNetworks.data.socialNetworks.reduce(
+							(
+								socialNetworks: Record<string, SocialNetwork>,
+								socialNetwork: SocialNetwork
+							) => ({
+								...socialNetworks,
+								[socialNetwork.name!]: { ...socialNetwork },
+							}),
+							{}
+						),
+					},
+				},
+			}
+		}
+	)
 
 	fs.writeFileSync(
 		'locale/generated/languages.json',
 		JSON.stringify(languages?.data?.languages || [], null, 2)
 	)
 
-	resources.map(({ language, resource }: any) =>
+	translatedResources.map(({ language, resource }: any) =>
 		fs.writeFileSync(
 			`locale/generated/resources/${language}.json`,
 			JSON.stringify(resource, null, 2)
