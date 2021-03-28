@@ -23,7 +23,8 @@
     "noImplicitAny": true,
     "strict": true,
     "lib": [
-      "es6"
+      "es6",
+      "ES2020"
     ],
     "typeRoots": [
       "node_modules/@types"
