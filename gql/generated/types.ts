@@ -2762,22 +2762,34 @@ export type CaseStudiesQuery = (
   { __typename?: 'Query' }
   & { caseStudies?: Maybe<Array<Maybe<(
     { __typename?: 'CaseStudy' }
-    & Pick<CaseStudy, 'id' | 'title' | 'language' | 'subtitle' | 'about' | 'projectId' | 'system'>
+    & Pick<CaseStudy, 'id' | 'title' | 'language' | 'subtitle' | 'about' | 'projectId' | 'system' | 'created_at' | 'updated_at' | 'published_at' | 'client'>
     & { mainImage?: Maybe<(
       { __typename?: 'UploadFile' }
-      & Pick<UploadFile, 'url' | 'previewUrl'>
+      & Pick<UploadFile, 'url'>
     )>, content?: Maybe<Array<Maybe<(
       { __typename: 'ComponentContentImage' }
       & Pick<ComponentContentImage, 'id' | 'widthPercent'>
+      & { image?: Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'url'>
+      )> }
     ) | (
       { __typename: 'ComponentContentInfoColumn' }
-      & Pick<ComponentContentInfoColumn, 'id' | 'widthPercent'>
+      & Pick<ComponentContentInfoColumn, 'id' | 'widthPercent' | 'title' | 'description' | 'number'>
+      & { infoColumnImage?: Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'url'>
+      )> }
     ) | (
       { __typename: 'ComponentContentRichText' }
-      & Pick<ComponentContentRichText, 'id' | 'title'>
+      & Pick<ComponentContentRichText, 'id' | 'title' | 'desciption' | 'desciptionLevel2' | 'desciptionLevel3' | 'subtitle' | 'widthPercent'>
+      & { richTextImage?: Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'url'>
+      )> }
     ) | (
       { __typename: 'ComponentContentTechnologies' }
-      & Pick<ComponentContentTechnologies, 'id' | 'technologies'>
+      & Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
     )>>> }
   )>>> }
 );

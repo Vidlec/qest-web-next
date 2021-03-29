@@ -13,3 +13,5 @@ generates:
     ./gql/generated/fragmentTypes.json:
         plugins:
             - fragment-matcher
+        config:
+            apolloClientVersion: 2
