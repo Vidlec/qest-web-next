@@ -37,7 +37,11 @@ export const GlobalStyle = createGlobalStyle`
     button {
       outline: none;
     }
-    
+
+    h1 {
+      font-size: 4.375rem;
+    }
+
     h3 {
 		  margin: 0;
 		  font-size: 1.8rem;

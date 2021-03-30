@@ -8,6 +8,8 @@ export const theme = {
 		porcelainWhite: '#F0EFEC',
 		roseRed: '#DC4846',
 		softBlack: '#0E0E0E',
+		basilGreen: '#317A5B',
+		metalGray: '#CDCDCD',
 	},
 	mediaQueries: {
 		desktopLarge: '110rem',
