@@ -16,3 +16,5 @@ export const WrapperContent = styled.div`
 		width: 71.25rem;
 	}
 `
+
+export default Wrapper
