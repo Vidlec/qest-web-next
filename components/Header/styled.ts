@@ -2,7 +2,7 @@ import { MainMenu } from 'components/Link'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
-	height: 15vh;
+	height: 100px;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;

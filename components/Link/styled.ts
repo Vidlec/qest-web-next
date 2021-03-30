@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 export const Link = styled.a`
 	font-size: 1.5rem;
-	text-decoration: none;
+	:hover {
+		filter: brightness(200%);
+	}
 `
 
 export const AboutUs = styled(Link)`

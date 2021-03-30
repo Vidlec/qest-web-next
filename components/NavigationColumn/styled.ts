@@ -16,6 +16,10 @@ export const MenuButton = styled.button`
 	border: none;
 	font-size: 1.75rem;
 	text-decoration: none;
+
+	:hover {
+		filter: brightness(200%);
+	}
 `
 
 export const CloseButton = styled.button`
