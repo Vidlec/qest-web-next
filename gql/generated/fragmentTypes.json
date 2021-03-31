@@ -1,687 +1,231 @@
 {
-  "__schema": {
-    "types": [
-      {
-        "kind": "UNION",
-        "name": "CaseStudyContentDynamicZone",
-        "possibleTypes": [
-          {
-            "name": "ComponentContentImage"
-          },
-          {
-            "name": "ComponentContentInfoColumn"
-          },
-          {
-            "name": "ComponentContentRichText"
-          },
-          {
-            "name": "ComponentContentTechnologies"
-          }
-        ]
-      },
-      {
-        "kind": "UNION",
-        "name": "Morph",
-        "possibleTypes": [
-          {
-            "name": "UsersPermissionsMe"
-          },
-          {
-            "name": "UsersPermissionsMeRole"
-          },
-          {
-            "name": "UsersPermissionsLoginPayload"
-          },
-          {
-            "name": "UserPermissionsPasswordPayload"
-          },
-          {
-            "name": "CaseStudyMeta"
-          },
-          {
-            "name": "CaseStudyMetaConnection"
-          },
-          {
-            "name": "CaseStudyMetaAggregator"
-          },
-          {
-            "name": "CaseStudyMetaGroupBy"
-          },
-          {
-            "name": "CaseStudyMetaConnectionId"
-          },
-          {
-            "name": "CaseStudyMetaConnectionCreated_at"
-          },
-          {
-            "name": "CaseStudyMetaConnectionUpdated_at"
-          },
-          {
-            "name": "CaseStudyMetaConnectionIndustry"
-          },
-          {
-            "name": "CaseStudyMetaConnectionClient"
-          },
-          {
-            "name": "CaseStudyMetaConnectionSystem"
-          },
-          {
-            "name": "CaseStudyMetaConnectionTechnologies"
-          },
-          {
-            "name": "CaseStudyMetaConnectionPreviousProject"
-          },
-          {
-            "name": "CaseStudyMetaConnectionNextProject"
-          },
-          {
-            "name": "CaseStudyMetaConnectionFooterText"
-          },
-          {
-            "name": "CaseStudyMetaConnectionWriteUs"
-          },
-          {
-            "name": "CaseStudyMetaConnectionLanguage"
-          },
-          {
-            "name": "CaseStudyMetaConnectionPublished_at"
-          },
-          {
-            "name": "createCaseStudyMetaPayload"
-          },
-          {
-            "name": "updateCaseStudyMetaPayload"
-          },
-          {
-            "name": "deleteCaseStudyMetaPayload"
-          },
-          {
-            "name": "CaseStudy"
-          },
-          {
-            "name": "CaseStudyConnection"
-          },
-          {
-            "name": "CaseStudyAggregator"
-          },
-          {
-            "name": "CaseStudyGroupBy"
-          },
-          {
-            "name": "CaseStudyConnectionId"
-          },
-          {
-            "name": "CaseStudyConnectionCreated_at"
-          },
-          {
-            "name": "CaseStudyConnectionUpdated_at"
-          },
-          {
-            "name": "CaseStudyConnectionTitle"
-          },
-          {
-            "name": "CaseStudyConnectionSubtitle"
-          },
-          {
-            "name": "CaseStudyConnectionAbout"
-          },
-          {
-            "name": "CaseStudyConnectionIndustry"
-          },
-          {
-            "name": "CaseStudyConnectionClient"
-          },
-          {
-            "name": "CaseStudyConnectionSystem"
-          },
-          {
-            "name": "CaseStudyConnectionMainImage"
-          },
-          {
-            "name": "CaseStudyConnectionLanguage"
-          },
-          {
-            "name": "CaseStudyConnectionProjectId"
-          },
-          {
-            "name": "CaseStudyConnectionPublished_at"
-          },
-          {
-            "name": "createCaseStudyPayload"
-          },
-          {
-            "name": "updateCaseStudyPayload"
-          },
-          {
-            "name": "deleteCaseStudyPayload"
-          },
-          {
-            "name": "Contact"
-          },
-          {
-            "name": "ContactConnection"
-          },
-          {
-            "name": "ContactAggregator"
-          },
-          {
-            "name": "ContactGroupBy"
-          },
-          {
-            "name": "ContactConnectionId"
-          },
-          {
-            "name": "ContactConnectionCreated_at"
-          },
-          {
-            "name": "ContactConnectionUpdated_at"
-          },
-          {
-            "name": "ContactConnectionLanguage"
-          },
-          {
-            "name": "ContactConnectionTitle"
-          },
-          {
-            "name": "ContactConnectionAddress"
-          },
-          {
-            "name": "ContactConnectionTaxIdentificationNumbers"
-          },
-          {
-            "name": "ContactConnectionTaxIdentificationDescription"
-          },
-          {
-            "name": "ContactConnectionEmail"
-          },
-          {
-            "name": "ContactConnectionPhoneNumber"
-          },
-          {
-            "name": "ContactConnectionPublished_at"
-          },
-          {
-            "name": "createContactPayload"
-          },
-          {
-            "name": "updateContactPayload"
-          },
-          {
-            "name": "deleteContactPayload"
-          },
-          {
-            "name": "Header"
-          },
-          {
-            "name": "HeaderConnection"
-          },
-          {
-            "name": "HeaderAggregator"
-          },
-          {
-            "name": "HeaderGroupBy"
-          },
-          {
-            "name": "HeaderConnectionId"
-          },
-          {
-            "name": "HeaderConnectionCreated_at"
-          },
-          {
-            "name": "HeaderConnectionUpdated_at"
-          },
-          {
-            "name": "HeaderConnectionTitle"
-          },
-          {
-            "name": "HeaderConnectionDescription"
-          },
-          {
-            "name": "HeaderConnectionLanguage"
-          },
-          {
-            "name": "HeaderConnectionLogo"
-          },
-          {
-            "name": "HeaderConnectionPublished_at"
-          },
-          {
-            "name": "createHeaderPayload"
-          },
-          {
-            "name": "updateHeaderPayload"
-          },
-          {
-            "name": "deleteHeaderPayload"
-          },
-          {
-            "name": "Homepage"
-          },
-          {
-            "name": "HomepageConnection"
-          },
-          {
-            "name": "HomepageAggregator"
-          },
-          {
-            "name": "HomepageGroupBy"
-          },
-          {
-            "name": "HomepageConnectionId"
-          },
-          {
-            "name": "HomepageConnectionCreated_at"
-          },
-          {
-            "name": "HomepageConnectionUpdated_at"
-          },
-          {
-            "name": "HomepageConnectionLanguage"
-          },
-          {
-            "name": "HomepageConnectionClickToStop"
-          },
-          {
-            "name": "HomepageConnectionDescriptionAboveLine"
-          },
-          {
-            "name": "HomepageConnectionDescriptionBellowLine"
-          },
-          {
-            "name": "HomepageConnectionLogo"
-          },
-          {
-            "name": "HomepageConnectionPublished_at"
-          },
-          {
-            "name": "createHomepagePayload"
-          },
-          {
-            "name": "updateHomepagePayload"
-          },
-          {
-            "name": "deleteHomepagePayload"
-          },
-          {
-            "name": "Language"
-          },
-          {
-            "name": "LanguageConnection"
-          },
-          {
-            "name": "LanguageAggregator"
-          },
-          {
-            "name": "LanguageGroupBy"
-          },
-          {
-            "name": "LanguageConnectionId"
-          },
-          {
-            "name": "LanguageConnectionCreated_at"
-          },
-          {
-            "name": "LanguageConnectionUpdated_at"
-          },
-          {
-            "name": "LanguageConnectionLanguageCode"
-          },
-          {
-            "name": "LanguageConnectionDisplayName"
-          },
-          {
-            "name": "LanguageConnectionPublished_at"
-          },
-          {
-            "name": "createLanguagePayload"
-          },
-          {
-            "name": "updateLanguagePayload"
-          },
-          {
-            "name": "deleteLanguagePayload"
-          },
-          {
-            "name": "Menu"
-          },
-          {
-            "name": "MenuConnection"
-          },
-          {
-            "name": "MenuAggregator"
-          },
-          {
-            "name": "MenuGroupBy"
-          },
-          {
-            "name": "MenuConnectionId"
-          },
-          {
-            "name": "MenuConnectionCreated_at"
-          },
-          {
-            "name": "MenuConnectionUpdated_at"
-          },
-          {
-            "name": "MenuConnectionMenu"
-          },
-          {
-            "name": "MenuConnectionHomePage"
-          },
-          {
-            "name": "MenuConnectionReference"
-          },
-          {
-            "name": "MenuConnectionAboutUs"
-          },
-          {
-            "name": "MenuConnectionCareer"
-          },
-          {
-            "name": "MenuConnectionContact"
-          },
-          {
-            "name": "MenuConnectionLanguage"
-          },
-          {
-            "name": "MenuConnectionPublished_at"
-          },
-          {
-            "name": "createMenuPayload"
-          },
-          {
-            "name": "updateMenuPayload"
-          },
-          {
-            "name": "deleteMenuPayload"
-          },
-          {
-            "name": "SocialNetwork"
-          },
-          {
-            "name": "SocialNetworkConnection"
-          },
-          {
-            "name": "SocialNetworkAggregator"
-          },
-          {
-            "name": "SocialNetworkGroupBy"
-          },
-          {
-            "name": "SocialNetworkConnectionId"
-          },
-          {
-            "name": "SocialNetworkConnectionCreated_at"
-          },
-          {
-            "name": "SocialNetworkConnectionUpdated_at"
-          },
-          {
-            "name": "SocialNetworkConnectionName"
-          },
-          {
-            "name": "SocialNetworkConnectionUrl"
-          },
-          {
-            "name": "SocialNetworkConnectionPublished_at"
-          },
-          {
-            "name": "createSocialNetworkPayload"
-          },
-          {
-            "name": "updateSocialNetworkPayload"
-          },
-          {
-            "name": "deleteSocialNetworkPayload"
-          },
-          {
-            "name": "TechList"
-          },
-          {
-            "name": "TechListConnection"
-          },
-          {
-            "name": "TechListAggregator"
-          },
-          {
-            "name": "TechListGroupBy"
-          },
-          {
-            "name": "TechListConnectionId"
-          },
-          {
-            "name": "TechListConnectionCreated_at"
-          },
-          {
-            "name": "TechListConnectionUpdated_at"
-          },
-          {
-            "name": "TechListConnectionName"
-          },
-          {
-            "name": "TechListConnectionPublished_at"
-          },
-          {
-            "name": "createTechListPayload"
-          },
-          {
-            "name": "updateTechListPayload"
-          },
-          {
-            "name": "deleteTechListPayload"
-          },
-          {
-            "name": "Webhook"
-          },
-          {
-            "name": "WebhookConnection"
-          },
-          {
-            "name": "WebhookAggregator"
-          },
-          {
-            "name": "WebhookGroupBy"
-          },
-          {
-            "name": "WebhookConnectionId"
-          },
-          {
-            "name": "WebhookConnectionCreated_at"
-          },
-          {
-            "name": "WebhookConnectionUpdated_at"
-          },
-          {
-            "name": "WebhookConnectionName"
-          },
-          {
-            "name": "WebhookConnectionPublished_at"
-          },
-          {
-            "name": "createWebhookPayload"
-          },
-          {
-            "name": "updateWebhookPayload"
-          },
-          {
-            "name": "deleteWebhookPayload"
-          },
-          {
-            "name": "UploadFile"
-          },
-          {
-            "name": "UploadFileConnection"
-          },
-          {
-            "name": "UploadFileAggregator"
-          },
-          {
-            "name": "UploadFileAggregatorSum"
-          },
-          {
-            "name": "UploadFileAggregatorAvg"
-          },
-          {
-            "name": "UploadFileAggregatorMin"
-          },
-          {
-            "name": "UploadFileAggregatorMax"
-          },
-          {
-            "name": "UploadFileGroupBy"
-          },
-          {
-            "name": "UploadFileConnectionId"
-          },
-          {
-            "name": "UploadFileConnectionCreated_at"
-          },
-          {
-            "name": "UploadFileConnectionUpdated_at"
-          },
-          {
-            "name": "UploadFileConnectionName"
-          },
-          {
-            "name": "UploadFileConnectionAlternativeText"
-          },
-          {
-            "name": "UploadFileConnectionCaption"
-          },
-          {
-            "name": "UploadFileConnectionWidth"
-          },
-          {
-            "name": "UploadFileConnectionHeight"
-          },
-          {
-            "name": "UploadFileConnectionFormats"
-          },
-          {
-            "name": "UploadFileConnectionHash"
-          },
-          {
-            "name": "UploadFileConnectionExt"
-          },
-          {
-            "name": "UploadFileConnectionMime"
-          },
-          {
-            "name": "UploadFileConnectionSize"
-          },
-          {
-            "name": "UploadFileConnectionUrl"
-          },
-          {
-            "name": "UploadFileConnectionPreviewUrl"
-          },
-          {
-            "name": "UploadFileConnectionProvider"
-          },
-          {
-            "name": "UploadFileConnectionProvider_metadata"
-          },
-          {
-            "name": "deleteFilePayload"
-          },
-          {
-            "name": "UsersPermissionsPermission"
-          },
-          {
-            "name": "UsersPermissionsRole"
-          },
-          {
-            "name": "UsersPermissionsRoleConnection"
-          },
-          {
-            "name": "UsersPermissionsRoleAggregator"
-          },
-          {
-            "name": "UsersPermissionsRoleGroupBy"
-          },
-          {
-            "name": "UsersPermissionsRoleConnectionId"
-          },
-          {
-            "name": "UsersPermissionsRoleConnectionName"
-          },
-          {
-            "name": "UsersPermissionsRoleConnectionDescription"
-          },
-          {
-            "name": "UsersPermissionsRoleConnectionType"
-          },
-          {
-            "name": "createRolePayload"
-          },
-          {
-            "name": "updateRolePayload"
-          },
-          {
-            "name": "deleteRolePayload"
-          },
-          {
-            "name": "UsersPermissionsUser"
-          },
-          {
-            "name": "UsersPermissionsUserConnection"
-          },
-          {
-            "name": "UsersPermissionsUserAggregator"
-          },
-          {
-            "name": "UsersPermissionsUserGroupBy"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionId"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionCreated_at"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionUpdated_at"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionUsername"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionEmail"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionProvider"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionConfirmed"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionBlocked"
-          },
-          {
-            "name": "UsersPermissionsUserConnectionRole"
-          },
-          {
-            "name": "createUserPayload"
-          },
-          {
-            "name": "updateUserPayload"
-          },
-          {
-            "name": "deleteUserPayload"
-          },
-          {
-            "name": "ComponentContentImage"
-          },
-          {
-            "name": "ComponentContentInfoColumn"
-          },
-          {
-            "name": "ComponentContentRichText"
-          },
-          {
-            "name": "ComponentContentTechnologies"
-          }
-        ]
-      }
+  "possibleTypes": {
+    "CaseStudyContentDynamicZone": [
+      "ComponentContentImage",
+      "ComponentContentInfoColumn",
+      "ComponentContentRichText",
+      "ComponentContentTechnologies"
+    ],
+    "Morph": [
+      "UsersPermissionsMe",
+      "UsersPermissionsMeRole",
+      "UsersPermissionsLoginPayload",
+      "UserPermissionsPasswordPayload",
+      "CaseStudyMeta",
+      "CaseStudyMetaConnection",
+      "CaseStudyMetaAggregator",
+      "CaseStudyMetaGroupBy",
+      "CaseStudyMetaConnectionId",
+      "CaseStudyMetaConnectionCreated_at",
+      "CaseStudyMetaConnectionUpdated_at",
+      "CaseStudyMetaConnectionIndustry",
+      "CaseStudyMetaConnectionClient",
+      "CaseStudyMetaConnectionSystem",
+      "CaseStudyMetaConnectionTechnologies",
+      "CaseStudyMetaConnectionPreviousProject",
+      "CaseStudyMetaConnectionNextProject",
+      "CaseStudyMetaConnectionFooterText",
+      "CaseStudyMetaConnectionWriteUs",
+      "CaseStudyMetaConnectionLanguage",
+      "CaseStudyMetaConnectionPublished_at",
+      "createCaseStudyMetaPayload",
+      "updateCaseStudyMetaPayload",
+      "deleteCaseStudyMetaPayload",
+      "CaseStudy",
+      "CaseStudyConnection",
+      "CaseStudyAggregator",
+      "CaseStudyGroupBy",
+      "CaseStudyConnectionId",
+      "CaseStudyConnectionCreated_at",
+      "CaseStudyConnectionUpdated_at",
+      "CaseStudyConnectionTitle",
+      "CaseStudyConnectionSubtitle",
+      "CaseStudyConnectionAbout",
+      "CaseStudyConnectionIndustry",
+      "CaseStudyConnectionClient",
+      "CaseStudyConnectionSystem",
+      "CaseStudyConnectionMainImage",
+      "CaseStudyConnectionLanguage",
+      "CaseStudyConnectionProjectId",
+      "CaseStudyConnectionPublished_at",
+      "createCaseStudyPayload",
+      "updateCaseStudyPayload",
+      "deleteCaseStudyPayload",
+      "Contact",
+      "ContactConnection",
+      "ContactAggregator",
+      "ContactGroupBy",
+      "ContactConnectionId",
+      "ContactConnectionCreated_at",
+      "ContactConnectionUpdated_at",
+      "ContactConnectionLanguage",
+      "ContactConnectionTitle",
+      "ContactConnectionAddress",
+      "ContactConnectionTaxIdentificationNumbers",
+      "ContactConnectionTaxIdentificationDescription",
+      "ContactConnectionEmail",
+      "ContactConnectionPhoneNumber",
+      "ContactConnectionPublished_at",
+      "createContactPayload",
+      "updateContactPayload",
+      "deleteContactPayload",
+      "Header",
+      "HeaderConnection",
+      "HeaderAggregator",
+      "HeaderGroupBy",
+      "HeaderConnectionId",
+      "HeaderConnectionCreated_at",
+      "HeaderConnectionUpdated_at",
+      "HeaderConnectionTitle",
+      "HeaderConnectionDescription",
+      "HeaderConnectionLanguage",
+      "HeaderConnectionLogo",
+      "HeaderConnectionPublished_at",
+      "createHeaderPayload",
+      "updateHeaderPayload",
+      "deleteHeaderPayload",
+      "Homepage",
+      "HomepageConnection",
+      "HomepageAggregator",
+      "HomepageGroupBy",
+      "HomepageConnectionId",
+      "HomepageConnectionCreated_at",
+      "HomepageConnectionUpdated_at",
+      "HomepageConnectionLanguage",
+      "HomepageConnectionClickToStop",
+      "HomepageConnectionDescriptionAboveLine",
+      "HomepageConnectionDescriptionBellowLine",
+      "HomepageConnectionLogo",
+      "HomepageConnectionPublished_at",
+      "createHomepagePayload",
+      "updateHomepagePayload",
+      "deleteHomepagePayload",
+      "Language",
+      "LanguageConnection",
+      "LanguageAggregator",
+      "LanguageGroupBy",
+      "LanguageConnectionId",
+      "LanguageConnectionCreated_at",
+      "LanguageConnectionUpdated_at",
+      "LanguageConnectionLanguageCode",
+      "LanguageConnectionDisplayName",
+      "LanguageConnectionPublished_at",
+      "createLanguagePayload",
+      "updateLanguagePayload",
+      "deleteLanguagePayload",
+      "Menu",
+      "MenuConnection",
+      "MenuAggregator",
+      "MenuGroupBy",
+      "MenuConnectionId",
+      "MenuConnectionCreated_at",
+      "MenuConnectionUpdated_at",
+      "MenuConnectionMenu",
+      "MenuConnectionHomePage",
+      "MenuConnectionReference",
+      "MenuConnectionAboutUs",
+      "MenuConnectionCareer",
+      "MenuConnectionContact",
+      "MenuConnectionLanguage",
+      "MenuConnectionPublished_at",
+      "createMenuPayload",
+      "updateMenuPayload",
+      "deleteMenuPayload",
+      "SocialNetwork",
+      "SocialNetworkConnection",
+      "SocialNetworkAggregator",
+      "SocialNetworkGroupBy",
+      "SocialNetworkConnectionId",
+      "SocialNetworkConnectionCreated_at",
+      "SocialNetworkConnectionUpdated_at",
+      "SocialNetworkConnectionName",
+      "SocialNetworkConnectionUrl",
+      "SocialNetworkConnectionPublished_at",
+      "createSocialNetworkPayload",
+      "updateSocialNetworkPayload",
+      "deleteSocialNetworkPayload",
+      "TechList",
+      "TechListConnection",
+      "TechListAggregator",
+      "TechListGroupBy",
+      "TechListConnectionId",
+      "TechListConnectionCreated_at",
+      "TechListConnectionUpdated_at",
+      "TechListConnectionName",
+      "TechListConnectionPublished_at",
+      "createTechListPayload",
+      "updateTechListPayload",
+      "deleteTechListPayload",
+      "Webhook",
+      "WebhookConnection",
+      "WebhookAggregator",
+      "WebhookGroupBy",
+      "WebhookConnectionId",
+      "WebhookConnectionCreated_at",
+      "WebhookConnectionUpdated_at",
+      "WebhookConnectionName",
+      "WebhookConnectionPublished_at",
+      "createWebhookPayload",
+      "updateWebhookPayload",
+      "deleteWebhookPayload",
+      "UploadFile",
+      "UploadFileConnection",
+      "UploadFileAggregator",
+      "UploadFileAggregatorSum",
+      "UploadFileAggregatorAvg",
+      "UploadFileAggregatorMin",
+      "UploadFileAggregatorMax",
+      "UploadFileGroupBy",
+      "UploadFileConnectionId",
+      "UploadFileConnectionCreated_at",
+      "UploadFileConnectionUpdated_at",
+      "UploadFileConnectionName",
+      "UploadFileConnectionAlternativeText",
+      "UploadFileConnectionCaption",
+      "UploadFileConnectionWidth",
+      "UploadFileConnectionHeight",
+      "UploadFileConnectionFormats",
+      "UploadFileConnectionHash",
+      "UploadFileConnectionExt",
+      "UploadFileConnectionMime",
+      "UploadFileConnectionSize",
+      "UploadFileConnectionUrl",
+      "UploadFileConnectionPreviewUrl",
+      "UploadFileConnectionProvider",
+      "UploadFileConnectionProvider_metadata",
+      "deleteFilePayload",
+      "UsersPermissionsPermission",
+      "UsersPermissionsRole",
+      "UsersPermissionsRoleConnection",
+      "UsersPermissionsRoleAggregator",
+      "UsersPermissionsRoleGroupBy",
+      "UsersPermissionsRoleConnectionId",
+      "UsersPermissionsRoleConnectionName",
+      "UsersPermissionsRoleConnectionDescription",
+      "UsersPermissionsRoleConnectionType",
+      "createRolePayload",
+      "updateRolePayload",
+      "deleteRolePayload",
+      "UsersPermissionsUser",
+      "UsersPermissionsUserConnection",
+      "UsersPermissionsUserAggregator",
+      "UsersPermissionsUserGroupBy",
+      "UsersPermissionsUserConnectionId",
+      "UsersPermissionsUserConnectionCreated_at",
+      "UsersPermissionsUserConnectionUpdated_at",
+      "UsersPermissionsUserConnectionUsername",
+      "UsersPermissionsUserConnectionEmail",
+      "UsersPermissionsUserConnectionProvider",
+      "UsersPermissionsUserConnectionConfirmed",
+      "UsersPermissionsUserConnectionBlocked",
+      "UsersPermissionsUserConnectionRole",
+      "createUserPayload",
+      "updateUserPayload",
+      "deleteUserPayload",
+      "ComponentContentImage",
+      "ComponentContentInfoColumn",
+      "ComponentContentRichText",
+      "ComponentContentTechnologies"
     ]
   }
 }

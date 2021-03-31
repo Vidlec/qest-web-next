@@ -7,8 +7,6 @@
 	},
 	"scripts": {
 		"dev": "next dev",
-		"debug": "NODE_OPTIONS='--inspect' next dev",
-		"debug:brk": "NODE_OPTIONS='--inspect-brk' next dev",
 		"generate": "graphql-codegen --config codegen.yml",
 		"build": "next build && next export -o build",
 		"deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackDev' --progress events --require-approval never",
@@ -27,7 +25,6 @@
 		"@apollo/react-hooks": "^4.0.0",
 		"@styled-icons/boxicons-logos": "^10.23.0",
 		"apollo-boost": "^0.4.9",
-		"apollo-cache-inmemory": "^1.6.6",
 		"graphql": "^15.5.0",
 		"i18next": "^19.9.2",
 		"next": "^10.0.0",

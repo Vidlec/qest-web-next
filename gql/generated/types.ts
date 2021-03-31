@@ -2762,34 +2762,22 @@ export type CaseStudiesQuery = (
   { __typename?: 'Query' }
   & { caseStudies?: Maybe<Array<Maybe<(
     { __typename?: 'CaseStudy' }
-    & Pick<CaseStudy, 'id' | 'title' | 'language' | 'subtitle' | 'about' | 'projectId' | 'system' | 'created_at' | 'updated_at' | 'published_at' | 'client'>
+    & Pick<CaseStudy, 'id' | 'title' | 'language' | 'subtitle' | 'about' | 'projectId' | 'system'>
     & { mainImage?: Maybe<(
       { __typename?: 'UploadFile' }
-      & Pick<UploadFile, 'url'>
+      & Pick<UploadFile, 'url' | 'previewUrl'>
     )>, content?: Maybe<Array<Maybe<(
       { __typename: 'ComponentContentImage' }
       & Pick<ComponentContentImage, 'id' | 'widthPercent'>
-      & { image?: Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'url'>
-      )> }
     ) | (
       { __typename: 'ComponentContentInfoColumn' }
-      & Pick<ComponentContentInfoColumn, 'id' | 'widthPercent' | 'title' | 'description' | 'number'>
-      & { infoColumnImage?: Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'url'>
-      )> }
+      & Pick<ComponentContentInfoColumn, 'id' | 'widthPercent'>
     ) | (
       { __typename: 'ComponentContentRichText' }
-      & Pick<ComponentContentRichText, 'id' | 'title' | 'desciption' | 'desciptionLevel2' | 'desciptionLevel3' | 'subtitle' | 'widthPercent'>
-      & { richTextImage?: Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'url'>
-      )> }
+      & Pick<ComponentContentRichText, 'id' | 'title'>
     ) | (
       { __typename: 'ComponentContentTechnologies' }
-      & Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
+      & Pick<ComponentContentTechnologies, 'id' | 'technologies'>
     )>>> }
   )>>> }
 );
