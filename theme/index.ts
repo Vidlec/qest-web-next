@@ -10,6 +10,7 @@ export const theme = {
 		softBlack: '#0E0E0E',
 		basilGreen: '#317A5B',
 		metalGray: '#CDCDCD',
+		absoluteBlack: '#000000'
 	},
 	mediaQueries: {
 		desktopLarge: '110rem',
