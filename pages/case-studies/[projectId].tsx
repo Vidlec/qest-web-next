@@ -1,6 +1,7 @@
 import React from 'react'
 import { groupBy } from 'ramda'
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'node:querystring'
 import apolloClient from 'gql/apollo'
 import { CASE_STUDIES_QUERY } from 'gql/queries/caseStudies'
 import {
@@ -8,11 +9,8 @@ import {
 	CaseStudiesQueryVariables,
 	Maybe,
 } from 'gql/generated/types'
-import { LocalizedPathParams } from 'types/LocalizedPathParams'
-import { Language } from 'locale'
-import { TranslationProvider } from 'context/TranslationContext'
 
-interface PathParams extends LocalizedPathParams {
+interface PathParams extends ParsedUrlQuery {
 	projectId: string
 }
 
@@ -27,7 +25,7 @@ type CaseStudyFromQuery = UnMaybe<
 >
 
 interface CaseStudyProps {
-	caseStudy: CaseStudyFromQuery
+	data: CaseStudyFromQuery
 }
 
 const queryCaseStudies = () =>
@@ -38,21 +36,22 @@ const queryCaseStudies = () =>
 const byProjectId = ({ projectId }: CaseStudyFromQuery) => projectId
 
 const toStaticPath = (caseStudy: CaseStudyFromQuery): ResultPath => ({
-	params: {
-		projectId: caseStudy.projectId,
-		language: caseStudy.language as Language,
-	},
+	params: { projectId: caseStudy.projectId },
+	locale: caseStudy.language,
 })
 
 const groupToPaths = (caseStudiesInGroup: CaseStudyFromQuery[]) =>
 	caseStudiesInGroup.map(toStaticPath)
 
 export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
-	const { errors, data } = await queryCaseStudies()
+	const {
+		errors,
+		data,
+	} = await queryCaseStudies()
 
 	// TODO error handling
 	if (errors) throw errors
-	if (!data.caseStudies) return { paths: [], fallback: false }
+	if (!data?.caseStudies) return { paths: [], fallback: false }
 
 	const { caseStudies } = data
 
@@ -69,41 +68,39 @@ export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
 	}
 }
 
-const equalCaseStudy = (projectId: string, language: Language) => (
+const equalCaseStudy = (projectId: string, language: string) => (
 	caseStudy: CaseStudyFromQuery
 ) => caseStudy.projectId === projectId && caseStudy.language === language
 
 export const getStaticProps: GetStaticProps<
 	CaseStudyProps,
 	PathParams
-> = async ({ params }) => {
+> = async ({ params, locale }) => {
 	if (!params) throw new Error('Undefined path params')
+	if (!locale) throw new Error('No locale defined')
 
-	const { projectId, language } = params
-	const { errors, data } = await queryCaseStudies()
+	const { projectId } = params
+	const {
+		errors,
+		data: { caseStudies },
+	} = await queryCaseStudies()
 
 	if (errors) throw errors
-	if (!data.caseStudies) throw new Error('No case studies fetched')
-
-	const { caseStudies } = data
+	if (!caseStudies) throw new Error('No case studies fetched')
 
 	const nonNullCaseStudies = caseStudies.filter(
 		Boolean
 	) as CaseStudyFromQuery[]
 
-	const caseStudy = nonNullCaseStudies.find(
-		equalCaseStudy(projectId, language)
-	)
+	const caseStudy = nonNullCaseStudies.find(equalCaseStudy(projectId, locale))
 
 	if (!caseStudy) return { notFound: true }
 
-	return { props: { caseStudy } }
+	return { props: { data: caseStudy } }
 }
 
-const CaseStudyPage: React.FC<CaseStudyProps> = ({ caseStudy }) => (
-	<TranslationProvider language={caseStudy.language as Language}>
-		{JSON.stringify(caseStudy)}
-	</TranslationProvider>
+const CaseStudy: React.FC<CaseStudyProps> = ({ data }) => (
+	<div>{JSON.stringify(data)}</div>
 )
 
-export default CaseStudyPage
+export default CaseStudy
