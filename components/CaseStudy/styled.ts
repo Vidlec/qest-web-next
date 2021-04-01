@@ -42,7 +42,7 @@ export const Title = styled.h1`
 	line-height: 0;
 	margin-bottom: 3rem;
 	padding: 1rem;
-	color: ${({ theme }) => theme.colors.metalGray};
+	color: ${({ theme }) => theme.colors.h1};
 `
 
 export const Subtitle = styled.h2`
@@ -60,7 +60,7 @@ export const About = styled.p`
 export const Line = styled.article`
 	width: 100%;
 	height: 0.1rem;
-	background-color: ${({ theme }) => theme.colors.porcelainWhite};
+	background-color: ${({ theme }) => theme.colors.mainFont};
 	position: absolute;
 	top: 1rem;
 `
@@ -82,8 +82,8 @@ export const Description = styled.div`
 
 		span {
 			padding: 0 1rem 0 1rem;
-			background-color: ${({ theme }) => theme.colors.softBlack};
-			color: ${({ theme }) => theme.colors.basilGreen};
+			background-color: ${({ theme }) => theme.colors.mainBackground};
+			color: ${({ theme }) => theme.colors.caseStudyComplementaryColor};
 		}
 	}
 `

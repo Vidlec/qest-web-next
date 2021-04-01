@@ -58,8 +58,8 @@ export const Line = styled.div`
 	position: absolute;
 	height: 0.15rem;
 	margin-top: 0.25rem;
-	background-color: ${({ theme }) => theme.colors.porcelainWhite};
-	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.porcelainWhite};
+	background-color: ${({ theme }) => theme.colors.mainFont};
+	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.mainFont};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		height: 0.25rem;

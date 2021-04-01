@@ -10,7 +10,7 @@ export const NavigationColumnContainer = styled.div`
 `
 
 export const MenuButton = styled.button`
-	color: ${({ theme }) => theme.colors.roseRed};
+	color: ${({ theme }) => theme.colors.mainMenuButton};
 	cursor: pointer;
 	background-color: transparent;
 	border: none;

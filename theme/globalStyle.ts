@@ -20,33 +20,28 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0 auto;
-    color: ${({ theme }) => theme.colors.niceBlack};
-    background-color: ${({ theme }) => theme.colors.softBlack};
-    font-family: sportingGrotesque, Tahoma, Sans-Serif;
-    
-    * {
-      box-sizing: border-box;
-      font-size: 1.5rem;
-		  color: ${({ theme }) => theme.colors.porcelainWhite};
-    }
-
-    a {
-      text-decoration: none; 
-    }
-
-    button {
-      outline: none;
-    }
-
-    h1 {
-      font-size: 4.375rem;
-    }
-
-    h3 {
+    color: ${({ theme }) => theme.colors.bodyColor};
+	  background-color: ${({ theme }) => theme.colors.mainBackground};
+	  font-family: sportingGrotesque, Tahoma, Sans-Serif;
+	  * {
+		  box-sizing: border-box;
+		  font-size: 1.5rem;
+		  color: ${({ theme }) => theme.colors.mainFont};
+	  }
+	  a {
+		  text-decoration: none;
+	  }
+	  button {
+		  outline: none;
+	  }
+	  h1 {
+		  font-size: 4.375rem;
+	  }
+	  h3 {
 		  margin: 0;
 		  font-size: 1.8rem;
 		  text-transform: uppercase;
-	  	color: ${({ theme }) => theme.colors.merigoldOrange};
+		  color: ${({ theme }) => theme.colors.h3};
 	  }
 }
 `

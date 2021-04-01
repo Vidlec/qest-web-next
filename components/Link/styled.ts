@@ -8,21 +8,21 @@ export const Link = styled.a`
 `
 
 export const AboutUs = styled(Link)`
-	color: ${({ theme }) => theme.colors.poolBlue};
+	color: ${({ theme }) => theme.colors.aboutButton};
 `
 
 export const Reference = styled(Link)`
-	color: ${({ theme }) => theme.colors.orchidPink};
+	color: ${({ theme }) => theme.colors.referenceButton};
 `
 
 export const Career = styled(Link)`
-	color: ${({ theme }) => theme.colors.merigoldOrange};
+	color: ${({ theme }) => theme.colors.h3};
 `
 
 export const Contact = styled(Link)`
-	color: ${({ theme }) => theme.colors.mintGreen};
+	color: ${({ theme }) => theme.colors.contactButton};
 `
 
 export const MainMenu = styled(Link)`
-	color: ${({ theme }) => theme.colors.roseRed};
+	color: ${({ theme }) => theme.colors.mainMenuButton};
 `
