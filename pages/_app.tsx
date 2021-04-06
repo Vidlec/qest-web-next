@@ -26,15 +26,22 @@ const GlobalStyle = createGlobalStyle`
   	font-family: wingdings2;
   	src: url("/assets/fonts/Wingdings2.ttf")
   }
+  @font-face {
+  	font-family: sourceCodeVariable;
+  	src: url("/assets/fonts/SourceCodeVariable-Roman.otf")
+  }
+  html{
+	font-size: 16px;
+  }
   body {
     margin: 0 auto;
-    color: ${({ theme }) => theme.colors.niceBlack};
 	background-color: ${({ theme }) => theme.colors.softBlack};
 	font-family: sportingGrotesque, Tahoma, Sans-Serif;
-	* {
-		box-sizing: border-box;
-		font-size: 1.5rem;
-		color: ${({ theme }) => theme.colors.porcelainWhite};
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.colors.porcelainWhite};
+	
+	*{
+	  	box-sizing: border-box;
 	}
 	a {
 		text-decoration: none;
@@ -47,6 +54,9 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 1.8rem;
 		text-transform: uppercase;
 		color: ${({ theme }) => theme.colors.merigoldOrange};
+	}
+	p{
+	  	margin: 0; 
 	}
   }
 `
