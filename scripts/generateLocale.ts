@@ -12,18 +12,21 @@ import {
 	Menu,
 	Language,
 	SocialNetwork,
+	AboutUs,
 } from '../gql/generated/types'
 import { MENU_QUERY } from '../gql/queries/menus'
 import { HEADER_QUERY } from '../gql/queries/headers'
 import { LANGUAGE_QUERY } from '../gql/queries/languages'
 import { CONTACT_QUERY } from '../gql/queries/contacts'
 import { SOCIAL_NETWORK_QUERY } from '../gql/queries/socialNetworks'
+import { ABOUT_QUERY } from '../gql/queries/aboutuses'
 
 type Resources = {
 	homepage: Homepage[]
 	menu: Menu[]
 	header: Header[]
 	contact: Contact[]
+	about: AboutUs[]
 }
 
 const apolloClient = new ApolloClient({
@@ -35,7 +38,7 @@ const apolloClient = new ApolloClient({
 })
 
 const toResource = (
-	{ homepage, menu, header, contact }: Resources,
+	{ homepage, menu, header, contact, about }: Resources,
 	language: string
 ) => {
 	const translatedHomepage = homepage.find(
@@ -51,6 +54,7 @@ const toResource = (
 	const translatedContact = contact.find(
 		(contact) => contact?.language === language
 	)
+	const translatedAbout = about.find((about) => about?.language === language)
 
 	return {
 		translation: {
@@ -58,6 +62,7 @@ const toResource = (
 			menu: translatedMenu,
 			header: translatedHeader,
 			contact: translatedContact,
+			about: translatedAbout,
 		},
 	}
 }
@@ -70,6 +75,7 @@ const main = async () => {
 		languages,
 		contacts,
 		socialNetworks,
+		about,
 	] = await Promise.all(
 		[
 			HOMEPAGE_QUERY,
@@ -78,6 +84,7 @@ const main = async () => {
 			LANGUAGE_QUERY,
 			CONTACT_QUERY,
 			SOCIAL_NETWORK_QUERY,
+			ABOUT_QUERY,
 		].map(async (query) => apolloClient.query({ query }))
 	)
 
@@ -89,6 +96,7 @@ const main = async () => {
 					menu: menus.data.menus,
 					header: headers.data.headers,
 					contact: contacts.data.contacts,
+					about: about.data.aboutuses,
 				},
 				language.languageCode!
 			)
