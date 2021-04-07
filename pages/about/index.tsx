@@ -1,8 +1,8 @@
 import React from 'react'
-import { Line } from 'components/HomePageContent/styled'
 import styled from 'styled-components'
 import { Col } from 'components/Col'
 import { Row } from 'components/Row'
+import { Line } from 'components/Line'
 
 const AboutUs: React.FC = () => {
 	return (
@@ -10,20 +10,13 @@ const AboutUs: React.FC = () => {
 			<Wrapper>
 				{/*<Navigation />*/}
 				<HeroContainer>
-					<HeroHeadline>THERE IS MORE UNDER THE SURFACE</HeroHeadline>
-
-					<LineContainer>
-						<LogoLine />
-						<LogoPicture>
-							{/* TODO get transparent bg logo*/}
-							<PictureImg
-								src={
-									'/assets/images/logo-psychedelic-negative.png'
-								}
-								alt={'Qest psychedelic logo'}
-							/>
-						</LogoPicture>
-					</LineContainer>
+					<HeroHeadline>
+						<span>THERE IS MORE</span>
+						<HeroLineWrapper>
+							<Line />
+						</HeroLineWrapper>
+						<span>UNDER THE SURFACE</span>
+					</HeroHeadline>
 
 					<HeroDescription>
 						Qest je dobrodružství. Kódování je umění, jehož krása{' '}
@@ -42,6 +35,20 @@ const AboutUs: React.FC = () => {
 						</GreenText>
 						.
 					</HeroDescription>
+
+					<LogoLineWrapper>
+						<Line />
+
+						<LogoPicture>
+							{/* TODO get transparent bg logo*/}
+							<PictureImg
+								src={
+									'/assets/images/logo-psychedelic-negative.png'
+								}
+								alt={'Qest psychedelic logo'}
+							/>
+						</LogoPicture>
+					</LogoLineWrapper>
 
 					<ArrowLinkWrapper>
 						<ArrowLink href={'#'}>
@@ -134,12 +141,14 @@ const AboutUs: React.FC = () => {
 									<strong>Programovací jazyky: </strong>
 									C#, javascript, typescript, html, css
 								</TechnologiesDescription>
+
 								<TechnologiesDescription>
 									<strong>Používáme technologie: </strong>
 									graphql, rest api frontend: React (16+),
 									Typescript, Redux (Redux-saga)/Apollo,
 									Styled components
 								</TechnologiesDescription>
+
 								<TechnologiesDescription>
 									<strong>backend (javascript): </strong>
 									Node.js, Typescript MongoDB, Docker,
@@ -147,6 +156,7 @@ const AboutUs: React.FC = () => {
 									Cloud, Serverless, Redis, Kubernetes,
 									OpenStack, Express.js, Apollo Graphql
 								</TechnologiesDescription>
+
 								<TechnologiesDescription>
 									<strong>C#: </strong>ASP.NET Core (latest),
 									C# (latest), SignalR/WebSockets, MongoDB, MS
@@ -231,7 +241,7 @@ const AboutUs: React.FC = () => {
 				<Container>
 					<Headline>KARIÉRA</Headline>
 
-					<p>
+					<CareerDescription>
 						Chceš se těšit na pondělí jako my? Spoj se s Qestem.
 						Svou práci děláme rádi a na špičkové úrovni. Hledáme
 						skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat
@@ -251,7 +261,7 @@ const AboutUs: React.FC = () => {
 						veřejných akcí – Qeetup či Q-TON. Vydáváme také náš
 						vlastní podcast Qcast o moderních technologiích a
 						programování.
-					</p>
+					</CareerDescription>
 
 					<CareerCTA>
 						<span>KOHO HLEDÁME</span>
@@ -278,6 +288,7 @@ export const Wrapper = styled.div`
 export const Container = styled.section`
 	width: 100%;
 	margin: 0 auto 13.875rem auto;
+	padding: 0 1rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
 		max-width: ${({ theme }) => theme.mediaQueries.mobileLarge};
@@ -297,7 +308,6 @@ export const Container = styled.section`
 `
 
 const Headline = styled.h1`
-	width: 52.5625rem; // 841px;
 	color: #cccccc;
 	font-size: 4.375rem; // 70px;
 	font-weight: bold;
@@ -306,13 +316,6 @@ const Headline = styled.h1`
 	line-height: 1;
 	margin-bottom: 3.6875rem; // 59px;
 	margin-top: 0;
-`
-
-export const LineContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	width: 100%;
 `
 
 //TODO rename color names to more accurate name
@@ -338,16 +341,30 @@ const PinkText = styled.span`
 	color: ${({ theme }) => theme.colors.pink};
 `
 
-const LogoPicture = styled.picture`
-	position: absolute;
-	display: block;
-	transform: translateY(-45%);
-	width: 19.5625rem; //calc(var(--containerWidth) - var(--marginLeft));
-	align-self: end;
+export const LogoLineWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 3rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		order: 1;
+		justify-content: start;
+		margin-bottom: 0;
+	}
 `
 
-const LogoLine = styled(Line)`
-	left: 0;
+const LogoPicture = styled.picture`
+	display: block;
+	align-self: end;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		max-width: 19.5625rem; //calc(var(--containerWidth) - var(--marginLeft));
+		position: absolute;
+		transform: translateY(-45%);
+	}
 `
 
 const PictureImg = styled.img`
@@ -355,23 +372,33 @@ const PictureImg = styled.img`
 `
 
 const HeroContainer = styled(Container)`
-	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 `
 
 const HeroHeadline = styled(Headline)`
 	font-size: 3.5625rem; // 57px;
+	max-width: 52.5625rem; // 841px;
+	margin: 1rem 0 calc(1.5625rem - 0.45rem); // 384px (25px - line margin top);
 
-	margin: 24rem 0 calc(1.5625rem - 0.45rem); // 384px (25px - line margin top);
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		margin-top: 24rem;
+	}
+`
+
+const HeroLineWrapper = styled.div`
+	height: 1rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		display: none;
+	}
 `
 
 const HeroDescription = styled.p`
-	width: 56.5625rem; // 905px;
-	color: #ffffff;
-	font-size: 1.5625rem; //25px;
-	letter-spacing: 0;
+	max-width: 56.5625rem; // 905px;
 	margin-top: calc(1.5625rem + 0.25rem + 0.45rem);
-	margin-bottom: 5.5625rem;
-	//line-height: 0;
+	margin-bottom: 3rem;
 `
 
 const ArrowLinkWrapper = styled.div`
@@ -389,7 +416,6 @@ const ArrowIcon = styled.img`
 `
 
 const WeAreDescription = styled.p`
-	color: #ffffff;
 	font-size: 2.1875rem; // 35px;
 	letter-spacing: 0;
 	line-height: 2.75rem; //44px;
@@ -450,16 +476,21 @@ const TechnologiesCard = styled.div`
 
 const TechnologiesPicture = styled.picture`
 	position: absolute;
-	transform: rotate(180deg);
-	bottom: calc(100% - 1rem);
 	right: 0;
+	top: calc(100% - 1rem);
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		transform: rotate(180deg);
+		bottom: calc(100% - 1rem);
+		top: unset;
+	}
 `
 
 const TechnologiesDescription = styled.p`
 	margin: 0 0 2rem;
 	color: ${({ theme }) => theme.colors.green};
 	font-family: 'sourceCodeVariable';
-	font-size: 2.159375rem; //20px;
+	font-size: 1.25rem; //20px;
 `
 
 const ValuesHeadline = styled(Headline)`
@@ -470,10 +501,16 @@ const ValuesWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	flex-wrap: wrap;
 `
 
 const ValuesColumn = styled.div`
-	width: 17.5rem; // 280px;
+	width: 100%;
+	margin-bottom: 3rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		width: 17.5rem; // 280px;
+	}
 `
 const ValueDescription = styled.p`
 	text-align: center;
@@ -534,12 +571,21 @@ export function ValueItem(props: IValueItem) {
 }
 
 const HQDescription = styled.p`
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
+`
+
+const CareerDescription = styled.p`
+	margin-bottom: 3rem;
 `
 
 const CareerCTA = styled.a`
 	display: flex;
 	align-items: center;
+	flex-direction: column;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		flex-direction: row;
+	}
 
 	span {
 		font-size: 2.1875rem;

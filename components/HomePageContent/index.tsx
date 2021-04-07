@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next'
 import {
 	Button,
 	ClickText,
-	Line,
 	Logo,
 	PictureLogo,
 	SlideStopWrapper,
 	TextLogo,
 	WrapperLogoTexts,
 } from './styled'
+import { Line } from 'components/Line'
 
 const HomePageContent: React.FC = () => {
 	const { t } = useTranslation()

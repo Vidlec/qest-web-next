@@ -53,20 +53,6 @@ export const PictureLogo = styled.img`
 	}
 `
 
-export const Line = styled.div`
-	width: 100%;
-	position: absolute;
-	height: 0.15rem;
-	margin-top: 0.25rem;
-	background-color: ${({ theme }) => theme.colors.porcelainWhite};
-	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.porcelainWhite};
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		height: 0.25rem;
-		margin-top: 0.45rem;
-	}
-`
-
 export const SlideStopWrapper = styled.div`
 	width: 100%;
 	display: flex;

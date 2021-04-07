@@ -30,21 +30,28 @@ const GlobalStyle = createGlobalStyle`
   	font-family: sourceCodeVariable;
   	src: url("/assets/fonts/SourceCodeVariable-Roman.otf")
   }
-  html{
-	font-size: 16px;
+  
+  html {
+	font-size: 10px;
+	
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		font-size: 16px;
+    }
   }
+  
   body {
     margin: 0 auto;
 	background-color: ${({ theme }) => theme.colors.softBlack};
 	font-family: sportingGrotesque, Tahoma, Sans-Serif;
     font-size: 1.5rem;
     color: ${({ theme }) => theme.colors.porcelainWhite};
-	
-	*{
+    
+  	* {
 	  	box-sizing: border-box;
 	}
 	a {
 		text-decoration: none;
+		color: ${({ theme }) => theme.colors.porcelainWhite};
 	}
 	button {
 		outline: none;
