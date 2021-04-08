@@ -10,7 +10,7 @@ export const Line = styled.div`
 	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.porcelainWhite};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		height: 0.25rem;
-		margin-top: 0.45rem;
+		//height: 0.25rem;
+		//margin-top: 0.45rem;
 	}
 `

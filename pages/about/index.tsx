@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { Col } from 'components/Col'
 import { Row } from 'components/Row'
@@ -69,14 +69,14 @@ const AboutUs: React.FC<IAbout> = (props: IAbout) => {
 					/>
 
 					<LogoLineWrapper>
-						<Line />
-
 						<LogoPicture>
 							<PictureImg
 								src={t('about.heroLogo.url')}
 								alt={t('about.heroLogo.alternativeText')}
 							/>
 						</LogoPicture>
+
+						<Line />
 					</LogoLineWrapper>
 
 					<ArrowLinkWrapper>
@@ -162,10 +162,12 @@ const AboutUs: React.FC<IAbout> = (props: IAbout) => {
 							<TechnologiesCard>
 								<TechnologiesPicture>
 									<PictureImg
-										src={t('about.technologiesImage')}
+										src={t('about.technologiesImage.url')}
+										alt={t(
+											'about.technologiesImage.alternativeText'
+										)}
 									/>
 								</TechnologiesPicture>
-
 								<TechnologiesDescription
 									dangerouslySetInnerHTML={{
 										__html: t(
@@ -397,7 +399,7 @@ const LogoPicture = styled.picture`
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		max-width: 19.5625rem; //calc(var(--containerWidth) - var(--marginLeft));
 		position: absolute;
-		transform: translateY(-45%);
+		transform: translateY(-50%);
 	}
 `
 
@@ -734,10 +736,13 @@ const CloudCol = styled(Col)`
 
 const CloudPicture = styled.picture`
 	width: 21.6875rem; // 347px;
+	display: block !important;
 `
 
 const CloudLine = styled(Line)`
-	top: calc(48% - 0.45rem);
+	top: calc(50%);
+	transform: translateY(-50%);
+	margin: 0;
 `
 
 const SkillsRow = styled(Row)`
