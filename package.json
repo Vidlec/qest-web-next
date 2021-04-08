@@ -17,7 +17,7 @@
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
 		"code:check": "npm-run-all -l -p lint prettier",
-		"generateLocale": "ts-node -r dotenv/config -T scripts/generateLocale.ts dotenv_config_path=.env",
+		"generateLocale": "ts-node -r dotenv/config -P tsconfig.generate.json -T scripts/generateLocale.ts dotenv_config_path=.env",
 		"code:fix": "npm-run-all -l -p lint:fix prettier:fix"
 	},
 	"dependencies": {

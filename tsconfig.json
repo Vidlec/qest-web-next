@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "incremental": false,
     "declaration": false,
-    "module": "commonjs",
+    "module": "esnext",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "rootDir": ".",
@@ -22,9 +22,7 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "strict": true,
-    "lib": [
-      "es6"
-    ],
+    "lib": ["es6","dom", "dom.iterable", "esnext"],
     "typeRoots": [
       "node_modules/@types"
     ],
