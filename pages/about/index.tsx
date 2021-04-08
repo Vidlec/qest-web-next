@@ -65,7 +65,7 @@ const AboutUs: React.FC = () => {
 			descriptionLink.addEventListener('mouseenter', (e) =>
 				moveSlickToIndex(e, sliderRef.current)
 			)
-			descriptionLink.addEventListener('mouseleave', (e) =>
+			descriptionLink.addEventListener('mouseleave', () =>
 				resumeSlider(sliderRef.current)
 			)
 		}
@@ -75,7 +75,7 @@ const AboutUs: React.FC = () => {
 				descriptionLink.removeEventListener('mouseenter', (e) =>
 					moveSlickToIndex(e, sliderRef.current)
 				)
-				descriptionLink.addEventListener('mouseleave', (e) =>
+				descriptionLink.addEventListener('mouseleave', () =>
 					resumeSlider(sliderRef.current)
 				)
 			}
@@ -147,7 +147,10 @@ const AboutUs: React.FC = () => {
 								autoplay={true}
 								ref={sliderRef}
 							>
-								{props.weAreImageCarousel.map((image) => (
+								{t<string, UploadFile[]>(
+									'about.weAreImageCarousel',
+									{ returnObjects: true }
+								).map((image) => (
 									<CarouselPicture key={image.id}>
 										<img
 											src={image.url}
@@ -178,7 +181,9 @@ const AboutUs: React.FC = () => {
 						<p>{t('about.skillsDescription')}</p>
 
 						<SkillsList>
-							{props.skills.map((skill) => (
+							{t<string, Skill[]>('about.skills', {
+								returnObjects: true,
+							}).map((skill) => (
 								<SkillsListItem key={skill.id}>
 									<SkillHeadline>
 										<ColorText
@@ -219,7 +224,9 @@ const AboutUs: React.FC = () => {
 				<ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
 
 				<ValuesWrapper>
-					{props.brandValues.map((value) => (
+					{t<string, BrandValue[]>('about.brandValues', {
+						returnObjects: true,
+					}).map((value) => (
 						<ValuesColumn key={value.id}>
 							<ValueHeadlineWrapper>
 								<ValueNumber>
@@ -281,50 +288,6 @@ const AboutUs: React.FC = () => {
 }
 
 export default AboutUs
-
-export async function getStaticProps(
-	context: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<IAbout>> {
-	// TODO refactor gql to separate file
-	const { data } = await apolloClient.query({
-		query: gql`
-			query {
-				skills {
-					id
-					title
-					description
-					titleColorHash
-				}
-
-				brandValues {
-					id
-					headline
-					backgroundNumber
-					image {
-						url
-					}
-					description
-				}
-
-				aboutWeAreImageCarousel {
-					weAreImageCarousel {
-						id
-						url
-						alternativeText
-					}
-				}
-			}
-		`,
-	})
-
-	return {
-		props: {
-			skills: data.skills,
-			brandValues: data.brandValues,
-			weAreImageCarousel: data.aboutWeAreImageCarousel.weAreImageCarousel,
-		},
-	}
-}
 
 function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
 	const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')

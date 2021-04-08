@@ -41,6 +41,7 @@ export const ABOUT_QUERY = gql`
 			blogHeadline
 			published_at
 			weAreImageCarousel {
+				id
 				url
 				alternativeText
 			}
