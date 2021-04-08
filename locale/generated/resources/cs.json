@@ -45,7 +45,7 @@
       "id": "1",
       "language": "cs",
       "created_at": "2021-04-07T10:02:06.607Z",
-      "updated_at": "2021-04-08T11:31:47.953Z",
+      "updated_at": "2021-04-08T13:49:51.262Z",
       "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
       "heroLogo": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
@@ -60,7 +60,7 @@
       "weAreArrowTitle": "co umíme",
       "skillsHeadline": "CO UMÍME",
       "skillsDescription": "TODO",
-      "technologiesDescription": "<p><strong>Programovací jazyky: </strong>C#, javascript, typescript, html, css</p><br/><p><strong>Používáme technologie: </strong>graphql, rest api frontend: React (16+),Typescript, Redux (Redux-saga)/Apollo,Styled components</p><br/><p><strong>backend (javascript): </strong>Node.js, Typescript MongoDB, Docker,Elasticsearch, MariaDB, AWS, Azure, GoogleCloud, Serverless, Redis, Kubernetes,OpenStack, Express.js, Apollo Graphql</p><br/><p><strong>C#: </strong>ASP.NET Core (latest),C# (latest), SignalR/WebSockets, MongoDB, MSSQL, RabbitMQ, Redis, Docker, Kubernetes(Azure)</p>",
+      "technologiesDescription": "<p><strong>Programovací jazyky: </strong>C#, javascript, typescript, html, css</p><p><strong>Používáme technologie: </strong>graphql, rest api frontend: React (16+),Typescript, Redux (Redux-saga)/Apollo,Styled components</p><p><strong>backend (javascript): </strong>Node.js, Typescript MongoDB, Docker,Elasticsearch, MariaDB, AWS, Azure, GoogleCloud, Serverless, Redis, Kubernetes,OpenStack, Express.js, Apollo Graphql</p><p><strong>C#: </strong>ASP.NET Core (latest),C# (latest), SignalR/WebSockets, MongoDB, MSSQL, RabbitMQ, Redis, Docker, Kubernetes(Azure)</p>",
       "technologiesImage": null,
       "valuesHeadline": "HODNOTY",
       "teamHeadline": "NÁŠ TEAM",
@@ -78,17 +78,14 @@
       "published_at": "2021-04-07T10:02:09.389Z",
       "weAreImageCarousel": [
         {
-          "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
+          "id": "8",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Centered_Cloud_d0dfd26f15.png",
           "alternativeText": "",
           "__typename": "UploadFile"
         },
         {
-          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
-          "alternativeText": "",
-          "__typename": "UploadFile"
-        },
-        {
-          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+          "id": "7",
+          "url": "https://qest-web-cms-media.s3.amazonaws.com/Centered_CD_0f67140a79.png",
           "alternativeText": "",
           "__typename": "UploadFile"
         }

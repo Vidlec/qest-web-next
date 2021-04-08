@@ -21,6 +21,7 @@ function getStyles(
 			@media (min-width: ${theme.mediaQueries[mediaQuery]}) {
 				flex: 0 0 ${getFlexSize(colSize)};
 				max-width: ${getFlexSize(colSize)};
+				${colSize === 'auto' ? `width: auto;` : ''}
 			}
 		`
 		: ''

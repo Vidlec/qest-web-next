@@ -5,6 +5,16 @@ import { Container } from 'components/Container'
 import { Line } from 'components/Line'
 import { Headline } from 'components/Headline'
 
+export const SelectLanguageWrapper = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 3.75rem 2.5rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		margin-bottom: calc(16rem);
+	}
+`
+
 export const ColorText = styled.span<{ colorHash: string | null | undefined }>`
 	font-size: inherit;
 	color: ${(props) => props.colorHash};
@@ -28,7 +38,7 @@ export const LogoPicture = styled.picture`
 	align-self: end;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
-		max-width: 19.5625rem; //calc(var(--containerWidth) - var(--marginLeft));
+		max-width: 20rem; //calc(var(--containerWidth) - var(--marginLeft));
 		position: absolute;
 		transform: translateY(-50%);
 	}
@@ -43,20 +53,19 @@ export const HeroContainer = styled(Container)`
 `
 export const HeroHeadline = styled(Headline)`
 	font-size: 3.5625rem; // 57px;
-	max-width: 52.5625rem; // 841px;
+	max-width: calc(100% - 20rem - 4rem);
 	margin: 1rem 0 calc(1.5625rem - 0.45rem); // 384px (25px - line margin top);
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
-		margin-top: 24rem;
-	}
 `
 export const HeroLineWrapper = styled.div`
 	height: 1rem;
+`
 
+export const HeroLine = styled(Line)`
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		display: none;
 	}
 `
+
 export const HeroDescription = styled.div`
 	max-width: 56.5625rem; // 905px;
 	margin-top: calc(1.5625rem + 0.25rem + 0.45rem);
@@ -88,6 +97,7 @@ export const WeAreDescription = styled.div`
 `
 export const WeAreRow = styled(Row)`
 	justify-content: space-between;
+	align-items: flex-start;
 	margin-bottom: 9rem;
 `
 export const CarouselCol = styled(Col)`

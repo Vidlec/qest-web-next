@@ -2,15 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import { Col } from 'components/Col'
 import { Line } from 'components/Line'
 import { useTranslation } from 'react-i18next'
-import { gql } from 'apollo-boost'
-import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
-import apolloClient from '../../gql/apollo'
 import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
 import Slider from 'react-slick'
 import numberOrDefault from 'components/numberOrDefault'
 import { Container } from 'components/Container'
 import { SliderWrapper } from 'components/Slider/styled'
 import {
+	SelectLanguageWrapper,
 	ArrowIcon,
 	ArrowLink,
 	ArrowLinkWrapper,
@@ -23,6 +21,7 @@ import {
 	HeroContainer,
 	HeroDescription,
 	HeroHeadline,
+	HeroLine,
 	HeroLineWrapper,
 	HQDescription,
 	LogoLineWrapper,
@@ -48,14 +47,9 @@ import {
 	WeAreRow,
 } from 'pages/about/styled'
 import { Headline } from 'components/Headline'
-import Navigation from 'components/Menu'
+import SelectLanguage from 'components/SelectLanguage'
 
-interface IAbout {
-	skills: Skill[]
-	brandValues: BrandValue[]
-	weAreImageCarousel: UploadFile[]
-}
-const AboutUs: React.FC<IAbout> = (props: IAbout) => {
+const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
 
 	const sliderRef = useRef<Slider>(null)
@@ -90,13 +84,15 @@ const AboutUs: React.FC<IAbout> = (props: IAbout) => {
 
 	return (
 		<>
-			<Navigation />
-
 			<HeroContainer>
+				<SelectLanguageWrapper>
+					<SelectLanguage />
+				</SelectLanguageWrapper>
+
 				<HeroHeadline>
 					<span>{t('about.heroHeadlineTop')}</span>
 					<HeroLineWrapper>
-						<Line />
+						<HeroLine />
 					</HeroLineWrapper>
 					<span>{t('about.heroHeadlineBottom')}</span>
 				</HeroHeadline>
@@ -139,7 +135,7 @@ const AboutUs: React.FC<IAbout> = (props: IAbout) => {
 						/>
 					</Col>
 
-					<CarouselCol mobile={12} desktop={5}>
+					<CarouselCol mobile={12} desktop={3}>
 						<SliderWrapper>
 							<Slider
 								infinite={true}
@@ -153,7 +149,7 @@ const AboutUs: React.FC<IAbout> = (props: IAbout) => {
 							>
 								{props.weAreImageCarousel.map((image) => (
 									<CarouselPicture key={image.id}>
-										<PictureImg
+										<img
 											src={image.url}
 											alt={image.alternativeText ?? ''}
 										/>
