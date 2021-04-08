@@ -44,11 +44,102 @@
     "about": {
       "id": "1",
       "language": "cs",
+      "created_at": "2021-04-07T10:02:06.607Z",
+      "updated_at": "2021-04-08T06:29:38.527Z",
       "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
       "heroLogo": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
+        "alternativeText": "",
         "__typename": "UploadFile"
       },
+      "heroHeadlineTop": "THERE IS MORE",
+      "heroHeadlineBottom": "UNDER THE SURFACE",
+      "heroArrowTitle": "ponořit se hlouběji",
+      "weAreHeadline": "JSME QEST",
+      "weAreDescription": "Nejsme jen dodavatel <span style=\"color:#FCC403;\">softwarových řešení.</span> Vztahy v týmu i s klienty zakládáme na důvěře a partnerství. Pro své klienty, ať už ambiciózní české startupy, či korporáty, vyvíjíme skvělé <span style=\"color:#FF5451;\">aplikace</span>, <span style=\"color:#83E1FF;\">weby</span>, <span style=\"color:#d096a0;\">informační systémy</span> a třeba -i <span style=\"color:#80F286;\">chytré domy</span>. Každý den na sobě pracujeme a posouváme se vpřed. Úspěch klienta je náš největší závazek.",
+      "weAreArrowTitle": "co umíme",
+      "skillsHeadline": "CO UMÍME",
+      "skillsDescription": "TODO",
+      "technologiesDescription": "<p>\n\t<strong>Programovací jazyky: </strong>\n\tC#, javascript, typescript, html, css\n</p>\n<br />\n<p>\n\t<strong>Používáme technologie: </strong>\n\tgraphql, rest api frontend: React (16+),\n\tTypescript, Redux (Redux-saga)/Apollo,\n\tStyled components\n</p>\n<br />\n<p>\n\t<strong>backend (javascript): </strong>\n\tNode.js, Typescript MongoDB, Docker,\n\tElasticsearch, MariaDB, AWS, Azure, Google\n\tCloud, Serverless, Redis, Kubernetes,\n\tOpenStack, Express.js, Apollo Graphql\n</p>\n<br />\n<p>\n\t<strong>C#: </strong>ASP.NET Core (latest),\n\tC# (latest), SignalR/WebSockets, MongoDB, MS\n\tSQL, RabbitMQ, Redis, Docker, Kubernetes\n\t(Azure)\n</p>",
+      "technologiesImage": null,
+      "valuesHeadline": "HODNOTY",
+      "teamHeadline": "NÁŠ TEAM",
+      "hqHeadline": "QEST HQ",
+      "hqDescription": "V Qestu se rádi a často pyšníme tím, kde pracujeme. Součástí kanceláří je terasa s posezením, grilem a inspirativním výhledem, relaxační zóna, stolní tenis, Xbox, kuchyňka s kávovarem, chladničkou a dostatečným množstvím občerstvení jako je cola, káva, voda, čaj.\n\t\t\t\t\t\t\n\nProč Karlín? V Karlíně to žije a stává se tech centrem hlavního města Prahy. Sdružuje se zde silná IT komunita. Zcela přirozeně se z Karlína stalo startupové centrum, malé pražské Silicon Valley.",
+      "careerHeadline": "KARIÉRA",
+      "careerDescription": "Chceš se těšit na pondělí jako my? Spoj se s Qestem. Svou práci děláme rádi a na špičkové úrovni. Hledáme skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat na projektech s nejnovějšími technologiemi. Dnes je nás přes 30 a stále rosteme, takže u nás opravdu je, od koho se učit. Jsme mladý tým, ale věk je jenom číslo. Oceňujeme zkušenost, zodpovědnost a vášeň pro dokonalost. Pátráme po lidech s tím pravým přístupem, všechno ostatní je možné se naučit. Velmi si zakládáme na mezilidských vztazích, ať už jde o vztahy mezi zaměstnanci, nebo vůči klientům. Nabízíme práci v moderním prostředí a uvolněné atmosféře se zázemím stabilní společnosti. Naším produktem je „Team As a Service“ a jako tým spolu také dost často fungujeme i mimo práci. #qestlife Nehrajeme si ale jen na svém písečku a o know-how se rádi podělíme v rámci našich veřejných akcí – Qeetup či Q-TON. Vydáváme také náš vlastní podcast Qcast o moderních technologiích a programování.",
+      "careerCTATitle": "KOHO HLEDÁME",
+      "careerCTAImage": null,
+      "blogHeadline": "BLOG",
+      "published_at": "2021-04-07T10:02:09.389Z",
+      "weAreImageCarousel": [
+        {
+          "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        }
+      ],
+      "skills": [
+        {
+          "id": "1",
+          "title": "Backendové a cloudové aplikace",
+          "description": "dodáváme serverová a cloudová řešení",
+          "titleColorHash": "#83E1FF",
+          "__typename": "Skill"
+        },
+        {
+          "id": "2",
+          "title": "Weby",
+          "description": "Navrhujeme a implementujeme webové aplikace",
+          "titleColorHash": "#FCC403",
+          "__typename": "Skill"
+        }
+      ],
+      "brandValues": [
+        {
+          "id": "1",
+          "headline": "Human\nCentered\nDesign",
+          "backgroundNumber": 1,
+          "image": null,
+          "description": "Ke každému produktu přistupujeme individuálně. Naším cílem je vytvořit návrh, který je funkční a řeší reálný problém. Navrhujeme a vyvíjíme intuitivní a krásné produkty.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "2",
+          "headline": "Kreativita\na\nInovace",
+          "backgroundNumber": 2,
+          "image": null,
+          "description": "Uvažujeme jinak, experimentujeme a nebojíme se nových postupů a řešení. Inovativní myšlení a kreativita nás spojují a ženou kupředu. Naše tvůrčí koncepty dotahujeme do posledního detailu.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "3",
+          "headline": "Týmová\npráce",
+          "backgroundNumber": 3,
+          "image": null,
+          "description": "Máme za sebou čtyři roky práce a 40+ úspěšných projektů. Náš tým se rychle rozrůstá, stejně jako rostou i naše ambice. Zaměstnáváme lidi, kteří mají schopnost učit se a inovovat, věří v týmovou práci a společný růst a hlavně: milují to, co dělají.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "4",
+          "headline": "Efektivita\nje\nzáklad",
+          "backgroundNumber": 4,
+          "image": null,
+          "description": "Poskytujeme nákladově efektivní služby a klademe velký důraz na zájmy klienta. Týmy skládáme vždy podle potřeb projektu a naše procesy zajišťují vysokou kvalitu komunikace. Nominovaný team-leader má za úkol zaručit maximální zefektivnění práce.",
+          "__typename": "BrandValue"
+        }
+      ],
+      "hqImageGrid": [],
       "__typename": "AboutUs"
     },
     "socialNetworkUrls": {

@@ -3,49 +3,46 @@ import styled from 'styled-components'
 import { Col } from 'components/Col'
 import { Row } from 'components/Row'
 import { Line } from 'components/Line'
+import { useTranslation } from 'react-i18next'
+import { gql } from 'apollo-boost'
+import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next'
+import apolloClient from '../../gql/apollo'
+import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
 
-const AboutUs: React.FC = () => {
+interface IAbout {
+	skills: Skill[]
+	brandValues: BrandValue[]
+	weAreImageCarousel: UploadFile[]
+}
+const AboutUs: React.FC<IAbout> = (props: IAbout) => {
+	const { t } = useTranslation()
+
 	return (
 		<>
 			<Wrapper>
 				{/*<Navigation />*/}
 				<HeroContainer>
 					<HeroHeadline>
-						<span>THERE IS MORE</span>
+						<span>{t('about.heroHeadlineTop')}</span>
 						<HeroLineWrapper>
 							<Line />
 						</HeroLineWrapper>
-						<span>UNDER THE SURFACE</span>
+						<span>{t('about.heroHeadlineBottom')}</span>
 					</HeroHeadline>
 
-					<HeroDescription>
-						Qest je dobrodružství. Kódování je umění, jehož krása{' '}
-						<YellowText>leží pod povrchem.</YellowText> Jsme
-						badatelé v nekonečném světě oceánu aplikací a
-						informačních systémů. Noříme se{' '}
-						<RedText>do hlubin</RedText>, abychom každému z našich
-						klientů přinesli výjimečné řešení.
-						<BlueText> Náš kód</BlueText> má nezaměnitelný rukopis:
-						je precizní, vyladěný, založený na vzájemném porozumění.
-						Elegantním, intuitivním a perfektně fungujícím softwarem
-						poskytujeme uživateli jedinečný zážitek. S hrdostí
-						vytváříme krásu a dokonalost pod hladinou.{' '}
-						<GreenText>
-							Co je důležité, je očím neviditelné
-						</GreenText>
-						.
-					</HeroDescription>
+					<HeroDescription
+						dangerouslySetInnerHTML={{
+							__html: t('about.heroDescription'),
+						}}
+					/>
 
 					<LogoLineWrapper>
 						<Line />
 
 						<LogoPicture>
-							{/* TODO get transparent bg logo*/}
 							<PictureImg
-								src={
-									'/assets/images/logo-psychedelic-negative.png'
-								}
-								alt={'Qest psychedelic logo'}
+								src={t('about.heroLogo.url')}
+								alt={t('about.heroLogo.alternativeText')}
 							/>
 						</LogoPicture>
 					</LogoLineWrapper>
@@ -53,38 +50,31 @@ const AboutUs: React.FC = () => {
 					<ArrowLinkWrapper>
 						<ArrowLink href={'#'}>
 							<ArrowIcon />
-							<span>ponořit se hlouběji</span>
+							<span>{t('about.heroArrowTitle')}</span>
 						</ArrowLink>
 					</ArrowLinkWrapper>
 				</HeroContainer>
 
 				<Container>
-					<Headline>JSME QEST</Headline>
+					<Headline>{t('about.weAreHeadline')}</Headline>
 
 					<WeAreRow>
 						<Col mobile={12} desktop={7}>
-							<WeAreDescription>
-								Nejsme jen dodavatel{' '}
-								<YellowText>softwarových řešení.</YellowText>{' '}
-								Vztahy v týmu i s klienty zakládáme na důvěře a
-								partnerství. Pro své klienty, ať už ambiciózní
-								české startupy, či korporáty, vyvíjíme skvělé{' '}
-								<RedText>aplikace</RedText>,{' '}
-								<BlueText>weby</BlueText>,{' '}
-								<PinkText>informační systémy</PinkText> a třeba
-								i <GreenText>chytré domy</GreenText>. Každý den
-								na sobě pracujeme a posouváme se vpřed. Úspěch
-								klienta je náš největší závazek.
-							</WeAreDescription>
+							<WeAreDescription
+								dangerouslySetInnerHTML={{
+									__html: t('about.weAreDescription'),
+								}}
+							/>
 						</Col>
-
 						<CloudCol mobile={12} desktop={5}>
-							<CloudPicture>
-								<PictureImg
-									src={'/assets/images/cloud-smaller.png'}
-									alt={'Brain'}
-								/>
-							</CloudPicture>
+							{props.weAreImageCarousel.map((image) => (
+								<CloudPicture key={image.id}>
+									<PictureImg
+										src={image.url}
+										alt={image.alternativeText ?? ''}
+									/>
+								</CloudPicture>
+							))}
 							<CloudLine />
 						</CloudCol>
 					</WeAreRow>
@@ -92,40 +82,33 @@ const AboutUs: React.FC = () => {
 					<ArrowLinkWrapper>
 						<ArrowLink href={'#'}>
 							<ArrowIcon />
-							<span>co umíme</span>
+							<span>{t('about.weAreArrowTitle')}</span>
 						</ArrowLink>
 					</ArrowLinkWrapper>
 				</Container>
 
 				<Container>
-					<Headline>CO UMÍME</Headline>
+					<Headline>{t('about.skillsHeadline')}</Headline>
 
 					<SkillsRow>
 						<Col mobile={12} desktop={7}>
-							{/*TODO*/}
-							<p>TODO</p>
+							<p>{t('about.skillsDescription')}</p>
 
 							<SkillsList>
-								<SkillsListItem>
-									<SkillHeadline>
-										<BlueText>
-											Backendové a cloudové aplikace
-										</BlueText>
-									</SkillHeadline>
-									<SkillDescription>
-										dodáváme serverová a cloudová řešení
-									</SkillDescription>
-								</SkillsListItem>
-
-								<SkillsListItem>
-									<SkillHeadline>
-										<YellowText>Weby</YellowText>
-									</SkillHeadline>
-									<SkillDescription>
-										Navrhujeme a implementujeme webové
-										aplikace
-									</SkillDescription>
-								</SkillsListItem>
+								{props.skills.map((skill) => (
+									<SkillsListItem key={skill.id}>
+										<SkillHeadline>
+											<ColorText
+												colorHash={skill.titleColorHash}
+											>
+												{skill.title}
+											</ColorText>
+										</SkillHeadline>
+										<SkillDescription>
+											{skill.description}
+										</SkillDescription>
+									</SkillsListItem>
+								))}
 							</SkillsList>
 						</Col>
 
@@ -133,144 +116,86 @@ const AboutUs: React.FC = () => {
 							<TechnologiesCard>
 								<TechnologiesPicture>
 									<PictureImg
-										src={'/assets/images/ruka-zavrena.png'}
+										src={t('about.technologiesImage')}
 									/>
 								</TechnologiesPicture>
 
-								<TechnologiesDescription>
-									<strong>Programovací jazyky: </strong>
-									C#, javascript, typescript, html, css
-								</TechnologiesDescription>
-
-								<TechnologiesDescription>
-									<strong>Používáme technologie: </strong>
-									graphql, rest api frontend: React (16+),
-									Typescript, Redux (Redux-saga)/Apollo,
-									Styled components
-								</TechnologiesDescription>
-
-								<TechnologiesDescription>
-									<strong>backend (javascript): </strong>
-									Node.js, Typescript MongoDB, Docker,
-									Elasticsearch, MariaDB, AWS, Azure, Google
-									Cloud, Serverless, Redis, Kubernetes,
-									OpenStack, Express.js, Apollo Graphql
-								</TechnologiesDescription>
-
-								<TechnologiesDescription>
-									<strong>C#: </strong>ASP.NET Core (latest),
-									C# (latest), SignalR/WebSockets, MongoDB, MS
-									SQL, RabbitMQ, Redis, Docker, Kubernetes
-									(Azure)
-								</TechnologiesDescription>
+								<TechnologiesDescription
+									dangerouslySetInnerHTML={{
+										__html: t(
+											'about.technologiesDescription'
+										),
+									}}
+								/>
 							</TechnologiesCard>
 						</Col>
 					</SkillsRow>
 				</Container>
 
 				<Container>
-					<ValuesHeadline>HODNOTY</ValuesHeadline>
+					<ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
 
 					<ValuesWrapper>
-						<ValueItem
-							number={'1'}
-							headline={'Human\nCentered\nDesign'}
-							imageSrc={'/assets/images/srdce.png'}
-							imageAlt={'Heart'}
-							description={
-								'Ke každému produktu přistupujeme individuálně. Naším cílem je vytvořit návrh, který je funkční a řeší reálný problém. Navrhujeme a vyvíjíme intuitivní a krásné produkty.'
-							}
-						/>
+						{props.brandValues.map((value) => (
+							<ValuesColumn key={value.id}>
+								<ValueHeadlineWrapper>
+									<ValueNumber>
+										{value.backgroundNumber}
+									</ValueNumber>
 
-						<ValueItem
-							number={'2'}
-							headline={'Kreativita\na\nInovace'}
-							imageSrc={'/assets/images/hlava.png'}
-							imageAlt={'Heart'}
-							description={
-								'Uvažujeme jinak, experimentujeme a nebojíme se nových postupů a řešení. Inovativní myšlení a kreativita nás spojují a ženou kupředu. Naše tvůrčí koncepty dotahujeme do posledního detailu.'
-							}
-						/>
+									<ValueHeadline>
+										{value.headline}
+									</ValueHeadline>
 
-						<ValueItem
-							number={'3'}
-							headline={'Týmová\npráce'}
-							imageSrc={'/assets/images/koule.png'}
-							imageAlt={'Heart'}
-							description={
-								'Máme za sebou čtyři roky práce a 40+ úspěšných projektů. Náš tým se rychle rozrůstá, stejně jako rostou i naše ambice. Zaměstnáváme lidi, kteří mají schopnost učit se a inovovat, věří v týmovou práci a společný růst a hlavně: milují to, co dělají.'
-							}
-						/>
+									<ValuePicture>
+										<PictureImg
+											src={value.image?.url}
+											alt={
+												value.image?.alternativeText ??
+												''
+											}
+										/>
+									</ValuePicture>
+								</ValueHeadlineWrapper>
 
-						<ValueItem
-							number={'4'}
-							headline={'Efektivita\nje\nzáklad'}
-							imageSrc={'/assets/images/schody.png'}
-							imageAlt={'Heart'}
-							description={
-								'Poskytujeme nákladově efektivní služby a klademe velký důraz na zájmy klienta. Týmy skládáme vždy podle potřeb projektu a naše procesy zajišťují vysokou kvalitu komunikace. Nominovaný team-leader má za úkol zaručit maximální zefektivnění práce.'
-							}
-						/>
+								<ValueDescription>
+									{value.description}
+								</ValueDescription>
+							</ValuesColumn>
+						))}
 					</ValuesWrapper>
 				</Container>
 
 				<Container>
-					<Headline>NÁŠ TEAM</Headline>
+					<Headline>{t('about.teamHeadline')}</Headline>
 				</Container>
 
 				<Container>
-					<Headline>QEST HQ</Headline>
+					<Headline>{t('about.hqHeadline')}</Headline>
 
-					<HQDescription>
-						V Qestu se rádi a často pyšníme tím, kde pracujeme.
-						Součástí kanceláří je terasa s posezením, grilem a
-						inspirativním výhledem, relaxační zóna, stolní tenis,
-						Xbox, kuchyňka s kávovarem, chladničkou a dostatečným
-						množstvím občerstvení jako je cola, káva, voda, čaj.
-						<br />
-						<br />
-						Proč Karlín? V Karlíně to žije a stává se tech centrem
-						hlavního města Prahy. Sdružuje se zde silná IT komunita.
-						Zcela přirozeně se z Karlína stalo startupové centrum,
-						malé pražské Silicon Valley.
-					</HQDescription>
+					<HQDescription>{t('about.hqDescription')}</HQDescription>
 
 					{/*	TODO grid component*/}
 				</Container>
 
 				<Container>
-					<Headline>KARIÉRA</Headline>
+					<Headline>{t('about.careerHeadline')}</Headline>
 
 					<CareerDescription>
-						Chceš se těšit na pondělí jako my? Spoj se s Qestem.
-						Svou práci děláme rádi a na špičkové úrovni. Hledáme
-						skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat
-						na projektech s nejnovějšími technologiemi. Dnes je nás
-						přes 30 a stále rosteme, takže u nás opravdu je, od koho
-						se učit. Jsme mladý tým, ale věk je jenom číslo.
-						Oceňujeme zkušenost, zodpovědnost a vášeň pro
-						dokonalost. Pátráme po lidech s tím pravým přístupem,
-						všechno ostatní je možné se naučit. Velmi si zakládáme
-						na mezilidských vztazích, ať už jde o vztahy mezi
-						zaměstnanci, nebo vůči klientům. Nabízíme práci v
-						moderním prostředí a uvolněné atmosféře se zázemím
-						stabilní společnosti. Naším produktem je „Team As a
-						Service“ a jako tým spolu také dost často fungujeme i
-						mimo práci. #qestlife Nehrajeme si ale jen na svém
-						písečku a o know-how se rádi podělíme v rámci našich
-						veřejných akcí – Qeetup či Q-TON. Vydáváme také náš
-						vlastní podcast Qcast o moderních technologiích a
-						programování.
+						{t('about.careerDescription')}
 					</CareerDescription>
 
 					<CareerCTA>
-						<span>KOHO HLEDÁME</span>
-						<img src={'/assets/images/otaznik.png'} alt={''} />
+						<span>{t('about.careerCTATitle')}</span>
+						<img
+							src={t('about.careerCTAImage.url')}
+							alt={t('about.careerCTAImage.alternativeText')}
+						/>
 					</CareerCTA>
 				</Container>
 
 				<Container>
-					<Headline>BLOG</Headline>
+					<Headline>{t('about.blogHeadline')}</Headline>
 					{/*	TODO load from api*/}
 				</Container>
 			</Wrapper>
@@ -279,6 +204,49 @@ const AboutUs: React.FC = () => {
 }
 
 export default AboutUs
+
+export async function getStaticProps(
+	context: GetServerSidePropsContext
+): Promise<GetServerSidePropsResult<IAbout>> {
+	const { data } = await apolloClient.query({
+		query: gql`
+			query {
+				skills {
+					id
+					title
+					description
+					titleColorHash
+				}
+
+				brandValues {
+					id
+					headline
+					backgroundNumber
+					image {
+						url
+					}
+					description
+				}
+
+				aboutWeAreImageCarousel {
+					weAreImageCarousel {
+						id
+						url
+						alternativeText
+					}
+				}
+			}
+		`,
+	})
+
+	return {
+		props: {
+			skills: data.skills,
+			brandValues: data.brandValues,
+			weAreImageCarousel: data.aboutWeAreImageCarousel.weAreImageCarousel,
+		},
+	}
+}
 
 export const Wrapper = styled.div`
 	width: 100%;
@@ -341,6 +309,11 @@ const PinkText = styled.span`
 	color: ${({ theme }) => theme.colors.pink};
 `
 
+const ColorText = styled.span<{ colorHash: string | null | undefined }>`
+	font-size: inherit;
+	color: ${(props) => props.colorHash};
+`
+
 export const LogoLineWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -399,10 +372,18 @@ const HeroDescription = styled.p`
 	max-width: 56.5625rem; // 905px;
 	margin-top: calc(1.5625rem + 0.25rem + 0.45rem);
 	margin-bottom: 3rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		order: 2;
+	}
 `
 
 const ArrowLinkWrapper = styled.div`
 	margin: auto;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+		order: 3;
+	}
 `
 
 const ArrowLink = styled.a`
@@ -542,33 +523,6 @@ const ValuePicture = styled.picture`
 	position: absolute;
 	right: 0;
 `
-
-interface IValueItem {
-	number: string
-	headline: string
-	imageSrc: string
-	imageAlt: string
-	description: string
-}
-
-export function ValueItem(props: IValueItem) {
-	return (
-		<ValuesColumn>
-			<ValueHeadlineWrapper>
-				<ValueNumber>{props.number}</ValueNumber>
-
-				<ValueHeadline>{props.headline}</ValueHeadline>
-
-				<ValuePicture>
-					{/*TODO use img with correctly sized img*/}
-					<PictureImg src={props.imageSrc} alt={props.imageAlt} />
-				</ValuePicture>
-			</ValueHeadlineWrapper>
-
-			<ValueDescription>{props.description}</ValueDescription>
-		</ValuesColumn>
-	)
-}
 
 const HQDescription = styled.p`
 	margin-bottom: 3rem;
