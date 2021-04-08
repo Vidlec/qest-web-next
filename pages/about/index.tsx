@@ -431,7 +431,7 @@ const HeroLineWrapper = styled.div`
 	}
 `
 
-const HeroDescription = styled.p`
+const HeroDescription = styled.div`
 	max-width: 56.5625rem; // 905px;
 	margin-top: calc(1.5625rem + 0.25rem + 0.45rem);
 	margin-bottom: 3rem;
@@ -443,7 +443,6 @@ const HeroDescription = styled.p`
 
 const ArrowLinkWrapper = styled.div`
 	margin: auto;
-
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		order: 3;
 	}
@@ -459,7 +458,7 @@ const ArrowIcon = styled.img`
 	height: 49px;
 `
 
-const WeAreDescription = styled.p`
+const WeAreDescription = styled.div`
 	font-size: 2.1875rem; // 35px;
 	letter-spacing: 0;
 	line-height: 2.75rem; //44px;
@@ -787,7 +786,7 @@ const TechnologiesPicture = styled.picture`
 	}
 `
 
-const TechnologiesDescription = styled.p`
+const TechnologiesDescription = styled.div`
 	margin: 0 0 2rem;
 	color: ${({ theme }) => theme.colors.green};
 	font-family: 'sourceCodeVariable';
