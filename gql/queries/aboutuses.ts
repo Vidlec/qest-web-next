@@ -66,6 +66,13 @@ export const ABOUT_QUERY = gql`
 				url
 				alternativeText
 			}
+			hqWeAreHereImage {
+				id
+				url
+				alternativeText
+			}
+			hqCTATitle
+			hqWeAreHereDescription
 		}
 	}
 `

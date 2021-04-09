@@ -9,7 +9,7 @@ import { Container } from 'components/Container'
 import { SliderWrapper } from 'components/Slider/styled'
 import {
 	SelectLanguageWrapper,
-	ArrowIcon,
+	ArrowDownIcon,
 	ArrowLink,
 	ArrowLinkWrapper,
 	CareerCTA,
@@ -45,6 +45,12 @@ import {
 	ValuesWrapper,
 	WeAreDescription,
 	WeAreRow,
+	HQWeAreHereCol,
+	ArrowRightIcon,
+	HQWeAreHereDescription,
+	HQWeAreHerePicture,
+	HQWeAreHereRow,
+	HQCTACol,
 } from 'pages/about/styled'
 import { Headline } from 'components/Headline'
 import SelectLanguage from 'components/SelectLanguage'
@@ -119,7 +125,7 @@ const AboutUs: React.FC = () => {
 
 				<ArrowLinkWrapper>
 					<ArrowLink href={'#'}>
-						<ArrowIcon />
+						<ArrowDownIcon />
 						<span>{t('about.heroArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
@@ -170,7 +176,7 @@ const AboutUs: React.FC = () => {
 
 				<ArrowLinkWrapper>
 					<ArrowLink href={'#'}>
-						<ArrowIcon />
+						<ArrowDownIcon />
 						<span>{t('about.weAreArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
@@ -287,6 +293,30 @@ const AboutUs: React.FC = () => {
 						))}
 					</Masonry>
 				</ResponsiveMasonry>
+
+				<HQWeAreHereRow>
+					<HQWeAreHereCol mobile={12} ipad={6} desktopSmall={4}>
+						<HQWeAreHerePicture>
+							<PictureImg
+								src={t('about.hqWeAreHereImage.url')}
+								alt={t(
+									'about.hqWeAreHereImage.alternativeText'
+								)}
+							/>
+						</HQWeAreHerePicture>
+
+						<HQWeAreHereDescription
+							dangerouslySetInnerHTML={{
+								__html: t('about.hqWeAreHereDescription'),
+							}}
+						/>
+					</HQWeAreHereCol>
+
+					<HQCTACol mobile={12} ipad={6} desktopSmall={4}>
+						<ArrowRightIcon />
+						<span>{t('about.hqCTATitle')}</span>
+					</HQCTACol>
+				</HQWeAreHereRow>
 			</Container>
 
 			<Container>

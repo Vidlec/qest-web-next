@@ -89,7 +89,7 @@ export const ArrowLink = styled.a`
 	flex-direction: column;
 	align-items: center;
 `
-export const ArrowIcon = styled.img`
+export const ArrowDownIcon = styled.img`
 	height: 49px;
 `
 export const WeAreDescription = styled.div`
@@ -218,8 +218,29 @@ export const ValuePicture = styled.picture`
 export const HQDescription = styled.div`
 	margin-bottom: 2rem;
 `
+export const HQWeAreHereDescription = styled.div`
+	font-size: 1.5rem;
+`
+export const HQWeAreHerePicture = styled.picture``
+export const HQWeAreHereCol = styled(Col)`
+	display: flex;
+	align-items: center;
+`
+export const HQCTACol = styled(Col)`
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+`
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
+`
+export const ArrowRightIcon = styled.img`
+	width: 75px;
+	height: 20px;
+	display: block;
+`
+export const HQWeAreHereRow = styled(Row)`
+	justify-content: space-between;
 `
 export const CareerCTA = styled.a`
 	display: flex;
