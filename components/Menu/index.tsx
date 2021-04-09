@@ -44,7 +44,7 @@ const Navigation: React.FC = () => {
 						<Career href="/">{t('menu.career')}</Career>
 					</Item>
 					<Item>
-						<Contact href="/">{t('menu.contact')}</Contact>
+						<Contact href="/contacts">{t('menu.contact')}</Contact>
 					</Item>
 				</MenuList>
 			</Menu>
