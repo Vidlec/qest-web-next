@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import NextLink from 'next/link'
 
-export const Link = styled.a`
+export const Link = styled(NextLink)`
 	font-size: 1.5rem;
 	:hover {
 		filter: brightness(200%);
