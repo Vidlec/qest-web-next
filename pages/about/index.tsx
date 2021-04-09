@@ -258,17 +258,22 @@ const AboutUs: React.FC = () => {
 			<Container>
 				<Headline>{t('about.hqHeadline')}</Headline>
 
-				<HQDescription>{t('about.hqDescription')}</HQDescription>
-
+				<HQDescription
+					dangerouslySetInnerHTML={{
+						__html: t('about.hqDescription'),
+					}}
+				/>
 				{/*	TODO grid component*/}
 			</Container>
 
 			<Container>
 				<Headline>{t('about.careerHeadline')}</Headline>
 
-				<CareerDescription>
-					{t('about.careerDescription')}
-				</CareerDescription>
+				<CareerDescription
+					dangerouslySetInnerHTML={{
+						__html: t('about.careerDescription'),
+					}}
+				/>
 
 				<CareerCTA>
 					<span>{t('about.careerCTATitle')}</span>

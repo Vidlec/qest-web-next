@@ -215,10 +215,10 @@ export const ValuePicture = styled.picture`
 	position: absolute;
 	right: 0;
 `
-export const HQDescription = styled.p`
+export const HQDescription = styled.div`
 	margin-bottom: 2rem;
 `
-export const CareerDescription = styled.p`
+export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
 `
 export const CareerCTA = styled.a`
