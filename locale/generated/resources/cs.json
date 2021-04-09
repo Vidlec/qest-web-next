@@ -45,7 +45,7 @@
       "id": "1",
       "language": "cs",
       "created_at": "2021-04-07T10:02:06.607Z",
-      "updated_at": "2021-04-09T07:02:15.507Z",
+      "updated_at": "2021-04-09T08:52:09.085Z",
       "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
       "heroLogo": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
@@ -144,7 +144,50 @@
           "__typename": "BrandValue"
         }
       ],
-      "hqImageGrid": [],
+      "hqImageGrid": [
+        {
+          "id": "11",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/ruka_zavrena_9daab515ce.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "10",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/otaznik_50b1926b8f.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "8",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Centered_Cloud_d0dfd26f15.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "5",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "2",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "12",
+          "url": "https://qest-web-cms-media.s3.amazonaws.com/cb3e1bcac903e82f6d7eb4a344c178d7_b7d472815a.jpg",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "13",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/overcooked_85d2398fb8.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        }
+      ],
       "__typename": "AboutUs"
     },
     "socialNetworkUrls": {

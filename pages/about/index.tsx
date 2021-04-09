@@ -49,6 +49,8 @@ import {
 import { Headline } from 'components/Headline'
 import SelectLanguage from 'components/SelectLanguage'
 import Footer from 'components/Footer'
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import theme from 'theme/index'
 
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
@@ -264,7 +266,27 @@ const AboutUs: React.FC = () => {
 						__html: t('about.hqDescription'),
 					}}
 				/>
-				{/*	TODO grid component*/}
+
+				<ResponsiveMasonry
+					columnsCountBreakPoints={{
+						[theme.mediaQueriesNumbers.mobile]: 1,
+						[theme.mediaQueriesNumbers.ipad]: 2,
+						[theme.mediaQueriesNumbers.desktop]: 3,
+					}}
+				>
+					<Masonry>
+						{t<string, UploadFile[]>('about.hqImageGrid', {
+							returnObjects: true,
+						}).map((image) => (
+							<picture key={image.id}>
+								<PictureImg
+									src={image.url}
+									alt={image.alternativeText ?? ''}
+								/>
+							</picture>
+						))}
+					</Masonry>
+				</ResponsiveMasonry>
 			</Container>
 
 			<Container>

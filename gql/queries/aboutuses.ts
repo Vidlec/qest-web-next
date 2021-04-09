@@ -62,6 +62,7 @@ export const ABOUT_QUERY = gql`
 				description
 			}
 			hqImageGrid {
+				id
 				url
 				alternativeText
 			}
