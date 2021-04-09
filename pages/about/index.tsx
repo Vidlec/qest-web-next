@@ -48,6 +48,7 @@ import {
 } from 'pages/about/styled'
 import { Headline } from 'components/Headline'
 import SelectLanguage from 'components/SelectLanguage'
+import Footer from 'components/Footer'
 
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
@@ -288,6 +289,8 @@ const AboutUs: React.FC = () => {
 				<Headline>{t('about.blogHeadline')}</Headline>
 				{/*	TODO load from api*/}
 			</Container>
+
+			<Footer />
 		</>
 	)
 }
