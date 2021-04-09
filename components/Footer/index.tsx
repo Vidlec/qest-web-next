@@ -20,6 +20,7 @@ import {
 	Linkedin,
 } from '@styled-icons/boxicons-logos'
 import { WrapperContent } from 'pages/styled'
+import { Container } from 'components/Container'
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation()
@@ -27,7 +28,7 @@ const Footer: React.FC = () => {
 	return (
 		<Wrapper>
 			<Line />
-			<WrapperContent>
+			<Container>
 				<Title>{t('contact.title')}</Title>
 				<ArticleWrapper>
 					<Column>
@@ -80,7 +81,7 @@ const Footer: React.FC = () => {
 						</TextTaxIdentification>
 					</Column>
 				</ArticleWrapper>
-			</WrapperContent>
+			</Container>
 		</Wrapper>
 	)
 }
