@@ -126,7 +126,7 @@ const AboutUs: React.FC = () => {
 				<Headline>{t('about.weAreHeadline')}</Headline>
 
 				<WeAreRow>
-					<Col mobile={12} desktop={7}>
+					<Col mobile={12} desktopSmall={7}>
 						<WeAreDescription
 							dangerouslySetInnerHTML={{
 								__html: t('about.weAreDescription'),
@@ -135,7 +135,7 @@ const AboutUs: React.FC = () => {
 						/>
 					</Col>
 
-					<CarouselCol mobile={12} desktop={3}>
+					<CarouselCol mobile={12} desktopSmall={5} desktop={3}>
 						<SliderWrapper>
 							<Slider
 								infinite={true}
@@ -177,7 +177,7 @@ const AboutUs: React.FC = () => {
 				<Headline>{t('about.skillsHeadline')}</Headline>
 
 				<SkillsRow>
-					<Col mobile={12} desktop={7}>
+					<Col mobile={12} desktopSmall={7}>
 						<p>{t('about.skillsDescription')}</p>
 
 						<SkillsList>
@@ -200,7 +200,7 @@ const AboutUs: React.FC = () => {
 						</SkillsList>
 					</Col>
 
-					<Col mobile={12} desktop={5}>
+					<Col mobile={12} desktopSmall={5}>
 						<TechnologiesCard>
 							<TechnologiesPicture>
 								<PictureImg
