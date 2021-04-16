@@ -42,12 +42,12 @@ import {
 	HQWeAreHerePicture,
 	HQWeAreHereRow,
 	HQCTACol,
-} from './styled'
+} from 'components/About/styled'
 import Headline from 'components/Headline'
 import Footer from 'components/Footer'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import theme from 'theme'
-import AboutHero from 'pages/about/Hero'
+import AboutHero from 'components/About/Hero'
 
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
