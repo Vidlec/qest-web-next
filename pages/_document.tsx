@@ -2,6 +2,7 @@ import React from 'react'
 import Document, {
 	DocumentContext,
 	Head,
+	Html,
 	Main,
 	NextScript,
 } from 'next/document'
@@ -37,13 +38,13 @@ export default class MyDocument extends Document<any> {
 
 	render() {
 		return (
-			<html>
+			<Html>
 				<Head>{this.props.styleTags}</Head>
 				<body>
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		)
 	}
 }

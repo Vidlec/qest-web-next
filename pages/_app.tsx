@@ -10,6 +10,7 @@ import {
 
 import i18n from '../locale'
 import theme from '../theme'
+
 import { GlobalStyle } from 'theme/globalStyle'
 import Footer from 'components/Footer'
 import withRouter from 'next/dist/client/with-router'
