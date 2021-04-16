@@ -6,7 +6,7 @@ import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
 import Slider from 'react-slick'
 import numberOrDefault from 'components/numberOrDefault'
 import { Container } from 'components/Container'
-import { SliderWrapper } from 'components/Slider/styled'
+import SliderWrapper from 'components/Slider/styled'
 import {
 	SelectLanguageWrapper,
 	ArrowDownIcon,

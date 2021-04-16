@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SliderWrapper = styled.div`
+const SliderWrapper = styled.div`
 	.slick-list,
 	.slick-slider,
 	.slick-track {
@@ -15,15 +15,8 @@ export const SliderWrapper = styled.div`
 
 	.slick-slider {
 		box-sizing: border-box;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
 		user-select: none;
-		-webkit-touch-callout: none;
-		-khtml-user-select: none;
-		-ms-touch-action: pan-y;
 		touch-action: pan-y;
-		-webkit-tap-highlight-color: transparent;
 	}
 
 	.slick-list {
@@ -43,10 +36,6 @@ export const SliderWrapper = styled.div`
 
 	.slick-slider .slick-list,
 	.slick-slider .slick-track {
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		-ms-transform: translate3d(0, 0, 0);
-		-o-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
 	}
 
@@ -102,8 +91,6 @@ export const SliderWrapper = styled.div`
 		display: none;
 	}
 
-	/*# sourceMappingURL=slick.min.css.map */
-
 	@charset 'UTF-8';
 
 	.slick-dots,
@@ -118,23 +105,6 @@ export const SliderWrapper = styled.div`
 	.slick-next:before,
 	.slick-prev:before {
 		font-family: slick;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-
-	.slick-loading .slick-list {
-		background: url(ajax-loader.gif) center center no-repeat #fff;
-	}
-
-	@font-face {
-		font-family: slick;
-		font-weight: 400;
-		font-style: normal;
-		src: url(fonts/slick.eot);
-		src: url(fonts/slick.eot?#iefix) format('embedded-opentype'),
-			url(fonts/slick.woff) format('woff'),
-			url(fonts/slick.ttf) format('truetype'),
-			url(fonts/slick.svg#slick) format('svg');
 	}
 
 	.slick-next,
@@ -144,8 +114,6 @@ export const SliderWrapper = styled.div`
 		top: 50%;
 		width: 20px;
 		height: 20px;
-		-webkit-transform: translate(0, -50%);
-		-ms-transform: translate(0, -50%);
 		transform: translate(0, -50%);
 		cursor: pointer;
 		color: transparent;
@@ -180,7 +148,7 @@ export const SliderWrapper = styled.div`
 		font-size: 20px;
 		line-height: 1;
 		opacity: 0.75;
-		color: #fff;
+		color: ${({ theme }) => theme.colors.porcelainWhite};
 	}
 
 	.slick-prev {
@@ -271,13 +239,13 @@ export const SliderWrapper = styled.div`
 		content: '•';
 		text-align: center;
 		opacity: 0.25;
-		color: #000;
+		color: ${({ theme }) => theme.colors.black};
 	}
 
 	.slick-dots li.slick-active button:before {
 		opacity: 0.75;
-		color: #000;
+		color: ${({ theme }) => theme.colors.black};
 	}
-
-	/*# sourceMappingURL=slick-theme.min.css.map */
 `
+
+export default SliderWrapper
