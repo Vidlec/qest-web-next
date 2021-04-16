@@ -8,12 +8,12 @@ export const Wrapper = styled.footer`
 `
 
 export const Line = styled.div`
-	background-color: ${({ theme }) => theme.colors.porcelainWhite};
+	background-color: ${({ theme }) => theme.colors.mainFont};
 	height: 0.125rem;
 	width: 100%;
 	position: absolute;
 	top: 1.2rem;
-	box-shadow: 0 0 8px ${({ theme }) => theme.colors.porcelainWhite};
+	box-shadow: 0 0 8px ${({ theme }) => theme.colors.mainFont};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		top: 2.7rem;
@@ -85,7 +85,7 @@ export const IconBox = styled.div`
 `
 
 export const Email = styled.a`
-	border-bottom: ${({ theme }) => `1px solid ${theme.colors.merigoldOrange}`};
+	border-bottom: ${({ theme }) => `1px solid ${theme.colors.h3}`};
 	line-height: 1.5rem;
 	:hover {
 		border-bottom: 1px solid transparent;

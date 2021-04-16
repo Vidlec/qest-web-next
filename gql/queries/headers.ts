@@ -7,6 +7,9 @@ export const HEADER_QUERY = gql`
 			language
 			title
 			description
+			logo {
+				url
+			}
 		}
 	}
 `

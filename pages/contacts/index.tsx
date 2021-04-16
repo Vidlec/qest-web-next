@@ -1,7 +1,6 @@
 import React from 'react'
 
-import Footer from 'components/Footer'
-
-const Contacts: React.FC = () => <Footer />
+// TODO: Add Formular and Header
+const Contacts: React.FC = () => <></>
 
 export default Contacts

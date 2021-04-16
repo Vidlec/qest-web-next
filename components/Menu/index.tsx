@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
 import {
-	AboutUs,
-	Career,
-	Contact,
 	Item,
-	MainMenu,
 	MenuButton,
 	MenuCross,
 	MenuList,
 	MenuSwitcher,
-	Reference,
 	Menu,
 } from './styled'
 

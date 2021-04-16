@@ -17,18 +17,19 @@ export const MenuSwitcher = styled.nav`
 
 export const MenuButton = styled.button`
 	font-weight: bold;
-	color: ${({ theme }) => theme.colors.roseRed};
+	color: ${({ theme }) => theme.colors.mainMenuButton};
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
 `
+
 export const Menu = styled.div<{ isOpen: boolean }>`
 	width: 100%;
 	height: 100vh;
 	display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 	position: absolute;
 	flex-direction: column;
-	background-color: ${({ theme }) => theme.colors.softBlack};
+	background-color: ${({ theme }) => theme.colors.mainBackground};
 	z-index: 10;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
@@ -43,7 +44,7 @@ export const MenuCross = styled.button`
 	cursor: pointer;
 	line-height: 0;
 	padding: 0;
-	color: ${({ theme }) => theme.colors.roseRed};
+	color: ${({ theme }) => theme.colors.mainMenuButton};
 	background-color: none;
 	font-size: 5rem;
 	margin-top: 1rem;
@@ -99,28 +100,4 @@ export const Item = styled.li`
 			text-align: right;
 		}
 	}
-`
-
-export const BasicLink = styled.a`
-	text-decoration: none;
-`
-
-export const AboutUs = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.poolBlue};
-`
-
-export const Reference = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.orchidPink};
-`
-
-export const Career = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.merigoldOrange};
-`
-
-export const Contact = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.mintGreen};
-`
-
-export const MainMenu = styled(BasicLink)`
-	color: ${({ theme }) => theme.colors.roseRed};
 `
