@@ -148,7 +148,7 @@ const SliderWrapper = styled.div`
 		font-size: 20px;
 		line-height: 1;
 		opacity: 0.75;
-		color: ${({ theme }) => theme.colors.porcelainWhite};
+		color: ${({ theme }) => theme.colors.mainFont};
 	}
 
 	.slick-prev {

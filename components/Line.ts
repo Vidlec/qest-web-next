@@ -5,8 +5,8 @@ const Line = styled.div`
 	position: absolute;
 	height: 0.15rem;
 	left: 0;
-	background-color: ${({ theme }) => theme.colors.porcelainWhite};
-	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.porcelainWhite};
+	background-color: ${({ theme }) => theme.colors.mainFont};
+	box-shadow: 0px 0px 12px ${({ theme }) => theme.colors.mainFont};
 `
 
 export default Line

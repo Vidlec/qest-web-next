@@ -28,6 +28,10 @@
       "language": "cs",
       "title": "QEST | Qest",
       "description": "V Qest navrhujeme a vyvíjíme softwarové, mobilní i webové aplikace.",
+      "logo": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
+        "__typename": "UploadFile"
+      },
       "__typename": "Header"
     },
     "contact": {
