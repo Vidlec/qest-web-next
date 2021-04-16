@@ -1,14 +1,12 @@
-import React, { useEffect, useRef } from 'react'
-import { Col } from 'components/Col'
-import { Line } from 'components/Line'
+import React, { useEffect, useState } from 'react'
+import Col from 'components/Col'
 import { useTranslation } from 'react-i18next'
 import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
 import Slider from 'react-slick'
-import numberOrDefault from 'components/numberOrDefault'
-import { Container } from 'components/Container'
+import numberOrNull from 'components/numberOrNull'
+import Container from 'components/Container'
 import SliderWrapper from 'components/Slider/styled'
 import {
-	SelectLanguageWrapper,
 	ArrowDownIcon,
 	ArrowLink,
 	ArrowLinkWrapper,
@@ -18,14 +16,7 @@ import {
 	CarouselLine,
 	CarouselPicture,
 	ColorText,
-	HeroContainer,
-	HeroDescription,
-	HeroHeadline,
-	HeroLine,
-	HeroLineWrapper,
 	HQDescription,
-	LogoLineWrapper,
-	LogoPicture,
 	PictureImg,
 	SkillDescription,
 	SkillHeadline,
@@ -51,85 +42,50 @@ import {
 	HQWeAreHerePicture,
 	HQWeAreHereRow,
 	HQCTACol,
-} from 'pages/about/styled'
-import { Headline } from 'components/Headline'
-import SelectLanguage from 'components/SelectLanguage'
+} from './styled'
+import Headline from 'components/Headline'
 import Footer from 'components/Footer'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import theme from 'theme/index'
+import theme from 'theme'
+import AboutHero from 'pages/about/Hero'
 
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
 
-	const sliderRef = useRef<Slider>(null)
-	const weAreDescriptionRef = useRef<HTMLParagraphElement>(null)
+	const [sliderRef, setSliderRef] = useState<Slider | null>(null)
+	const [
+		weAreDescriptionRef,
+		setWeAreDescriptionRef,
+	] = useState<HTMLParagraphElement | null>(null)
 
 	useEffect(() => {
 		const descriptionLinks =
-			weAreDescriptionRef.current?.querySelectorAll(
-				'[data-sliderIndex]'
-			) ?? []
+			weAreDescriptionRef?.querySelectorAll('[data-sliderIndex]') ?? []
 
 		for (const descriptionLink of descriptionLinks) {
 			descriptionLink.addEventListener('mouseenter', (e) =>
-				moveSlickToIndex(e, sliderRef.current)
+				moveSlickToIndex(e, sliderRef)
 			)
 			descriptionLink.addEventListener('mouseleave', () =>
-				resumeSlider(sliderRef.current)
+				resumeSlider(sliderRef)
 			)
 		}
 
 		return () => {
 			for (const descriptionLink of descriptionLinks) {
 				descriptionLink.removeEventListener('mouseenter', (e) =>
-					moveSlickToIndex(e, sliderRef.current)
+					moveSlickToIndex(e, sliderRef)
 				)
 				descriptionLink.addEventListener('mouseleave', () =>
-					resumeSlider(sliderRef.current)
+					resumeSlider(sliderRef)
 				)
 			}
 		}
-	}, [weAreDescriptionRef, sliderRef])
+	}, [sliderRef, weAreDescriptionRef])
 
 	return (
 		<>
-			<HeroContainer>
-				<SelectLanguageWrapper>
-					<SelectLanguage />
-				</SelectLanguageWrapper>
-
-				<HeroHeadline>
-					<span>{t('about.heroHeadlineTop')}</span>
-					<HeroLineWrapper>
-						<HeroLine />
-					</HeroLineWrapper>
-					<span>{t('about.heroHeadlineBottom')}</span>
-				</HeroHeadline>
-
-				<HeroDescription
-					dangerouslySetInnerHTML={{
-						__html: t('about.heroDescription'),
-					}}
-				/>
-
-				<LogoLineWrapper>
-					<LogoPicture>
-						<PictureImg
-							src={t('about.heroLogo.url')}
-							alt={t('about.heroLogo.alternativeText')}
-						/>
-					</LogoPicture>
-
-					<Line />
-				</LogoLineWrapper>
-
-				<ArrowLinkWrapper>
-					<ArrowLink href={'#'}>
-						<ArrowDownIcon />
-						<span>{t('about.heroArrowTitle')}</span>
-					</ArrowLink>
-				</ArrowLinkWrapper>
-			</HeroContainer>
+			<AboutHero />
 
 			<Container>
 				<Headline>{t('about.weAreHeadline')}</Headline>
@@ -140,7 +96,7 @@ const AboutUs: React.FC = () => {
 							dangerouslySetInnerHTML={{
 								__html: t('about.weAreDescription'),
 							}}
-							ref={weAreDescriptionRef}
+							ref={setWeAreDescriptionRef}
 						/>
 					</Col>
 
@@ -154,7 +110,7 @@ const AboutUs: React.FC = () => {
 								dots={false}
 								arrows={false}
 								autoplay={true}
-								ref={sliderRef}
+								ref={setSliderRef}
 							>
 								{t<string, UploadFile[]>(
 									'about.weAreImageCarousel',
@@ -342,6 +298,7 @@ const AboutUs: React.FC = () => {
 				{/*	TODO load from api*/}
 			</Container>
 
+			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}
 			<Footer />
 		</>
 	)
@@ -351,7 +308,7 @@ export default AboutUs
 
 function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
 	const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')
-	const index = numberOrDefault(indexAttr)
+	const index = numberOrNull(indexAttr)
 
 	if (index !== null) {
 		sliderRef?.slickPause()

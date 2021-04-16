@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+const Container = styled.section`
 	width: 100%;
-	margin: 0 auto 13.875rem auto;
+	margin: 0 auto 13.8rem auto;
 	padding: 0 1rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
@@ -21,3 +21,4 @@ export const Container = styled.section`
 		max-width: ${({ theme }) => theme.mediaQueries.desktopLarge};
 	}
 `
+export default Container

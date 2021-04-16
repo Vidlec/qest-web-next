@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
-export const Headline = styled.h1`
-	color: #cccccc;
-	font-size: 4.375rem; // 70px;
+const Headline = styled.h1`
+	color: ${({ theme }) => theme.colors.lightGray};
+	font-size: 4.4rem;
 	font-weight: bold;
 	letter-spacing: 0;
-	//margin: 24rem 0 calc(1.5625rem - 0.45rem); // 384px (25px - line margin top);
 	line-height: 1;
-	margin-bottom: 3.6875rem; // 59px;
+	margin-bottom: 3.6rem;
 	margin-top: 0;
 `
+
+export default Headline

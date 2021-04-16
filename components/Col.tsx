@@ -1,20 +1,20 @@
 import styled, { DefaultTheme } from 'styled-components'
 import { Theme } from 'theme/index'
 
-type IColSize = number | 'auto' | 'span'
-interface ICol {
-	mobile?: IColSize
-	mobileLarge?: IColSize
-	ipad?: IColSize
-	desktopSmall?: IColSize
-	desktop?: IColSize
-	desktopLarge?: IColSize
+type ColSize = number | 'auto' | 'span'
+interface ColProps {
+	mobile?: ColSize
+	mobileLarge?: ColSize
+	ipad?: ColSize
+	desktopSmall?: ColSize
+	desktop?: ColSize
+	desktopLarge?: ColSize
 }
 
 function getStyles(
 	theme: DefaultTheme,
 	mediaQuery: keyof Theme['mediaQueries'],
-	colSize?: IColSize
+	colSize?: ColSize
 ) {
 	return colSize !== undefined
 		? `
@@ -27,16 +27,13 @@ function getStyles(
 		: ''
 }
 
-export const Col = styled.div<ICol>`
+const Col = styled.div<ColProps>`
 	flex-basis: 0;
-	-webkit-box-flex: 1;
 	flex-grow: 1;
 	max-width: 100%;
 
 	padding-left: 1rem;
 	padding-right: 1rem;
-
-	box-sizing: border-box;
 
 	${({ mobile, theme }) => getStyles(theme, 'mobile', mobile)}
 	${({ mobileLarge, theme }) => getStyles(theme, 'mobileLarge', mobileLarge)}
@@ -46,7 +43,9 @@ export const Col = styled.div<ICol>`
 	${({ desktopLarge, theme }) => getStyles(theme, 'desktopLarge', desktopLarge)}
 `
 
-function getFlexSize(colSize: IColSize) {
+export default Col
+
+function getFlexSize(colSize: ColSize) {
 	if (colSize === 'auto') return 'auto'
 	if (colSize === 'span') return 0
 

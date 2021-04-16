@@ -10,7 +10,7 @@ import {
 	TextLogo,
 	WrapperLogoTexts,
 } from './styled'
-import { Line } from 'components/Line'
+import Line from 'components/Line'
 
 const HomePageContent: React.FC = () => {
 	const { t } = useTranslation()

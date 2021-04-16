@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Col } from 'components/Col'
-import { Row } from 'components/Row'
-import { Container } from 'components/Container'
-import { Line } from 'components/Line'
-import { Headline } from 'components/Headline'
+import Col from 'components/Col'
+import Row from 'components/Row'
+import Container from 'components/Container'
+import Line from 'components/Line'
+import Headline from 'components/Headline'
 
 export const SelectLanguageWrapper = styled.div`
 	display: flex;
@@ -37,7 +37,7 @@ export const LogoPicture = styled.picture`
 	align-self: end;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		max-width: 20rem; //calc(var(--containerWidth) - var(--marginLeft));
+		max-width: 20rem;
 		position: absolute;
 		transform: translateY(-50%);
 	}
@@ -51,11 +51,11 @@ export const HeroContainer = styled(Container)`
 	flex-direction: column;
 `
 export const HeroHeadline = styled(Headline)`
-	margin: 1rem 0 calc(1.5625rem - 0.45rem); // 384px (25px - line margin top);
-	font-size: 2rem; // 57px;
+	margin: 1rem 0 calc(1.5rem - 0.45rem);
+	font-size: 2rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		font-size: 3.5625rem; // 57px;
+		font-size: 3.5rem;
 		max-width: calc(100% - 20rem - 4rem);
 	}
 `
@@ -70,8 +70,8 @@ export const HeroLine = styled(Line)`
 `
 
 export const HeroDescription = styled.div`
-	max-width: 56.5625rem; // 905px;
-	margin-top: calc(1.5625rem + 0.25rem + 0.45rem);
+	max-width: 56.5rem;
+	margin-top: calc(1.5rem + 0.25rem + 0.45rem);
 	margin-bottom: 3rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
@@ -93,9 +93,9 @@ export const ArrowDownIcon = styled.img`
 	height: 49px;
 `
 export const WeAreDescription = styled.div`
-	font-size: 2.1875rem; // 35px;
+	font-size: 2.2rem;
 	letter-spacing: 0;
-	line-height: 2.75rem; //44px;
+	line-height: 2.75rem;
 	margin-bottom: 2rem;
 `
 export const WeAreRow = styled(Row)`
@@ -109,7 +109,7 @@ export const CarouselCol = styled(Col)`
 	position: relative;
 `
 export const CarouselPicture = styled.picture`
-	width: 21.6875rem; // 347px;
+	width: 21.7rem;
 	display: block !important;
 
 	img {
@@ -136,7 +136,7 @@ export const SkillsList = styled.ul`
 	list-style: none;
 `
 export const SkillsListItem = styled.li`
-	margin-bottom: 2rem; // TODO use value from design
+	margin-bottom: 2rem;
 `
 export const SkillHeadline = styled.h2`
 	font-size: 2rem;
@@ -166,7 +166,7 @@ export const TechnologiesDescription = styled.div`
 	margin: 0 0 2rem;
 	color: ${({ theme }) => theme.colors.green};
 	font-family: 'sourceCodeVariable';
-	font-size: 1.25rem; //20px;
+	font-size: 1.25rem;
 `
 export const ValuesHeadline = styled(Headline)`
 	margin-bottom: 11.25rem;
@@ -182,14 +182,14 @@ export const ValuesColumn = styled.div`
 	margin-bottom: 3rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		width: 17.5rem; // 280px;
+		width: 17.5rem;
 	}
 `
 export const ValueDescription = styled.p`
 	text-align: center;
 `
 export const ValueHeadlineWrapper = styled.div`
-	margin-bottom: 1.875rem;
+	margin-bottom: 1.8rem;
 	position: relative;
 	display: flex;
 `
@@ -202,12 +202,12 @@ export const ValueNumber = styled.div`
 export const ValueHeadline = styled.div`
 	letter-spacing: 0;
 	font-weight: bold;
-	font-size: 2.1875rem; //35px;
-	line-height: 2.375rem; // 38px;
+	font-size: 2.2rem;
+	line-height: 2.3rem;
 	text-align: center;
 	white-space: pre-wrap;
 	z-index: 1;
-	padding-top: 0.875rem; // TODO use value from design
+	padding-top: 0.8rem;
 	width: 100%;
 	position: absolute;
 `
@@ -252,7 +252,7 @@ export const CareerCTA = styled.a`
 	}
 
 	span {
-		font-size: 2.1875rem;
+		font-size: 2.2rem;
 		font-weight: bold;
 		color: ${({ theme }) => theme.colors.red};
 		text-decoration: underline;
