@@ -12,7 +12,7 @@ import {
 	LogoPicture,
 	PictureImg,
 	SelectLanguageWrapper,
-} from 'pages/about/styled'
+} from 'components/About/styled'
 import SelectLanguage from 'components/SelectLanguage'
 import Line from 'components/Line'
 import { useTranslation } from 'react-i18next'
