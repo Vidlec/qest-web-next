@@ -34,7 +34,7 @@ export const LogoLineWrapper = styled.div`
 `
 export const LogoPicture = styled.picture`
 	display: block;
-	align-self: end;
+	align-self: flex-end;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		max-width: 20rem;
