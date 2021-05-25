@@ -10,7 +10,8 @@ import {
     FormTextArea,
     FormInput,
     FormSubmit,
-    FormRow
+    FormRow,
+    TopMargin,
 } from 'components/Form/styled'
 
 // TODO: Add Formular and Header
@@ -19,6 +20,7 @@ const Contacts: React.FC = () => {
     const [nameInput, setNameInput] = useState("")
     const [emailInput, setEmailInput] = useState("")
     const [isSending, setIsSending] = useState(false)
+    const [emailStatus, setEmailStaus] = useState<boolean>()
 
     const { t } = useTranslation();
 
@@ -30,7 +32,11 @@ const Contacts: React.FC = () => {
 
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault()
-        if( nameInput === "" || emailInput === "" || textAreaInput === "" ) {
+        if( nameInput === "" || 
+            emailInput === "" || 
+            textAreaInput === "" || 
+            isEmailInvalid(emailInput) ) 
+        {
             return
         }
         setIsSending(true);
@@ -42,35 +48,60 @@ const Contacts: React.FC = () => {
         }
     }
 
-    const testEmail = (email: string) => {
+    const isEmailInvalid = (email: string) => {
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return(re.test(email));
+        return(!re.test(email));
     }
 
-    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-        
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => { 
         setEmailInput(e.target.value)
+        if (emailStatus !== undefined) {
+            setEmailStaus(isEmailInvalid(e.target.value))
+        }
+    }
+
+    const handleIsValid = () => {
+        if(emailStatus === undefined) {
+            setEmailStaus(isEmailInvalid(emailInput))
+        } 
     }
 
     return (
         <>
-            <Footer />
+            <TopMargin>
+                <Footer />
+            </TopMargin>
             
             <Container>
                 <FormWrapper 
                     onSubmit={handleSubmit}>
                     <FormLabel>
                         napište nám:
-                        <FormTextArea value={textAreaInput} onChange={e => setTextAreaInput(e.target.value)} />    
+                        <FormTextArea
+                            value={textAreaInput}
+                            onChange={e => setTextAreaInput(e.target.value)}
+                        />    
                     </FormLabel>
                     <FormRow>
                         <FormLabel>
-                            jméno:
-                            <FormInput type="text" value={nameInput} onChange={e => setNameInput(e.target.value)} />
+                            jméno*:
+                            <FormInput
+                                type="text"
+                                value={nameInput}
+                                onChange={e => setNameInput(e.target.value)}
+                                required={false}
+                            />
                         </FormLabel>
                         <FormLabel>
-                            email:
-                            <FormInput type="text" value={emailInput} onChange={handleEmail}/>
+                            email*:
+                            <FormInput
+                                type="text"
+                                value={emailInput}
+                                onChange={handleEmail}
+                                required={true}
+                                isInValid={emailStatus}
+                                onBlur={handleIsValid}
+                            />
                         </FormLabel>
                         <FormSubmit type="submit" value="ODESLAT" disabled={isSending} />
                     </FormRow>
