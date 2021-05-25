@@ -1,8 +1,7 @@
 import fs from 'fs'
 import Parser from 'rss-parser'
 
-const postCount = 5
-const snippetLength = 250
+const postCount = 3
 
 interface Post {
 	creator: string
@@ -25,17 +24,18 @@ const fetchMediumPosts = async () => {
 		if (post) {
 			posts.push({
 				creator: post.creator,
-				title: post.title,
+				title: post.title || '',
 				link: post.link,
 				date: new Date(post.isoDate || ''),
 				img: post['content:encoded'].match(
 					/(?<=(<img[^>]+src="))([^"\s]+)(?!"[^>]*\/z)/g
 				)[0],
-				snippet:
-					(post['content:encodedSnippet'] || '')
-						.slice(0, snippetLength)
-						.replaceAll('\n', '') + '...',
+				snippet: (post['content:encodedSnippet'] || '').split(
+					'\n',
+					3
+				)[1],
 			})
+			console.log(post)
 		}
 	}
 	fs.writeFile('./public/posts.json', JSON.stringify(posts), () => {})

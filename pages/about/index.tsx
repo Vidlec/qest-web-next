@@ -42,6 +42,13 @@ import {
 	HQWeAreHerePicture,
 	HQWeAreHereRow,
 	HQCTACol,
+	BlogPostThumbnail,
+	BlogPostsContainer,
+	BlogPostWrapper,
+	BlogPostTitle,
+	BlogPostSnippet,
+	MoreBlogPosts,
+	MoreBlogPostsContainer,
 } from 'components/About/styled'
 import Headline from 'components/Headline'
 import Footer from 'components/Footer'
@@ -297,13 +304,33 @@ const AboutUs: React.FC = () => {
 
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
-				{blogPosts.map((post, index) => (
-					<div key={index}>
-						<a href={post.link} target="_blank">
-							{post.title}
-						</a>
-					</div>
-				))}
+				<BlogPostsContainer>
+					{blogPosts.map((post, index) => (
+						<BlogPostWrapper
+							key={index}
+							href={post.link}
+							target="_blank"
+						>
+							<BlogPostThumbnail href={post.img} />
+							<BlogPostTitle>
+								{post.title
+									.split(' — ')
+									.map((titleLine, index) => (
+										<div key={index}>{titleLine}</div>
+									))}
+							</BlogPostTitle>
+							<BlogPostSnippet>{post.snippet}</BlogPostSnippet>
+						</BlogPostWrapper>
+					))}
+				</BlogPostsContainer>
+				<MoreBlogPostsContainer>
+					<MoreBlogPosts
+						href="https://medium.com/qest"
+						target="_blank"
+					>
+						{t('about.moreBlogPosts')}
+					</MoreBlogPosts>
+				</MoreBlogPostsContainer>
 			</Container>
 
 			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}

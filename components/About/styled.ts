@@ -258,3 +258,47 @@ export const CareerCTA = styled.a`
 		text-decoration: underline;
 	}
 `
+export const BlogPostsContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 5rem;
+`
+export const BlogPostWrapper = styled.a`
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 0;
+`
+export const BlogPostThumbnail = styled.div<{ href: string }>`
+	background-image: url(${(props) => props.href});
+	background-position: center top;
+	background-size: cover;
+	width: 100%;
+	padding-top: 67%;
+`
+export const BlogPostTitle = styled.div`
+	max-width: 100%;
+	text-align: center;
+	color: ${({ theme }) => theme.colors.blue};
+	margin-top: 3rem;
+`
+export const BlogPostSnippet = styled.div`
+	max-width: 100%;
+	text-align: center;
+	color: ${({ theme }) => theme.colors.mainFont};
+	margin-top: 1rem;
+	font-size: 1rem;
+	line-height: 1.2rem;
+`
+export const MoreBlogPostsContainer = styled.div`
+	margin-top: 5rem;
+	text-align: center;
+`
+export const MoreBlogPosts = styled.a`
+	text-transform: uppercase;
+	line-height: 1.5rem;
+	border-bottom: ${({ theme }) => `1px solid ${theme.colors.blue}`};
+	:hover {
+		border-bottom: 1px solid transparent;
+	}
+`
