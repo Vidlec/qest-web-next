@@ -6,9 +6,9 @@
 		"node": ">=14 <=15.8.0"
 	},
 	"scripts": {
-		"dev": "next dev",
+		"dev": "npm run posts:fetch && next dev",
 		"generate": "graphql-codegen --config codegen.yml",
-		"build": "next build && next export -o build",
+		"build": "npm run posts:fetch && next build && next export -o build",
 		"deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackDev' --progress events --require-approval never",
 		"deploy:prod": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackProd' --progress events --require-approval never",
 		"start": "next start",
@@ -18,6 +18,7 @@
 		"prettier:fix": "prettier --write .",
 		"code:check": "npm-run-all -l -p lint prettier",
 		"generateLocale": "ts-node -r dotenv/config -P tsconfig.generate.json -T scripts/generateLocale.ts dotenv_config_path=.env",
+		"posts:fetch": "ts-node -r dotenv/config -P tsconfig.generate.json -T  scripts/fetchMediumPosts dotenv_config_path=.env",
 		"code:fix": "npm-run-all -l -p lint:fix prettier:fix"
 	},
 	"dependencies": {
@@ -34,9 +35,10 @@
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
 		"react-i18next": "^11.8.10",
-		"styled-components": "^5.2.1",
+		"react-responsive-masonry": "^2.1.2",
 		"react-slick": "^0.28.1",
-		"react-responsive-masonry": "^2.1.2"
+		"rss-parser": "^3.12.0",
+		"styled-components": "^5.2.1"
 	},
 	"devDependencies": {
 		"@aws-cdk/aws-apigateway": "1.89.0",
@@ -66,8 +68,8 @@
 		"@types/node": "^14.14.30",
 		"@types/node-fetch": "^2.5.8",
 		"@types/react": "^17.0.2",
-		"@types/styled-components": "^5.1.7",
 		"@types/react-slick": "^0.23.4",
+		"@types/styled-components": "^5.1.7",
 		"@typescript-eslint/eslint-plugin": "^4.0.0",
 		"@typescript-eslint/parser": "^4.0.0",
 		"aws-cdk": "1.89.0",
