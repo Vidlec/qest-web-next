@@ -10,9 +10,11 @@ font-size: .9em;
 `
 
 export const FormLabel = styled.label`
-display: block;
+display: flex;
+flex-wrap: wrap;
 width: 100%;
 color: ${({theme}) => theme.colors.yellow};
+font-family: sourceCodeVariable;
 `
 
 export const FormTextArea = styled.textarea`
@@ -22,7 +24,8 @@ font-size: 1em;
 background-color: ${({theme}) => theme.colors.black};
 border: none;
 color: ${({theme}) => theme.colors.white};
-margin: .4em 0 0 0;
+margin: .4em 0 .8em 0;
+padding: .4em;
 `
 
 export const FormInput = styled.input`
