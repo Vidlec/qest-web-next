@@ -49,6 +49,8 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import theme from 'theme'
 import AboutHero from 'components/About/Hero'
 
+import blogPosts from '../../public/posts.json'
+
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
 
@@ -295,7 +297,13 @@ const AboutUs: React.FC = () => {
 
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
-				{/*	TODO load from api*/}
+				{blogPosts.map((post, index) => (
+					<div key={index}>
+						<a href={post.link} target="_blank">
+							{post.title}
+						</a>
+					</div>
+				))}
 			</Container>
 
 			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}
