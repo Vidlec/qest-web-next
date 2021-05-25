@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
 						<MainMenu href="/">{t('menu.homePage')}</MainMenu>
 					</Item>
 					<Item>
-						<AboutUs href="/">{t('menu.aboutUs')}</AboutUs>
+						<AboutUs href="/about">{t('menu.aboutUs')}</AboutUs>
 					</Item>
 					<Item>
 						<SelectLanguage />
