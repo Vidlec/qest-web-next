@@ -53,7 +53,7 @@ const Contacts: React.FC = () => {
         return(!re.test(email));
     }
 
-    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => { 
         setEmailInput(e.target.value)
         if (emailStatus !== undefined) {
             setEmailStaus(isEmailInvalid(e.target.value))
@@ -64,6 +64,14 @@ const Contacts: React.FC = () => {
         if(emailStatus === undefined) {
             setEmailStaus(isEmailInvalid(emailInput))
         } 
+    }
+
+    const handleTextInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setTextAreaInput(e.target.value)
+    }
+
+    const handleNameInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNameInput(e.target.value);
     }
 
     return (
@@ -79,7 +87,7 @@ const Contacts: React.FC = () => {
                         napište nám:
                         <FormTextArea
                             value={textAreaInput}
-                            onChange={e => setTextAreaInput(e.target.value)}
+                            onChange={handleTextInput}
                         />    
                     </FormLabel>
                     <FormRow>
@@ -88,7 +96,7 @@ const Contacts: React.FC = () => {
                             <FormInput
                                 type="text"
                                 value={nameInput}
-                                onChange={e => setNameInput(e.target.value)}
+                                onChange={handleNameInput}
                                 required={false}
                             />
                         </FormLabel>
@@ -97,7 +105,7 @@ const Contacts: React.FC = () => {
                             <FormInput
                                 type="text"
                                 value={emailInput}
-                                onChange={handleEmail}
+                                onChange={handleEmailInput}
                                 required={true}
                                 isInValid={emailStatus}
                                 onBlur={handleIsValid}
