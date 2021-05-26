@@ -67,6 +67,8 @@ const AboutUs: React.FC = () => {
 		setWeAreDescriptionRef,
 	] = useState<HTMLParagraphElement | null>(null)
 
+	const mediumUrl = 'https://medium.com/qest'
+
 	useEffect(() => {
 		const descriptionLinks =
 			weAreDescriptionRef?.querySelectorAll('[data-sliderIndex]') ?? []
@@ -305,30 +307,27 @@ const AboutUs: React.FC = () => {
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
 				<BlogPostsContainer>
-					{blogPosts.map((post, index) => (
-						<BlogPostWrapper
-							key={index}
-							href={post.link}
-							target="_blank"
-						>
-							<BlogPostThumbnail href={post.img} />
-							<BlogPostTitle>
-								{post.title
-									.split(' — ')
-									.map((titleLine, index) => (
-										<div key={index}>{titleLine}</div>
-									))}
-							</BlogPostTitle>
-							<BlogPostSnippet>{post.snippet}</BlogPostSnippet>
+					{blogPosts.map((post) => (
+						<BlogPostWrapper key={post.link}>
+							<a href={post.link} target="_blank">
+								<BlogPostThumbnail src={post.img} />
+								<BlogPostTitle>
+									{post.title
+										.split(' — ')
+										.map((titleLine, index) => (
+											<div key={index}>{titleLine}</div>
+										))}
+								</BlogPostTitle>
+								<BlogPostSnippet>
+									{post.snippet}
+								</BlogPostSnippet>
+							</a>
 						</BlogPostWrapper>
 					))}
 				</BlogPostsContainer>
 				<MoreBlogPostsContainer>
-					<MoreBlogPosts
-						href="https://medium.com/qest"
-						target="_blank"
-					>
-						{t('about.moreBlogPosts')}
+					<MoreBlogPosts href={mediumUrl} target="_blank">
+						{t('about.blogReadMore')}
 					</MoreBlogPosts>
 				</MoreBlogPostsContainer>
 			</Container>

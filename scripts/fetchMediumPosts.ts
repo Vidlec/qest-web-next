@@ -35,7 +35,6 @@ const fetchMediumPosts = async () => {
 					3
 				)[1],
 			})
-			console.log(post)
 		}
 	}
 	fs.writeFile('./public/posts.json', JSON.stringify(posts), () => {})
