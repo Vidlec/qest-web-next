@@ -2,25 +2,26 @@ import React, { useState } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import Container from 'components/Container'
-import Footer from 'components/Footer'
 import {
 	FormWrapper,
-	FormLabel,
+	FormLabelInput,
+	FormLabelText,
 	FormTextArea,
 	FormInput,
 	FormSubmit,
 	FormRow,
-	TopMargin,
+	FormLabelHeading,
 } from 'components/Form/styled'
 
-// TODO: Add Formular and Header
+import Portal from 'components/Portal'
+
 const Contacts: React.FC = () => {
 	const [textAreaInput, setTextAreaInput] = useState('')
 	const [nameInput, setNameInput] = useState('')
 	const [emailInput, setEmailInput] = useState('')
 	const [isSending, setIsSending] = useState(false)
-	const [emailStatus, setEmailStaus] = useState<boolean>()
+	const [emailIsValid, setEmailIsValid] = useState<boolean>()
+	const [nameIsValid, setNameIsValid] = useState<boolean>()
 
 	const { t } = useTranslation()
 
@@ -34,12 +35,7 @@ const Contacts: React.FC = () => {
 
 	const handleSubmit = async (e: React.SyntheticEvent) => {
 		e.preventDefault()
-		if (
-			nameInput === '' ||
-			emailInput === '' ||
-			textAreaInput === '' ||
-			isEmailInvalid(emailInput)
-		) {
+		if (!isNameValid(nameInput) || !isEmailValid(emailInput)) {
 			return
 		}
 		setIsSending(true)
@@ -51,68 +47,85 @@ const Contacts: React.FC = () => {
 		}
 	}
 
-	const isEmailInvalid = (email: string) => {
-		const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-		return !re.test(email)
-	}
-
-	const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setEmailInput(e.target.value)
-		if (emailStatus !== undefined) {
-			setEmailStaus(isEmailInvalid(e.target.value))
-		}
-	}
-
-	const handleIsValid = () => {
-		if (emailStatus === undefined) {
-			setEmailStaus(isEmailInvalid(emailInput))
-		}
-	}
-
 	const handleTextInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		setTextAreaInput(e.target.value)
 	}
 
+	const isEmailValid = (email: string) => {
+		const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		return re.test(email)
+	}
+
+	const isNameValid = (name: string) => {
+		return name !== ''
+	}
+
+	const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setEmailInput(e.target.value)
+		if (emailIsValid !== undefined) {
+			setEmailIsValid(isEmailValid(e.target.value))
+		}
+	}
+
+	const handleIsEmailValid = () => {
+		if (emailIsValid === undefined) {
+			setEmailIsValid(isEmailValid(emailInput))
+		}
+	}
+
+	const handleIsNameValid = () => {
+		if (nameIsValid === undefined) {
+			setNameIsValid(isNameValid(nameInput))
+		}
+	}
+
 	const handleNameInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (nameIsValid !== undefined) {
+			setNameIsValid(isNameValid(e.target.value))
+		}
 		setNameInput(e.target.value)
 	}
 
 	return (
 		<>
-			<TopMargin>
-				<Footer />
-			</TopMargin>
-
-			<Container>
+			<Portal portalID="footer">
 				<FormWrapper onSubmit={handleSubmit}>
-					<FormLabel>
-						{t('contact.FormText')}
+					<FormLabelText>
+						<FormLabelHeading>
+							{t('contact.FormText')}
+						</FormLabelHeading>
 						<FormTextArea
 							value={textAreaInput}
 							onChange={handleTextInput}
 						/>
-					</FormLabel>
+					</FormLabelText>
 					<FormRow>
-						<FormLabel>
-							{t('contact.FormName')}
+						<FormLabelInput>
+							<FormLabelHeading>
+								{t('contact.FormName')}
+							</FormLabelHeading>
 							<FormInput
 								type="text"
 								value={nameInput}
 								onChange={handleNameInput}
-								required={false}
+								required
+								isValid={nameIsValid}
+								onBlur={handleIsNameValid}
 							/>
-						</FormLabel>
-						<FormLabel>
-							{t('contact.FormEmail')}
+						</FormLabelInput>
+						<FormLabelInput>
+							<FormLabelHeading>
+								{t('contact.FormEmail')}
+							</FormLabelHeading>
 							<FormInput
 								type="text"
 								value={emailInput}
 								onChange={handleEmailInput}
-								required={true}
-								isInValid={emailStatus}
-								onBlur={handleIsValid}
+								required
+								isValid={emailIsValid}
+								onBlur={handleIsEmailValid}
 							/>
-						</FormLabel>
+						</FormLabelInput>
 						<FormSubmit
 							type="submit"
 							value="ODESLAT"
@@ -120,7 +133,7 @@ const Contacts: React.FC = () => {
 						/>
 					</FormRow>
 				</FormWrapper>
-			</Container>
+			</Portal>
 		</>
 	)
 }

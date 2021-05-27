@@ -80,6 +80,9 @@ const Footer: React.FC = () => {
 						</TextTaxIdentification>
 					</Column>
 				</ArticleWrapper>
+				<div>
+					<div id="footer"></div>
+				</div>
 			</Container>
 		</Wrapper>
 	)
