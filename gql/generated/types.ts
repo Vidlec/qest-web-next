@@ -4338,7 +4338,7 @@ export type Unnamed_3_Query = (
   { __typename?: 'Query' }
   & { contacts?: Maybe<Array<Maybe<(
     { __typename?: 'Contact' }
-    & Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'FormName' | 'FormEmail' | 'FormText'>
+    & Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'FormName' | 'FormEmail' | 'FormText' | 'formNameWarning' | 'formEmailWarning'>
   )>>> }
 );
 

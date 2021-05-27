@@ -46,6 +46,8 @@
       "FormName": "jméno*:",
       "FormEmail": "email*:",
       "FormText": "napište nám:",
+      "formNameWarning": "jméno musí být vyplněné",
+      "formEmailWarning": "email musí být vyplněný",
       "__typename": "Contact"
     },
     "careers": {

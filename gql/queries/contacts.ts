@@ -14,6 +14,8 @@ export const CONTACT_QUERY = gql`
 			FormName
 			FormEmail
 			FormText
+			formNameWarning
+			formEmailWarning
 		}
 	}
 `

@@ -11,6 +11,7 @@ import {
 	FormSubmit,
 	FormRow,
 	FormLabelHeading,
+	WarningMessage,
 } from 'components/Form/styled'
 
 import Portal from 'components/Portal'
@@ -35,7 +36,11 @@ const Contacts: React.FC = () => {
 
 	const handleSubmit = async (e: React.SyntheticEvent) => {
 		e.preventDefault()
-		if (!isNameValid(nameInput) || !isEmailValid(emailInput)) {
+		if (!isNameValid(nameInput)) {
+			setNameIsValid(false);
+			return
+		} else if (!isEmailValid(emailInput)) {
+			setEmailIsValid(false);
 			return
 		}
 		setIsSending(true)
@@ -108,10 +113,14 @@ const Contacts: React.FC = () => {
 								type="text"
 								value={nameInput}
 								onChange={handleNameInput}
-								required
 								isValid={nameIsValid}
 								onBlur={handleIsNameValid}
 							/>
+							{nameIsValid === false ? (
+								<WarningMessage>
+									{t('contact.formNameWarning')}
+								</WarningMessage>
+							) : null}
 						</FormLabelInput>
 						<FormLabelInput>
 							<FormLabelHeading>
@@ -121,10 +130,14 @@ const Contacts: React.FC = () => {
 								type="text"
 								value={emailInput}
 								onChange={handleEmailInput}
-								required
 								isValid={emailIsValid}
 								onBlur={handleIsEmailValid}
 							/>
+							{emailIsValid === false ? (
+								<WarningMessage>
+									{t('contact.formEmailWarning')}
+								</WarningMessage>
+							) : null}
 						</FormLabelInput>
 						<FormSubmit
 							type="submit"

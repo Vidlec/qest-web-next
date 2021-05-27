@@ -46,6 +46,8 @@
       "FormName": "name*:",
       "FormEmail": "email*:",
       "FormText": "contact us:",
+      "formNameWarning": "name has to be filled",
+      "formEmailWarning": "email has to be filled",
       "__typename": "Contact"
     },
     "careers": {
