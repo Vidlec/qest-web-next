@@ -42,6 +42,13 @@ import {
 	HQWeAreHerePicture,
 	HQWeAreHereRow,
 	HQCTACol,
+	BlogPostThumbnail,
+	BlogPostsContainer,
+	BlogPostWrapper,
+	BlogPostTitle,
+	BlogPostSnippet,
+	MoreBlogPosts,
+	MoreBlogPostsContainer,
 } from 'components/About/styled'
 import Headline from 'components/Headline'
 import Footer from 'components/Footer'
@@ -59,6 +66,8 @@ const AboutUs: React.FC = () => {
 		weAreDescriptionRef,
 		setWeAreDescriptionRef,
 	] = useState<HTMLParagraphElement | null>(null)
+
+	const mediumUrl = 'https://medium.com/qest'
 
 	useEffect(() => {
 		const descriptionLinks =
@@ -297,13 +306,30 @@ const AboutUs: React.FC = () => {
 
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
-				{blogPosts.map((post, index) => (
-					<div key={index}>
-						<a href={post.link} target="_blank">
-							{post.title}
-						</a>
-					</div>
-				))}
+				<BlogPostsContainer>
+					{blogPosts.map((post) => (
+						<BlogPostWrapper key={post.link}>
+							<a href={post.link} target="_blank">
+								<BlogPostThumbnail src={post.img} />
+								<BlogPostTitle>
+									{post.title
+										.split(' — ')
+										.map((titleLine, index) => (
+											<div key={index}>{titleLine}</div>
+										))}
+								</BlogPostTitle>
+								<BlogPostSnippet>
+									{post.snippet}
+								</BlogPostSnippet>
+							</a>
+						</BlogPostWrapper>
+					))}
+				</BlogPostsContainer>
+				<MoreBlogPostsContainer>
+					<MoreBlogPosts href={mediumUrl} target="_blank">
+						{t('about.blogReadMore')}
+					</MoreBlogPosts>
+				</MoreBlogPostsContainer>
 			</Container>
 
 			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}

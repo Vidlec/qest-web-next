@@ -49,7 +49,7 @@
       "id": "1",
       "language": "cs",
       "created_at": "2021-04-07T10:02:06.607Z",
-      "updated_at": "2021-04-09T09:51:24.754Z",
+      "updated_at": "2021-05-26T08:45:48.477Z",
       "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
       "heroLogo": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
@@ -83,6 +83,7 @@
         "__typename": "UploadFile"
       },
       "blogHeadline": "BLOG",
+      "blogReadMore": "Starší příspěvky",
       "published_at": "2021-04-07T10:02:09.389Z",
       "weAreImageCarousel": [
         {
