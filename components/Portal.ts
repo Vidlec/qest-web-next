@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
-const Portal = ({
+interface Portal {
+	portalID: string
+}
+
+const Portal: React.FC<Portal> = ({
 	portalID,
 	children,
-}: {
-	portalID: string
-	children: React.ReactElement
 }) => {
 	const ref = useRef<Element | null>(null)
 	const [mounted, setMounted] = useState(false)

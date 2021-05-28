@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormWrapper = styled.form`
+export const Wrapper = styled.form`
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
@@ -12,7 +12,7 @@ export const FormWrapper = styled.form`
 	color: ${({ theme }) => theme.colors.yellow};
 `
 
-export const FormLabel = styled.label`
+export const Label = styled.label`
 	position: relative;
 	display: flex;
 	align-items: baseline;
@@ -24,11 +24,11 @@ export const FormLabel = styled.label`
 	}
 `
 
-export const FormLabelSpan = styled.span`
+export const LabelSpan = styled.span`
 	margin: 0 0.8rem 0.8rem 0;
 `
 
-export const FormTextArea = styled.textarea`
+export const TextArea = styled.textarea`
 	width: 100%;
 	height: 256px;
 	font-size: 1.4rem;
@@ -44,7 +44,7 @@ export const FormTextArea = styled.textarea`
 	}
 `
 
-export const FormInput = styled.input<{ isValid?: boolean }>`
+export const Input = styled.input<{ isValid?: boolean }>`
 	width: 80%;
 	font-size: 1.4rem;
 	background-color: ${({ theme }) => theme.colors.black};
@@ -58,7 +58,7 @@ export const FormInput = styled.input<{ isValid?: boolean }>`
 	}
 `
 
-export const FormSubmit = styled.input`
+export const Submit = styled.input`
 	background-color: ${({ theme }) => theme.colors.yellow};
 	padding: 0.6rem 7rem;
 	margin: 0 0 2.6rem 0;
@@ -66,7 +66,7 @@ export const FormSubmit = styled.input`
 	border: none;
 `
 
-export const FormRow = styled.div`
+export const Row = styled.div`
 	display: flex;
 	align-items: center;
 	flex-direction: column;

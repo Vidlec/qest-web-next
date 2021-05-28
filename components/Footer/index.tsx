@@ -20,6 +20,7 @@ import {
 	Linkedin,
 } from '@styled-icons/boxicons-logos'
 import Container from 'components/Container'
+import { FOOTER_PORTAL_ID } from 'components/Constants'
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation()
@@ -80,7 +81,7 @@ const Footer: React.FC = () => {
 						</TextTaxIdentification>
 					</Column>
 				</ArticleWrapper>
-				<div id="footerPortalID"></div>
+				<div id={FOOTER_PORTAL_ID}></div>
 			</Container>
 		</Wrapper>
 	)

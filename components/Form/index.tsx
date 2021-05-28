@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-	FormWrapper,
-	FormLabel,
-	FormTextArea,
-	FormInput,
-	FormSubmit,
-	FormRow,
-	FormLabelSpan,
+	Wrapper,
+	Label,
+	TextArea,
+	Input,
+	Submit,
+	Row,
+	LabelSpan,
 	WarningMessage,
 } from './styled'
 
@@ -66,10 +66,6 @@ export const Form: React.FC = () => {
 		setEmailStatus({ ...emailStatus, isTouched: true })
 	}
 
-	const isNameValid = (name: string) => {
-		return name !== ''
-	}
-
 	const handleNameBlur = () => {
 		setNameStatus({ ...nameStatus, isTouched: true })
 	}
@@ -77,7 +73,7 @@ export const Form: React.FC = () => {
 	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value
 		setNameInput(value)
-		setNameStatus({ ...nameStatus, isValid: isNameValid(value) })
+		setNameStatus({ ...nameStatus, isValid: Boolean(value) })
 	}
 
 	const shouldDisplayEmailError =
@@ -86,22 +82,21 @@ export const Form: React.FC = () => {
 		? t('contact.formInvalidEmailWarning')
 		: t('contact.formEmailWarning')
 	const shouldDisplayNameError = !nameStatus.isValid && nameStatus.isTouched
-	const submitValue = t('contact.formSubmit')
 
 	return (
-		<FormWrapper onSubmit={handleSubmit}>
-			<FormLabel htmlFor="textInput">
-				<FormLabelSpan>{t('contact.formTextLabel')}</FormLabelSpan>
-			</FormLabel>
-			<FormTextArea
+		<Wrapper onSubmit={handleSubmit}>
+			<Label htmlFor="textInput">
+				<LabelSpan>{t('contact.formTextLabel')}</LabelSpan>
+			</Label>
+			<TextArea
 				id="textInput"
 				value={textAreaInput}
 				onChange={handleTextChange}
 			/>
-			<FormRow>
-				<FormLabel>
-					<FormLabelSpan>{t('contact.formNameLabel')}</FormLabelSpan>
-					<FormInput
+			<Row>
+				<Label>
+					<LabelSpan>{t('contact.formNameLabel')}</LabelSpan>
+					<Input
 						type="text"
 						value={nameInput}
 						onChange={handleNameChange}
@@ -113,10 +108,10 @@ export const Form: React.FC = () => {
 							{t('contact.formNameWarning')}
 						</WarningMessage>
 					) : null}
-				</FormLabel>
-				<FormLabel>
-					<FormLabelSpan>{t('contact.formEmailLabel')}</FormLabelSpan>
-					<FormInput
+				</Label>
+				<Label>
+					<LabelSpan>{t('contact.formEmailLabel')}</LabelSpan>
+					<Input
 						type="text"
 						value={emailInput}
 						onChange={handleEmailChange}
@@ -126,13 +121,13 @@ export const Form: React.FC = () => {
 					{shouldDisplayEmailError ? (
 						<WarningMessage>{emailError}</WarningMessage>
 					) : null}
-				</FormLabel>
-				<FormSubmit
+				</Label>
+				<Submit
 					type="submit"
-					value={submitValue}
+					value={t('contact.formSubmit') as string}
 					disabled={isSending}
 				/>
-			</FormRow>
-		</FormWrapper>
+			</Row>
+		</Wrapper>
 	)
 }
