@@ -12,9 +12,9 @@ export const CONTACT_QUERY = gql`
 			email
 			phoneNumber
 			formSubmit
-			FormName
-			FormEmail
-			FormText
+			formTextLabel
+			formNameLabel
+			formEmailLabel
 			formNameWarning
 			formEmailWarning
 			formInvalidEmailWarning

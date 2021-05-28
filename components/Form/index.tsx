@@ -91,7 +91,7 @@ export const Form: React.FC = () => {
 	return (
 		<FormWrapper onSubmit={handleSubmit}>
 			<FormLabel htmlFor="textInput">
-				<FormLabelSpan>{t('contact.FormText')}</FormLabelSpan>
+				<FormLabelSpan>{t('contact.formTextLabel')}</FormLabelSpan>
 			</FormLabel>
 			<FormTextArea
 				id="textInput"
@@ -100,7 +100,7 @@ export const Form: React.FC = () => {
 			/>
 			<FormRow>
 				<FormLabel>
-					<FormLabelSpan>{t('contact.FormName')}</FormLabelSpan>
+					<FormLabelSpan>{t('contact.formNameLabel')}</FormLabelSpan>
 					<FormInput
 						type="text"
 						value={nameInput}
@@ -115,7 +115,7 @@ export const Form: React.FC = () => {
 					) : null}
 				</FormLabel>
 				<FormLabel>
-					<FormLabelSpan>{t('contact.FormEmail')}</FormLabelSpan>
+					<FormLabelSpan>{t('contact.formEmailLabel')}</FormLabelSpan>
 					<FormInput
 						type="text"
 						value={emailInput}
