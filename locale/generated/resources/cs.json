@@ -43,11 +43,13 @@
       "taxIdentificationDescription": "zapsaný v obchodním rejstříku Městského soudu v Praze, v dd. C, vl.217060",
       "email": "info@qest.cz",
       "phoneNumber": "+420 726 898",
+      "formSubmit": "odeslat",
       "FormName": "jméno*:",
       "FormEmail": "email*:",
       "FormText": "napište nám:",
       "formNameWarning": "jméno musí být vyplněné",
       "formEmailWarning": "email musí být vyplněný",
+      "formInvalidEmailWarning": "email má špatný tvar",
       "__typename": "Contact"
     },
     "careers": {
