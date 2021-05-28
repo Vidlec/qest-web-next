@@ -5,7 +5,7 @@ export const Wrapper = styled.footer`
 	width: 100%;
 	justify-content: center;
 	position: relative;
-	margin-top: 120px;
+	padding-top: 120px;
 `
 
 export const Line = styled.div`
@@ -13,11 +13,11 @@ export const Line = styled.div`
 	height: 0.125rem;
 	width: 100%;
 	position: absolute;
-	top: 1.2rem;
+	top: calc(1.2rem + 120px);
 	box-shadow: 0 0 8px ${({ theme }) => theme.colors.mainFont};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		top: 2.7rem;
+		top: calc(2.7rem + 120px);
 	}
 `
 
