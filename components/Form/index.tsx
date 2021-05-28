@@ -37,7 +37,9 @@ export const Form: React.FC = () => {
 
 	const handleSubmit = async (e: React.SyntheticEvent) => {
 		e.preventDefault()
-
+		if ( !emailStatus.isValid ||  !nameStatus.isValid ) {
+			return;
+		}
 		setIsSending(true)
 		try {
 			await fakeSubmit()
