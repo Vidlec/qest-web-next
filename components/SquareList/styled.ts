@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
     margin: -1.8rem;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     width: 100%;
 `
 
@@ -49,8 +49,9 @@ export const End = styled.div`
     }
 
     h5 {
-        margin: .6rem 0;
-        font-size: 4rem;
+        margin: 1.8rem 0 .8rem 0;
+        font-size: 2.7rem;
+        color: ${({theme}) => theme.colors.lightGray}
     }
 
     a {
