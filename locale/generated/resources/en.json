@@ -55,6 +55,7 @@
       "somethingElseHeading": "Do you know something else?",
       "somethingElseDescription": "Never mind, contact us despite that, Maybe you are the one who we need. You've got the chance to convince us.",
       "somethingElseContact": "contact us",
+      "careerWhy": "Do you wanna know why are we lookin to for work? <a href=\"#\">take a look at our work</a>",
       "__typename": "Career"
     },
     "socialNetworkUrls": {

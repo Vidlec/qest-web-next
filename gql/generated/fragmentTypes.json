@@ -89,6 +89,7 @@
       "CareerConnectionSomethingElseHeading",
       "CareerConnectionSomethingElseDescription",
       "CareerConnectionSomethingElseContact",
+      "CareerConnectionCareerWhy",
       "CareerConnectionPublished_at",
       "createCareerPayload",
       "updateCareerPayload",

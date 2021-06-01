@@ -55,6 +55,7 @@
       "somethingElseHeading": "Umíš něco jiného",
       "somethingElseDescription": "Nevadí, napiš nám i tak. Třeba jsi právě ty ten, kterého potřebujeme. Máš možnost nás o tom přesvědčit.",
       "somethingElseContact": "napiš nám",
+      "careerWhy": "Chceš vědět proč se těšíme na pondělí? <a href=\"#\">podívej se na naší práci</a>",
       "__typename": "Career"
     },
     "about": {

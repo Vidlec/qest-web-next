@@ -12,6 +12,7 @@ export const CAREER_QUERY = gql`
             somethingElseHeading
             somethingElseDescription
             somethingElseContact
+            careerWhy
 		}
 	}
 `
