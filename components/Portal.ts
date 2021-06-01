@@ -10,7 +10,7 @@ const Portal: React.FC<Portal> = ({
 	children,
 }) => {
 	const ref = useRef<Element | null>(null)
-	const [mounted, setMounted] = useState(false)
+	const [_mounted, setMounted] = useState(false)
 
 	useEffect(() => {
 		ref.current = document?.createElement('div')
