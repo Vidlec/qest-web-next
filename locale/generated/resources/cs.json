@@ -52,10 +52,12 @@
       "technologiesHeading": "Naše technologie:",
       "technologies": "Typescript <br />\nNode.js <br />\nReact.js <br />\nC# <br />\nGraphQL <br />\nAWS <br />\nDynamoDB <br />\nMongoDB <br />\nDocker <br />\nNoSQL <br />\nAzure <br />\nCI <br />\n.NET core <br />\nKubernetes <br />\nPub/ Sub<br />",
       "careerDescription": "Vdechujeme život skvělým technologickým nápadům!\n<br />\n<br />\nDo svého týmu hledáme badatele, inovátory, průzkumníky, odvážlivce a spoluhráče, kteří budou spolu s námi pomáhat vytvářet dokonalý svět pod hladinou webů, aplikací a informačních systémů.",
+      "careerWho": "Koho hledáme",
       "somethingElseHeading": "Umíš něco jiného",
       "somethingElseDescription": "Nevadí, napiš nám i tak. Třeba jsi právě ty ten, kterého potřebujeme. Máš možnost nás o tom přesvědčit.",
       "somethingElseContact": "napiš nám",
       "careerWhy": "Chceš vědět proč se těšíme na pondělí? <a href=\"#\">podívej se na naší práci</a>",
+      "careerWhatHeading": "Qest to jsou zkušenosti, schopnosti a vášeň",
       "__typename": "Career"
     },
     "about": {

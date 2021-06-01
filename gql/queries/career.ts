@@ -9,10 +9,12 @@ export const CAREER_QUERY = gql`
             technologiesHeading
             technologies
             careerDescription
+            careerWho
             somethingElseHeading
             somethingElseDescription
             somethingElseContact
             careerWhy
+            careerWhatHeading
 		}
 	}
 `
