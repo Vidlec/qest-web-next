@@ -1,5 +1,12 @@
 import React from 'react'
-import { Wrapper, Item, Heading, Description } from './styled'
+import {
+	Wrapper,
+	Item,
+	Heading,
+	Description,
+	ItemIndex,
+	ItemInformation,
+} from './styled'
 
 interface Props {
 	items: {
@@ -10,14 +17,17 @@ interface Props {
 }
 
 const PictureList: React.FC<Props> = ({ items }) => {
-	const content = items.map((i) => (
-		<Item key={i.heading}>
-			<Heading>{i.heading}</Heading>
-			<Description>{i.description}</Description>
+	const content = items.map((item, index) => (
+		<Item key={item.heading}>
+			<ItemIndex>{index + 1}</ItemIndex>
+			<ItemInformation>
+				<Heading>{item.heading}</Heading>
+				<Description>{item.description}</Description>
+			</ItemInformation>
 		</Item>
 	))
 
 	return <Wrapper>{content}</Wrapper>
 }
 
-export default PictureList;
+export default PictureList
