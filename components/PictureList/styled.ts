@@ -9,6 +9,8 @@ export const Item = styled.div`
 	margin-bottom: 1.5rem;
 `
 export const Heading = styled.h5`
+    font-weight: 500;
+    font-size: 2.2rem;
 	margin: 0;
 `
 
