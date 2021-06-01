@@ -1,11 +1,11 @@
 import React from 'react'
 import { Wrapper, Base, Content, End, Title } from './styled'
 
-interface SqueareListProps {
+interface Props {
 	squares: { header: string; description: string }[]
 }
 
-const SquareList: React.FC<SqueareListProps> = ({ squares, children }) => {
+const SquareList: React.FC<Props> = ({ squares, children }) => {
 	const squaresContent = squares.map((s) => (
 		<Base key={s.header}>
 			<Content>
