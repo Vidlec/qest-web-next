@@ -1,35 +1,36 @@
 import React from 'react'
-import { Card, Picture, Description } from './styled'
+import { Card, Picture, Heading, Description } from './styled'
 import PictureImg from 'components/PictureImg'
-import {useTranslation} from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
-interface TechnologiesCardProps {
-    src: string;
-    alt: string;
-    __html?: string;
+interface Props {
+	src: string
+	alt: string
+	heading?: string
+	__html?: string
+	handIsOnMiddle?: boolean
 }
 
-const TechnologiesCard: React.FC<TechnologiesCardProps> = ({ src, alt, __html}) => {
+const TechnologiesCard: React.FC<Props> = ({
+	src,
+	alt,
+	handIsOnMiddle,
+	heading,
+	__html,
+}) => {
+	const { t } = useTranslation()
 
-    const {t} = useTranslation()
-
-    return (
-        <Card>
-            <Picture handIsOnMiddle>
-                <PictureImg
-                    src={t('about.technologiesImage.url')}
-                    alt={t(
-                        'about.technologiesImage.alternativeText'
-                    )}
-                />
-            </Picture>
-            { __html? 
-                <Description dangerouslySetInnerHTML={{__html: __html}} />: null
-}
-        </Card>
-    )
-    
-                       
+	return (
+		<Card>
+			<Picture handIsOnMiddle={handIsOnMiddle}>
+				<PictureImg src={src} alt={alt} />
+			</Picture>
+			{heading ? <Heading>{heading}</Heading> : null}
+			{__html ? (
+				<Description dangerouslySetInnerHTML={{ __html: __html }} />
+			) : null}
+		</Card>
+	)
 }
 
 export default TechnologiesCard
