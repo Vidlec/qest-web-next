@@ -57,7 +57,7 @@ const Career: React.FC = () => {
 				</Row>
 			</Container>
 			<Container>
-				<Headline>Koho Hledáme</Headline>
+				<Headline>{t('careers.careerWho')}</Headline>
 				<SquareList squares={squareData}>
 					<h5>{t('careers.somethingElseHeading')}</h5>
 					<p>{t('careers.somethingElseDescription')}</p>
@@ -69,7 +69,7 @@ const Career: React.FC = () => {
 				/>
 			</Container>
 			<Container>
-				<Headline>Qest to jsou zkušenosti, schopnosti a vášeň</Headline>
+				<Headline>{t('careers.careerWhatHeading')}</Headline>
 				<PictureList items={listData} />
 			</Container>
 		</>
