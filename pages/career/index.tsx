@@ -6,6 +6,7 @@ import Col from 'components/Col'
 import Row from 'components/Row'
 import SquareList from 'components/SquareList'
 import TechnologiesCard from 'components/TechnologiesCard'
+import PictureList from 'components/PictureList'
 import theme from 'theme'
 import { useTranslation } from 'react-i18next'
 
@@ -14,6 +15,13 @@ const squareData: { header: string, description: string }[] = [
 	{ header: 'React Developer', description: 'Baví tě weby a JavaScript' },
 	{ header: 'Node.js Developer', description: 'Backend je vášeň' },
     { header: 'Obchod', description: 'Backend je vášeň' },
+]
+
+const listData: { heading: string, description: string }[] = [
+	{ heading: 'C# Developer', description: 'Baví tě C#' },
+	{ heading: 'React Developer', description: 'Baví tě weby a JavaScript' },
+	{ heading: 'Node.js Developer', description: 'Backend je vášeň' },
+    { heading: 'Obchod', description: 'Backend je vášeň' },
 ]
 
 const Career: React.FC = () => {
@@ -26,11 +34,11 @@ const Career: React.FC = () => {
                 <br></br>
                 <br></br>
                 <Row>
-                    <Col mobile={12} desktopSmall={7}>
-                        <Headline color={theme.colors.green}>{t('about.careerHeadline')}</Headline>
+                    <Col mobile={12} desktopSmall={7} desktop={8}>
+                        <Headline color={theme.colors.green}>{t('careers.title')}</Headline>
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: t('about.careerDescription'),
+                                __html: t('careers.careerDescription'),
                             }}
                         />
                     </Col>
@@ -38,7 +46,9 @@ const Career: React.FC = () => {
                         <TechnologiesCard
                             src={t('about.technologiesImage.url')}
                             alt={t('about.technologiesImage.alternativeText')}
-                            __html={t('about.technologiesDescription')}
+                            heading={t('careers.technologiesHeading')}
+                            __html={t('careers.technologies')}
+                            handIsOnMiddle
                         />
                     </Col>
                 </Row>
@@ -46,15 +56,16 @@ const Career: React.FC = () => {
             <Container>
                 <Headline>Koho Hledáme</Headline>
                 <SquareList squares={squareData}>
-                    <h5>Umíš něco jiného?</h5>
-                    <p>Nevadí. Napiš a třeba se domluvíme.</p>
-                    <a href="#" >Napiš nám</a>
+                    <h5>{t('careers.somethingElseHeading')}</h5>
+                    <p>{t('careers.somethingElseDescription')}</p>
+                    <a href="#" >{t('careers.somethingElseContact')}</a>
                 </SquareList>
 
                 <p>Líbí se ti naše práce? kounki na více</p>
             </Container>
             <Container>
                 <Headline>Qest to jsou zkušenosti, schopnosti a vášeň</Headline>
+                <PictureList items={listData} />
             </Container>
         </>
 	)
