@@ -58,6 +58,28 @@
       "somethingElseContact": "napiš nám",
       "careerWhy": "Chceš vědět proč se těšíme na pondělí? <a href=\"#\">podívej se na naší práci</a>",
       "careerWhatHeading": "Qest to jsou zkušenosti, schopnosti a vášeň",
+      "careerPosition": [
+        {
+          "careerPositionHeading": "C# Developer",
+          "careerPositionDescription": "Ukaž co je v tobě",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "React Developer",
+          "careerPositionDescription": "Baví tě weby a javascript?",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "Node.js Developer",
+          "careerPositionDescription": "Backend je vášeň",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "Obchodník",
+          "careerPositionDescription": "Když miluješ technologie a inovace",
+          "__typename": "ComponentContentCareerPosition"
+        }
+      ],
       "__typename": "Career"
     },
     "about": {

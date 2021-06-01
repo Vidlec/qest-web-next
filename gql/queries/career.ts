@@ -15,6 +15,10 @@ export const CAREER_QUERY = gql`
             somethingElseContact
             careerWhy
             careerWhatHeading
+            careerPosition {
+                careerPositionHeading
+                careerPositionDescription
+            }
 		}
 	}
 `

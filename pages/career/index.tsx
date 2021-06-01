@@ -10,6 +10,8 @@ import PictureList from 'components/PictureList'
 import Paragraph from 'components/Paragraph'
 import theme from 'theme'
 import { useTranslation } from 'react-i18next'
+import { ComponentContentCareerPosition } from 'gql/generated/types'
+import Header from 'components/Header'
 
 const squareData: { header: string; description: string }[] = [
 	{ header: 'C# Developer', description: 'Baví tě C#' },
@@ -26,7 +28,27 @@ const listData: { heading: string; description: string }[] = [
 ]
 
 const Career: React.FC = () => {
-	const { t } = useTranslation()
+	
+    const { t } = useTranslation()
+
+   /* {t<string, UploadFile[]>(
+        'about.weAreImageCarousel',
+        { returnObjects: true }
+    ).map((image) => (
+        <CarouselPicture key={image.id}>
+            <img
+                src={image.url}
+                alt={image.alternativeText ?? ''}
+            />
+        </CarouselPicture>
+    ))} */
+
+    const careerPositions: {header: string; description: string}[] = [];
+    t<string, ComponentContentCareerPosition[]>('careers.careerPosition', {returnObjects: true}).map( position => {
+        careerPositions.push({ header: position.careerPositionHeading as string, description: position.careerPositionDescription as string})
+        return position
+    })
+    console.log(t('careers.careerPosition'));
 	return (
 		<>
 			<Container>
@@ -58,7 +80,7 @@ const Career: React.FC = () => {
 			</Container>
 			<Container>
 				<Headline>{t('careers.careerWho')}</Headline>
-				<SquareList squares={squareData}>
+				<SquareList squares={careerPositions}>
 					<h5>{t('careers.somethingElseHeading')}</h5>
 					<p>{t('careers.somethingElseDescription')}</p>
 					<a href="#">{t('careers.somethingElseContact')}</a>

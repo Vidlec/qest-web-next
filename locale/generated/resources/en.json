@@ -58,6 +58,28 @@
       "somethingElseContact": "contact us",
       "careerWhy": "Do you wanna know why are we lookin to for work? <a href=\"#\">take a look at our work</a>",
       "careerWhatHeading": "Qest is experience, skills and passion",
+      "careerPosition": [
+        {
+          "careerPositionHeading": "C# Developer",
+          "careerPositionDescription": "Show us what's in you",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "React Developer",
+          "careerPositionDescription": "Do you like web development and javascript",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "Node.js Developer",
+          "careerPositionDescription": "Backend is passion",
+          "__typename": "ComponentContentCareerPosition"
+        },
+        {
+          "careerPositionHeading": "businessman",
+          "careerPositionDescription": "When you love technology and inovation",
+          "__typename": "ComponentContentCareerPosition"
+        }
+      ],
       "__typename": "Career"
     },
     "socialNetworkUrls": {
