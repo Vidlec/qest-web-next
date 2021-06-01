@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
-interface Portal {
+interface Props {
 	portalID: string
 }
 
-const Portal: React.FC<Portal> = ({
+const Portal: React.FC<Props> = ({
 	portalID,
 	children,
 }) => {
