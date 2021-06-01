@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-    margin: -1.8rem;
-    font-size: 2.4rem;
-    width: 100%;
+    margin:  -1.8rem -1.8rem .4rem -1.8rem;
+    font-size: 2.2rem;
+    width: calc( 100% + 3.6rem );;
 `
 
 export const Base = styled.div`
