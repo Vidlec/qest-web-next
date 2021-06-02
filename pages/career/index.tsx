@@ -82,9 +82,7 @@ const Career: React.FC = () => {
 				<SquareList squares={careerPositions}>
 					<h5>{t('careers.somethingElseHeading')}</h5>
 					<p>{t('careers.somethingElseDescription')}</p>
-					<div>
-						<a href="#">{t('careers.somethingElseContact')}</a>
-					</div>
+					<a href="#">{t('careers.somethingElseContact')}</a>
 				</SquareList>
 
 				<Paragraph
