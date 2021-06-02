@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Container from 'components/Container'
 import Headline from 'components/Headline'
 import Col from 'components/Col'
@@ -10,52 +9,52 @@ import PictureList from 'components/PictureList'
 import Paragraph from 'components/Paragraph'
 import theme from 'theme'
 import { useTranslation } from 'react-i18next'
-import { ComponentContentCareerPosition } from 'gql/generated/types'
-import Header from 'components/Header'
-
-const squareData: { header: string; description: string }[] = [
-	{ header: 'C# Developer', description: 'Baví tě C#' },
-	{ header: 'React Developer', description: 'Baví tě weby a JavaScript' },
-	{ header: 'Node.js Developer', description: 'Backend je vášeň' },
-	{ header: 'Obchod', description: 'Backend je vášeň' },
-]
-
-const listData: { heading: string; description: string }[] = [
-	{ heading: 'C# Developer', description: 'Baví tě C#' },
-	{ heading: 'React Developer', description: 'Baví tě weby a JavaScript' },
-	{ heading: 'Node.js Developer', description: 'Backend je vášeň' },
-	{ heading: 'Obchod', description: 'Backend je vášeň' },
-]
+import {
+	ComponentContentCareerPosition,
+	ComponentContentPictureList,
+} from 'gql/generated/types'
 
 const Career: React.FC = () => {
-	
-    const { t } = useTranslation()
+	const { t } = useTranslation()
 
-   /* {t<string, UploadFile[]>(
-        'about.weAreImageCarousel',
-        { returnObjects: true }
-    ).map((image) => (
-        <CarouselPicture key={image.id}>
-            <img
-                src={image.url}
-                alt={image.alternativeText ?? ''}
-            />
-        </CarouselPicture>
-    ))} */
+	const careerPositions: {
+		header: string
+		description: string
+		color: string
+	}[] = []
+	const pictureListData: {
+		heading: string
+		description: string
+		color: string
+		imgSrc: string
+	}[] = []
 
-    const careerPositions: {header: string; description: string}[] = [];
-    t<string, ComponentContentCareerPosition[]>('careers.careerPosition', {returnObjects: true}).map( position => {
-        careerPositions.push({ header: position.careerPositionHeading as string, description: position.careerPositionDescription as string})
-        return position
-    })
-    console.log(t('careers.careerPosition'));
+	t<string, ComponentContentCareerPosition[]>('careers.careerPosition', {
+		returnObjects: true,
+	}).map((position) => {
+		careerPositions.push({
+			header: position.careerPositionHeading as string,
+			description: position.careerPositionDescription as string,
+			color: position.careerPositionColor as string,
+		})
+		return position
+	})
+
+	t<string, ComponentContentPictureList[]>('careers.careerInfo', {
+		returnObjects: true,
+	}).map((info) => {
+		pictureListData.push({
+			heading: info.pictureListHeading as string,
+			description: info.pictureListDescription as string,
+			color: info.pictureListColor as string,
+			imgSrc: info.pictureListImage?.url as string,
+		})
+		return info
+	})
+
 	return (
 		<>
 			<Container>
-				<br></br>
-				<br></br>
-				<br></br>
-				<br></br>
 				<Row>
 					<Col mobile={12} desktopSmall={7} desktop={8}>
 						<Headline color={theme.colors.green}>
@@ -83,7 +82,9 @@ const Career: React.FC = () => {
 				<SquareList squares={careerPositions}>
 					<h5>{t('careers.somethingElseHeading')}</h5>
 					<p>{t('careers.somethingElseDescription')}</p>
-					<a href="#">{t('careers.somethingElseContact')}</a>
+					<div>
+						<a href="#">{t('careers.somethingElseContact')}</a>
+					</div>
 				</SquareList>
 
 				<Paragraph
@@ -92,7 +93,7 @@ const Career: React.FC = () => {
 			</Container>
 			<Container>
 				<Headline>{t('careers.careerWhatHeading')}</Headline>
-				<PictureList items={listData} />
+				<PictureList items={pictureListData} />
 			</Container>
 		</>
 	)
