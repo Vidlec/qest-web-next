@@ -6,20 +6,26 @@ import {
 	Description,
 	ItemIndex,
 	ItemInformation,
+	ItemImg,
 } from './styled'
 
 interface Props {
 	items: {
 		heading: string
 		description: string
-		imgSrc?: string
+		color: string
+		imgSrc: string
+		altText?: string
 	}[]
 }
 
 const PictureList: React.FC<Props> = ({ items }) => {
 	const content = items.map((item, index) => (
 		<Item key={item.heading}>
-			<ItemIndex>{index + 1}</ItemIndex>
+			<ItemIndex color={item.color}>
+				<span>{index + 1}</span>
+				<ItemImg src={item.imgSrc} />
+			</ItemIndex>
 			<ItemInformation>
 				<Heading>{item.heading}</Heading>
 				<Description>{item.description}</Description>
