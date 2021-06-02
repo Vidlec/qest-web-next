@@ -422,8 +422,12 @@
       "createUserPayload",
       "updateUserPayload",
       "deleteUserPayload",
+<<<<<<< HEAD
       "ComponentContentContact",
       "ComponentContentGalleryImage",
+=======
+      "ComponentContentCareerPosition",
+>>>>>>> feat(reference) conect project list with strapi
       "ComponentContentImage",
       "ComponentContentInfoColumn",
       "ComponentContentPictureList",

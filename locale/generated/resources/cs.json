@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"translation": {
 		"homepage": {
 			"id": "1",
@@ -318,3 +319,364 @@
 		}
 	}
 }
+=======
+  "translation": {
+    "homepage": {
+      "id": "1",
+      "language": "cs",
+      "clickToStop": "zastavte kliknutím",
+      "descriptionAboveLine": "Děje se toho víc",
+      "descriptionBellowLine": "Pod povrchem",
+      "logo": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+        "__typename": "UploadFile"
+      },
+      "__typename": "Homepage"
+    },
+    "reference": {
+      "id": "1",
+      "language": "cs",
+      "title": "projekty",
+      "referenceProjects": [
+        {
+          "projectName": "Mall.cz",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Abaku",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Sportlito",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Prima",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Česká Spořitelna",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "D21",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Runczech",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Teco",
+          "__typename": "ComponentContentReferenceProjects"
+        },
+        {
+          "projectName": "Uložto",
+          "__typename": "ComponentContentReferenceProjects"
+        }
+      ],
+      "__typename": "Reference"
+    },
+    "menu": {
+      "id": "2",
+      "aboutUs": "o nás",
+      "career": "kariéra",
+      "contact": "kontakt",
+      "homePage": "hlavní stránka",
+      "language": "cs",
+      "menu": "menu",
+      "reference": "reference",
+      "__typename": "Menu"
+    },
+    "header": {
+      "id": "1",
+      "language": "cs",
+      "title": "QEST | Qest",
+      "description": "V Qest navrhujeme a vyvíjíme softwarové, mobilní i webové aplikace.",
+      "logo": {
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/Logo_9e6ddcb2aa.svg",
+        "__typename": "UploadFile"
+      },
+      "__typename": "Header"
+    },
+    "contact": {
+      "id": "1",
+      "language": "cs",
+      "title": "KONTAKT",
+      "address": "Qest automation s.r.o.\nPobřežní 249/46,\nKarlín, 186 00 Praha 8",
+      "taxIdentificationNumbers": "IČO: 02232073\nDIČ: CZ02232073",
+      "taxIdentificationDescription": "zapsaný v obchodním rejstříku Městského soudu v Praze, v dd. C, vl.217060",
+      "email": "info@qest.cz",
+      "phoneNumber": "+420 728 214 029",
+      "formSubmit": "odeslat",
+      "formTextLabel": "napište nám:",
+      "formNameLabel": "jméno*:",
+      "formEmailLabel": "email*:",
+      "formNameWarning": "jméno musí být vyplněné",
+      "formEmailWarning": "email musí být vyplněný",
+      "formInvalidEmailWarning": "email má špatný tvar",
+      "footerImg": {
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/socha_3_97306680f2.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "__typename": "Contact"
+    },
+    "page404s": {
+      "id": "1",
+      "language": "cs",
+      "heading": "AJAJAJ!! Tady nic není.",
+      "description": "Vypadá to, že nemůžeme najít stránku, kterou hledáte. <br />\nZkuste se vrátit na hlavní stránku a zažijte další dobrodružství.",
+      "image": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/mozek_e3b33570d3.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "link": "Zpět na hlavní stránku",
+      "bgText": "404",
+      "__typename": "Page404"
+    },
+    "about": {
+      "id": "1",
+      "language": "cs",
+      "created_at": "2021-04-07T10:02:06.607Z",
+      "updated_at": "2021-06-17T12:14:52.962Z",
+      "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
+      "heroLogo": {
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "heroHeadlineTop": "THERE IS MORE",
+      "heroHeadlineBottom": "UNDER THE SURFACE",
+      "heroArrowTitle": "ponořit se hlouběji",
+      "weAreHeadline": "JSME QEST",
+      "weAreDescription": "Nejsme jen dodavatel <span style=\"color:#FCC403;\" data-sliderIndex=\"0\">softwarových řešení.</span> Vztahy v týmu i s klienty zakládáme na důvěře a partnerství. Pro své klienty, ať už ambiciózní české startupy, či korporáty, vyvíjíme skvělé <span style=\"color:#FF5451;\" data-sliderIndex=\"1\">aplikace</span>, <span style=\"color:#83E1FF;\" data-sliderIndex=\"2\">weby</span>, <span style=\"color:#d096a0;\" data-sliderIndex=\"3\">informační systémy</span> a třeba -i <span style=\"color:#80F286;\" data-sliderIndex=\"4\">chytré domy</span>. Každý den na sobě pracujeme a posouváme se vpřed. Úspěch klienta je náš největší závazek.",
+      "weAreArrowTitle": "co umíme",
+      "skillsHeadline": "CO UMÍME",
+      "skillsDescription": "TODO",
+      "technologiesDescription": "<p><strong>Programovací jazyky: </strong>C#, javascript, typescript, html, css</p><p><strong>Používáme technologie: </strong>graphql, rest api frontend: React (16+),Typescript, Redux (Redux-saga)/Apollo,Styled components</p><p><strong>backend (javascript): </strong>Node.js, Typescript MongoDB, Docker,Elasticsearch, MariaDB, AWS, Azure, GoogleCloud, Serverless, Redis, Kubernetes,OpenStack, Express.js, Apollo Graphql</p><p><strong>C#: </strong>ASP.NET Core (latest),C# (latest), SignalR/WebSockets, MongoDB, MSSQL, RabbitMQ, Redis, Docker, Kubernetes(Azure)</p>",
+      "technologiesImage": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/ruka_zavrena_9daab515ce.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "valuesHeadline": "HODNOTY",
+      "teamHeadline": "NÁŠ TEAM",
+      "hqHeadline": "QEST HQ",
+      "hqDescription": "V Qestu se rádi a často pyšníme tím, kde pracujeme. Součástí kanceláří je terasa s posezením, grilem a inspirativním výhledem, relaxační zóna, stolní tenis, Xbox, kuchyňka s kávovarem, chladničkou a dostatečným množstvím občerstvení jako je cola, káva, voda, čaj.\n<br />\n<br />\n<span style=\"color:#FCC403;\">Proč Karlín?</span> V Karlíně to žije a stává se tech centrem hlavního města Prahy. Sdružuje se zde silná IT komunita. Zcela přirozeně se z Karlína stalo startupové centrum, malé pražské Silicon Valley.",
+      "careerHeadline": "KARIÉRA",
+      "careerDescription": "Chceš se těšit na pondělí jako my? Spoj se s Qestem. Svou práci děláme rádi a na špičkové úrovni. Hledáme skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat na projektech s nejnovějšími technologiemi. Dnes je nás přes 30 a stále rosteme, takže u nás opravdu je, od koho se učit. Jsme mladý tým, ale věk je jenom číslo. Oceňujeme zkušenost, zodpovědnost a vášeň pro dokonalost. Pátráme po lidech s tím pravým přístupem, všechno ostatní je možné se naučit. Velmi si zakládáme na mezilidských vztazích, ať už jde o vztahy mezi zaměstnanci, nebo vůči klientům. Nabízíme práci v moderním prostředí a uvolněné atmosféře se zázemím stabilní společnosti. Naším produktem je „Team As a Service“ a jako tým spolu také dost často fungujeme i mimo práci. #qestlife Nehrajeme si ale jen na svém písečku a o know-how se rádi podělíme v rámci našich veřejných akcí – Qeetup či Q-TON. Vydáváme také náš vlastní podcast Qcast o moderních technologiích a programování.",
+      "careerCTATitle": "KOHO HLEDÁME",
+      "careerCTAImage": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/otaznik_50b1926b8f.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "blogHeadline": "BLOG",
+      "blogReadMore": "Starší příspěvky",
+      "published_at": "2021-04-07T10:02:09.389Z",
+      "weAreImageCarousel": [
+        {
+          "id": "8",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Centered_Cloud_d0dfd26f15.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "7",
+          "url": "https://qest-web-cms-media.s3.amazonaws.com/Centered_CD_0f67140a79.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        }
+      ],
+      "skills": [
+        {
+          "id": "1",
+          "title": "Backendové a cloudové aplikace",
+          "description": "dodáváme serverová a cloudová řešení",
+          "titleColorHash": "#83E1FF",
+          "__typename": "Skill"
+        },
+        {
+          "id": "2",
+          "title": "Weby",
+          "description": "Navrhujeme a implementujeme webové aplikace",
+          "titleColorHash": "#FCC403",
+          "__typename": "Skill"
+        }
+      ],
+      "brandValues": [
+        {
+          "id": "1",
+          "headline": "Human\nCentered\nDesign",
+          "backgroundNumber": 1,
+          "image": {
+            "url": "https://qest-web-cms-media.s3.amazonaws.com/srdce_237bb255c2.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "description": "Ke každému produktu přistupujeme individuálně. Naším cílem je vytvořit návrh, který je funkční a řeší reálný problém. Navrhujeme a vyvíjíme intuitivní a krásné produkty.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "2",
+          "headline": "Kreativita\na\nInovace",
+          "backgroundNumber": 2,
+          "image": {
+            "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/hlava_817af006a4.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "description": "Uvažujeme jinak, experimentujeme a nebojíme se nových postupů a řešení. Inovativní myšlení a kreativita nás spojují a ženou kupředu. Naše tvůrčí koncepty dotahujeme do posledního detailu.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "3",
+          "headline": "Týmová\npráce",
+          "backgroundNumber": 3,
+          "image": {
+            "url": "https://qest-web-cms-media.s3.amazonaws.com/koule_6b51e5dc6f.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "description": "Máme za sebou čtyři roky práce a 40+ úspěšných projektů. Náš tým se rychle rozrůstá, stejně jako rostou i naše ambice. Zaměstnáváme lidi, kteří mají schopnost učit se a inovovat, věří v týmovou práci a společný růst a hlavně: milují to, co dělají.",
+          "__typename": "BrandValue"
+        },
+        {
+          "id": "4",
+          "headline": "Efektivita\nje\nzáklad",
+          "backgroundNumber": 4,
+          "image": {
+            "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/schody_1_11564eff05.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "description": "Poskytujeme nákladově efektivní služby a klademe velký důraz na zájmy klienta. Týmy skládáme vždy podle potřeb projektu a naše procesy zajišťují vysokou kvalitu komunikace. Nominovaný team-leader má za úkol zaručit maximální zefektivnění práce.",
+          "__typename": "BrandValue"
+        }
+      ],
+      "hqImageGrid": [
+        {
+          "id": "11",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/ruka_zavrena_9daab515ce.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "10",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/otaznik_50b1926b8f.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "8",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Centered_Cloud_d0dfd26f15.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "5",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "2",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_negative_becc35304b.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "12",
+          "url": "https://qest-web-cms-media.s3.amazonaws.com/cb3e1bcac903e82f6d7eb4a344c178d7_b7d472815a.jpg",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        },
+        {
+          "id": "13",
+          "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/overcooked_85d2398fb8.png",
+          "alternativeText": "",
+          "__typename": "UploadFile"
+        }
+      ],
+      "hqWeAreHereImage": {
+        "id": "14",
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/Fancy_3_D_Letters_Effect_2_39dbb63f0c.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "hqCTATitle": "je toho víc",
+      "hqWeAreHereDescription": "Pobřežní 46\nKarlín, Praha 8\n<a href=\"\" style=\"color:#FCC403\">show on map/<a>",
+      "arrow": {
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/sipka_a1613eb46b.svg",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "__typename": "AboutUs"
+    },
+    "careerOffering": [
+      {
+        "id": "1",
+        "language": "cs",
+        "title": "C# Developer",
+        "slug": "c-developer",
+        "description": "Qest hledá hledá dobře vyzbrojeného C# Developera, který se nebojí rozvíjet znalosti a výzvám se staví s nadšením.",
+        "careerTechnologiesTitle": "S čím a jak konkrétně pracujeme",
+        "careerTechnologiesContent": "ASP.NET Core (latest), C# (latest), SignalR/WebSockets, MongoDB, MS SQL, RabbitMQ, Redis, Docker, Kubernetes (Azure)",
+        "careerExpectedSkillsTitle": "Co se čeká od tebe?",
+        "careerExpectedSkillsContent": "- že ti alespoň něco z výše zmíněného není cizí\n- že se zajímáš o nové technologie a chceš na sobě pracovat\n- že máš analytické myšlení a umíš zapojit i selský rozum\n- že se na tebe budeme moct spolehnout\n- že budeš součástí komunity a občas s námi něco podnikneš",
+        "careerOfferTitle": "Co nabízíme",
+        "careerOfferContent": "Staneš se součástí skvělého kolektivu nadšených profesionálů, kteří tvoří funkční smysluplné a užitečné aplikace. S námi můžeš posouvat své hranice a zdokonalovat se. My ti poskytneme oporu, know-how a budeme ti krýt záda. Sáhneš si také na různé moderní technologie. Vyzkoušíš si, co znamená. \"Team As a Service\" a řízení projektů ve Scrumu. Týmově fungujeme i mimo práci a tak budeš mít spoustu příležitostí nás poznat i neformálně. Jaký každý Qesťák budeš moct vyjádřit svůj názor, který nezapadne. Pracovat můžeš nejen na HPP, ale také IČO, nebo částečný úvazek při studiu. Ztotožňuješ se s našimi životy v našem týmu, protože hodnotami, dovedeš si představit i práce je součástí života a má bavit, a chtěl bys nám pomoct s tvorbou skvělých aplikací? Dej nám o sobě vědět! Osobně se pak můžeš potkat s naší Lindou, ale samozřejmostí je i popovídání s vývojáři. Nejčastěji se software architektem Zdeňkem.\n",
+        "endTitle": "Zaujali jsme tě?",
+        "endContent": "Tak pojď do toho! Napiš nám, jak bys chtěl přispět a začlenit se do Qestu.",
+        "endCTA": "napiš nám",
+        "__typename": "CareerOfferings"
+      },
+      {
+        "id": "2",
+        "language": "cs",
+        "title": "React developer",
+        "slug": "react-developer",
+        "description": "Qest hledá hledá dobře vyzbrojeného C# Developera, který se nebojí rozvíjet znalosti a výzvám se staví s nadšením.",
+        "careerTechnologiesTitle": "S čím a jak konkrétně pracujeme",
+        "careerTechnologiesContent": "ASP.NET Core (latest), C# (latest), SignalR/WebSockets, MongoDB, MS SQL, RabbitMQ, Redis, Docker, Kubernetes (Azure)",
+        "careerExpectedSkillsTitle": "Co se čeká od tebe?",
+        "careerExpectedSkillsContent": "- že ti alespoň něco z výše zmíněného není cizí\n- že se zajímáš o nové technologie a chceš na sobě pracovat\n- že máš analytické myšlení a umíš zapojit i selský rozum\n- že se na tebe budeme moct spolehnout\n- že budeš součástí komunity a občas s námi něco podnikneš",
+        "careerOfferTitle": "Co nabízíme",
+        "careerOfferContent": "Staneš se součástí skvělého kolektivu nadšených profesionálů, kteří tvoří funkční smysluplné a užitečné aplikace. S námi můžeš posouvat své hranice a zdokonalovat se. My ti poskytneme oporu, know-how a budeme ti krýt záda. Sáhneš si také na různé moderní technologie. Vyzkoušíš si, co znamená. \"Team As a Service\" a řízení projektů ve Scrumu. Týmově fungujeme i mimo práci a tak budeš mít spoustu příležitostí nás poznat i neformálně. Jaký každý Qesťák budeš moct vyjádřit svůj názor, který nezapadne. Pracovat můžeš nejen na HPP, ale také IČO, nebo částečný úvazek při studiu. Ztotožňuješ se s našimi životy v našem týmu, protože hodnotami, dovedeš si představit i práce je součástí života a má bavit, a chtěl bys nám pomoct s tvorbou skvělých aplikací? Dej nám o sobě vědět! Osobně se pak můžeš potkat s naší Lindou, ale samozřejmostí je i popovídání s vývojáři. Nejčastěji se software architektem Zdeňkem.\n",
+        "endTitle": "Zaujali jsme tě?",
+        "endContent": "Tak pojď do toho! Napiš nám, jak bys chtěl přispět a začlenit se do Qestu.",
+        "endCTA": "napiš nám",
+        "__typename": "CareerOfferings"
+      }
+    ],
+    "socialNetworkUrls": {
+      "Twitter": {
+        "id": "1",
+        "name": "Twitter",
+        "url": "https://twitter.com/qest_developers",
+        "__typename": "SocialNetwork"
+      },
+      "Facebook": {
+        "id": "2",
+        "name": "Facebook",
+        "url": "https://www.facebook.com/QestCompany",
+        "__typename": "SocialNetwork"
+      },
+      "Instagram": {
+        "id": "3",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/qest.cz/",
+        "__typename": "SocialNetwork"
+      },
+      "Linkedin": {
+        "id": "4",
+        "name": "Linkedin",
+        "url": "https://cz.linkedin.com/company/qest-automation",
+        "__typename": "SocialNetwork"
+      }
+    }
+  }
+}
+>>>>>>> feat(reference) conect project list with strapi

@@ -44,6 +44,6 @@ export const WhiteSpace = styled.div`
 `
 
 export const DotSpan = styled.span<{ color: string }>`
-	color: ${({color}) => color};
+	color: ${({color}) => (color)};
 	margin: 0 1rem;
 `

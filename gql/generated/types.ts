@@ -4094,6 +4094,7 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
+<<<<<<< HEAD
 export type ComponentContentContact = {
   __typename?: 'ComponentContentContact';
   id: Scalars['ID'];
@@ -4143,6 +4144,27 @@ export type EditComponentContentGalleryImageInput = {
   rows?: Maybe<Scalars['Int']>;
   spacing?: Maybe<Scalars['Int']>;
   images?: Maybe<Scalars['ID']>;
+=======
+export type ComponentContentCareerPosition = {
+  __typename?: 'ComponentContentCareerPosition';
+  id: Scalars['ID'];
+  careerPositionHeading?: Maybe<Scalars['String']>;
+  careerPositionDescription?: Maybe<Scalars['String']>;
+  careerPositionColor?: Maybe<Scalars['String']>;
+};
+
+export type ComponentContentCareerPositionInput = {
+  careerPositionHeading?: Maybe<Scalars['String']>;
+  careerPositionDescription?: Maybe<Scalars['String']>;
+  careerPositionColor?: Maybe<Scalars['String']>;
+};
+
+export type EditComponentContentCareerPositionInput = {
+  id?: Maybe<Scalars['ID']>;
+  careerPositionHeading?: Maybe<Scalars['String']>;
+  careerPositionDescription?: Maybe<Scalars['String']>;
+  careerPositionColor?: Maybe<Scalars['String']>;
+>>>>>>> feat(reference) conect project list with strapi
 };
 
 export type ComponentContentImage = {
@@ -5713,6 +5735,21 @@ export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_9_Query = (
+  { __typename?: 'Query' }
+  & { references?: Maybe<Array<Maybe<(
+    { __typename?: 'Reference' }
+    & Pick<Reference, 'id' | 'language' | 'title'>
+    & { referenceProjects?: Maybe<Array<Maybe<(
+      { __typename?: 'ComponentContentReferenceProjects' }
+      & Pick<ComponentContentReferenceProjects, 'projectName'>
+    )>>> }
+  )>>> }
+);
+
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { socialNetworks?: Maybe<Array<Maybe<(
     { __typename?: 'SocialNetwork' }

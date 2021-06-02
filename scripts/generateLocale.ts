@@ -7,6 +7,7 @@ import { HOMEPAGE_QUERY } from '../gql/queries/homepages'
 import {
 	Contact,
 	Homepage,
+	Reference,
 	Header,
 	Menu,
 	Language,
@@ -26,6 +27,7 @@ import { CAREER_OFFERINGS_QUERY } from '../gql/queries/careerOfferings'
 
 type Resources = {
 	homepage: Homepage[]
+	reference: Reference[]
 	menu: Menu[]
 	header: Header[]
 	contact: Contact[]
@@ -48,6 +50,10 @@ const toResource = (
 ) => {
 	const translatedHomepage = homepage.find(
 		(homepage) => homepage?.language === language
+	)
+
+	const translatedReference = reference.find(
+		(referenc) => referenc?.language === language
 	)
 
 	const translatedMenu = menu.find((menu) => menu?.language === language)
@@ -73,6 +79,7 @@ const toResource = (
 	return {
 		translation: {
 			homepage: translatedHomepage,
+			reference: translatedReference,
 			menu: translatedMenu,
 			header: translatedHeader,
 			contact: translatedContact,
@@ -86,6 +93,7 @@ const toResource = (
 const main = async () => {
 	const [
 		homepages,
+		references,
 		menus,
 		headers,
 		languages,
@@ -97,6 +105,7 @@ const main = async () => {
 	] = await Promise.all(
 		[
 			HOMEPAGE_QUERY,
+			REFERENCE_QUERY,
 			MENU_QUERY,
 			HEADER_QUERY,
 			LANGUAGE_QUERY,
@@ -113,6 +122,7 @@ const main = async () => {
 			const translatedTexts = toResource(
 				{
 					homepage: homepages.data.homepages,
+					reference: references.data.references,
 					menu: menus.data.menus,
 					header: headers.data.headers,
 					contact: contacts.data.contacts,
