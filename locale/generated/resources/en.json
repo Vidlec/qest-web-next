@@ -62,22 +62,50 @@
         {
           "careerPositionHeading": "C# Developer",
           "careerPositionDescription": "Show us what's in you",
+          "careerPositionColor": "#80F286",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "React Developer",
           "careerPositionDescription": "Do you like web development and javascript",
+          "careerPositionColor": "#83E1FF",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "Node.js Developer",
           "careerPositionDescription": "Backend is passion",
+          "careerPositionColor": "#d096a0",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "businessman",
           "careerPositionDescription": "When you love technology and inovation",
+          "careerPositionColor": "#FCC403",
           "__typename": "ComponentContentCareerPosition"
+        }
+      ],
+      "careerInfo": [
+        {
+          "pictureListHeading": "Projects",
+          "pictureListDescription": "We work with start-ups as well as with well known brands. We create complete software solutions, from mobile phone aplications, web aplications to home controling systems and IOT.",
+          "pictureListColor": "#FF5451",
+          "pictureListImage": {
+            "url": "https://qest-web-cms-media.s3.amazonaws.com/srdce_237bb255c2.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "__typename": "ComponentContentPictureList"
+        },
+        {
+          "pictureListHeading": "Team",
+          "pictureListDescription": "Qest is full with experienced profesionals who'll help juniors to get to the top. We are constantly trying to improve our code and outcome.\n<br/>\n<br/>\nWe are learning one from the other, but we can use interesting meetups and conferences",
+          "pictureListColor": "#FCC403",
+          "pictureListImage": {
+            "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/yellow_submarine_4582665_1920_05a974d53c.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "__typename": "ComponentContentPictureList"
         }
       ],
       "__typename": "Career"

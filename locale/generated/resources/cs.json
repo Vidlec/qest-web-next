@@ -62,22 +62,50 @@
         {
           "careerPositionHeading": "C# Developer",
           "careerPositionDescription": "Ukaž co je v tobě",
+          "careerPositionColor": "#80F286",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "React Developer",
           "careerPositionDescription": "Baví tě weby a javascript?",
+          "careerPositionColor": "#FF5451",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "Node.js Developer",
           "careerPositionDescription": "Backend je vášeň",
+          "careerPositionColor": "#d096a0",
           "__typename": "ComponentContentCareerPosition"
         },
         {
           "careerPositionHeading": "Obchodník",
           "careerPositionDescription": "Když miluješ technologie a inovace",
+          "careerPositionColor": "#83E1FF",
           "__typename": "ComponentContentCareerPosition"
+        }
+      ],
+      "careerInfo": [
+        {
+          "pictureListHeading": "Projekty",
+          "pictureListDescription": "Pracujeme pro startupy i se zavedenými značkami. Vytváříme kompletní softwareová řešení\nod aplikací pro mobily, přes weby až po systémy řízení domů a IOT",
+          "pictureListColor": "#FF5451",
+          "pictureListImage": {
+            "url": "https://qest-web-cms-media.s3.amazonaws.com/srdce_237bb255c2.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "__typename": "ComponentContentPictureList"
+        },
+        {
+          "pictureListHeading": "Tým",
+          "pictureListDescription": "Qest tým je plný zkušených profesionálů, kteří rádí pomůžou zapáleným juniorům stát se špičkou v oboru neustále se snažíme zdokonalovat náš kód a výsledky naší práce. učíme se \n<br/>\n<br/>\njeden od druhého ale umíme využívat i zajímavých meetupu či konferencí.",
+          "pictureListColor": "#FCC403",
+          "pictureListImage": {
+            "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/yellow_submarine_4582665_1920_05a974d53c.png",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "__typename": "ComponentContentPictureList"
         }
       ],
       "__typename": "Career"

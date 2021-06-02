@@ -334,6 +334,7 @@
       "ComponentContentCareerPosition",
       "ComponentContentImage",
       "ComponentContentInfoColumn",
+      "ComponentContentPictureList",
       "ComponentContentRichText",
       "ComponentContentTechnologies"
     ]

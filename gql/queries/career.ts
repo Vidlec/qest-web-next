@@ -18,6 +18,16 @@ export const CAREER_QUERY = gql`
             careerPosition {
                 careerPositionHeading
                 careerPositionDescription
+                careerPositionColor
+            }
+            careerInfo {
+                pictureListHeading
+                pictureListDescription
+                pictureListColor
+                pictureListImage {
+                    url
+				    alternativeText
+                }
             }
 		}
 	}
