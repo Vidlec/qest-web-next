@@ -1,24 +1,26 @@
 import React from 'react'
-import { Wrapper, Base, Content, End, Title } from './styled'
+import { Container, Wrapper, Base, Content, End, Title } from './styled'
 
 interface Props {
-	squares: { header: string; description: string }[]
+	squares: { header: string; description: string; color: string }[]
 }
 
 const SquareList: React.FC<Props> = ({ squares, children }) => {
 	const squaresContent = squares.map((s) => (
 		<Base key={s.header}>
 			<Content>
-				<Title>{s.header}</Title>
+				<Title color={s.color}>{s.header}</Title>
 				<div>{s.description}</div>
 			</Content>
 		</Base>
 	))
 	return (
-		<Wrapper>
-			{squaresContent}
-			<End>{children}</End>
-		</Wrapper>
+		<Container>
+			<Wrapper>
+				{squaresContent}
+				<End>{children}</End>
+			</Wrapper>
+		</Container>
 	)
 }
 
