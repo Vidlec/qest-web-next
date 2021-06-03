@@ -331,9 +331,6 @@ const AboutUs: React.FC = () => {
 					</MoreBlogPosts>
 				</MoreBlogPostsContainer>
 			</Container>
-
-			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}
-			<Footer />
 		</>
 	)
 }
