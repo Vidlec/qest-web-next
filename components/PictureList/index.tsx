@@ -20,19 +20,6 @@ interface Props {
 }
 
 const PictureList: React.FC<Props> = ({ items }) => {
-	const content = items.map((item, index) => (
-		<Item key={item.heading}>
-			<ItemIndex color={item.color}>
-				<span>{index + 1}</span>
-				<ItemImg src={item.imgSrc} />
-			</ItemIndex>
-			<ItemInformation>
-				<Heading>{item.heading}</Heading>
-				<Description>{item.description}</Description>
-			</ItemInformation>
-		</Item>
-	))
-
 	return (
 		<Wrapper>
 			{
