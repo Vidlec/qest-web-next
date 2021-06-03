@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
+import NextLink from 'next/link'
+import { Router } from 'next/dist/client/router'
 import {
 	IntroItem,
 	IntroMenuButton,
 	IntroMenuCross,
 	IntroMenuList,
 	IntroMenuSwitcher,
-	IntroMenuWrapper
+	IntroMenuWrapper,
 } from './styled'
 import {
 	MenuPanel,
@@ -17,12 +19,59 @@ import {
 	MenuButton,
 	MenuCross,
 	Link,
-	Icon
+	Icon,
 } from './styled'
 
-export const Menu: React.FC = () => {
+export const Menu: React.FC<{ router: Router }> = ({ router }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { t } = useTranslation()
+
+	const links: { url: string; link: React.ReactElement }[] = [
+		{
+			url: '/homepage',
+			link: (
+				<MainMenu>
+					<NextLink href="/">{t('menu.homePage')}</NextLink>
+				</MainMenu>
+			),
+		},
+		{
+			url: '/about',
+			link: (
+				<AboutUs>
+					<NextLink href="/about">{t('menu.aboutUs')}</NextLink>
+				</AboutUs>
+			),
+		},
+		{
+			url: '/career',
+			link: (
+				<Career>
+					<NextLink href="/career">{t('menu.career')}</NextLink>
+				</Career>
+			),
+		},
+		{
+			url: '/reference',
+			link: (
+				<Reference>
+					<NextLink href="/">{t('menu.reference')}</NextLink>
+				</Reference>
+			),
+		},
+		{
+			url: '/contacts',
+			link: (
+				<Contact>
+					<NextLink href="/contacts">{t('menu.contact')}</NextLink>
+				</Contact>
+			),
+		},
+	]
+
+	useEffect(() => {
+		setIsOpen(false)
+	}, [router.pathname])
 
 	return (
 		<MenuPanel>
@@ -38,21 +87,11 @@ export const Menu: React.FC = () => {
 			{isOpen ? (
 				<MenuWrapper>
 					<MenuCross onClick={() => setIsOpen(false)}>🞨</MenuCross>
-					<Link>
-						<MainMenu href="/">{t('menu.homePage')}</MainMenu>
-					</Link>
-					<Link>
-						<AboutUs href="/about">{t('menu.aboutUs')}</AboutUs>
-					</Link>
-					<Link>
-						<Career href="/career">{t('menu.career')}</Career>
-					</Link>
-					<Link>
-						<Reference href="/">{t('menu.reference')}</Reference>
-					</Link>
-					<Link>
-						<Contact href="/contacts">{t('menu.contact')}</Contact>
-					</Link>
+					{links.map((link) => {
+						if (link.url !== router.pathname) {
+							return <Link key={link.url}>{link.link}</Link>
+						}
+					})}
 				</MenuWrapper>
 			) : null}
 		</MenuPanel>
@@ -72,26 +111,44 @@ export const Navigation: React.FC = () => {
 			</IntroMenuSwitcher>
 			<IntroMenuWrapper isOpen={isOpen}>
 				<IntroMenuSwitcher>
-					<IntroMenuCross onClick={() => setIsOpen(false)}>🞨</IntroMenuCross>
+					<IntroMenuCross onClick={() => setIsOpen(false)}>
+						🞨
+					</IntroMenuCross>
 				</IntroMenuSwitcher>
 				<IntroMenuList>
 					<IntroItem>
-						<MainMenu href="/">{t('menu.homePage')}</MainMenu>
+						<MainMenu>
+							<NextLink href="/">{t('menu.homePage')}</NextLink>
+						</MainMenu>
 					</IntroItem>
 					<IntroItem>
-						<AboutUs href="/about">{t('menu.aboutUs')}</AboutUs>
+						<AboutUs>
+							<NextLink href="/about">
+								{t('menu.aboutUs')}
+							</NextLink>
+						</AboutUs>
 					</IntroItem>
 					<IntroItem>
 						<SelectLanguage />
 					</IntroItem>
 					<IntroItem>
-						<Reference href="/">{t('menu.reference')}</Reference>
+						<Reference>
+							<NextLink href="/">{t('menu.reference')}</NextLink>
+						</Reference>
 					</IntroItem>
 					<IntroItem>
-						<Career href="/career">{t('menu.career')}</Career>
+						<Career>
+							<NextLink href="/career">
+								{t('menu.career')}
+							</NextLink>
+						</Career>
 					</IntroItem>
 					<IntroItem>
-						<Contact href="/contacts">{t('menu.contact')}</Contact>
+						<Contact>
+							<NextLink href="/contacts">
+								{t('menu.contact')}
+							</NextLink>
+						</Contact>
 					</IntroItem>
 				</IntroMenuList>
 			</IntroMenuWrapper>

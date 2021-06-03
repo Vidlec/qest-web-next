@@ -35,7 +35,9 @@ class QestWeb extends App<WithTranslation> {
 				<ThemeProvider theme={theme}>
 					<I18nextProvider i18n={i18n}>
 						<GlobalStyle />
-						{router.pathname === '/' ? null : <Menu /> }
+						{router.pathname === '/' ? null : (
+							<Menu router={router} />
+						)}
 						<Component {...pageProps} />
 						{router.pathname === '/' ? null : <Footer />}
 					</I18nextProvider>
