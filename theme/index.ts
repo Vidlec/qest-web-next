@@ -27,6 +27,7 @@ export const theme = {
 		pink: '#d096a0',
 		black: '#000',
 		lightGray: '#cccccc',
+		white: '#fff',
 	},
 	mediaQueriesNumbers,
 	mediaQueries: {

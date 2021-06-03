@@ -5,6 +5,7 @@ export const Wrapper = styled.footer`
 	width: 100%;
 	justify-content: center;
 	position: relative;
+	padding-top: 120px;
 `
 
 export const Line = styled.div`
@@ -12,18 +13,30 @@ export const Line = styled.div`
 	height: 0.125rem;
 	width: 100%;
 	position: absolute;
-	top: 1.2rem;
+	top: calc(1.2rem + 120px);
 	box-shadow: 0 0 8px ${({ theme }) => theme.colors.mainFont};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		top: 2.7rem;
+		top: calc(2.7rem + 120px);
 	}
+`
+
+export const TitleWrapper = styled.div`
+	position: relative;
 `
 
 export const Title = styled.h3`
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		font-size: 4.3rem;
 	}
+`
+
+export const FooterHead = styled.img`
+	position: absolute;
+	width: 14rem;
+	top: -5.8rem;
+	right: 0;
+	z-index: -1;
 `
 
 export const ArticleWrapper = styled.section`

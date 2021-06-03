@@ -11,6 +11,17 @@ export const CONTACT_QUERY = gql`
 			taxIdentificationDescription
 			email
 			phoneNumber
+			formSubmit
+			formTextLabel
+			formNameLabel
+			formEmailLabel
+			formNameWarning
+			formEmailWarning
+			formInvalidEmailWarning
+			footerImg {
+				url
+				alternativeText
+			}
 		}
 	}
 `

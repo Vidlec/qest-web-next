@@ -1,6 +1,14 @@
 import React from 'react'
+import Portal from 'components/Portal'
+import { Form } from 'components/Form'
+import { FOOTER_PORTAL_ID } from 'components/Constants'
 
-// TODO: Add Formular and Header
-const Contacts: React.FC = () => <></>
+const Contacts: React.FC = () => {
+	return (
+		<Portal portalID={FOOTER_PORTAL_ID}>
+			<Form />
+		</Portal>
+	)
+}
 
 export default Contacts

@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next'
 import {
 	Column,
 	ArticleWrapper,
+	TitleWrapper,
 	Title,
+	FooterHead,
 	Wrapper,
 	Line,
 	Text,
@@ -20,6 +22,7 @@ import {
 	Linkedin,
 } from '@styled-icons/boxicons-logos'
 import Container from 'components/Container'
+import { FOOTER_PORTAL_ID } from 'components/Constants'
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation()
@@ -28,7 +31,10 @@ const Footer: React.FC = () => {
 		<Wrapper>
 			<Line />
 			<Container>
+				<TitleWrapper>
 				<Title>{t('contact.title')}</Title>
+				<FooterHead src={t('contact.footerImg.url')} />
+				</TitleWrapper>
 				<ArticleWrapper>
 					<Column>
 						<Email href={'mailto:' + t('contact.email')}>
@@ -80,6 +86,7 @@ const Footer: React.FC = () => {
 						</TextTaxIdentification>
 					</Column>
 				</ArticleWrapper>
+				<div id={FOOTER_PORTAL_ID}></div>
 			</Container>
 		</Wrapper>
 	)

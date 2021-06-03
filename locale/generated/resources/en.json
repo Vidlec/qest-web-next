@@ -43,6 +43,14 @@
       "taxIdentificationDescription": "entered in the Commercial Register of the Municipal Court in Prague, in dd. C, vl.217060",
       "email": "info@qest.cz",
       "phoneNumber": "+420 726 898",
+      "formSubmit": "send",
+      "formTextLabel": "contact us:",
+      "formNameLabel": "name*:",
+      "formEmailLabel": "email*:",
+      "formNameWarning": "name has to be filled",
+      "formEmailWarning": "email has to be filled",
+      "formInvalidEmailWarning": "email must be in correct format",
+      "footerImg": null,
       "__typename": "Contact"
     },
     "careers": {
