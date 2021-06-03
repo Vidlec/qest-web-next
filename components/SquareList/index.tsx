@@ -6,18 +6,19 @@ interface Props {
 }
 
 const SquareList: React.FC<Props> = ({ squares, children }) => {
-	const squaresContent = squares.map((s) => (
-		<Base key={s.header}>
-			<Content>
-				<Title color={s.color}>{s.header}</Title>
-				<div>{s.description}</div>
-			</Content>
-		</Base>
-	))
 	return (
 		<Container>
 			<Wrapper>
-				{squaresContent}
+				{
+					squares.map((s) => (
+						<Base key={s.header}>
+							<Content>
+								<Title color={s.color}>{s.header}</Title>
+								<div>{s.description}</div>
+							</Content>
+						</Base>
+					))
+				}
 				<End>{children}</End>
 			</Wrapper>
 		</Container>
