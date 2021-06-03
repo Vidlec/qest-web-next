@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Wrapper } from './styled'
-import Navigation from 'components/Menu'
+import { Navigation } from 'components/Menu'
 import HomePageContent from 'components/HomePageContent'
 
 const Index: React.FC = () => {

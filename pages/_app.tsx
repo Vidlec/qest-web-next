@@ -12,6 +12,7 @@ import i18n from '../locale'
 import theme from '../theme'
 
 import { GlobalStyle } from 'theme/globalStyle'
+import { Menu } from 'components/Menu'
 import Footer from 'components/Footer'
 import withRouter from 'next/dist/client/with-router'
 
@@ -34,6 +35,7 @@ class QestWeb extends App<WithTranslation> {
 				<ThemeProvider theme={theme}>
 					<I18nextProvider i18n={i18n}>
 						<GlobalStyle />
+						{router.pathname === '/' ? null : <Menu /> }
 						<Component {...pageProps} />
 						{router.pathname === '/' ? null : <Footer />}
 					</I18nextProvider>
