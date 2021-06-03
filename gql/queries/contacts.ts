@@ -18,6 +18,10 @@ export const CONTACT_QUERY = gql`
 			formNameWarning
 			formEmailWarning
 			formInvalidEmailWarning
+			footerImg {
+				url
+				alternativeText
+			}
 		}
 	}
 `

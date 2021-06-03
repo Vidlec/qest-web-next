@@ -50,6 +50,7 @@
       "formNameWarning": "name has to be filled",
       "formEmailWarning": "email has to be filled",
       "formInvalidEmailWarning": "email must be in correct format",
+      "footerImg": null,
       "__typename": "Contact"
     },
     "careers": {

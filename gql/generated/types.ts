@@ -4339,6 +4339,10 @@ export type Unnamed_3_Query = (
   & { contacts?: Maybe<Array<Maybe<(
     { __typename?: 'Contact' }
     & Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'formSubmit' | 'formTextLabel' | 'formNameLabel' | 'formEmailLabel' | 'formNameWarning' | 'formEmailWarning' | 'formInvalidEmailWarning'>
+    & { footerImg?: Maybe<(
+      { __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )> }
   )>>> }
 );
 

@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next'
 import {
 	Column,
 	ArticleWrapper,
+	TitleWrapper,
 	Title,
+	FooterHead,
 	Wrapper,
 	Line,
 	Text,
@@ -29,7 +31,10 @@ const Footer: React.FC = () => {
 		<Wrapper>
 			<Line />
 			<Container>
+				<TitleWrapper>
 				<Title>{t('contact.title')}</Title>
+				<FooterHead src={t('contact.footerImg.url')} />
+				</TitleWrapper>
 				<ArticleWrapper>
 					<Column>
 						<Email href={'mailto:' + t('contact.email')}>
