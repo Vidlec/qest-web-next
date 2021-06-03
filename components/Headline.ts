@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-const Headline = styled.h1`
-	color: ${({ theme }) => theme.colors.lightGray};
+const Headline = styled.h1<{color?: string}>`
+	color: ${({ color, theme }) =>  color? color : theme.colors.lightGray};
 	font-size: 4.4rem;
 	font-weight: bold;
 	letter-spacing: 0;

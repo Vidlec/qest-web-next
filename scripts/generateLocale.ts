@@ -7,6 +7,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HOMEPAGE_QUERY } from '../gql/queries/homepages'
 import {
 	Contact,
+	Career,
 	Homepage,
 	Header,
 	Menu,
@@ -18,6 +19,7 @@ import { MENU_QUERY } from '../gql/queries/menus'
 import { HEADER_QUERY } from '../gql/queries/headers'
 import { LANGUAGE_QUERY } from '../gql/queries/languages'
 import { CONTACT_QUERY } from '../gql/queries/contacts'
+import { CAREER_QUERY } from '../gql/queries/career'
 import { SOCIAL_NETWORK_QUERY } from '../gql/queries/socialNetworks'
 import { ABOUT_QUERY } from '../gql/queries/aboutuses'
 
@@ -26,6 +28,7 @@ type Resources = {
 	menu: Menu[]
 	header: Header[]
 	contact: Contact[]
+	careers: Career[]
 	about: AboutUs[]
 }
 
@@ -38,7 +41,7 @@ const apolloClient = new ApolloClient({
 })
 
 const toResource = (
-	{ homepage, menu, header, contact, about }: Resources,
+	{ homepage, menu, header, contact, careers, about }: Resources,
 	language: string
 ) => {
 	const translatedHomepage = homepage.find(
@@ -54,6 +57,11 @@ const toResource = (
 	const translatedContact = contact.find(
 		(contact) => contact?.language === language
 	)
+
+	const translatedCareer = careers.find(
+		(career) => career?.language === language
+	)
+
 	const translatedAbout = about.find((about) => about?.language === language)
 
 	return {
@@ -62,6 +70,7 @@ const toResource = (
 			menu: translatedMenu,
 			header: translatedHeader,
 			contact: translatedContact,
+			careers: translatedCareer,
 			about: translatedAbout,
 		},
 	}
@@ -74,6 +83,7 @@ const main = async () => {
 		headers,
 		languages,
 		contacts,
+		careers,
 		socialNetworks,
 		about,
 	] = await Promise.all(
@@ -83,6 +93,7 @@ const main = async () => {
 			HEADER_QUERY,
 			LANGUAGE_QUERY,
 			CONTACT_QUERY,
+			CAREER_QUERY,
 			SOCIAL_NETWORK_QUERY,
 			ABOUT_QUERY,
 		].map(async (query) => apolloClient.query({ query }))
@@ -96,6 +107,7 @@ const main = async () => {
 					menu: menus.data.menus,
 					header: headers.data.headers,
 					contact: contacts.data.contacts,
+					careers: careers.data.careers,
 					about: about.data.aboutuses,
 				},
 				language.languageCode!
@@ -138,4 +150,4 @@ const main = async () => {
 
 main()
 	.then(() => console.log('Translations generated successful'))
-	.catch(console.error)
+	.catch((error) => {console.error(JSON.stringify(error, null, 2))})
