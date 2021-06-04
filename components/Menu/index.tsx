@@ -5,14 +5,6 @@ import SelectLanguage from '../SelectLanguage'
 import NextLink from 'next/link'
 import { Router } from 'next/dist/client/router'
 import {
-	IntroItem,
-	IntroMenuButton,
-	IntroMenuCross,
-	IntroMenuList,
-	IntroMenuSwitcher,
-	IntroMenuWrapper,
-} from './styled'
-import {
 	MenuPanel,
 	Item,
 	MenuWrapper,
@@ -22,7 +14,7 @@ import {
 	Icon,
 } from './styled'
 
-export const Menu: React.FC<{ router: Router }> = ({ router }) => {
+const Menu: React.FC<{ router: Router }> = ({ router }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { t } = useTranslation()
 
@@ -82,7 +74,9 @@ export const Menu: React.FC<{ router: Router }> = ({ router }) => {
 				<SelectLanguage />
 			</Item>
 			<Item>
-				<MenuButton onClick={() => setIsOpen(true)}>menu</MenuButton>
+				<MenuButton onClick={() => setIsOpen(true)}>
+					{t('menu.menu')}
+				</MenuButton>
 			</Item>
 			{isOpen ? (
 				<MenuWrapper>
@@ -98,60 +92,4 @@ export const Menu: React.FC<{ router: Router }> = ({ router }) => {
 	)
 }
 
-export const Navigation: React.FC = () => {
-	const { t } = useTranslation()
-	const [isOpen, setIsOpen] = useState(false)
-
-	return (
-		<>
-			<IntroMenuSwitcher>
-				<IntroMenuButton onClick={() => setIsOpen(true)}>
-					{t('menu.menu')}
-				</IntroMenuButton>
-			</IntroMenuSwitcher>
-			<IntroMenuWrapper isOpen={isOpen}>
-				<IntroMenuSwitcher>
-					<IntroMenuCross onClick={() => setIsOpen(false)}>
-						🞨
-					</IntroMenuCross>
-				</IntroMenuSwitcher>
-				<IntroMenuList>
-					<IntroItem>
-						<MainMenu>
-							<NextLink href="/">{t('menu.homePage')}</NextLink>
-						</MainMenu>
-					</IntroItem>
-					<IntroItem>
-						<AboutUs>
-							<NextLink href="/about">
-								{t('menu.aboutUs')}
-							</NextLink>
-						</AboutUs>
-					</IntroItem>
-					<IntroItem>
-						<SelectLanguage />
-					</IntroItem>
-					<IntroItem>
-						<Reference>
-							<NextLink href="/">{t('menu.reference')}</NextLink>
-						</Reference>
-					</IntroItem>
-					<IntroItem>
-						<Career>
-							<NextLink href="/career">
-								{t('menu.career')}
-							</NextLink>
-						</Career>
-					</IntroItem>
-					<IntroItem>
-						<Contact>
-							<NextLink href="/contacts">
-								{t('menu.contact')}
-							</NextLink>
-						</Contact>
-					</IntroItem>
-				</IntroMenuList>
-			</IntroMenuWrapper>
-		</>
-	)
-}
+export default Menu
