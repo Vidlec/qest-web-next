@@ -5,7 +5,6 @@ export const Wrapper = styled.footer`
 	width: 100%;
 	justify-content: center;
 	position: relative;
-	padding-top: 120px;
 `
 
 export const Line = styled.div`
