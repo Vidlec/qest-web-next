@@ -90,7 +90,9 @@ export const ArrowLink = styled.a`
 	align-items: center;
 `
 export const ArrowDownIcon = styled.img`
-	height: 49px;
+	transform: rotate(90deg);
+	width: 49px;
+	margin-bottom: 24px;
 `
 export const WeAreDescription = styled.div`
 	font-size: 2.2rem;
