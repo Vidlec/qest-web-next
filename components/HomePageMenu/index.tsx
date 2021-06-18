@@ -5,12 +5,12 @@ import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
 
 import {
-	IntroItem,
-	IntroMenuButton,
-	IntroMenuCross,
-	IntroMenuList,
-	IntroMenuSwitcher,
-	IntroMenuWrapper,
+	Item,
+	MenuButton,
+	MenuCross,
+	MenuList,
+	MenuSwitcher,
+	MenuWrapper,
 } from './styled'
 
 export const HomePageMenu: React.FC = () => {
@@ -19,54 +19,54 @@ export const HomePageMenu: React.FC = () => {
 
 	return (
 		<>
-			<IntroMenuSwitcher>
-				<IntroMenuButton onClick={() => setIsOpen(true)}>
+			<MenuSwitcher>
+				<MenuButton onClick={() => setIsOpen(true)}>
 					{t('menu.menu')}
-				</IntroMenuButton>
-			</IntroMenuSwitcher>
-			<IntroMenuWrapper isOpen={isOpen}>
-				<IntroMenuSwitcher>
-					<IntroMenuCross onClick={() => setIsOpen(false)}>
+				</MenuButton>
+			</MenuSwitcher>
+			<MenuWrapper isOpen={isOpen}>
+				<MenuSwitcher>
+					<MenuCross onClick={() => setIsOpen(false)}>
 						🞨
-					</IntroMenuCross>
-				</IntroMenuSwitcher>
-				<IntroMenuList>
-					<IntroItem>
+					</MenuCross>
+				</MenuSwitcher>
+				<MenuList>
+					<Item>
 						<MainMenu>
 							<NextLink href="/">{t('menu.homePage')}</NextLink>
 						</MainMenu>
-					</IntroItem>
-					<IntroItem>
+					</Item>
+					<Item>
 						<AboutUs>
 							<NextLink href="/about">
 								{t('menu.aboutUs')}
 							</NextLink>
 						</AboutUs>
-					</IntroItem>
-					<IntroItem>
+					</Item>
+					<Item>
 						<SelectLanguage />
-					</IntroItem>
-					<IntroItem>
+					</Item>
+					<Item>
 						<Reference>
 							<NextLink href="/">{t('menu.reference')}</NextLink>
 						</Reference>
-					</IntroItem>
-					<IntroItem>
+					</Item>
+					<Item>
 						<Career>
 							<NextLink href="/career">
 								{t('menu.career')}
 							</NextLink>
 						</Career>
-					</IntroItem>
-					<IntroItem>
+					</Item>
+					<Item>
 						<Contact>
 							<NextLink href="/contacts">
 								{t('menu.contact')}
 							</NextLink>
 						</Contact>
-					</IntroItem>
-				</IntroMenuList>
-			</IntroMenuWrapper>
+					</Item>
+				</MenuList>
+			</MenuWrapper>
 		</>
 	)
 }

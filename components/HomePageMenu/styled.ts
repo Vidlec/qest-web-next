@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const IntroMenuSwitcher = styled.nav`
+export const MenuSwitcher = styled.nav`
 	width: 100%;
 	height: 4rem;
 	display: flex;
@@ -15,7 +15,7 @@ export const IntroMenuSwitcher = styled.nav`
 	}
 `
 
-export const IntroMenuButton = styled.button`
+export const MenuButton = styled.button`
 	font-weight: bold;
 	color: ${({ theme }) => theme.colors.mainMenuButton};
 	cursor: pointer;
@@ -23,7 +23,7 @@ export const IntroMenuButton = styled.button`
 	border: none;
 `
 
-export const IntroMenuWrapper = styled.div<{ isOpen: boolean }>`
+export const MenuWrapper = styled.div<{ isOpen: boolean }>`
 	width: 100%;
 	height: 100vh;
 	display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -38,7 +38,7 @@ export const IntroMenuWrapper = styled.div<{ isOpen: boolean }>`
 	}
 `
 
-export const IntroMenuCross = styled.button`
+export const MenuCross = styled.button`
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
@@ -50,7 +50,7 @@ export const IntroMenuCross = styled.button`
 	margin-top: 1rem;
 `
 
-export const IntroMenuList = styled.ul`
+export const MenuList = styled.ul`
 	width: 100%;
 	height: 70%;
 	display: flex;
@@ -70,7 +70,7 @@ export const IntroMenuList = styled.ul`
 	}
 `
 
-export const IntroItem = styled.li`
+export const Item = styled.li`
 	margin: 0 1rem 0 0;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
