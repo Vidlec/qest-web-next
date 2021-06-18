@@ -1,11 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 import Container from 'components/Container'
 import Row from 'components/Row'
 import { Col404, Img, Heading, Paragraph404, Link404, Arrow } from './styled'
-import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
 
-const PageNotFound = () => {
+const PageNotFound: React.FC = () => {
 	const { t } = useTranslation()
 
 	return (
