@@ -143,7 +143,7 @@ const AboutUs: React.FC = () => {
 
 				<ArrowLinkWrapper>
 					<ArrowLink href={'#'}>
-						<ArrowDownIcon src={t('about.arrow.url')} />
+						<ArrowDownIcon src={t('about.arrow.url')}  alt={t('about.arrow.alternativeText')} />
 						<span>{t('about.weAreArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
