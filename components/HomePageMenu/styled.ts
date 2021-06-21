@@ -23,10 +23,10 @@ export const MenuButton = styled.button`
 	border: none;
 `
 
-export const MenuWrapper = styled.div<{ isOpen: boolean }>`
+export const MenuWrapper = styled.div`
 	width: 100%;
 	height: 100vh;
-	display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+	display: flex;
 	position: absolute;
 	flex-direction: column;
 	background-color: ${({ theme }) => theme.colors.mainBackground};
