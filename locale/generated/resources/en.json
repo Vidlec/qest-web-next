@@ -42,7 +42,7 @@
       "taxIdentificationNumbers": "IČO: 02232073\nDIČ: CZ02232073",
       "taxIdentificationDescription": "entered in the Commercial Register of the Municipal Court in Prague, in dd. C, vl.217060",
       "email": "info@qest.cz",
-      "phoneNumber": "+420 726 898",
+      "phoneNumber": "+420 728 214 029",
       "formSubmit": "send",
       "formTextLabel": "contact us:",
       "formNameLabel": "name*:",
@@ -117,6 +117,20 @@
         }
       ],
       "__typename": "Career"
+    },
+    "page404s": {
+      "id": "2",
+      "language": "en",
+      "heading": "OH NO!! There is nothing here.",
+      "description": "It seems that we are unable to find what you're looking for.\nTry going back on main page and live an adventure.",
+      "image": {
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/mozek_e3b33570d3.png",
+        "alternativeText": "",
+        "__typename": "UploadFile"
+      },
+      "link": "back to the main page",
+      "bgText": "404",
+      "__typename": "Page404"
     },
     "socialNetworkUrls": {
       "Twitter": {

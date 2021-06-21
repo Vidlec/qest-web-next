@@ -74,6 +74,10 @@ export const ABOUT_QUERY = gql`
 			}
 			hqCTATitle
 			hqWeAreHereDescription
+			arrow {
+				url
+				alternativeText
+			}
 		}
 	}
 `

@@ -12,6 +12,7 @@ import {
 	Header,
 	Menu,
 	Language,
+	Page404,
 	SocialNetwork,
 	AboutUs,
 } from '../gql/generated/types'
@@ -20,6 +21,7 @@ import { HEADER_QUERY } from '../gql/queries/headers'
 import { LANGUAGE_QUERY } from '../gql/queries/languages'
 import { CONTACT_QUERY } from '../gql/queries/contacts'
 import { CAREER_QUERY } from '../gql/queries/career'
+import { PAGE404_QUERY } from '../gql/queries/page404s'
 import { SOCIAL_NETWORK_QUERY } from '../gql/queries/socialNetworks'
 import { ABOUT_QUERY } from '../gql/queries/aboutuses'
 
@@ -29,6 +31,7 @@ type Resources = {
 	header: Header[]
 	contact: Contact[]
 	careers: Career[]
+	page404s: Page404[]
 	about: AboutUs[]
 }
 
@@ -41,7 +44,7 @@ const apolloClient = new ApolloClient({
 })
 
 const toResource = (
-	{ homepage, menu, header, contact, careers, about }: Resources,
+	{ homepage, menu, header, contact, careers, page404s, about }: Resources,
 	language: string
 ) => {
 	const translatedHomepage = homepage.find(
@@ -62,6 +65,10 @@ const toResource = (
 		(career) => career?.language === language
 	)
 
+	const translatedPage404 = page404s.find(
+		(page404) => page404?.language === language
+	)
+
 	const translatedAbout = about.find((about) => about?.language === language)
 
 	return {
@@ -71,6 +78,7 @@ const toResource = (
 			header: translatedHeader,
 			contact: translatedContact,
 			careers: translatedCareer,
+			page404s: translatedPage404,
 			about: translatedAbout,
 		},
 	}
@@ -84,6 +92,7 @@ const main = async () => {
 		languages,
 		contacts,
 		careers,
+		page404s,
 		socialNetworks,
 		about,
 	] = await Promise.all(
@@ -94,6 +103,7 @@ const main = async () => {
 			LANGUAGE_QUERY,
 			CONTACT_QUERY,
 			CAREER_QUERY,
+			PAGE404_QUERY,
 			SOCIAL_NETWORK_QUERY,
 			ABOUT_QUERY,
 		].map(async (query) => apolloClient.query({ query }))
@@ -108,6 +118,7 @@ const main = async () => {
 					header: headers.data.headers,
 					contact: contacts.data.contacts,
 					careers: careers.data.careers,
+					page404s: page404s.data.page404s,
 					about: about.data.aboutuses,
 				},
 				language.languageCode!

@@ -16,7 +16,7 @@ export const theme = {
 		contactButton: '#81F287',
 		mainFont: '#F0EFEC',
 		mainMenuButton: '#DC4846',
-		mainBackground: '#0E0E0E',
+		mainBackground: '#161616',
 		caseStudyComplementaryColor: '#317A5B',
 		h1: '#CDCDCD',
 		technologiesBackground: '#000000',
