@@ -30,7 +30,7 @@ export const MenuButton = styled.button`
 	border: none;
 	background: none;
 	cursor: pointer;
-	font-size: 2.2rem;
+	font-size: 1.44rem;
 `
 
 export const MenuCross = styled.button`

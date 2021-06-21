@@ -4,6 +4,7 @@ import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
 import NextLink from 'next/link'
 import { Router } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import {
 	MenuPanel,
 	Item,
@@ -14,9 +15,10 @@ import {
 	Icon,
 } from './styled'
 
-const Menu: React.FC<{ router: Router }> = ({ router }) => {
+const Menu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const { t } = useTranslation()
+	const router = useRouter()
 
 	const links: { url: string; link: React.ReactElement }[] = [
 		{
@@ -63,7 +65,7 @@ const Menu: React.FC<{ router: Router }> = ({ router }) => {
 
 	useEffect(() => {
 		setIsOpen(false)
-	}, [router.pathname])
+	}, [router.asPath])
 
 	return (
 		<MenuPanel>
