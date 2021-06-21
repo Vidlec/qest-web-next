@@ -3,6 +3,7 @@ import Paragraph from 'components/Paragraph'
 import Col from 'components/Col'
 
 export const Col404 = styled(Col)`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -15,6 +16,15 @@ export const Img = styled.img`
     @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		width: 80%;
 	}
+`
+
+export const Text404 = styled.span`
+	position: absolute;
+	font-size: 10rem;
+	top: calc(25% - 10rem);
+	color: ${({theme}) => theme.colors.black};
+	right: 5%;
+	z-index: -1;
 `
 
 export const Heading = styled.h1`
