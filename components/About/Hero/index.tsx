@@ -53,7 +53,7 @@ const AboutHero = () => {
 
 			<ArrowLinkWrapper>
 				<ArrowLink href={'#'}>
-					<ArrowDownIcon />
+					<ArrowDownIcon src={t('about.arrow.url')} alt={t('about.arrow.alternativeText')} />
 					<span>{t('about.heroArrowTitle')}</span>
 				</ArrowLink>
 			</ArrowLinkWrapper>
