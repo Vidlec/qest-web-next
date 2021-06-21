@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
 import NextLink from 'next/link'
-import { Router } from 'next/dist/client/router'
 import { useRouter } from 'next/router'
 import {
 	MenuPanel,
@@ -73,9 +72,6 @@ const Menu: React.FC = () => {
 				<Icon src={t('header.logo.url') as string} />
 			</Item>
 			<Item>
-				<SelectLanguage />
-			</Item>
-			<Item>
 				<MenuButton onClick={() => setIsOpen(true)}>
 					{t('menu.menu')}
 				</MenuButton>
@@ -88,6 +84,7 @@ const Menu: React.FC = () => {
 							return <Link key={link.url}>{link.link}</Link>
 						}
 					})}
+					<SelectLanguage />
 				</MenuWrapper>
 			) : null}
 		</MenuPanel>

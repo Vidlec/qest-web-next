@@ -19,8 +19,8 @@ export const HomePageMenu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [width, setWidth] = useState<boolean | null>(null)
 
-	useEffect( ()=> {
-		if(!width) {
+	useEffect(() => {
+		if (!width) {
 			setWidth(window.innerWidth > theme.mediaQueriesNumbers.ipad)
 		}
 
@@ -29,7 +29,7 @@ export const HomePageMenu: React.FC = () => {
 		}
 
 		window.addEventListener('resize', handleResize)
-		
+
 		return () => window.removeEventListener('resize', handleResize)
 	}, [])
 
@@ -40,7 +40,7 @@ export const HomePageMenu: React.FC = () => {
 					{t('menu.menu')}
 				</MenuButton>
 			</MenuSwitcher>
-			{isOpen || width  ? (
+			{isOpen || width ? (
 				<MenuWrapper>
 					<MenuSwitcher>
 						<MenuCross onClick={() => setIsOpen(false)}>
