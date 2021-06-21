@@ -48,12 +48,3 @@ export const Link404 = styled.div`
         font-size: 1.38rem;
 	}
 `
-
-export const Arrow = styled.img`
-    cursor: pointer;
-    width: 49px;
-    
-    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		margin-left: -20px;
-	}
-`

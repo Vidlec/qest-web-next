@@ -12,6 +12,7 @@ export const PAGE404_QUERY = gql`
                 alternativeText
             }
             link
+            bgText
 		}
 	}
 `

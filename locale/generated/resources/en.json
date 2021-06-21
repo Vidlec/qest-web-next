@@ -129,6 +129,7 @@
         "__typename": "UploadFile"
       },
       "link": "back to the main page",
+      "bgText": "404",
       "__typename": "Page404"
     },
     "socialNetworkUrls": {

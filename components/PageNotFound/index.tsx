@@ -16,7 +16,7 @@ const PageNotFound: React.FC = () => {
 						src={t('page404s.image.url')}
 						alt={t('page404s.image.alternativeText')}
 					/>
-					<Text404>404</Text404>
+					<Text404>{t('page404s.bgText')}</Text404>
 				</Col404>
 				<Col404 mobile={12} ipad={6}>
 					<Heading>{t('page404s.heading')}</Heading>
