@@ -29,25 +29,25 @@ const Career: React.FC = () => {
 		imgSrc: string
 	}[] = []
 
-	t<string, ComponentContentCareerPosition[]>('careers.careerPosition', {
+	t<string, ComponentContentCareerPosition[]>('careers.positions', {
 		returnObjects: true,
 	}).map((position) => {
 		careerPositions.push({
-			header: position.careerPositionHeading as string,
-			description: position.careerPositionDescription as string,
-			color: position.careerPositionColor as string,
+			header: position.heading as string,
+			description: position.description as string,
+			color: position.color as string,
 		})
 		return position
 	})
 
-	t<string, ComponentContentPictureList[]>('careers.careerInfo', {
+	t<string, ComponentContentPictureList[]>('careers.info', {
 		returnObjects: true,
 	}).map((info) => {
 		pictureListData.push({
-			heading: info.pictureListHeading as string,
-			description: info.pictureListDescription as string,
-			color: info.pictureListColor as string,
-			imgSrc: info.pictureListImage?.url as string,
+			heading: info.heading as string,
+			description: info.description as string,
+			color: info.color as string,
+			imgSrc: info.image?.url as string,
 		})
 		return info
 	})

@@ -11,20 +11,20 @@ export const CAREER_QUERY = gql`
             careerDescription
             careerWho
             somethingElseHeading
-            somethingElseDescription
+            somethingElseDescritption
             somethingElseContact
             careerWhy
             careerWhatHeading
-            careerPosition {
-                careerPositionHeading
-                careerPositionDescription
-                careerPositionColor
+            positions {
+                heading
+                description
+                color
             }
-            careerInfo {
-                pictureListHeading
-                pictureListDescription
-                pictureListColor
-                pictureListImage {
+            info {
+                heading
+                description
+                color
+                image {
                     url
 				    alternativeText
                 }
