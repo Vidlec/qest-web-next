@@ -111,64 +111,46 @@ export const MenuWrapper = styled.div`
 	display: flex;
 	position: absolute;
 	flex-direction: column;
-	background-color: ${({ theme }) => theme.colors.mainBackground};
 	z-index: 10;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		display: flex;
-		background-color: transparent;
-	}
 `
 
 export const MenuList = styled.ul`
 	width: 100%;
-	height: 70%;
+	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: flex-end;
+	align-content: space-between;
 	list-style: none;
 	padding: 0;
-	margin-top: 4rem;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		height: 100vh;
-		margin: 0;
-		align-content: space-between;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
+	margin: 0;
 `
 
 export const Item = styled.li`
-	margin: 0 1rem 0 0;
+	padding: 3.75rem 2.5rem;
+	width: 33%;
+	flex-grow: 1;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		margin: 0;
-		padding: 3.75rem 2.5rem;
-		width: 33%;
-		flex-grow: 1;
+	// Main page
+	&:nth-child(1) {
+		display: none;
+	}
 
-		// Main page
-		&:nth-child(1) {
-			display: none;
-		}
+	// Languages picker
+	&:nth-child(3) {
+		text-align: center;
+	}
 
-		// Languages picker
-		&:nth-child(3) {
-			text-align: center;
-		}
+	// Reference
+	&:nth-child(4) {
+		text-align: right;
+	}
 
-		// Reference
-		&:nth-child(4) {
-			text-align: right;
-		}
-
-		// Contact
-		&:nth-child(6) {
-			flex-grow: 2;
-			text-align: right;
-		}
+	// Contact
+	&:nth-child(6) {
+		flex-grow: 2;
+		text-align: right;
 	}
 `
-
