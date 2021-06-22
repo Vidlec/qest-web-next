@@ -128,6 +128,7 @@ const Content: React.FC<ContentProps> = ({
 	links,
 }) => {
 	const { t } = useTranslation()
+	const router = useRouter()
 	return (
 		<>
 			<Item>
@@ -141,7 +142,7 @@ const Content: React.FC<ContentProps> = ({
 					<MenuWrapper>
 						<MenuCross onClick={handleClose}>🞨</MenuCross>
 						{links.map((link) => (
-							<Link key={link.url}>{link.link}</Link>
+							router.asPath !== link.url? <Link key={link.url}>{link.link}</Link>: null
 						))}
 						<SelectLanguage />
 					</MenuWrapper>
