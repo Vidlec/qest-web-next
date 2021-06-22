@@ -1,26 +1,78 @@
-import { MainMenu } from 'components/Link'
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.div`
-	height: 100px;
+export const MenuPanel = styled.div`
 	width: 100%;
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 1vh;
+	padding: 2rem;
+	margin: 0 0 9rem 0;
 `
 
-export const Logo = styled.img`
-	height: 100%;
+export const HomePageMenuPanel = styled(MenuPanel)`
+	&& {
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		top: 0;
+		margin: 0;
+	}
 `
 
-export const StyledMainMenu = styled(MainMenu)`
-	padding-right: 2vw;
+export const Item = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	&:first-child {
+		justify-content: flex-start;
+	}
+
+	&:last-child {
+		justify-content: flex-end;
+	}
 `
 
-export const LanguageSwitcherWrapper = styled.div`
-	position: absolute;
-	top: 4vh;
-	left: 50%;
-	right: 50%;
+export const MenuButton = styled.button`
+	padding: 1rem;
+	color: ${({ theme }) => theme.colors.red};
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 1.44rem;
+`
+
+export const MenuCross = styled.button`
+	padding: 1rem;
+	color: ${({ theme }) => theme.colors.red};
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: 4rem;
+	line-height: 4rem;
+	margin-bottom: 2rem;
+`
+
+export const MenuWrapper = styled.div`
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: ${({ theme }) => theme.colors.mainBackground};
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding: 2rem;
+`
+
+export const Link = styled.span`
+	font-size: 2.2rem;
+	margin: 0 0 2rem;
+`
+
+export const Icon = styled.img`
+	height: 6.45rem;
 `
