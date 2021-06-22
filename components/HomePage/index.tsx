@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useMediaQuery } from 'react-responsive'
 import NextLink from 'next/link'
 import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from 'components/SelectLanguage'
@@ -21,21 +22,15 @@ import Line from 'components/Line'
 
 const HomePage: React.FC = () => {
 	const { t } = useTranslation()
-	const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
+	const [isDesktop, setIsDesktop] = useState(false)
+
+	const isDesktopQuery = useMediaQuery({
+		query: `(min-device-width: ${theme.mediaQueriesNumbers.ipad}px)`,
+	})
 
 	useEffect(() => {
-		if (isDesktop === null) {
-			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
-		}
-
-		const handleResize = () => {
-			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
-		}
-
-		window.addEventListener('resize', handleResize)
-
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
+		setIsDesktop(isDesktopQuery)
+	}, [isDesktopQuery])
 
 	return (
 		<Wrapper>
