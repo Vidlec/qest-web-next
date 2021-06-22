@@ -11,11 +11,13 @@ export const MenuPanel = styled.div`
 `
 
 export const HomePageMenuPanel = styled(MenuPanel)`
-	position: absolute;
-	z-index: 5;
-	left: 0;
-	top: 0;
-	margin: 0;
+	&& {
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		top: 0;
+		margin: 0;
+	}
 `
 
 export const Item = styled.div`
