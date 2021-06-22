@@ -65,7 +65,7 @@ export const MenuWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding: 2rem;
+	padding: 2.38rem 2.25rem;
 `
 
 export const Link = styled.span`
@@ -74,5 +74,5 @@ export const Link = styled.span`
 `
 
 export const Icon = styled.img`
-	height: 6.45rem;
+	height: 4rem;
 `
