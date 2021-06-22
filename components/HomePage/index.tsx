@@ -2,30 +2,34 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import NextLink from 'next/link'
 import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
-import SelectLanguage from '../SelectLanguage'
+import SelectLanguage from 'components/SelectLanguage'
 import theme from 'theme'
-
 import {
-	Item,
-	MenuButton,
-	MenuCross,
-	MenuList,
-	MenuSwitcher,
+	Wrapper,
+	Button,
+	ClickText,
+	Logo,
+	PictureLogo,
+	SlideStopWrapper,
+	TextLogo,
+	WrapperLogoTexts,
 	MenuWrapper,
+	MenuList,
+	Item,
 } from './styled'
+import Line from 'components/Line'
 
-export const HomePageMenu: React.FC = () => {
+const HomePage: React.FC = () => {
 	const { t } = useTranslation()
-	const [isOpen, setIsOpen] = useState(false)
-	const [width, setWidth] = useState<boolean | null>(null)
+	const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
 
 	useEffect(() => {
-		if (!width) {
-			setWidth(window.innerWidth > theme.mediaQueriesNumbers.ipad)
+		if (isDesktop === null) {
+			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
 		}
 
 		const handleResize = () => {
-			setWidth(window.innerWidth > theme.mediaQueriesNumbers.ipad)
+			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
 		}
 
 		window.addEventListener('resize', handleResize)
@@ -34,19 +38,9 @@ export const HomePageMenu: React.FC = () => {
 	}, [])
 
 	return (
-		<>
-			<MenuSwitcher>
-				<MenuButton onClick={() => setIsOpen(true)}>
-					{t('menu.menu')}
-				</MenuButton>
-			</MenuSwitcher>
-			{isOpen || width ? (
+		<Wrapper>
+			{isDesktop ? (
 				<MenuWrapper>
-					<MenuSwitcher>
-						<MenuCross onClick={() => setIsOpen(false)}>
-							🞨
-						</MenuCross>
-					</MenuSwitcher>
 					<MenuList>
 						<Item>
 							<MainMenu>
@@ -89,8 +83,21 @@ export const HomePageMenu: React.FC = () => {
 					</MenuList>
 				</MenuWrapper>
 			) : null}
-		</>
+
+			<WrapperLogoTexts>
+				<TextLogo>{t('homepage.descriptionAboveLine')}</TextLogo>
+				<TextLogo>{t('homepage.descriptionBellowLine')}</TextLogo>
+			</WrapperLogoTexts>
+			<Logo>
+				<PictureLogo src={t('homepage.logo.url')} alt="qest logo" />
+				<Line />
+			</Logo>
+			<SlideStopWrapper>
+				<Button>8</Button>
+				<ClickText href={'/'}>{t('homepage.clickToStop')}</ClickText>
+			</SlideStopWrapper>
+		</Wrapper>
 	)
 }
 
-export default HomePageMenu
+export default HomePage

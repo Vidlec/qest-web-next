@@ -10,6 +10,14 @@ export const MenuPanel = styled.div`
 	margin: 0 0 9rem 0;
 `
 
+export const HomePageMenuPanel = styled(MenuPanel)`
+	position: absolute;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	margin: 0;
+`
+
 export const Item = styled.div`
 	width: 100%;
 	display: flex;
@@ -49,7 +57,7 @@ export const MenuWrapper = styled.div`
 	width: 100%;
 	height: 100vh;
 	background-color: ${({ theme }) => theme.colors.mainBackground};
-	z-index: 1;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	display: flex;

@@ -4,8 +4,12 @@ import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
 import SelectLanguage from '../SelectLanguage'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import Portal from 'components/Portal'
+import { MENU_PORTAL_ID } from 'components/Constants'
+import theme from 'theme'
 import {
 	MenuPanel,
+	HomePageMenuPanel,
 	Item,
 	MenuWrapper,
 	MenuButton,
@@ -16,6 +20,7 @@ import {
 
 const Menu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
+	const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
 	const { t } = useTranslation()
 	const router = useRouter()
 
@@ -66,6 +71,51 @@ const Menu: React.FC = () => {
 		setIsOpen(false)
 	}, [router.asPath])
 
+	useEffect(() => {
+		if (isDesktop === null) {
+			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
+		}
+
+		const handleResize = () => {
+			setIsDesktop(window.innerWidth > theme.mediaQueriesNumbers.ipad)
+		}
+
+		window.addEventListener('resize', handleResize)
+
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	const handleClose = () => {
+		setIsOpen(false)
+	}
+
+
+	if (router.asPath === '/') {
+		console.log(router.asPath)
+		return !isDesktop ? (
+			<HomePageMenuPanel>
+				<Item>
+					<Icon src={t('header.logo.url') as string} />
+				</Item>
+				<Item>
+					<MenuButton onClick={() => setIsOpen(true)}>
+						{t('menu.menu')}
+					</MenuButton>
+				</Item>
+				{isOpen ? (
+					<Portal portalID={MENU_PORTAL_ID}>
+					<MenuWrapper>
+						<MenuCross onClick={handleClose} >🞨</MenuCross>
+						{links.map((link) => (
+							<Link key={link.url}>{link.link}</Link>
+						))}
+					</MenuWrapper>
+				</Portal>
+				) : null}
+			</HomePageMenuPanel>
+		) : null
+	}
+
 	return (
 		<MenuPanel>
 			<Item>
@@ -77,15 +127,14 @@ const Menu: React.FC = () => {
 				</MenuButton>
 			</Item>
 			{isOpen ? (
-				<MenuWrapper>
-					<MenuCross onClick={() => setIsOpen(false)}>🞨</MenuCross>
-					{links.map((link) => {
-						if (link.url !== router.pathname) {
-							return <Link key={link.url}>{link.link}</Link>
-						}
-					})}
-					<SelectLanguage />
-				</MenuWrapper>
+				<Portal portalID={MENU_PORTAL_ID}>
+					<MenuWrapper>
+						<MenuCross onClick={handleClose} >🞨</MenuCross>
+						{links.map((link) => (
+							<Link key={link.url}>{link.link}</Link>
+						))}
+					</MenuWrapper>
+				</Portal>
 			) : null}
 		</MenuPanel>
 	)

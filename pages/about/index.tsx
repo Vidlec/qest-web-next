@@ -51,7 +51,6 @@ import {
 	MoreBlogPostsContainer,
 } from 'components/About/styled'
 import Headline from 'components/Headline'
-import Footer from 'components/Footer'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import theme from 'theme'
 import AboutHero from 'components/About/Hero'
@@ -97,7 +96,6 @@ const AboutUs: React.FC = () => {
 	return (
 		<>
 			<AboutHero />
-
 			<Container>
 				<Headline>{t('about.weAreHeadline')}</Headline>
 
@@ -136,19 +134,19 @@ const AboutUs: React.FC = () => {
 								))}
 							</Slider>
 						</SliderWrapper>
-
 						<CarouselLine />
 					</CarouselCol>
 				</WeAreRow>
-
 				<ArrowLinkWrapper>
 					<ArrowLink href={'#'}>
-						<ArrowDownIcon src={t('about.arrow.url')}  alt={t('about.arrow.alternativeText')} />
+						<ArrowDownIcon
+							src={t('about.arrow.url')}
+							alt={t('about.arrow.alternativeText')}
+						/>
 						<span>{t('about.weAreArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
 			</Container>
-
 			<Container>
 				<Headline>{t('about.skillsHeadline')}</Headline>
 
@@ -195,7 +193,6 @@ const AboutUs: React.FC = () => {
 					</Col>
 				</SkillsRow>
 			</Container>
-
 			<Container>
 				<ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
 
@@ -226,11 +223,9 @@ const AboutUs: React.FC = () => {
 					))}
 				</ValuesWrapper>
 			</Container>
-
 			<Container>
 				<Headline>{t('about.teamHeadline')}</Headline>
 			</Container>
-
 			<Container>
 				<Headline>{t('about.hqHeadline')}</Headline>
 
@@ -285,7 +280,6 @@ const AboutUs: React.FC = () => {
 					</HQCTACol>
 				</HQWeAreHereRow>
 			</Container>
-
 			<Container>
 				<Headline>{t('about.careerHeadline')}</Headline>
 
@@ -303,7 +297,6 @@ const AboutUs: React.FC = () => {
 					/>
 				</CareerCTA>
 			</Container>
-
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
 				<BlogPostsContainer>
