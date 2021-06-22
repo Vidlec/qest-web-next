@@ -23,6 +23,8 @@ const Portal: React.FC<Props> = ({
 		}
 	}, [portalID])
 
+	console.log(ref.current)
+
 	return ref.current ? createPortal(children, ref.current) : null
 }
 

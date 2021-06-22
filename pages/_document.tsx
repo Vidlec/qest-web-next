@@ -7,6 +7,7 @@ import Document, {
 	NextScript,
 } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { MENU_PORTAL_ID } from 'components/Constants'
 
 export default class MyDocument extends Document<any> {
 	static async getInitialProps(ctx: DocumentContext) {
@@ -42,6 +43,7 @@ export default class MyDocument extends Document<any> {
 				<Head>{this.props.styleTags}</Head>
 				<body>
 					<Main />
+					<div id={MENU_PORTAL_ID} />
 					<NextScript />
 				</body>
 			</Html>
