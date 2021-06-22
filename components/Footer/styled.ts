@@ -31,7 +31,7 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h3`
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		font-size: 4.3rem;
+		font-size: ${({ theme }) => theme.sizes.pageTitle
 	}
 `
 

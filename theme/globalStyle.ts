@@ -23,14 +23,6 @@ export const GlobalStyle = createGlobalStyle`
     src: url("/assets/fonts/SourceCodeVariable-Roman.otf")
   }
 
-  html {
-    font-size: 10px;
-
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
-      font-size: 16px;
-    }
-  }
-
   body {
     margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.mainBackground};
@@ -52,12 +44,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      font-size: 4.375rem;
+      font-size: ${({ theme }) => theme.sizes.pageTitle};
     }
-
+    
+    h2 {
+      font-size: 2.1875rem;
+    }
+    
     h3 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 3rem;
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.h3};
     }
