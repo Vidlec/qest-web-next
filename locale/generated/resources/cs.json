@@ -250,23 +250,42 @@
       },
       "__typename": "AboutUs"
     },
-    "job": {
-      "id": "1",
-      "language": "cs",
-      "title": "C# Developer",
-      "slug": "c-developer",
-      "description": "Qest hledá hledá dobře vyzbrojeného C# Developera, který se nebojí rozvíjet znalosti a výzvám se staví s nadšením.",
-      "careerTechnologiesTitle": "S čím a jak konkrétně pracujeme",
-      "careerTechnologiesContent": "ASP.NET Core (latest), C# (latest), SignalR/WebSockets, MongoDB, MS SQL, RabbitMQ, Redis, Docker, Kubernetes (Azure)",
-      "careerExpectedSkills": "Co se čeká od tebe?",
-      "careerExpectedSkillsContent": "- že ti alespoň něco z výše zmíněného není cizí\n- že se zajímáš o nové technologie a chceš na sobě pracovat\n- že máš analytické myšlení a umíš zapojit i selský rozum\n- že se na tebe budeme moct spolehnout\n- že budeš součástí komunity a občas s námi něco podnikneš",
-      "careerOfferTitle": "Co nabízíme",
-      "careerOfferContent": "Staneš se součástí skvělého kolektivu nadšených profesionálů, kteří tvoří funkční smysluplné a užitečné aplikace. S námi můžeš posouvat své hranice a zdokonalovat se. My ti poskytneme oporu, know-how a budeme ti krýt záda. Sáhneš si také na různé moderní technologie. Vyzkoušíš si, co znamená. \"Team As a Service\" a řízení projektů ve Scrumu. Týmově fungujeme i mimo práci a tak budeš mít spoustu příležitostí nás poznat i neformálně. Jaký každý Qesťák budeš moct vyjádřit svůj názor, který nezapadne. Pracovat můžeš nejen na HPP, ale také IČO, nebo částečný úvazek při studiu. Ztotožňuješ se s našimi životy v našem týmu, protože hodnotami, dovedeš si představit i práce je součástí života a má bavit, a chtěl bys nám pomoct s tvorbou skvělých aplikací? Dej nám o sobě vědět! Osobně se pak můžeš potkat s naší Lindou, ale samozřejmostí je i popovídání s vývojáři. Nejčastěji se software architektem Zdeňkem.\n",
-      "endTitle": "Zaujali jsme tě?",
-      "endContent": "Tak pojď do toho! Napiš nám, jak bys chtěl přispět a začlenit se do Qestu.",
-      "endCTA": "napiš nám",
-      "__typename": "Job"
-    },
+    "careerOffering": [
+      {
+        "id": "1",
+        "language": "cs",
+        "title": "C# Developer",
+        "slug": "c-developer",
+        "description": "Qest hledá hledá dobře vyzbrojeného C# Developera, který se nebojí rozvíjet znalosti a výzvám se staví s nadšením.",
+        "careerTechnologiesTitle": "S čím a jak konkrétně pracujeme",
+        "careerTechnologiesContent": "ASP.NET Core (latest), C# (latest), SignalR/WebSockets, MongoDB, MS SQL, RabbitMQ, Redis, Docker, Kubernetes (Azure)",
+        "careerExpectedSkillsTitle": "Co se čeká od tebe?",
+        "careerExpectedSkillsContent": "- že ti alespoň něco z výše zmíněného není cizí\n- že se zajímáš o nové technologie a chceš na sobě pracovat\n- že máš analytické myšlení a umíš zapojit i selský rozum\n- že se na tebe budeme moct spolehnout\n- že budeš součástí komunity a občas s námi něco podnikneš",
+        "careerOfferTitle": "Co nabízíme",
+        "careerOfferContent": "Staneš se součástí skvělého kolektivu nadšených profesionálů, kteří tvoří funkční smysluplné a užitečné aplikace. S námi můžeš posouvat své hranice a zdokonalovat se. My ti poskytneme oporu, know-how a budeme ti krýt záda. Sáhneš si také na různé moderní technologie. Vyzkoušíš si, co znamená. \"Team As a Service\" a řízení projektů ve Scrumu. Týmově fungujeme i mimo práci a tak budeš mít spoustu příležitostí nás poznat i neformálně. Jaký každý Qesťák budeš moct vyjádřit svůj názor, který nezapadne. Pracovat můžeš nejen na HPP, ale také IČO, nebo částečný úvazek při studiu. Ztotožňuješ se s našimi životy v našem týmu, protože hodnotami, dovedeš si představit i práce je součástí života a má bavit, a chtěl bys nám pomoct s tvorbou skvělých aplikací? Dej nám o sobě vědět! Osobně se pak můžeš potkat s naší Lindou, ale samozřejmostí je i popovídání s vývojáři. Nejčastěji se software architektem Zdeňkem.\n",
+        "endTitle": "Zaujali jsme tě?",
+        "endContent": "Tak pojď do toho! Napiš nám, jak bys chtěl přispět a začlenit se do Qestu.",
+        "endCTA": "napiš nám",
+        "__typename": "CareerOfferings"
+      },
+      {
+        "id": "2",
+        "language": "cs",
+        "title": "React developer",
+        "slug": "react-developer",
+        "description": "Qest hledá hledá dobře vyzbrojeného C# Developera, který se nebojí rozvíjet znalosti a výzvám se staví s nadšením.",
+        "careerTechnologiesTitle": "S čím a jak konkrétně pracujeme",
+        "careerTechnologiesContent": "ASP.NET Core (latest), C# (latest), SignalR/WebSockets, MongoDB, MS SQL, RabbitMQ, Redis, Docker, Kubernetes (Azure)",
+        "careerExpectedSkillsTitle": "Co se čeká od tebe?",
+        "careerExpectedSkillsContent": "- že ti alespoň něco z výše zmíněného není cizí\n- že se zajímáš o nové technologie a chceš na sobě pracovat\n- že máš analytické myšlení a umíš zapojit i selský rozum\n- že se na tebe budeme moct spolehnout\n- že budeš součástí komunity a občas s námi něco podnikneš",
+        "careerOfferTitle": "Co nabízíme",
+        "careerOfferContent": "Staneš se součástí skvělého kolektivu nadšených profesionálů, kteří tvoří funkční smysluplné a užitečné aplikace. S námi můžeš posouvat své hranice a zdokonalovat se. My ti poskytneme oporu, know-how a budeme ti krýt záda. Sáhneš si také na různé moderní technologie. Vyzkoušíš si, co znamená. \"Team As a Service\" a řízení projektů ve Scrumu. Týmově fungujeme i mimo práci a tak budeš mít spoustu příležitostí nás poznat i neformálně. Jaký každý Qesťák budeš moct vyjádřit svůj názor, který nezapadne. Pracovat můžeš nejen na HPP, ale také IČO, nebo částečný úvazek při studiu. Ztotožňuješ se s našimi životy v našem týmu, protože hodnotami, dovedeš si představit i práce je součástí života a má bavit, a chtěl bys nám pomoct s tvorbou skvělých aplikací? Dej nám o sobě vědět! Osobně se pak můžeš potkat s naší Lindou, ale samozřejmostí je i popovídání s vývojáři. Nejčastěji se software architektem Zdeňkem.\n",
+        "endTitle": "Zaujali jsme tě?",
+        "endContent": "Tak pojď do toho! Napiš nám, jak bys chtěl přispět a začlenit se do Qestu.",
+        "endCTA": "napiš nám",
+        "__typename": "CareerOfferings"
+      }
+    ],
     "socialNetworkUrls": {
       "Twitter": {
         "id": "1",
