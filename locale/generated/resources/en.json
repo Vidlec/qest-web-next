@@ -29,7 +29,7 @@
       "title": "QEST | Qest",
       "description": "V Qest navrhujeme a vyvíjíme softwarové, mobilní i webové aplikace.",
       "logo": {
-        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/Botanical_negative_6f36b1cd1c.png",
+        "url": "https://qest-web-cms-media.s3.amazonaws.com/Logo_9e6ddcb2aa.svg",
         "__typename": "UploadFile"
       },
       "__typename": "Header"
@@ -67,6 +67,7 @@
       "bgText": "404",
       "__typename": "Page404"
     },
+    "careerOffering": [],
     "socialNetworkUrls": {
       "Twitter": {
         "id": "1",
