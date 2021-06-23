@@ -1,34 +1,49 @@
 import React from 'react'
-import { Card, Picture, Heading, Description } from './styled'
-import PictureImg from 'components/PictureImg'
+import { Card, Picture, Heading, Description, ImageWrapper } from './styled'
 import { useTranslation } from 'react-i18next'
+import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
 
-interface Props {
-	src: string
-	alt: string
+interface Props extends ComponentContentTechnologies {
+	hand: UploadFile
 	heading?: string
 	__html?: string
 	handIsOnMiddle?: boolean
 }
 
 const TechnologiesCard: React.FC<Props> = ({
-	src,
-	alt,
+	hand,
 	handIsOnMiddle,
-	heading,
-	__html,
+	technologies,
+	description,
+	images,
 }) => {
 	const { t } = useTranslation()
 
 	return (
 		<Card>
-			<Picture handIsOnMiddle={handIsOnMiddle}>
-				<PictureImg src={src} alt={alt} />
-			</Picture>
-			{heading ? <Heading>{heading}</Heading> : null}
-			{__html ? (
-				<Description dangerouslySetInnerHTML={{ __html: __html }} />
-			) : null}
+			<Picture
+				handIsOnMiddle={handIsOnMiddle}
+				src={hand.url}
+				alt={hand.alternativeText as string}
+			/>
+
+			{technologies && <Heading>{technologies}</Heading>}
+			{description && (
+				<Description
+					dangerouslySetInnerHTML={{ __html: description }}
+				/>
+			)}
+			{images && (
+				<ImageWrapper>
+					{images.map((image) => (
+						<img
+							key={image?.id}
+							src={image?.url}
+							alt={image?.url}
+						/>
+					))}
+				</ImageWrapper>
+			)}
 		</Card>
 	)
 }

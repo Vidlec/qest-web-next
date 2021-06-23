@@ -5,18 +5,15 @@ import {
 	Heading,
 	Description,
 	ItemIndex,
+	ItemIndexNumber,
 	ItemInformation,
 	ItemImg,
 } from './styled'
 
+import { ComponentContentPictureList } from 'gql/generated/types'
+
 interface Props {
-	items: {
-		heading: string
-		description: string
-		color: string
-		imgSrc: string
-		altText?: string
-	}[]
+	items: ComponentContentPictureList[]
 }
 
 const PictureList: React.FC<Props> = ({ items }) => {
@@ -24,14 +21,14 @@ const PictureList: React.FC<Props> = ({ items }) => {
 		<Wrapper>
 			{
 				items.map((item, index) => (
-					<Item key={item.heading}>
-						<ItemIndex color={item.color}>
-							<span>{index + 1}</span>
-							<ItemImg src={item.imgSrc} />
+					<Item key={item.header}>
+						<ItemIndex color={item.color as string}>
+							<ItemIndexNumber>{index + 1}</ItemIndexNumber>
+							<ItemImg src={item.image?.url as string} />
 						</ItemIndex>
 						<ItemInformation>
-							<Heading>{item.heading}</Heading>
-							<Description dangerouslySetInnerHTML={{__html: item.description}} />
+							<Heading>{item.header}</Heading>
+							<Description dangerouslySetInnerHTML={{__html: item.description as string}} />
 						</ItemInformation>
 					</Item>
 				))

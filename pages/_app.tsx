@@ -7,10 +7,24 @@ import {
 	withTranslation,
 	WithTranslation,
 } from 'react-i18next'
+
+import {
+	ApolloClient,
+	InMemoryCache,
+	ApolloProvider,
+	useQuery,
+	gql,
+} from '@apollo/client'
+
 import i18n from '../locale'
 import theme from '../theme'
 import { GlobalStyle } from 'theme/globalStyle'
 import withRouter from 'next/dist/client/with-router'
+
+const client = new ApolloClient({
+	uri: 'https://cms-dev.web.qestapp.net/graphql',
+	cache: new InMemoryCache(),
+})
 
 class QestWeb extends App<WithTranslation> {
 	render() {
@@ -30,8 +44,10 @@ class QestWeb extends App<WithTranslation> {
 				</Head>
 				<ThemeProvider theme={theme}>
 					<I18nextProvider i18n={i18n}>
-						<GlobalStyle />
-						<Component {...pageProps} />
+						<ApolloProvider client={client}>
+							<GlobalStyle />
+							<Component {...pageProps} />
+						</ApolloProvider>
 					</I18nextProvider>
 				</ThemeProvider>
 			</>

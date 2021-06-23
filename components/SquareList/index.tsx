@@ -1,8 +1,11 @@
 import React from 'react'
-import { Container, Wrapper, Base, Content, End, Title } from './styled'
+import { Container, Wrapper, Base, Content, End, Title, EndHead, ContactUs } from './styled'
+import { CareerOfferings } from 'gql/generated/types'
+
+export { EndHead, ContactUs }
 
 interface Props {
-	squares: { header: string; description: string; color: string }[]
+	squares: CareerOfferings[]
 }
 
 const SquareList: React.FC<Props> = ({ squares, children }) => {
@@ -11,10 +14,10 @@ const SquareList: React.FC<Props> = ({ squares, children }) => {
 			<Wrapper>
 				{
 					squares.map((s) => (
-						<Base key={s.header}>
+						<Base key={s.title}>
 							<Content>
-								<Title color={s.color}>{s.header}</Title>
-								<div>{s.description}</div>
+								<Title color={s.color as string}>{s.title}</Title>
+								<div>{s.perex}</div>
 							</Content>
 						</Base>
 					))

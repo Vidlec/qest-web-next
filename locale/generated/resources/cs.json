@@ -75,10 +75,10 @@
       "id": "1",
       "language": "cs",
       "created_at": "2021-04-07T10:02:06.607Z",
-      "updated_at": "2021-06-17T12:14:52.962Z",
-      "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
+      "updated_at": "2021-06-28T07:44:16.412Z",
+      "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>. ",
       "heroLogo": {
-        "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
+        "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
         "alternativeText": "",
         "__typename": "UploadFile"
       },
@@ -89,7 +89,7 @@
       "weAreDescription": "Nejsme jen dodavatel <span style=\"color:#FCC403;\" data-sliderIndex=\"0\">softwarových řešení.</span> Vztahy v týmu i s klienty zakládáme na důvěře a partnerství. Pro své klienty, ať už ambiciózní české startupy, či korporáty, vyvíjíme skvělé <span style=\"color:#FF5451;\" data-sliderIndex=\"1\">aplikace</span>, <span style=\"color:#83E1FF;\" data-sliderIndex=\"2\">weby</span>, <span style=\"color:#d096a0;\" data-sliderIndex=\"3\">informační systémy</span> a třeba -i <span style=\"color:#80F286;\" data-sliderIndex=\"4\">chytré domy</span>. Každý den na sobě pracujeme a posouváme se vpřed. Úspěch klienta je náš největší závazek.",
       "weAreArrowTitle": "co umíme",
       "skillsHeadline": "CO UMÍME",
-      "skillsDescription": "TODO",
+      "skillsDescription": "Bude nějaký description pod nadpisem \"Co umíme\", nebo mažeme? ",
       "technologiesDescription": "<p><strong>Programovací jazyky: </strong>C#, javascript, typescript, html, css</p><p><strong>Používáme technologie: </strong>graphql, rest api frontend: React (16+),Typescript, Redux (Redux-saga)/Apollo,Styled components</p><p><strong>backend (javascript): </strong>Node.js, Typescript MongoDB, Docker,Elasticsearch, MariaDB, AWS, Azure, GoogleCloud, Serverless, Redis, Kubernetes,OpenStack, Express.js, Apollo Graphql</p><p><strong>C#: </strong>ASP.NET Core (latest),C# (latest), SignalR/WebSockets, MongoDB, MSSQL, RabbitMQ, Redis, Docker, Kubernetes(Azure)</p>",
       "technologiesImage": {
         "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/ruka_zavrena_9daab515ce.png",
@@ -101,7 +101,7 @@
       "hqHeadline": "QEST HQ",
       "hqDescription": "V Qestu se rádi a často pyšníme tím, kde pracujeme. Součástí kanceláří je terasa s posezením, grilem a inspirativním výhledem, relaxační zóna, stolní tenis, Xbox, kuchyňka s kávovarem, chladničkou a dostatečným množstvím občerstvení jako je cola, káva, voda, čaj.\n<br />\n<br />\n<span style=\"color:#FCC403;\">Proč Karlín?</span> V Karlíně to žije a stává se tech centrem hlavního města Prahy. Sdružuje se zde silná IT komunita. Zcela přirozeně se z Karlína stalo startupové centrum, malé pražské Silicon Valley.",
       "careerHeadline": "KARIÉRA",
-      "careerDescription": "Chceš se těšit na pondělí jako my? Spoj se s Qestem. Svou práci děláme rádi a na špičkové úrovni. Hledáme skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat na projektech s nejnovějšími technologiemi. Dnes je nás přes 30 a stále rosteme, takže u nás opravdu je, od koho se učit. Jsme mladý tým, ale věk je jenom číslo. Oceňujeme zkušenost, zodpovědnost a vášeň pro dokonalost. Pátráme po lidech s tím pravým přístupem, všechno ostatní je možné se naučit. Velmi si zakládáme na mezilidských vztazích, ať už jde o vztahy mezi zaměstnanci, nebo vůči klientům. Nabízíme práci v moderním prostředí a uvolněné atmosféře se zázemím stabilní společnosti. Naším produktem je „Team As a Service“ a jako tým spolu také dost často fungujeme i mimo práci. #qestlife Nehrajeme si ale jen na svém písečku a o know-how se rádi podělíme v rámci našich veřejných akcí – Qeetup či Q-TON. Vydáváme také náš vlastní podcast Qcast o moderních technologiích a programování.",
+      "careerDescription": "Chceš se těšit na pondělí jako my? Spoj se s Qestem. Svou práci děláme rádi a na špičkové úrovni. Hledáme skvělé lidi, kteří se chtějí učit, rozvíjet a pracovat na projektech s nejnovějšími technologiemi. Dnes je nás přes 30 a stále rosteme, takže u nás opravdu je, od koho se učit. Jsme mladý tým, ale věk je jenom číslo. Oceňujeme zkušenost, zodpovědnost a vášeň pro dokonalost. Pátráme po lidech s tím pravým přístupem, všechno ostatní je možné se naučit. <br/> <br/>\n\nVelmi si zakládáme na mezilidských vztazích, ať už jde o vztahy mezi zaměstnanci, nebo vůči klientům. Nabízíme práci v moderním prostředí a uvolněné atmosféře se zázemím stabilní společnosti. Naším produktem je „Team As a Service“ a jako tým spolu také dost často fungujeme i mimo práci. #qestlife <br/> <br/>\n\n Nehrajeme si ale jen na svém písečku a o know-how se rádi podělíme v rámci našich veřejných akcí – Qeetup či Q-TON. Vydáváme také náš vlastní podcast Qcast o moderních technologiích a programování.",
       "careerCTATitle": "KOHO HLEDÁME",
       "careerCTAImage": {
         "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/otaznik_50b1926b8f.png",
@@ -139,6 +139,34 @@
           "description": "Navrhujeme a implementujeme webové aplikace",
           "titleColorHash": "#FCC403",
           "__typename": "Skill"
+        },
+        {
+          "id": "3",
+          "title": "Design",
+          "description": "Navrhujeme a testujeme design pro aplikace ",
+          "titleColorHash": "#ffb6c3",
+          "__typename": "Skill"
+        },
+        {
+          "id": "4",
+          "title": "iOS",
+          "description": "Zajišťujeme vývoj úspěšných aplikací pro iOS",
+          "titleColorHash": "#80F286",
+          "__typename": "Skill"
+        },
+        {
+          "id": "5",
+          "title": "Android",
+          "description": "Vyvíjíme mobilní aplikace pro Android",
+          "titleColorHash": "#ff5451",
+          "__typename": "Skill"
+        },
+        {
+          "id": "6",
+          "title": "IOT",
+          "description": "Dodáváme klientům (nejen) chytrou domácnost s naší aplikací Home Qest",
+          "titleColorHash": "#bbeeff",
+          "__typename": "Skill"
         }
       ],
       "brandValues": [
@@ -147,7 +175,7 @@
           "headline": "Human\nCentered\nDesign",
           "backgroundNumber": 1,
           "image": {
-            "url": "https://qest-web-cms-media.s3.amazonaws.com/srdce_237bb255c2.png",
+            "url": "https://qest-web-cms-media.s3.eu-west-1.amazonaws.com/srdce_237bb255c2.png",
             "alternativeText": "",
             "__typename": "UploadFile"
           },
@@ -242,7 +270,7 @@
         "__typename": "UploadFile"
       },
       "hqCTATitle": "je toho víc",
-      "hqWeAreHereDescription": "Pobřežní 46\nKarlín, Praha 8\n<a href=\"\" style=\"color:#FCC403\">show on map/<a>",
+      "hqWeAreHereDescription": "Pobřežní 46\nKarlín, Praha 8\n<a href=\"https://www.google.com/maps/place/Qest+Automation+s.r.o./@50.0939317,14.4487753,15z/data=!4m5!3m4!1s0x0:0xa0c99d7c704fe5cb!8m2!3d50.0939317!4d14.4487753\" style=\"color:#FCC403\" target=\"_blank\">show on map/<a>",
       "arrow": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/sipka_a1613eb46b.svg",
         "alternativeText": "",
