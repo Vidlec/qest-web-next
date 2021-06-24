@@ -22,6 +22,10 @@ const AboutHero = () => {
 
 	return (
 		<HeroContainer>
+			<SelectLanguageWrapper>
+				<SelectLanguage />
+			</SelectLanguageWrapper>
+
 			<HeroHeadline>
 				<span>{t('about.heroHeadlineTop')}</span>
 				<HeroLineWrapper>
@@ -48,11 +52,8 @@ const AboutHero = () => {
 			</LogoLineWrapper>
 
 			<ArrowLinkWrapper>
-				<ArrowLink offset={() => 170} href="#weAre">
-					<ArrowDownIcon
-						src={t('about.arrow.url')}
-						alt={t('about.arrow.alternativeText')}
-					/>
+				<ArrowLink offset={() => 170} href='#weAre'>
+					<ArrowDownIcon src={t('about.arrow.url')} alt={t('about.arrow.alternativeText')} />
 					<span>{t('about.heroArrowTitle')}</span>
 				</ArrowLink>
 			</ArrowLinkWrapper>
