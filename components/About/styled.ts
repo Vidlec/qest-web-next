@@ -4,6 +4,7 @@ import Row from 'components/Row'
 import Container from 'components/Container'
 import Line from 'components/Line'
 import Headline from 'components/Headline'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export const SelectLanguageWrapper = styled.div`
 	display: flex;
@@ -84,7 +85,7 @@ export const ArrowLinkWrapper = styled.div`
 		order: 3;
 	}
 `
-export const ArrowLink = styled.a`
+export const ArrowLink = styled(AnchorLink)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
