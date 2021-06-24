@@ -10,16 +10,6 @@ export const MenuPanel = styled.div`
 	margin: 0 0 9rem 0;
 `
 
-export const HomePageMenuPanel = styled(MenuPanel)`
-	&& {
-		position: absolute;
-		z-index: 5;
-		left: 0;
-		top: 0;
-		margin: 0;
-	}
-`
-
 export const Item = styled.div`
 	width: 100%;
 	display: flex;
@@ -75,4 +65,5 @@ export const Link = styled.span`
 
 export const Icon = styled.img`
 	height: 4rem;
+	cursor: pointer;
 `

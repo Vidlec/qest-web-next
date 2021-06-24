@@ -50,6 +50,7 @@ import {
 	MoreBlogPosts,
 	MoreBlogPostsContainer,
 } from 'components/About/styled'
+import Page from 'components/Page'
 import Headline from 'components/Headline'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import theme from 'theme'
@@ -94,7 +95,8 @@ const AboutUs: React.FC = () => {
 	}, [sliderRef, weAreDescriptionRef])
 
 	return (
-		<>
+		<Page>
+			
 			<AboutHero />
 			<Container>
 				<Headline>{t('about.weAreHeadline')}</Headline>
@@ -324,7 +326,7 @@ const AboutUs: React.FC = () => {
 					</MoreBlogPosts>
 				</MoreBlogPostsContainer>
 			</Container>
-		</>
+		</Page>
 	)
 }
 
