@@ -1,13 +1,15 @@
 import React from 'react'
-import Portal from 'components/Portal'
 import { Form } from 'components/Form'
-import { FOOTER_PORTAL_ID } from 'components/Constants'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 const Contacts: React.FC = () => {
 	return (
-		<Portal portalID={FOOTER_PORTAL_ID}>
+		<>
+			<Header />
+			<Footer />
 			<Form />
-		</Portal>
+		</>
 	)
 }
 

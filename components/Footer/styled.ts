@@ -1,10 +1,15 @@
 import styled from 'styled-components'
+import Container from 'components/Container'
 
 export const Wrapper = styled.footer`
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	position: relative;
+`
+
+export const FooterContainer = styled(Container)`
+	margin-bottom: 3rem;
 `
 
 export const Line = styled.div`
