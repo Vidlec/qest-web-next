@@ -5,7 +5,7 @@ import { CAREER_OFFERINGS_QUERY } from 'gql/queries/careerOfferings'
 import { CAREER_OFFER_QUERY } from 'gql/queries/careerOffer'
 import CareerOffer from 'components/CareerOffer'
 
-interface Offer {
+interface Props {
     offerArray: CareerOfferings[]
 }
 interface Params {
@@ -15,12 +15,8 @@ interface Context {
     params: Params
 }
 
-const CareerDetail: React.FC<Offer> = ({ offerArray }) => {
-    return (
-        <>
-            <CareerOffer offer={offerArray[0]} />
-        </>
-    )
+const CareerDetail: React.FC<Props> = ({ offerArray }) => {
+    return <CareerOffer offer={offerArray[0]} />
 }
 
 export const getStaticPaths = async () => {
