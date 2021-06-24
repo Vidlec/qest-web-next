@@ -1,81 +1,25 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { request } from 'graphql-request'
-import { CareerOfferQuery, CareerOfferQueryVariables } from 'gql/generated/types'
+import { CareerOfferQuery, CareerOfferings, CareerOfferQueryVariables } from 'gql/generated/types'
 import { CAREER_OFFERINGS_QUERY } from 'gql/queries/careerOfferings'
 import { CAREER_OFFER_QUERY } from 'gql/queries/careerOffer'
-import Paragraph from 'components/Paragraph'
-import theme from 'theme'
-import Container from 'components/Container'
-import Col from 'components/Col'
-import Row from 'components/Row'
-import Headline from 'components/Headline'
-import {
-    Block,
-    Wrapper,
-    Link,
-    List,
-    Technologies
-} from 'components/CareerOffer/styled'
+import CareerOffer from 'components/CareerOffer'
 
-const CareerDetail: React.FC<any> = ({ offerArray }) => {
-    const [ offer ] = useState(offerArray[0])
+interface Offer {
+    offerArray: CareerOfferings[]
+}
+interface Params {
+    slug: string
+}
+interface Context {
+    params: Params
+}
 
+const CareerDetail: React.FC<Offer> = ({ offerArray }) => {
     return (
-        <Wrapper>
-            <Container>
-                <Block>
-                    <Headline color={theme.colors.green}>
-                        {offer.title}
-                    </Headline>
-                    <Paragraph
-                        dangerouslySetInnerHTML={{
-                            __html: offer.description,
-                        }}
-                    />
-                </Block>
-                <Row>
-                    <Col mobile={12} desktopSmall={7} desktop={8}>
-                        <Block>
-                            <h2 className="uppercase">{offer.careerTechnologiesTitle}</h2>
-                            <Technologies
-                                dangerouslySetInnerHTML={{
-                                    __html: offer.careerTechnologiesContent,
-                                }}
-                            />
-                        </Block>
-                        <Block>
-                            <h2 className="uppercase">{offer.careerExpectedSkillsTitle}</h2>
-                            <List
-                                dangerouslySetInnerHTML={{
-                                    __html: offer.careerExpectedSkillsContent,
-                                }}
-                            />
-                        </Block>
-                        <Block>
-                            <h2 className="uppercase">{offer.endTitle}</h2>
-                            <Paragraph
-                                dangerouslySetInnerHTML={{
-                                    __html: offer.endContent,
-                                }}
-                            />
-                        </Block>
-                        <Block>
-                            <Link href="/contacts">{offer.endCTA}</Link>
-                        </Block>
-                    </Col>
-                    <Col>
-                        <Block>
-                            <h2 className="uppercase">{offer.careerOfferTitle}</h2>
-                            <Paragraph
-                                dangerouslySetInnerHTML={{
-                                    __html: offer.careerOfferContent,
-                                }}
-                            />
-                        </Block>
-                    </Col>
-                </Row>
-            </Container>
-        </Wrapper>
+        <>
+            <CareerOffer offer={offerArray[0]} />
+        </>
     )
 }
 
@@ -94,12 +38,11 @@ export const getStaticPaths = async () => {
     }
 }
 
-export const getStaticProps = async (context: any) => {
-    const variables = {
-        slug: context.params.slug
-    }
+export const getStaticProps = async (context : Context) => {
 
-    const data = await request<CareerOfferQuery, CareerOfferQueryVariables>(process.env.CMS_GRAPHQL_URL!, CAREER_OFFER_QUERY, variables)
+    const slug = context.params
+
+    const data = await request<CareerOfferQuery, CareerOfferQueryVariables>(process.env.CMS_GRAPHQL_URL!, CAREER_OFFER_QUERY, slug)
 
     return {
         props: { offerArray: data.careerOfferings }
