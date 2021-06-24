@@ -1,9 +1,16 @@
 import styled from 'styled-components'
 import Paragraph from 'components/Paragraph'
 
-export const Wrapper = styled.div`
-  .uppercase {
-    text-transform: uppercase;
+export const SubTitle = styled.h2`
+  text-transform: uppercase;
+`
+
+export const Content = styled.div`
+  font-size: ${({ theme }) => theme.sizes.extraSmall};
+  margin: 0 0 1rem 0;
+
+  @media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+    font-size: ${({ theme }) => theme.sizes.body};
   }
 `
 

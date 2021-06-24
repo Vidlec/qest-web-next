@@ -1,10 +1,10 @@
 import React from 'react'
+import { useTheme } from 'styled-components'
 import {CareerOfferings} from 'gql/generated/types'
-import {Block, Link, List, Technologies, Wrapper} from 'components/CareerOffer/styled'
+import {Block, Link, List, Technologies, SubTitle, Content} from './styled'
 import Container from 'components/Container'
 import Headline from 'components/Headline'
 import theme from 'theme/index'
-import Paragraph from 'components/Paragraph'
 import Row from 'components/Row'
 import Col from 'components/Col'
 
@@ -13,13 +13,13 @@ type Props = {
 }
 
 const CareerOffer: React.FC<Props> = ({ offer }) => (
-    <Wrapper>
+    <>
         <Container>
             <Block>
-                <Headline color={theme.colors.green}>
+                <Headline color={useTheme().colors.green}>
                     {offer.title}
                 </Headline>
-                <Paragraph
+                <Content
                     dangerouslySetInnerHTML={{
                         __html: offer.description as string,
                     }}
@@ -28,7 +28,7 @@ const CareerOffer: React.FC<Props> = ({ offer }) => (
             <Row>
                 <Col mobile={12} desktopSmall={7} desktop={8}>
                     <Block>
-                        <h2 className='uppercase'>{offer.careerTechnologiesTitle}</h2>
+                        <SubTitle>{offer.careerTechnologiesTitle}</SubTitle>
                         <Technologies
                             dangerouslySetInnerHTML={{
                                 __html: offer.careerTechnologiesContent as string,
@@ -36,7 +36,7 @@ const CareerOffer: React.FC<Props> = ({ offer }) => (
                         />
                     </Block>
                     <Block>
-                        <h2 className='uppercase'>{offer.careerExpectedSkillsTitle}</h2>
+                        <SubTitle>{offer.careerExpectedSkillsTitle}</SubTitle>
                         <List
                             dangerouslySetInnerHTML={{
                                 __html: offer.careerExpectedSkillsContent as string,
@@ -44,8 +44,8 @@ const CareerOffer: React.FC<Props> = ({ offer }) => (
                         />
                     </Block>
                     <Block>
-                        <h2 className='uppercase'>{offer.endTitle}</h2>
-                        <Paragraph
+                        <SubTitle>{offer.endTitle}</SubTitle>
+                        <Content
                             dangerouslySetInnerHTML={{
                                 __html: offer.endContent as string,
                             }}
@@ -57,8 +57,8 @@ const CareerOffer: React.FC<Props> = ({ offer }) => (
                 </Col>
                 <Col>
                     <Block>
-                        <h2 className='uppercase'>{offer.careerOfferTitle}</h2>
-                        <Paragraph
+                        <SubTitle>{offer.careerOfferTitle}</SubTitle>
+                        <Content
                             dangerouslySetInnerHTML={{
                                 __html: offer.careerOfferContent as string,
                             }}
@@ -67,7 +67,7 @@ const CareerOffer: React.FC<Props> = ({ offer }) => (
                 </Col>
             </Row>
         </Container>
-    </Wrapper>
+    </>
 )
 
 export default CareerOffer
