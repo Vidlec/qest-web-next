@@ -44,11 +44,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      font-size: ${({ theme }) => theme.sizes.pageTitle};
+      font-size: ${({ theme }) => theme.sizes.large};
+      
+      @media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
+        font-size: ${({ theme }) => theme.sizes.pageTitle};
+      }
     }
     
     h2 {
-      font-size: 2.1875rem;
+      font-size: ${({ theme }) => theme.sizes.medium};
     }
     
     h3 {
