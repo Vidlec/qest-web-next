@@ -1,37 +1,30 @@
-import styled from 'styled-components'
+import styled, { DefaultTheme } from 'styled-components'
 
-export const Link = styled.span`
-	font-size: 1.5rem;
+export type LinkColor = 'red' | 'pink' | 'yellow' | 'blue' | 'green' | 'default'
+
+const getLinkColor = (theme: DefaultTheme, color: LinkColor): string => {
+	const colorsMap: Record<LinkColor, string> = {
+		red: theme.colors.red,
+		pink: theme.colors.pink,
+		yellow: theme.colors.yellow,
+		blue: theme.colors.blue,
+		green: theme.colors.green,
+		default: theme.colors.white,
+	}
+
+	return colorsMap[color]
+}
+
+export const StyledLink = styled.a<{ color?: LinkColor }>`
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+	color: ${({ color = 'default', theme }) => getLinkColor(theme, color)};
+
 	:hover {
 		filter: brightness(200%);
 	}
-`
-export const AboutUs = styled(Link)`
-	a {
-		color: ${({ theme }) => theme.colors.aboutButton};
-	}
-`
 
-export const Reference = styled(Link)`
-	a {
-		color: ${({ theme }) => theme.colors.referenceButton};
-	}
-`
-
-export const Career = styled(Link)`
-	a {
-		color: ${({ theme }) => theme.colors.h3};
-	}
-`
-
-export const Contact = styled(Link)`
-	a {
-		color: ${({ theme }) => theme.colors.contactButton};
-	}
-`
-
-export const MainMenu = styled(Link)`
-	a {
-		color: ${({ theme }) => theme.colors.mainMenuButton};
+	@media ( min-width: ${({theme}) => theme.mediaQueries.desktop}) {
+		font-size: 1.5rem;
 	}
 `

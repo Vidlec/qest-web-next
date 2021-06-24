@@ -1,25 +1,32 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+	position: absolute;
+	top: 0;
+	bottom: 0;
 	width: 100%;
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	padding: 12rem 0;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		height: 100vh;
+		justify-content: center;
+	}
 `
 
 export const WrapperLogoTexts = styled.div`
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	top: 5rem;
 	align-items: center;
 	margin-left: 0;
 	z-index: 1;
 	font-size: 1rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		position: absolute;
 		top: 10rem;
 	}
 
@@ -66,10 +73,10 @@ export const SlideStopWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
 	bottom: 4rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		position: absolute;
 		bottom: 6rem;
 	}
 `
@@ -126,31 +133,4 @@ export const MenuList = styled.ul`
 	list-style: none;
 	padding: 0;
 	margin: 0;
-`
-
-export const Item = styled.li`
-	padding: 3.75rem 2.5rem;
-	width: 33%;
-	flex-grow: 1;
-
-	// Main page
-	&:nth-child(1) {
-		display: none;
-	}
-
-	// Languages picker
-	&:nth-child(3) {
-		text-align: center;
-	}
-
-	// Reference
-	&:nth-child(4) {
-		text-align: right;
-	}
-
-	// Contact
-	&:nth-child(6) {
-		flex-grow: 2;
-		text-align: right;
-	}
 `

@@ -2,21 +2,20 @@ import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { AboutUs, Contact, MainMenu, Reference, Career } from 'components/Link'
-import SelectLanguage from '../SelectLanguage'
 import Portal from 'components/Portal'
 import { MENU_PORTAL_ID } from 'components/Constants'
+import Link, { LinkColor } from 'components/Link'
 import {
-	MenuPanel,
+	HeaderWrapper,
 	Item,
 	MenuWrapper,
 	MenuButton,
 	MenuCross,
-	Link,
 	Icon,
+	Language,
 } from './styled'
 
-type Link = { url: string; link: React.ReactElement }
+type Link = { url: string; link: React.ReactElement; color?: LinkColor }
 
 const Header: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -25,44 +24,29 @@ const Header: React.FC = () => {
 
 	const links: Link[] = [
 		{
-			url: '/homepage',
-			link: (
-				<MainMenu>
-					<NextLink href="/">{t('menu.homePage')}</NextLink>
-				</MainMenu>
-			),
+			url: '/',
+			link: t('menu.homePage'),
+			color: 'red',
 		},
 		{
 			url: '/about',
-			link: (
-				<AboutUs>
-					<NextLink href="/about">{t('menu.aboutUs')}</NextLink>
-				</AboutUs>
-			),
+			link: t('menu.aboutUs'),
+			color: 'blue',
 		},
 		{
 			url: '/career',
-			link: (
-				<Career>
-					<NextLink href="/career">{t('menu.career')}</NextLink>
-				</Career>
-			),
+			link: t('menu.career'),
+			color: 'yellow',
 		},
 		{
 			url: '/reference',
-			link: (
-				<Reference>
-					<NextLink href="/">{t('menu.reference')}</NextLink>
-				</Reference>
-			),
+			link: t('menu.reference'),
+			color: 'pink',
 		},
 		{
 			url: '/contacts',
-			link: (
-				<Contact>
-					<NextLink href="/contacts">{t('menu.contact')}</NextLink>
-				</Contact>
-			),
+			link: t('menu.contact'),
+			color: 'green',
 		},
 	]
 
@@ -75,9 +59,9 @@ const Header: React.FC = () => {
 	}
 
 	return (
-		<MenuPanel>
+		<HeaderWrapper>
 			<Item>
-				<NextLink href='/'>
+				<NextLink href="/">
 					<Icon src={t('header.logo.url') as string} />
 				</NextLink>
 			</Item>
@@ -88,16 +72,23 @@ const Header: React.FC = () => {
 				<Portal portalID={MENU_PORTAL_ID}>
 					<MenuWrapper>
 						<MenuCross onClick={handleClose}>🞨</MenuCross>
-						{links.map((link) =>
-							router.asPath !== link.url ? (
-								<Link key={link.url}>{link.link}</Link>
-							) : null
+						{links.map(
+							(link) =>
+								router.asPath !== link.url && (
+									<Link
+										key={link.url}
+										href={link.url}
+										color={link.color}
+									>
+										{link.link}
+									</Link>
+								)
 						)}
-						<SelectLanguage />
+						<Language />
 					</MenuWrapper>
 				</Portal>
 			)}
-		</MenuPanel>
+		</HeaderWrapper>
 	)
 }
 

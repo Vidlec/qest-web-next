@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import SelectLanguage from 'components/SelectLanguage'
 
-export const MenuPanel = styled.div`
+export const HeaderWrapper = styled.header`
 	width: 100%;
 	position: relative;
 	display: flex;
@@ -8,20 +9,12 @@ export const MenuPanel = styled.div`
 	align-items: center;
 	padding: 2rem;
 	margin: 0 0 9rem 0;
+	z-index: 5;
 `
 
 export const Item = styled.div`
-	width: 100%;
 	display: flex;
-	justify-content: center;
-
-	&:first-child {
-		justify-content: flex-start;
-	}
-
-	&:last-child {
-		justify-content: flex-end;
-	}
+	justify-content: space-between;
 `
 
 export const MenuButton = styled.button`
@@ -66,4 +59,7 @@ export const Link = styled.span`
 export const Icon = styled.img`
 	height: 4rem;
 	cursor: pointer;
+`
+export const Language = styled(SelectLanguage)`
+	font-size: 2.4rem;
 `
