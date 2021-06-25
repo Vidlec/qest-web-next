@@ -29,10 +29,9 @@ type SliderOptions = {
 
 interface Props {
     sliderOptions: SliderOptions,
-    data: UploadFile[]
 }
 
-const SlickSlider: React.FC<Props> = ({ sliderOptions, data }) => {
+const SlickSlider: React.FC<Props> = ({ sliderOptions, children }) => {
     const [sliderRef, setSliderRef] = useState<Slider | null>(null)
     const [weAreDescriptionRef] = useState<HTMLParagraphElement | null>(null)
 
@@ -64,14 +63,7 @@ const SlickSlider: React.FC<Props> = ({ sliderOptions, data }) => {
     return (
         <>
             <Slider {...sliderOptions} ref={setSliderRef} >
-                {data.map((image) =>
-                    <CarouselPicture key={image.id}>
-                        <img
-                            src={image.url}
-                            alt={image.alternativeText ?? ''}
-                        />
-                    </CarouselPicture>
-                )}
+                {children}
             </Slider>
         </>
     )
