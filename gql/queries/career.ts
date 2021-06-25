@@ -25,6 +25,7 @@ export const CAREER_QUERY = gql`
 			somethingElseDescription
 			somethingElseContact
 			careerWhy
+			careerWhyLook
 			careerWhatHeading
 			info {
 				header
