@@ -11,7 +11,7 @@ export const Item = styled.div`
 	margin-bottom: 5rem;
 	padding: 0 4.9rem;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		padding: 0;
 		flex-direction: row;
 	}
@@ -29,7 +29,7 @@ export const Heading = styled.h5`
 	text-transform: uppercase;
 	text-align: center;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		position: relative;
 		text-align: left;
 		margin: 0 0 2.4rem 0;
@@ -44,7 +44,7 @@ export const Description = styled.p`
 	text-align: justify;
 	font-size: 1.3rem;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		text-align: left;
 		font-size: 2.1875rem;
 	}
@@ -56,7 +56,7 @@ export const ItemIndex = styled.div<{ color: string | undefined }>`
 	width: 18rem;
 	align-self: flex-start;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		margin: 0 6rem 0 0;
 		align-self: unset;
 		display: flex;
@@ -74,7 +74,7 @@ export const ItemIndexNumber = styled.span`
 	left: 0;
 	bottom: 0;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		width: 100%;
 		left: unset;
 		bottom: unset;
@@ -85,7 +85,7 @@ export const ItemIndexNumber = styled.span`
 export const ItemImg = styled.img`
 	margin: 0 0 0 3rem;
 	max-height: 13.1rem;
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		margin: 0 0 0 0;
 		max-width: 14rem;
 		max-height: 14rem;
