@@ -72,191 +72,6 @@ export type UserPermissionsPasswordPayload = {
   ok: Scalars['Boolean'];
 };
 
-export type Abaku = {
-  __typename?: 'Abaku';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  language?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  moto?: Maybe<Scalars['String']>;
-  overLine?: Maybe<Scalars['String']>;
-  underLine?: Maybe<Scalars['String']>;
-  trioInfo?: Maybe<Array<Maybe<ComponentContentTrioInfo>>>;
-  orderedParagraph?: Maybe<Array<Maybe<ComponentContentOrderParagraph>>>;
-  borderGallery?: Maybe<Array<Maybe<ComponentContentBorderGallery>>>;
-  technologyBanner?: Maybe<Array<Maybe<ComponentContentTechnologyBanner>>>;
-  notebookBg?: Maybe<UploadFile>;
-  notebookContent?: Maybe<UploadFile>;
-  contactUs?: Maybe<ComponentContentContactUs>;
-  published_at?: Maybe<Scalars['DateTime']>;
-};
-
-export type AbakuConnection = {
-  __typename?: 'AbakuConnection';
-  values?: Maybe<Array<Maybe<Abaku>>>;
-  groupBy?: Maybe<AbakuGroupBy>;
-  aggregate?: Maybe<AbakuAggregator>;
-};
-
-export type AbakuAggregator = {
-  __typename?: 'AbakuAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
-};
-
-export type AbakuGroupBy = {
-  __typename?: 'AbakuGroupBy';
-  id?: Maybe<Array<Maybe<AbakuConnectionId>>>;
-  created_at?: Maybe<Array<Maybe<AbakuConnectionCreated_At>>>;
-  updated_at?: Maybe<Array<Maybe<AbakuConnectionUpdated_At>>>;
-  language?: Maybe<Array<Maybe<AbakuConnectionLanguage>>>;
-  title?: Maybe<Array<Maybe<AbakuConnectionTitle>>>;
-  moto?: Maybe<Array<Maybe<AbakuConnectionMoto>>>;
-  overLine?: Maybe<Array<Maybe<AbakuConnectionOverLine>>>;
-  underLine?: Maybe<Array<Maybe<AbakuConnectionUnderLine>>>;
-  notebookBg?: Maybe<Array<Maybe<AbakuConnectionNotebookBg>>>;
-  notebookContent?: Maybe<Array<Maybe<AbakuConnectionNotebookContent>>>;
-  contactUs?: Maybe<Array<Maybe<AbakuConnectionContactUs>>>;
-  published_at?: Maybe<Array<Maybe<AbakuConnectionPublished_At>>>;
-};
-
-export type AbakuConnectionId = {
-  __typename?: 'AbakuConnectionId';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionCreated_At = {
-  __typename?: 'AbakuConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionUpdated_At = {
-  __typename?: 'AbakuConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionLanguage = {
-  __typename?: 'AbakuConnectionLanguage';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionTitle = {
-  __typename?: 'AbakuConnectionTitle';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionMoto = {
-  __typename?: 'AbakuConnectionMoto';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionOverLine = {
-  __typename?: 'AbakuConnectionOverLine';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionUnderLine = {
-  __typename?: 'AbakuConnectionUnderLine';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionNotebookBg = {
-  __typename?: 'AbakuConnectionNotebookBg';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionNotebookContent = {
-  __typename?: 'AbakuConnectionNotebookContent';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionContactUs = {
-  __typename?: 'AbakuConnectionContactUs';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuConnectionPublished_At = {
-  __typename?: 'AbakuConnectionPublished_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<AbakuConnection>;
-};
-
-export type AbakuInput = {
-  language?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  moto?: Maybe<Scalars['String']>;
-  overLine?: Maybe<Scalars['String']>;
-  underLine?: Maybe<Scalars['String']>;
-  trioInfo?: Maybe<Array<Maybe<ComponentContentTrioInfoInput>>>;
-  orderedParagraph?: Maybe<Array<Maybe<ComponentContentOrderParagraphInput>>>;
-  borderGallery?: Maybe<Array<Maybe<ComponentContentBorderGalleryInput>>>;
-  technologyBanner?: Maybe<Array<Maybe<ComponentContentTechnologyBannerInput>>>;
-  notebookBg?: Maybe<Scalars['ID']>;
-  notebookContent?: Maybe<Scalars['ID']>;
-  contactUs?: Maybe<ComponentContentContactUsInput>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditAbakuInput = {
-  language?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  moto?: Maybe<Scalars['String']>;
-  overLine?: Maybe<Scalars['String']>;
-  underLine?: Maybe<Scalars['String']>;
-  trioInfo?: Maybe<Array<Maybe<EditComponentContentTrioInfoInput>>>;
-  orderedParagraph?: Maybe<Array<Maybe<EditComponentContentOrderParagraphInput>>>;
-  borderGallery?: Maybe<Array<Maybe<EditComponentContentBorderGalleryInput>>>;
-  technologyBanner?: Maybe<Array<Maybe<EditComponentContentTechnologyBannerInput>>>;
-  notebookBg?: Maybe<Scalars['ID']>;
-  notebookContent?: Maybe<Scalars['ID']>;
-  contactUs?: Maybe<EditComponentContentContactUsInput>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type CreateAbakuInput = {
-  data?: Maybe<AbakuInput>;
-};
-
-export type CreateAbakuPayload = {
-  __typename?: 'createAbakuPayload';
-  abaku?: Maybe<Abaku>;
-};
-
-export type UpdateAbakuInput = {
-  where?: Maybe<InputId>;
-  data?: Maybe<EditAbakuInput>;
-};
-
-export type UpdateAbakuPayload = {
-  __typename?: 'updateAbakuPayload';
-  abaku?: Maybe<Abaku>;
-};
-
-export type DeleteAbakuInput = {
-  where?: Maybe<InputId>;
-};
-
-export type DeleteAbakuPayload = {
-  __typename?: 'deleteAbakuPayload';
-  abaku?: Maybe<Abaku>;
-};
-
 export type AboutUs = {
   __typename?: 'AboutUs';
   id: Scalars['ID'];
@@ -294,6 +109,7 @@ export type AboutUs = {
   skills?: Maybe<Array<Maybe<Skill>>>;
   brandValues?: Maybe<Array<Maybe<BrandValue>>>;
   hqImageGrid?: Maybe<Array<Maybe<UploadFile>>>;
+  teams?: Maybe<Array<Maybe<Team>>>;
 };
 
 
@@ -322,6 +138,14 @@ export type AboutUsBrandValuesArgs = {
 
 
 export type AboutUsHqImageGridArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type AboutUsTeamsArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -594,6 +418,7 @@ export type AboutUsInput = {
   hqCTATitle?: Maybe<Scalars['String']>;
   blogReadMore?: Maybe<Scalars['String']>;
   arrow?: Maybe<Scalars['ID']>;
+  teams?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -631,6 +456,7 @@ export type EditAboutUsInput = {
   hqCTATitle?: Maybe<Scalars['String']>;
   blogReadMore?: Maybe<Scalars['String']>;
   arrow?: Maybe<Scalars['ID']>;
+  teams?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -866,208 +692,331 @@ export type DeleteBrandValuePayload = {
   brandValue?: Maybe<BrandValue>;
 };
 
+export type CareerOfferings = {
+  __typename?: 'CareerOfferings';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  language?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle: Scalars['String'];
+  careerTechnologiesContent?: Maybe<Scalars['String']>;
+  careerExpectedSkillsTitle: Scalars['String'];
+  careerExpectedSkillsContent?: Maybe<Scalars['String']>;
+  careerOfferTitle: Scalars['String'];
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle: Scalars['String'];
+  endContent?: Maybe<Scalars['String']>;
+  endCTA: Scalars['String'];
+  slug: Scalars['String'];
+  color?: Maybe<Scalars['String']>;
+  perex?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type CareerOfferingsConnection = {
+  __typename?: 'CareerOfferingsConnection';
+  values?: Maybe<Array<Maybe<CareerOfferings>>>;
+  groupBy?: Maybe<CareerOfferingsGroupBy>;
+  aggregate?: Maybe<CareerOfferingsAggregator>;
+};
+
+export type CareerOfferingsAggregator = {
+  __typename?: 'CareerOfferingsAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type CareerOfferingsGroupBy = {
+  __typename?: 'CareerOfferingsGroupBy';
+  id?: Maybe<Array<Maybe<CareerOfferingsConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<CareerOfferingsConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<CareerOfferingsConnectionUpdated_At>>>;
+  language?: Maybe<Array<Maybe<CareerOfferingsConnectionLanguage>>>;
+  title?: Maybe<Array<Maybe<CareerOfferingsConnectionTitle>>>;
+  description?: Maybe<Array<Maybe<CareerOfferingsConnectionDescription>>>;
+  careerTechnologiesTitle?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerTechnologiesTitle>>>;
+  careerTechnologiesContent?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerTechnologiesContent>>>;
+  careerExpectedSkillsTitle?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerExpectedSkillsTitle>>>;
+  careerExpectedSkillsContent?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerExpectedSkillsContent>>>;
+  careerOfferTitle?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerOfferTitle>>>;
+  careerOfferContent?: Maybe<Array<Maybe<CareerOfferingsConnectionCareerOfferContent>>>;
+  endTitle?: Maybe<Array<Maybe<CareerOfferingsConnectionEndTitle>>>;
+  endContent?: Maybe<Array<Maybe<CareerOfferingsConnectionEndContent>>>;
+  endCTA?: Maybe<Array<Maybe<CareerOfferingsConnectionEndCta>>>;
+  slug?: Maybe<Array<Maybe<CareerOfferingsConnectionSlug>>>;
+  color?: Maybe<Array<Maybe<CareerOfferingsConnectionColor>>>;
+  perex?: Maybe<Array<Maybe<CareerOfferingsConnectionPerex>>>;
+  published_at?: Maybe<Array<Maybe<CareerOfferingsConnectionPublished_At>>>;
+};
+
+export type CareerOfferingsConnectionId = {
+  __typename?: 'CareerOfferingsConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCreated_At = {
+  __typename?: 'CareerOfferingsConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionUpdated_At = {
+  __typename?: 'CareerOfferingsConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionLanguage = {
+  __typename?: 'CareerOfferingsConnectionLanguage';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionTitle = {
+  __typename?: 'CareerOfferingsConnectionTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionDescription = {
+  __typename?: 'CareerOfferingsConnectionDescription';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerTechnologiesTitle = {
+  __typename?: 'CareerOfferingsConnectionCareerTechnologiesTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerTechnologiesContent = {
+  __typename?: 'CareerOfferingsConnectionCareerTechnologiesContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerExpectedSkillsTitle = {
+  __typename?: 'CareerOfferingsConnectionCareerExpectedSkillsTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerExpectedSkillsContent = {
+  __typename?: 'CareerOfferingsConnectionCareerExpectedSkillsContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerOfferTitle = {
+  __typename?: 'CareerOfferingsConnectionCareerOfferTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionCareerOfferContent = {
+  __typename?: 'CareerOfferingsConnectionCareerOfferContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionEndTitle = {
+  __typename?: 'CareerOfferingsConnectionEndTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionEndContent = {
+  __typename?: 'CareerOfferingsConnectionEndContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionEndCta = {
+  __typename?: 'CareerOfferingsConnectionEndCTA';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionSlug = {
+  __typename?: 'CareerOfferingsConnectionSlug';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionColor = {
+  __typename?: 'CareerOfferingsConnectionColor';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionPerex = {
+  __typename?: 'CareerOfferingsConnectionPerex';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionPublished_At = {
+  __typename?: 'CareerOfferingsConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingInput = {
+  language?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle?: Maybe<Scalars['String']>;
+  careerTechnologiesContent?: Maybe<Scalars['String']>;
+  careerExpectedSkillsTitle?: Maybe<Scalars['String']>;
+  careerExpectedSkillsContent?: Maybe<Scalars['String']>;
+  careerOfferTitle?: Maybe<Scalars['String']>;
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle?: Maybe<Scalars['String']>;
+  endContent?: Maybe<Scalars['String']>;
+  endCTA?: Maybe<Scalars['String']>;
+  slug: Scalars['String'];
+  color?: Maybe<Scalars['String']>;
+  perex?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditCareerOfferingInput = {
+  language?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle?: Maybe<Scalars['String']>;
+  careerTechnologiesContent?: Maybe<Scalars['String']>;
+  careerExpectedSkillsTitle?: Maybe<Scalars['String']>;
+  careerExpectedSkillsContent?: Maybe<Scalars['String']>;
+  careerOfferTitle?: Maybe<Scalars['String']>;
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle?: Maybe<Scalars['String']>;
+  endContent?: Maybe<Scalars['String']>;
+  endCTA?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  color?: Maybe<Scalars['String']>;
+  perex?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateCareerOfferingInput = {
+  data?: Maybe<CareerOfferingInput>;
+};
+
+export type CreateCareerOfferingPayload = {
+  __typename?: 'createCareerOfferingPayload';
+  careerOffering?: Maybe<CareerOfferings>;
+};
+
+export type UpdateCareerOfferingInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditCareerOfferingInput>;
+};
+
+export type UpdateCareerOfferingPayload = {
+  __typename?: 'updateCareerOfferingPayload';
+  careerOffering?: Maybe<CareerOfferings>;
+};
+
+export type DeleteCareerOfferingInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteCareerOfferingPayload = {
+  __typename?: 'deleteCareerOfferingPayload';
+  careerOffering?: Maybe<CareerOfferings>;
+};
+
 export type Career = {
   __typename?: 'Career';
   id: Scalars['ID'];
   created_at: Scalars['DateTime'];
   updated_at: Scalars['DateTime'];
-  language?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  technologiesHeading?: Maybe<Scalars['String']>;
-  technologies?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description: Scalars['String'];
+  technologies?: Maybe<ComponentContentTechnologies>;
   careerWho?: Maybe<Scalars['String']>;
-  positions?: Maybe<Array<Maybe<ComponentContentCareerPosition>>>;
   somethingElseHeading?: Maybe<Scalars['String']>;
-  somethingElseDescritption?: Maybe<Scalars['String']>;
+  somethingElseDescription?: Maybe<Scalars['String']>;
   somethingElseContact?: Maybe<Scalars['String']>;
   careerWhy?: Maybe<Scalars['String']>;
   careerWhatHeading?: Maybe<Scalars['String']>;
   info?: Maybe<Array<Maybe<ComponentContentPictureList>>>;
-  careerDescription?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
+  careerPositions?: Maybe<Array<Maybe<CareerOfferings>>>;
+  localizations?: Maybe<Array<Maybe<Career>>>;
 };
 
-export type CareerConnection = {
-  __typename?: 'CareerConnection';
-  values?: Maybe<Array<Maybe<Career>>>;
-  groupBy?: Maybe<CareerGroupBy>;
-  aggregate?: Maybe<CareerAggregator>;
+
+export type CareerCareerPositionsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
-export type CareerAggregator = {
-  __typename?: 'CareerAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
-};
 
-export type CareerGroupBy = {
-  __typename?: 'CareerGroupBy';
-  id?: Maybe<Array<Maybe<CareerConnectionId>>>;
-  created_at?: Maybe<Array<Maybe<CareerConnectionCreated_At>>>;
-  updated_at?: Maybe<Array<Maybe<CareerConnectionUpdated_At>>>;
-  language?: Maybe<Array<Maybe<CareerConnectionLanguage>>>;
-  title?: Maybe<Array<Maybe<CareerConnectionTitle>>>;
-  technologiesHeading?: Maybe<Array<Maybe<CareerConnectionTechnologiesHeading>>>;
-  technologies?: Maybe<Array<Maybe<CareerConnectionTechnologies>>>;
-  careerWho?: Maybe<Array<Maybe<CareerConnectionCareerWho>>>;
-  somethingElseHeading?: Maybe<Array<Maybe<CareerConnectionSomethingElseHeading>>>;
-  somethingElseDescritption?: Maybe<Array<Maybe<CareerConnectionSomethingElseDescritption>>>;
-  somethingElseContact?: Maybe<Array<Maybe<CareerConnectionSomethingElseContact>>>;
-  careerWhy?: Maybe<Array<Maybe<CareerConnectionCareerWhy>>>;
-  careerWhatHeading?: Maybe<Array<Maybe<CareerConnectionCareerWhatHeading>>>;
-  careerDescription?: Maybe<Array<Maybe<CareerConnectionCareerDescription>>>;
-  published_at?: Maybe<Array<Maybe<CareerConnectionPublished_At>>>;
-};
-
-export type CareerConnectionId = {
-  __typename?: 'CareerConnectionId';
-  key?: Maybe<Scalars['ID']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionCreated_At = {
-  __typename?: 'CareerConnectionCreated_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionUpdated_At = {
-  __typename?: 'CareerConnectionUpdated_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionLanguage = {
-  __typename?: 'CareerConnectionLanguage';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionTitle = {
-  __typename?: 'CareerConnectionTitle';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionTechnologiesHeading = {
-  __typename?: 'CareerConnectionTechnologiesHeading';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionTechnologies = {
-  __typename?: 'CareerConnectionTechnologies';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionCareerWho = {
-  __typename?: 'CareerConnectionCareerWho';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionSomethingElseHeading = {
-  __typename?: 'CareerConnectionSomethingElseHeading';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionSomethingElseDescritption = {
-  __typename?: 'CareerConnectionSomethingElseDescritption';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionSomethingElseContact = {
-  __typename?: 'CareerConnectionSomethingElseContact';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionCareerWhy = {
-  __typename?: 'CareerConnectionCareerWhy';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionCareerWhatHeading = {
-  __typename?: 'CareerConnectionCareerWhatHeading';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionCareerDescription = {
-  __typename?: 'CareerConnectionCareerDescription';
-  key?: Maybe<Scalars['String']>;
-  connection?: Maybe<CareerConnection>;
-};
-
-export type CareerConnectionPublished_At = {
-  __typename?: 'CareerConnectionPublished_at';
-  key?: Maybe<Scalars['DateTime']>;
-  connection?: Maybe<CareerConnection>;
+export type CareerLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 export type CareerInput = {
-  language?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  technologiesHeading?: Maybe<Scalars['String']>;
-  technologies?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  description: Scalars['String'];
+  technologies?: Maybe<ComponentContentTechnologyInput>;
   careerWho?: Maybe<Scalars['String']>;
-  positions?: Maybe<Array<Maybe<ComponentContentCareerPositionInput>>>;
+  careerPositions?: Maybe<Array<Maybe<Scalars['ID']>>>;
   somethingElseHeading?: Maybe<Scalars['String']>;
-  somethingElseDescritption?: Maybe<Scalars['String']>;
+  somethingElseDescription?: Maybe<Scalars['String']>;
   somethingElseContact?: Maybe<Scalars['String']>;
   careerWhy?: Maybe<Scalars['String']>;
   careerWhatHeading?: Maybe<Scalars['String']>;
   info?: Maybe<Array<Maybe<ComponentContentPictureListInput>>>;
-  careerDescription?: Maybe<Scalars['String']>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type EditCareerInput = {
-  language?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  technologiesHeading?: Maybe<Scalars['String']>;
-  technologies?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  technologies?: Maybe<EditComponentContentTechnologyInput>;
   careerWho?: Maybe<Scalars['String']>;
-  positions?: Maybe<Array<Maybe<EditComponentContentCareerPositionInput>>>;
+  careerPositions?: Maybe<Array<Maybe<Scalars['ID']>>>;
   somethingElseHeading?: Maybe<Scalars['String']>;
-  somethingElseDescritption?: Maybe<Scalars['String']>;
+  somethingElseDescription?: Maybe<Scalars['String']>;
   somethingElseContact?: Maybe<Scalars['String']>;
   careerWhy?: Maybe<Scalars['String']>;
   careerWhatHeading?: Maybe<Scalars['String']>;
   info?: Maybe<Array<Maybe<EditComponentContentPictureListInput>>>;
-  careerDescription?: Maybe<Scalars['String']>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type CreateCareerInput = {
-  data?: Maybe<CareerInput>;
-};
-
-export type CreateCareerPayload = {
-  __typename?: 'createCareerPayload';
-  career?: Maybe<Career>;
-};
-
 export type UpdateCareerInput = {
-  where?: Maybe<InputId>;
   data?: Maybe<EditCareerInput>;
 };
 
 export type UpdateCareerPayload = {
   __typename?: 'updateCareerPayload';
   career?: Maybe<Career>;
-};
-
-export type DeleteCareerInput = {
-  where?: Maybe<InputId>;
 };
 
 export type DeleteCareerPayload = {
@@ -1720,6 +1669,63 @@ export type DeleteContactPayload = {
   contact?: Maybe<Contact>;
 };
 
+export type Footer = {
+  __typename?: 'Footer';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  title: Scalars['String'];
+  social?: Maybe<ComponentContentSocial>;
+  contact?: Maybe<ComponentContentContact>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  localizations?: Maybe<Array<Maybe<Footer>>>;
+};
+
+
+export type FooterLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type FooterInput = {
+  title: Scalars['String'];
+  social: ComponentContentSocialInput;
+  contact: ComponentContentContactInput;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditFooterInput = {
+  title?: Maybe<Scalars['String']>;
+  social?: Maybe<EditComponentContentSocialInput>;
+  contact?: Maybe<EditComponentContentContactInput>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdateFooterInput = {
+  data?: Maybe<EditFooterInput>;
+};
+
+export type UpdateFooterPayload = {
+  __typename?: 'updateFooterPayload';
+  footer?: Maybe<Footer>;
+};
+
+export type DeleteFooterPayload = {
+  __typename?: 'deleteFooterPayload';
+  footer?: Maybe<Footer>;
+};
+
 export type Header = {
   __typename?: 'Header';
   id: Scalars['ID'];
@@ -1851,6 +1857,78 @@ export type DeleteHeaderInput = {
 export type DeleteHeaderPayload = {
   __typename?: 'deleteHeaderPayload';
   header?: Maybe<Header>;
+};
+
+export type HomepageNew = {
+  __typename?: 'HomepageNew';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  topLeftLink?: Maybe<ComponentNavigationInternalLink>;
+  topRightLink?: Maybe<ComponentNavigationInternalLink>;
+  bottomLeftLink?: Maybe<ComponentNavigationInternalLink>;
+  bottomRightLink?: Maybe<ComponentNavigationInternalLink>;
+  logo?: Maybe<UploadFile>;
+  clickToStopText: Scalars['String'];
+  aboveLineText: Scalars['String'];
+  belowLineText: Scalars['String'];
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  localizations?: Maybe<Array<Maybe<HomepageNew>>>;
+};
+
+
+export type HomepageNewLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type HomepageNewInput = {
+  topLeftLink: ComponentNavigationInternalLinkInput;
+  topRightLink: ComponentNavigationInternalLinkInput;
+  bottomLeftLink: ComponentNavigationInternalLinkInput;
+  bottomRightLink: ComponentNavigationInternalLinkInput;
+  logo?: Maybe<Scalars['ID']>;
+  clickToStopText: Scalars['String'];
+  aboveLineText: Scalars['String'];
+  belowLineText: Scalars['String'];
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditHomepageNewInput = {
+  topLeftLink?: Maybe<EditComponentNavigationInternalLinkInput>;
+  topRightLink?: Maybe<EditComponentNavigationInternalLinkInput>;
+  bottomLeftLink?: Maybe<EditComponentNavigationInternalLinkInput>;
+  bottomRightLink?: Maybe<EditComponentNavigationInternalLinkInput>;
+  logo?: Maybe<Scalars['ID']>;
+  clickToStopText?: Maybe<Scalars['String']>;
+  aboveLineText?: Maybe<Scalars['String']>;
+  belowLineText?: Maybe<Scalars['String']>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdateHomepageNewInput = {
+  data?: Maybe<EditHomepageNewInput>;
+};
+
+export type UpdateHomepageNewPayload = {
+  __typename?: 'updateHomepageNewPayload';
+  homepageNew?: Maybe<HomepageNew>;
+};
+
+export type DeleteHomepageNewPayload = {
+  __typename?: 'deleteHomepageNewPayload';
+  homepageNew?: Maybe<HomepageNew>;
 };
 
 export type Homepage = {
@@ -1994,6 +2072,229 @@ export type DeleteHomepageInput = {
 export type DeleteHomepagePayload = {
   __typename?: 'deleteHomepagePayload';
   homepage?: Maybe<Homepage>;
+};
+
+export type Job = {
+  __typename?: 'Job';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle: Scalars['String'];
+  careerTechnologiesContent: Scalars['String'];
+  careerExpectedSkills: Scalars['String'];
+  careerExpectedSkillsContent: Scalars['String'];
+  careerOfferTitle: Scalars['String'];
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle: Scalars['String'];
+  endContent?: Maybe<Scalars['String']>;
+  endCTA: Scalars['String'];
+  language?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type JobConnection = {
+  __typename?: 'JobConnection';
+  values?: Maybe<Array<Maybe<Job>>>;
+  groupBy?: Maybe<JobGroupBy>;
+  aggregate?: Maybe<JobAggregator>;
+};
+
+export type JobAggregator = {
+  __typename?: 'JobAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type JobGroupBy = {
+  __typename?: 'JobGroupBy';
+  id?: Maybe<Array<Maybe<JobConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<JobConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<JobConnectionUpdated_At>>>;
+  title?: Maybe<Array<Maybe<JobConnectionTitle>>>;
+  description?: Maybe<Array<Maybe<JobConnectionDescription>>>;
+  careerTechnologiesTitle?: Maybe<Array<Maybe<JobConnectionCareerTechnologiesTitle>>>;
+  careerTechnologiesContent?: Maybe<Array<Maybe<JobConnectionCareerTechnologiesContent>>>;
+  careerExpectedSkills?: Maybe<Array<Maybe<JobConnectionCareerExpectedSkills>>>;
+  careerExpectedSkillsContent?: Maybe<Array<Maybe<JobConnectionCareerExpectedSkillsContent>>>;
+  careerOfferTitle?: Maybe<Array<Maybe<JobConnectionCareerOfferTitle>>>;
+  careerOfferContent?: Maybe<Array<Maybe<JobConnectionCareerOfferContent>>>;
+  endTitle?: Maybe<Array<Maybe<JobConnectionEndTitle>>>;
+  endContent?: Maybe<Array<Maybe<JobConnectionEndContent>>>;
+  endCTA?: Maybe<Array<Maybe<JobConnectionEndCta>>>;
+  language?: Maybe<Array<Maybe<JobConnectionLanguage>>>;
+  slug?: Maybe<Array<Maybe<JobConnectionSlug>>>;
+  published_at?: Maybe<Array<Maybe<JobConnectionPublished_At>>>;
+};
+
+export type JobConnectionId = {
+  __typename?: 'JobConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCreated_At = {
+  __typename?: 'JobConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionUpdated_At = {
+  __typename?: 'JobConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionTitle = {
+  __typename?: 'JobConnectionTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionDescription = {
+  __typename?: 'JobConnectionDescription';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerTechnologiesTitle = {
+  __typename?: 'JobConnectionCareerTechnologiesTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerTechnologiesContent = {
+  __typename?: 'JobConnectionCareerTechnologiesContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerExpectedSkills = {
+  __typename?: 'JobConnectionCareerExpectedSkills';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerExpectedSkillsContent = {
+  __typename?: 'JobConnectionCareerExpectedSkillsContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerOfferTitle = {
+  __typename?: 'JobConnectionCareerOfferTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionCareerOfferContent = {
+  __typename?: 'JobConnectionCareerOfferContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionEndTitle = {
+  __typename?: 'JobConnectionEndTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionEndContent = {
+  __typename?: 'JobConnectionEndContent';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionEndCta = {
+  __typename?: 'JobConnectionEndCTA';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionLanguage = {
+  __typename?: 'JobConnectionLanguage';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionSlug = {
+  __typename?: 'JobConnectionSlug';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobConnectionPublished_At = {
+  __typename?: 'JobConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<JobConnection>;
+};
+
+export type JobInput = {
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle?: Maybe<Scalars['String']>;
+  careerTechnologiesContent: Scalars['String'];
+  careerExpectedSkills?: Maybe<Scalars['String']>;
+  careerExpectedSkillsContent: Scalars['String'];
+  careerOfferTitle?: Maybe<Scalars['String']>;
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle?: Maybe<Scalars['String']>;
+  endContent?: Maybe<Scalars['String']>;
+  endCTA?: Maybe<Scalars['String']>;
+  language?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditJobInput = {
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  careerTechnologiesTitle?: Maybe<Scalars['String']>;
+  careerTechnologiesContent?: Maybe<Scalars['String']>;
+  careerExpectedSkills?: Maybe<Scalars['String']>;
+  careerExpectedSkillsContent?: Maybe<Scalars['String']>;
+  careerOfferTitle?: Maybe<Scalars['String']>;
+  careerOfferContent?: Maybe<Scalars['String']>;
+  endTitle?: Maybe<Scalars['String']>;
+  endContent?: Maybe<Scalars['String']>;
+  endCTA?: Maybe<Scalars['String']>;
+  language?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateJobInput = {
+  data?: Maybe<JobInput>;
+};
+
+export type CreateJobPayload = {
+  __typename?: 'createJobPayload';
+  job?: Maybe<Job>;
+};
+
+export type UpdateJobInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditJobInput>;
+};
+
+export type UpdateJobPayload = {
+  __typename?: 'updateJobPayload';
+  job?: Maybe<Job>;
+};
+
+export type DeleteJobInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteJobPayload = {
+  __typename?: 'deleteJobPayload';
+  job?: Maybe<Job>;
 };
 
 export type Language = {
@@ -2425,6 +2726,140 @@ export type DeletePage404Payload = {
   page404?: Maybe<Page404>;
 };
 
+export type Products = {
+  __typename?: 'Products';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name: Scalars['String'];
+  slug: Scalars['String'];
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  localizations?: Maybe<Array<Maybe<Products>>>;
+};
+
+
+export type ProductsLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type ProductsConnection = {
+  __typename?: 'ProductsConnection';
+  values?: Maybe<Array<Maybe<Products>>>;
+  groupBy?: Maybe<ProductsGroupBy>;
+  aggregate?: Maybe<ProductsAggregator>;
+};
+
+export type ProductsAggregator = {
+  __typename?: 'ProductsAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type ProductsGroupBy = {
+  __typename?: 'ProductsGroupBy';
+  id?: Maybe<Array<Maybe<ProductsConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<ProductsConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<ProductsConnectionUpdated_At>>>;
+  name?: Maybe<Array<Maybe<ProductsConnectionName>>>;
+  slug?: Maybe<Array<Maybe<ProductsConnectionSlug>>>;
+  locale?: Maybe<Array<Maybe<ProductsConnectionLocale>>>;
+  published_at?: Maybe<Array<Maybe<ProductsConnectionPublished_At>>>;
+};
+
+export type ProductsConnectionId = {
+  __typename?: 'ProductsConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionCreated_At = {
+  __typename?: 'ProductsConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionUpdated_At = {
+  __typename?: 'ProductsConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionName = {
+  __typename?: 'ProductsConnectionName';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionSlug = {
+  __typename?: 'ProductsConnectionSlug';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionLocale = {
+  __typename?: 'ProductsConnectionLocale';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionPublished_At = {
+  __typename?: 'ProductsConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductInput = {
+  name: Scalars['String'];
+  slug: Scalars['String'];
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditProductInput = {
+  name?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateProductInput = {
+  data?: Maybe<ProductInput>;
+};
+
+export type CreateProductPayload = {
+  __typename?: 'createProductPayload';
+  product?: Maybe<Products>;
+};
+
+export type UpdateProductInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditProductInput>;
+};
+
+export type UpdateProductPayload = {
+  __typename?: 'updateProductPayload';
+  product?: Maybe<Products>;
+};
+
+export type DeleteProductInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteProductPayload = {
+  __typename?: 'deleteProductPayload';
+  product?: Maybe<Products>;
+};
+
 export type Skill = {
   __typename?: 'Skill';
   id: Scalars['ID'];
@@ -2661,6 +3096,129 @@ export type DeleteSocialNetworkPayload = {
   socialNetwork?: Maybe<SocialNetwork>;
 };
 
+export type Team = {
+  __typename?: 'Team';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name: Scalars['String'];
+  position: Scalars['String'];
+  image?: Maybe<UploadFile>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type TeamConnection = {
+  __typename?: 'TeamConnection';
+  values?: Maybe<Array<Maybe<Team>>>;
+  groupBy?: Maybe<TeamGroupBy>;
+  aggregate?: Maybe<TeamAggregator>;
+};
+
+export type TeamAggregator = {
+  __typename?: 'TeamAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type TeamGroupBy = {
+  __typename?: 'TeamGroupBy';
+  id?: Maybe<Array<Maybe<TeamConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<TeamConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<TeamConnectionUpdated_At>>>;
+  name?: Maybe<Array<Maybe<TeamConnectionName>>>;
+  position?: Maybe<Array<Maybe<TeamConnectionPosition>>>;
+  image?: Maybe<Array<Maybe<TeamConnectionImage>>>;
+  published_at?: Maybe<Array<Maybe<TeamConnectionPublished_At>>>;
+};
+
+export type TeamConnectionId = {
+  __typename?: 'TeamConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionCreated_At = {
+  __typename?: 'TeamConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionUpdated_At = {
+  __typename?: 'TeamConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionName = {
+  __typename?: 'TeamConnectionName';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionPosition = {
+  __typename?: 'TeamConnectionPosition';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionImage = {
+  __typename?: 'TeamConnectionImage';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionPublished_At = {
+  __typename?: 'TeamConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamInput = {
+  name: Scalars['String'];
+  position: Scalars['String'];
+  image?: Maybe<Scalars['ID']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditTeamInput = {
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['ID']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateTeamInput = {
+  data?: Maybe<TeamInput>;
+};
+
+export type CreateTeamPayload = {
+  __typename?: 'createTeamPayload';
+  team?: Maybe<Team>;
+};
+
+export type UpdateTeamInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditTeamInput>;
+};
+
+export type UpdateTeamPayload = {
+  __typename?: 'updateTeamPayload';
+  team?: Maybe<Team>;
+};
+
+export type DeleteTeamInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteTeamPayload = {
+  __typename?: 'deleteTeamPayload';
+  team?: Maybe<Team>;
+};
+
 export type TechList = {
   __typename?: 'TechList';
   id: Scalars['ID'];
@@ -2865,6 +3423,29 @@ export type DeleteWebhookInput = {
 export type DeleteWebhookPayload = {
   __typename?: 'deleteWebhookPayload';
   webhook?: Maybe<Webhook>;
+};
+
+export type I18NLocale = {
+  __typename?: 'I18NLocale';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name?: Maybe<Scalars['String']>;
+  code?: Maybe<Scalars['String']>;
+};
+
+export type LocaleInput = {
+  name?: Maybe<Scalars['String']>;
+  code?: Maybe<Scalars['String']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditLocaleInput = {
+  name?: Maybe<Scalars['String']>;
+  code?: Maybe<Scalars['String']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type UploadFile = {
@@ -3393,61 +3974,34 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
-export type ComponentContentBorderGallery = {
-  __typename?: 'ComponentContentBorderGallery';
+export type ComponentContentContact = {
+  __typename?: 'ComponentContentContact';
   id: Scalars['ID'];
-  image?: Maybe<UploadFile>;
+  address: Scalars['String'];
+  phoneNumber: Scalars['String'];
+  email: Scalars['String'];
+  ico: Scalars['String'];
+  dic: Scalars['String'];
+  legal: Scalars['String'];
 };
 
-export type ComponentContentBorderGalleryInput = {
-  image?: Maybe<Scalars['ID']>;
+export type ComponentContentContactInput = {
+  address: Scalars['String'];
+  phoneNumber: Scalars['String'];
+  email: Scalars['String'];
+  ico: Scalars['String'];
+  dic: Scalars['String'];
+  legal: Scalars['String'];
 };
 
-export type EditComponentContentBorderGalleryInput = {
+export type EditComponentContentContactInput = {
   id?: Maybe<Scalars['ID']>;
-  image?: Maybe<Scalars['ID']>;
-};
-
-export type ComponentContentCareerPosition = {
-  __typename?: 'ComponentContentCareerPosition';
-  id: Scalars['ID'];
-  heading?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentCareerPositionInput = {
-  heading?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-};
-
-export type EditComponentContentCareerPositionInput = {
-  id?: Maybe<Scalars['ID']>;
-  heading?: Maybe<Scalars['String']>;
-  color?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentContactUs = {
-  __typename?: 'ComponentContentContactUs';
-  id: Scalars['ID'];
-  text?: Maybe<Scalars['String']>;
-  contact?: Maybe<Scalars['String']>;
-  image?: Maybe<UploadFile>;
-};
-
-export type ComponentContentContactUsInput = {
-  text?: Maybe<Scalars['String']>;
-  contact?: Maybe<Scalars['String']>;
-  image?: Maybe<Scalars['ID']>;
-};
-
-export type EditComponentContentContactUsInput = {
-  id?: Maybe<Scalars['ID']>;
-  text?: Maybe<Scalars['String']>;
-  contact?: Maybe<Scalars['String']>;
-  image?: Maybe<Scalars['ID']>;
+  address?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  ico?: Maybe<Scalars['String']>;
+  dic?: Maybe<Scalars['String']>;
+  legal?: Maybe<Scalars['String']>;
 };
 
 export type ComponentContentImage = {
@@ -3511,66 +4065,27 @@ export type EditComponentContentInfoColumnInput = {
   widthPercent?: Maybe<Scalars['Float']>;
 };
 
-export type ComponentContentInfo = {
-  __typename?: 'ComponentContentInfo';
-  id: Scalars['ID'];
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentInfoInput = {
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type EditComponentContentInfoInput = {
-  id?: Maybe<Scalars['ID']>;
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentOrderParagraph = {
-  __typename?: 'ComponentContentOrderParagraph';
-  id: Scalars['ID'];
-  head?: Maybe<Scalars['String']>;
-  subHead?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentOrderParagraphInput = {
-  head?: Maybe<Scalars['String']>;
-  subHead?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
-export type EditComponentContentOrderParagraphInput = {
-  id?: Maybe<Scalars['ID']>;
-  head?: Maybe<Scalars['String']>;
-  subHead?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-};
-
 export type ComponentContentPictureList = {
   __typename?: 'ComponentContentPictureList';
   id: Scalars['ID'];
-  heading?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  header?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   image?: Maybe<UploadFile>;
 };
 
 export type ComponentContentPictureListInput = {
-  heading?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  header?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   image?: Maybe<Scalars['ID']>;
 };
 
 export type EditComponentContentPictureListInput = {
   id?: Maybe<Scalars['ID']>;
-  heading?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  header?: Maybe<Scalars['String']>;
   color?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   image?: Maybe<Scalars['ID']>;
 };
 
@@ -3615,64 +4130,78 @@ export type EditComponentContentRichTextInput = {
   widthPercent?: Maybe<Scalars['Float']>;
 };
 
+export type ComponentContentSocial = {
+  __typename?: 'ComponentContentSocial';
+  id: Scalars['ID'];
+  facebook: Scalars['String'];
+  linkedIn: Scalars['String'];
+  instagram: Scalars['String'];
+  twitter: Scalars['String'];
+};
+
+export type ComponentContentSocialInput = {
+  facebook: Scalars['String'];
+  linkedIn: Scalars['String'];
+  instagram: Scalars['String'];
+  twitter: Scalars['String'];
+};
+
+export type EditComponentContentSocialInput = {
+  id?: Maybe<Scalars['ID']>;
+  facebook?: Maybe<Scalars['String']>;
+  linkedIn?: Maybe<Scalars['String']>;
+  instagram?: Maybe<Scalars['String']>;
+  twitter?: Maybe<Scalars['String']>;
+};
+
 export type ComponentContentTechnologies = {
   __typename?: 'ComponentContentTechnologies';
   id: Scalars['ID'];
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  images?: Maybe<Array<Maybe<UploadFile>>>;
+};
+
+
+export type ComponentContentTechnologiesImagesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 export type ComponentContentTechnologyInput = {
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  images?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
 export type EditComponentContentTechnologyInput = {
   id?: Maybe<Scalars['ID']>;
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  images?: Maybe<Array<Maybe<Scalars['ID']>>>;
 };
 
-export type ComponentContentTechnologyBanner = {
-  __typename?: 'ComponentContentTechnologyBanner';
+export type ComponentNavigationInternalLink = {
+  __typename?: 'ComponentNavigationInternalLink';
   id: Scalars['ID'];
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-  info?: Maybe<Array<Maybe<ComponentContentInfo>>>;
+  label: Scalars['String'];
+  path: Scalars['String'];
 };
 
-export type ComponentContentTechnologyBannerInput = {
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-  info?: Maybe<Array<Maybe<ComponentContentInfoInput>>>;
+export type ComponentNavigationInternalLinkInput = {
+  label: Scalars['String'];
+  path?: Maybe<Scalars['String']>;
 };
 
-export type EditComponentContentTechnologyBannerInput = {
+export type EditComponentNavigationInternalLinkInput = {
   id?: Maybe<Scalars['ID']>;
-  head?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-  info?: Maybe<Array<Maybe<EditComponentContentInfoInput>>>;
+  label?: Maybe<Scalars['String']>;
+  path?: Maybe<Scalars['String']>;
 };
 
-export type ComponentContentTrioInfo = {
-  __typename?: 'ComponentContentTrioInfo';
-  id: Scalars['ID'];
-  head?: Maybe<Scalars['String']>;
-  info?: Maybe<Scalars['String']>;
-};
-
-export type ComponentContentTrioInfoInput = {
-  head?: Maybe<Scalars['String']>;
-  info?: Maybe<Scalars['String']>;
-};
-
-export type EditComponentContentTrioInfoInput = {
-  id?: Maybe<Scalars['ID']>;
-  head?: Maybe<Scalars['String']>;
-  info?: Maybe<Scalars['String']>;
-};
-
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Abaku | AbakuConnection | AbakuAggregator | AbakuGroupBy | AbakuConnectionId | AbakuConnectionCreated_At | AbakuConnectionUpdated_At | AbakuConnectionLanguage | AbakuConnectionTitle | AbakuConnectionMoto | AbakuConnectionOverLine | AbakuConnectionUnderLine | AbakuConnectionNotebookBg | AbakuConnectionNotebookContent | AbakuConnectionContactUs | AbakuConnectionPublished_At | CreateAbakuPayload | UpdateAbakuPayload | DeleteAbakuPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | Career | CareerConnection | CareerAggregator | CareerGroupBy | CareerConnectionId | CareerConnectionCreated_At | CareerConnectionUpdated_At | CareerConnectionLanguage | CareerConnectionTitle | CareerConnectionTechnologiesHeading | CareerConnectionTechnologies | CareerConnectionCareerWho | CareerConnectionSomethingElseHeading | CareerConnectionSomethingElseDescritption | CareerConnectionSomethingElseContact | CareerConnectionCareerWhy | CareerConnectionCareerWhatHeading | CareerConnectionCareerDescription | CareerConnectionPublished_At | CreateCareerPayload | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionTitle | CaseStudyConnectionSubtitle | CaseStudyConnectionAbout | CaseStudyConnectionIndustry | CaseStudyConnectionClient | CaseStudyConnectionSystem | CaseStudyConnectionMainImage | CaseStudyConnectionLanguage | CaseStudyConnectionProjectId | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentContentBorderGallery | ComponentContentCareerPosition | ComponentContentContactUs | ComponentContentImage | ComponentContentInfoColumn | ComponentContentInfo | ComponentContentOrderParagraph | ComponentContentPictureList | ComponentContentRichText | ComponentContentTechnologies | ComponentContentTechnologyBanner | ComponentContentTrioInfo;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | CareerOfferings | CareerOfferingsConnection | CareerOfferingsAggregator | CareerOfferingsGroupBy | CareerOfferingsConnectionId | CareerOfferingsConnectionCreated_At | CareerOfferingsConnectionUpdated_At | CareerOfferingsConnectionLanguage | CareerOfferingsConnectionTitle | CareerOfferingsConnectionDescription | CareerOfferingsConnectionCareerTechnologiesTitle | CareerOfferingsConnectionCareerTechnologiesContent | CareerOfferingsConnectionCareerExpectedSkillsTitle | CareerOfferingsConnectionCareerExpectedSkillsContent | CareerOfferingsConnectionCareerOfferTitle | CareerOfferingsConnectionCareerOfferContent | CareerOfferingsConnectionEndTitle | CareerOfferingsConnectionEndContent | CareerOfferingsConnectionEndCta | CareerOfferingsConnectionSlug | CareerOfferingsConnectionColor | CareerOfferingsConnectionPerex | CareerOfferingsConnectionPublished_At | CreateCareerOfferingPayload | UpdateCareerOfferingPayload | DeleteCareerOfferingPayload | Career | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionTitle | CaseStudyConnectionSubtitle | CaseStudyConnectionAbout | CaseStudyConnectionIndustry | CaseStudyConnectionClient | CaseStudyConnectionSystem | CaseStudyConnectionMainImage | CaseStudyConnectionLanguage | CaseStudyConnectionProjectId | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | Footer | UpdateFooterPayload | DeleteFooterPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | HomepageNew | UpdateHomepageNewPayload | DeleteHomepageNewPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | Job | JobConnection | JobAggregator | JobGroupBy | JobConnectionId | JobConnectionCreated_At | JobConnectionUpdated_At | JobConnectionTitle | JobConnectionDescription | JobConnectionCareerTechnologiesTitle | JobConnectionCareerTechnologiesContent | JobConnectionCareerExpectedSkills | JobConnectionCareerExpectedSkillsContent | JobConnectionCareerOfferTitle | JobConnectionCareerOfferContent | JobConnectionEndTitle | JobConnectionEndContent | JobConnectionEndCta | JobConnectionLanguage | JobConnectionSlug | JobConnectionPublished_At | CreateJobPayload | UpdateJobPayload | DeleteJobPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_At | ProductsConnectionUpdated_At | ProductsConnectionName | ProductsConnectionSlug | ProductsConnectionLocale | ProductsConnectionPublished_At | CreateProductPayload | UpdateProductPayload | DeleteProductPayload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | Team | TeamConnection | TeamAggregator | TeamGroupBy | TeamConnectionId | TeamConnectionCreated_At | TeamConnectionUpdated_At | TeamConnectionName | TeamConnectionPosition | TeamConnectionImage | TeamConnectionPublished_At | CreateTeamPayload | UpdateTeamPayload | DeleteTeamPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentContentContact | ComponentContentImage | ComponentContentInfoColumn | ComponentContentPictureList | ComponentContentRichText | ComponentContentSocial | ComponentContentTechnologies | ComponentNavigationInternalLink;
 
 export type InputId = {
   id: Scalars['ID'];
@@ -3693,9 +4222,6 @@ export type AdminUser = {
 
 export type Query = {
   __typename?: 'Query';
-  abaku?: Maybe<Abaku>;
-  abakus?: Maybe<Array<Maybe<Abaku>>>;
-  abakusConnection?: Maybe<AbakuConnection>;
   aboutUs?: Maybe<AboutUs>;
   aboutuses?: Maybe<Array<Maybe<AboutUs>>>;
   aboutusesConnection?: Maybe<AboutUsConnection>;
@@ -3703,9 +4229,10 @@ export type Query = {
   brandValue?: Maybe<BrandValue>;
   brandValues?: Maybe<Array<Maybe<BrandValue>>>;
   brandValuesConnection?: Maybe<BrandValueConnection>;
+  careerOffering?: Maybe<CareerOfferings>;
+  careerOfferings?: Maybe<Array<Maybe<CareerOfferings>>>;
+  careerOfferingsConnection?: Maybe<CareerOfferingsConnection>;
   career?: Maybe<Career>;
-  careers?: Maybe<Array<Maybe<Career>>>;
-  careersConnection?: Maybe<CareerConnection>;
   caseStudyMeta?: Maybe<CaseStudyMeta>;
   caseStudyMetas?: Maybe<Array<Maybe<CaseStudyMeta>>>;
   caseStudyMetasConnection?: Maybe<CaseStudyMetaConnection>;
@@ -3715,12 +4242,17 @@ export type Query = {
   contact?: Maybe<Contact>;
   contacts?: Maybe<Array<Maybe<Contact>>>;
   contactsConnection?: Maybe<ContactConnection>;
+  footer?: Maybe<Footer>;
   header?: Maybe<Header>;
   headers?: Maybe<Array<Maybe<Header>>>;
   headersConnection?: Maybe<HeaderConnection>;
+  homepageNew?: Maybe<HomepageNew>;
   homepage?: Maybe<Homepage>;
   homepages?: Maybe<Array<Maybe<Homepage>>>;
   homepagesConnection?: Maybe<HomepageConnection>;
+  job?: Maybe<Job>;
+  jobs?: Maybe<Array<Maybe<Job>>>;
+  jobsConnection?: Maybe<JobConnection>;
   language?: Maybe<Language>;
   languages?: Maybe<Array<Maybe<Language>>>;
   languagesConnection?: Maybe<LanguageConnection>;
@@ -3730,12 +4262,18 @@ export type Query = {
   page404?: Maybe<Page404>;
   page404s?: Maybe<Array<Maybe<Page404>>>;
   page404sConnection?: Maybe<Page404Connection>;
+  product?: Maybe<Products>;
+  products?: Maybe<Array<Maybe<Products>>>;
+  productsConnection?: Maybe<ProductsConnection>;
   skill?: Maybe<Skill>;
   skills?: Maybe<Array<Maybe<Skill>>>;
   skillsConnection?: Maybe<SkillConnection>;
   socialNetwork?: Maybe<SocialNetwork>;
   socialNetworks?: Maybe<Array<Maybe<SocialNetwork>>>;
   socialNetworksConnection?: Maybe<SocialNetworkConnection>;
+  team?: Maybe<Team>;
+  teams?: Maybe<Array<Maybe<Team>>>;
+  teamsConnection?: Maybe<TeamConnection>;
   techList?: Maybe<TechList>;
   techLists?: Maybe<Array<Maybe<TechList>>>;
   techListsConnection?: Maybe<TechListConnection>;
@@ -3752,29 +4290,6 @@ export type Query = {
   users?: Maybe<Array<Maybe<UsersPermissionsUser>>>;
   usersConnection?: Maybe<UsersPermissionsUserConnection>;
   me?: Maybe<UsersPermissionsMe>;
-};
-
-
-export type QueryAbakuArgs = {
-  id: Scalars['ID'];
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryAbakusArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryAbakusConnectionArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
 };
 
 
@@ -3829,13 +4344,13 @@ export type QueryBrandValuesConnectionArgs = {
 };
 
 
-export type QueryCareerArgs = {
+export type QueryCareerOfferingArgs = {
   id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
 };
 
 
-export type QueryCareersArgs = {
+export type QueryCareerOfferingsArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -3844,11 +4359,17 @@ export type QueryCareersArgs = {
 };
 
 
-export type QueryCareersConnectionArgs = {
+export type QueryCareerOfferingsConnectionArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type QueryCareerArgs = {
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -3921,6 +4442,12 @@ export type QueryContactsConnectionArgs = {
 };
 
 
+export type QueryFooterArgs = {
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type QueryHeaderArgs = {
   id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
@@ -3944,6 +4471,12 @@ export type QueryHeadersConnectionArgs = {
 };
 
 
+export type QueryHomepageNewArgs = {
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type QueryHomepageArgs = {
   id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
@@ -3960,6 +4493,29 @@ export type QueryHomepagesArgs = {
 
 
 export type QueryHomepagesConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type QueryJobArgs = {
+  id: Scalars['ID'];
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryJobsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryJobsConnectionArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -4036,6 +4592,31 @@ export type QueryPage404sConnectionArgs = {
 };
 
 
+export type QueryProductArgs = {
+  id: Scalars['ID'];
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryProductsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryProductsConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type QuerySkillArgs = {
   id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
@@ -4075,6 +4656,29 @@ export type QuerySocialNetworksArgs = {
 
 
 export type QuerySocialNetworksConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type QueryTeamArgs = {
+  id: Scalars['ID'];
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryTeamsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryTeamsConnectionArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -4192,9 +4796,6 @@ export type QueryUsersConnectionArgs = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createAbaku?: Maybe<CreateAbakuPayload>;
-  updateAbaku?: Maybe<UpdateAbakuPayload>;
-  deleteAbaku?: Maybe<DeleteAbakuPayload>;
   createAboutUs?: Maybe<CreateAboutUsPayload>;
   updateAboutUs?: Maybe<UpdateAboutUsPayload>;
   deleteAboutUs?: Maybe<DeleteAboutUsPayload>;
@@ -4203,7 +4804,9 @@ export type Mutation = {
   createBrandValue?: Maybe<CreateBrandValuePayload>;
   updateBrandValue?: Maybe<UpdateBrandValuePayload>;
   deleteBrandValue?: Maybe<DeleteBrandValuePayload>;
-  createCareer?: Maybe<CreateCareerPayload>;
+  createCareerOffering?: Maybe<CreateCareerOfferingPayload>;
+  updateCareerOffering?: Maybe<UpdateCareerOfferingPayload>;
+  deleteCareerOffering?: Maybe<DeleteCareerOfferingPayload>;
   updateCareer?: Maybe<UpdateCareerPayload>;
   deleteCareer?: Maybe<DeleteCareerPayload>;
   createCaseStudyMeta?: Maybe<CreateCaseStudyMetaPayload>;
@@ -4215,12 +4818,19 @@ export type Mutation = {
   createContact?: Maybe<CreateContactPayload>;
   updateContact?: Maybe<UpdateContactPayload>;
   deleteContact?: Maybe<DeleteContactPayload>;
+  updateFooter?: Maybe<UpdateFooterPayload>;
+  deleteFooter?: Maybe<DeleteFooterPayload>;
   createHeader?: Maybe<CreateHeaderPayload>;
   updateHeader?: Maybe<UpdateHeaderPayload>;
   deleteHeader?: Maybe<DeleteHeaderPayload>;
+  updateHomepageNew?: Maybe<UpdateHomepageNewPayload>;
+  deleteHomepageNew?: Maybe<DeleteHomepageNewPayload>;
   createHomepage?: Maybe<CreateHomepagePayload>;
   updateHomepage?: Maybe<UpdateHomepagePayload>;
   deleteHomepage?: Maybe<DeleteHomepagePayload>;
+  createJob?: Maybe<CreateJobPayload>;
+  updateJob?: Maybe<UpdateJobPayload>;
+  deleteJob?: Maybe<DeleteJobPayload>;
   createLanguage?: Maybe<CreateLanguagePayload>;
   updateLanguage?: Maybe<UpdateLanguagePayload>;
   deleteLanguage?: Maybe<DeleteLanguagePayload>;
@@ -4230,12 +4840,18 @@ export type Mutation = {
   createPage404?: Maybe<CreatePage404Payload>;
   updatePage404?: Maybe<UpdatePage404Payload>;
   deletePage404?: Maybe<DeletePage404Payload>;
+  createProduct?: Maybe<CreateProductPayload>;
+  updateProduct?: Maybe<UpdateProductPayload>;
+  deleteProduct?: Maybe<DeleteProductPayload>;
   createSkill?: Maybe<CreateSkillPayload>;
   updateSkill?: Maybe<UpdateSkillPayload>;
   deleteSkill?: Maybe<DeleteSkillPayload>;
   createSocialNetwork?: Maybe<CreateSocialNetworkPayload>;
   updateSocialNetwork?: Maybe<UpdateSocialNetworkPayload>;
   deleteSocialNetwork?: Maybe<DeleteSocialNetworkPayload>;
+  createTeam?: Maybe<CreateTeamPayload>;
+  updateTeam?: Maybe<UpdateTeamPayload>;
+  deleteTeam?: Maybe<DeleteTeamPayload>;
   createTechList?: Maybe<CreateTechListPayload>;
   updateTechList?: Maybe<UpdateTechListPayload>;
   deleteTechList?: Maybe<DeleteTechListPayload>;
@@ -4256,6 +4872,10 @@ export type Mutation = {
   updateUser?: Maybe<UpdateUserPayload>;
   /** Delete an existing user */
   deleteUser?: Maybe<DeleteUserPayload>;
+  createCareerLocalization: Career;
+  createFooterLocalization: Footer;
+  createHomepageNewLocalization: HomepageNew;
+  createProductLocalization: Products;
   upload: UploadFile;
   multipleUpload: Array<Maybe<UploadFile>>;
   updateFileInfo: UploadFile;
@@ -4264,21 +4884,6 @@ export type Mutation = {
   forgotPassword?: Maybe<UserPermissionsPasswordPayload>;
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
   emailConfirmation?: Maybe<UsersPermissionsLoginPayload>;
-};
-
-
-export type MutationCreateAbakuArgs = {
-  input?: Maybe<CreateAbakuInput>;
-};
-
-
-export type MutationUpdateAbakuArgs = {
-  input?: Maybe<UpdateAbakuInput>;
-};
-
-
-export type MutationDeleteAbakuArgs = {
-  input?: Maybe<DeleteAbakuInput>;
 };
 
 
@@ -4317,18 +4922,29 @@ export type MutationDeleteBrandValueArgs = {
 };
 
 
-export type MutationCreateCareerArgs = {
-  input?: Maybe<CreateCareerInput>;
+export type MutationCreateCareerOfferingArgs = {
+  input?: Maybe<CreateCareerOfferingInput>;
+};
+
+
+export type MutationUpdateCareerOfferingArgs = {
+  input?: Maybe<UpdateCareerOfferingInput>;
+};
+
+
+export type MutationDeleteCareerOfferingArgs = {
+  input?: Maybe<DeleteCareerOfferingInput>;
 };
 
 
 export type MutationUpdateCareerArgs = {
   input?: Maybe<UpdateCareerInput>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
 export type MutationDeleteCareerArgs = {
-  input?: Maybe<DeleteCareerInput>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -4377,6 +4993,17 @@ export type MutationDeleteContactArgs = {
 };
 
 
+export type MutationUpdateFooterArgs = {
+  input?: Maybe<UpdateFooterInput>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationDeleteFooterArgs = {
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type MutationCreateHeaderArgs = {
   input?: Maybe<CreateHeaderInput>;
 };
@@ -4392,6 +5019,17 @@ export type MutationDeleteHeaderArgs = {
 };
 
 
+export type MutationUpdateHomepageNewArgs = {
+  input?: Maybe<UpdateHomepageNewInput>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationDeleteHomepageNewArgs = {
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type MutationCreateHomepageArgs = {
   input?: Maybe<CreateHomepageInput>;
 };
@@ -4404,6 +5042,21 @@ export type MutationUpdateHomepageArgs = {
 
 export type MutationDeleteHomepageArgs = {
   input?: Maybe<DeleteHomepageInput>;
+};
+
+
+export type MutationCreateJobArgs = {
+  input?: Maybe<CreateJobInput>;
+};
+
+
+export type MutationUpdateJobArgs = {
+  input?: Maybe<UpdateJobInput>;
+};
+
+
+export type MutationDeleteJobArgs = {
+  input?: Maybe<DeleteJobInput>;
 };
 
 
@@ -4452,6 +5105,21 @@ export type MutationDeletePage404Args = {
 };
 
 
+export type MutationCreateProductArgs = {
+  input?: Maybe<CreateProductInput>;
+};
+
+
+export type MutationUpdateProductArgs = {
+  input?: Maybe<UpdateProductInput>;
+};
+
+
+export type MutationDeleteProductArgs = {
+  input?: Maybe<DeleteProductInput>;
+};
+
+
 export type MutationCreateSkillArgs = {
   input?: Maybe<CreateSkillInput>;
 };
@@ -4479,6 +5147,21 @@ export type MutationUpdateSocialNetworkArgs = {
 
 export type MutationDeleteSocialNetworkArgs = {
   input?: Maybe<DeleteSocialNetworkInput>;
+};
+
+
+export type MutationCreateTeamArgs = {
+  input?: Maybe<CreateTeamInput>;
+};
+
+
+export type MutationUpdateTeamArgs = {
+  input?: Maybe<UpdateTeamInput>;
+};
+
+
+export type MutationDeleteTeamArgs = {
+  input?: Maybe<DeleteTeamInput>;
 };
 
 
@@ -4544,6 +5227,26 @@ export type MutationUpdateUserArgs = {
 
 export type MutationDeleteUserArgs = {
   input?: Maybe<DeleteUserInput>;
+};
+
+
+export type MutationCreateCareerLocalizationArgs = {
+  input: UpdateCareerInput;
+};
+
+
+export type MutationCreateFooterLocalizationArgs = {
+  input: UpdateFooterInput;
+};
+
+
+export type MutationCreateHomepageNewLocalizationArgs = {
+  input: UpdateHomepageNewInput;
+};
+
+
+export type MutationCreateProductLocalizationArgs = {
+  input: UpdateProductInput;
 };
 
 
@@ -4652,28 +5355,6 @@ export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_2_Query = (
   { __typename?: 'Query' }
-  & { careers?: Maybe<Array<Maybe<(
-    { __typename?: 'Career' }
-    & Pick<Career, 'id' | 'language' | 'title' | 'technologiesHeading' | 'technologies' | 'careerDescription' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescritption' | 'somethingElseContact' | 'careerWhy' | 'careerWhatHeading'>
-    & { positions?: Maybe<Array<Maybe<(
-      { __typename?: 'ComponentContentCareerPosition' }
-      & Pick<ComponentContentCareerPosition, 'heading' | 'description' | 'color'>
-    )>>>, info?: Maybe<Array<Maybe<(
-      { __typename?: 'ComponentContentPictureList' }
-      & Pick<ComponentContentPictureList, 'heading' | 'description' | 'color'>
-      & { image?: Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'url' | 'alternativeText'>
-      )> }
-    )>>> }
-  )>>> }
-);
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = (
-  { __typename?: 'Query' }
   & { contacts?: Maybe<Array<Maybe<(
     { __typename?: 'Contact' }
     & Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'formSubmit' | 'formTextLabel' | 'formNameLabel' | 'formEmailLabel' | 'formNameWarning' | 'formEmailWarning' | 'formInvalidEmailWarning'>
@@ -4684,14 +5365,29 @@ export type Unnamed_3_Query = (
   )>>> }
 );
 
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_3_Query = (
+  { __typename?: 'Query' }
+  & { headers?: Maybe<Array<Maybe<(
+    { __typename?: 'Header' }
+    & Pick<Header, 'id' | 'language' | 'title' | 'description'>
+    & { logo?: Maybe<(
+      { __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url'>
+    )> }
+  )>>> }
+);
+
 export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_4_Query = (
   { __typename?: 'Query' }
-  & { headers?: Maybe<Array<Maybe<(
-    { __typename?: 'Header' }
-    & Pick<Header, 'id' | 'language' | 'title' | 'description'>
+  & { homepages?: Maybe<Array<Maybe<(
+    { __typename?: 'Homepage' }
+    & Pick<Homepage, 'id' | 'language' | 'clickToStop' | 'descriptionAboveLine' | 'descriptionBellowLine'>
     & { logo?: Maybe<(
       { __typename?: 'UploadFile' }
       & Pick<UploadFile, 'url'>
@@ -4704,13 +5400,9 @@ export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_5_Query = (
   { __typename?: 'Query' }
-  & { homepages?: Maybe<Array<Maybe<(
-    { __typename?: 'Homepage' }
-    & Pick<Homepage, 'id' | 'language' | 'clickToStop' | 'descriptionAboveLine' | 'descriptionBellowLine'>
-    & { logo?: Maybe<(
-      { __typename?: 'UploadFile' }
-      & Pick<UploadFile, 'url'>
-    )> }
+  & { languages?: Maybe<Array<Maybe<(
+    { __typename?: 'Language' }
+    & Pick<Language, 'id' | 'languageCode' | 'displayName'>
   )>>> }
 );
 
@@ -4719,9 +5411,9 @@ export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_6_Query = (
   { __typename?: 'Query' }
-  & { languages?: Maybe<Array<Maybe<(
-    { __typename?: 'Language' }
-    & Pick<Language, 'id' | 'languageCode' | 'displayName'>
+  & { menus?: Maybe<Array<Maybe<(
+    { __typename?: 'Menu' }
+    & Pick<Menu, 'id' | 'aboutUs' | 'career' | 'contact' | 'homePage' | 'language' | 'menu' | 'reference'>
   )>>> }
 );
 
@@ -4729,17 +5421,6 @@ export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_7_Query = (
-  { __typename?: 'Query' }
-  & { menus?: Maybe<Array<Maybe<(
-    { __typename?: 'Menu' }
-    & Pick<Menu, 'id' | 'aboutUs' | 'career' | 'contact' | 'homePage' | 'language' | 'menu' | 'reference'>
-  )>>> }
-);
-
-export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { page404s?: Maybe<Array<Maybe<(
     { __typename?: 'Page404' }
@@ -4751,10 +5432,10 @@ export type Unnamed_8_Query = (
   )>>> }
 );
 
-export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_9_Query = (
+export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { socialNetworks?: Maybe<Array<Maybe<(
     { __typename?: 'SocialNetwork' }
