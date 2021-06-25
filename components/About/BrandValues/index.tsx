@@ -2,7 +2,7 @@ import React from 'react'
 import {
     ValuesHeadline,
     ValuesWrapper
-} from 'components/About/styled'
+} from './styled'
 import {BrandValue} from 'gql/generated/types'
 import { useTranslation } from 'react-i18next'
 

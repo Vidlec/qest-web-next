@@ -29,6 +29,14 @@ export const ABOUT_QUERY = gql`
 			}
 			valuesHeadline
 			teamHeadline
+			teams {
+				name
+				position
+				image {
+					url
+					alternativeText
+				}
+			}
 			hqHeadline
 			hqDescription
 			careerHeadline

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Col from 'components/Col'
 import { useTranslation } from 'react-i18next'
-import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
-import Slider from 'react-slick'
-import numberOrNull from 'components/numberOrNull'
+import { UploadFile } from '../../gql/generated/types'
 import Container from 'components/Container'
 import SliderWrapper from 'components/Slider/styled'
 import {
@@ -14,26 +12,12 @@ import {
 	CareerDescription,
 	CarouselCol,
 	CarouselLine,
-	CarouselPicture,
-	ColorText,
 	HQDescription,
 	PictureImg,
-	SkillDescription,
-	SkillHeadline,
-	SkillsList,
-	SkillsListItem,
 	SkillsRow,
 	TechnologiesCard,
 	TechnologiesDescription,
 	TechnologiesPicture,
-	ValueDescription,
-	ValueHeadline,
-	ValueHeadlineWrapper,
-	ValueNumber,
-	ValuePicture,
-	ValuesColumn,
-	ValuesHeadline,
-	ValuesWrapper,
 	WeAreDescription,
 	WeAreRow,
 	HQWeAreHereCol,
@@ -42,25 +26,48 @@ import {
 	HQWeAreHerePicture,
 	HQWeAreHereRow,
 	HQCTACol,
-	BlogPostThumbnail,
 	BlogPostsContainer,
-	BlogPostWrapper,
-	BlogPostTitle,
-	BlogPostSnippet,
 	MoreBlogPosts,
 	MoreBlogPostsContainer,
+	BlogPostWrapper,
+	HQGallery
 } from 'components/About/styled'
 import Headline from 'components/Headline'
+import Footer from 'components/Footer'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import theme from 'theme'
+
 import AboutHero from 'components/About/Hero'
+import Skills from 'components/About/Skills'
+import BrandValues from 'components/About/BrandValues'
+import BlogPost from 'components/About/BlogPost'
+import SlickSlider from 'components/Slider'
+import AboutTeam from 'components/About/Team'
 
 import blogPosts from '../../public/posts.json'
 
 const AboutUs: React.FC = () => {
 	const { t } = useTranslation()
 
-	const [sliderRef, setSliderRef] = useState<Slider | null>(null)
+	const [sliderImages] = useState(
+		t<string, UploadFile[]>(
+			'about.weAreImageCarousel',
+			{ returnObjects: true }
+		)
+	)
+
+	const [sliderOptions] = useState(
+		{
+			infinite:true,
+			speed: 500,
+			slidesToShow:1,
+			slidesToScroll:1,
+			dots:false,
+			arrows:false,
+			autoplay:true,
+		}
+	)
+
 	const [
 		weAreDescriptionRef,
 		setWeAreDescriptionRef,
@@ -71,36 +78,16 @@ const AboutUs: React.FC = () => {
 	useEffect(() => {
 		const descriptionLinks =
 			weAreDescriptionRef?.querySelectorAll('[data-sliderIndex]') ?? []
-
-		for (const descriptionLink of descriptionLinks) {
-			descriptionLink.addEventListener('mouseenter', (e) =>
-				moveSlickToIndex(e, sliderRef)
-			)
-			descriptionLink.addEventListener('mouseleave', () =>
-				resumeSlider(sliderRef)
-			)
-		}
-
-		return () => {
-			for (const descriptionLink of descriptionLinks) {
-				descriptionLink.removeEventListener('mouseenter', (e) =>
-					moveSlickToIndex(e, sliderRef)
-				)
-				descriptionLink.addEventListener('mouseleave', () =>
-					resumeSlider(sliderRef)
-				)
-			}
-		}
-	}, [sliderRef, weAreDescriptionRef])
+	}, [weAreDescriptionRef])
 
 	return (
-		<>	
+		<>
 			<AboutHero />
-			<Container>
-				<Headline>{t('about.weAreHeadline')}</Headline>
 
-				<WeAreRow>
+			<Container>
+				<WeAreRow id='weAre'>
 					<Col mobile={12} desktopSmall={7}>
+						<Headline>{t('about.weAreHeadline')}</Headline>
 						<WeAreDescription
 							dangerouslySetInnerHTML={{
 								__html: t('about.weAreDescription'),
@@ -111,67 +98,27 @@ const AboutUs: React.FC = () => {
 
 					<CarouselCol mobile={12} desktopSmall={5} desktop={3}>
 						<SliderWrapper>
-							<Slider
-								infinite={true}
-								speed={500}
-								slidesToShow={1}
-								slidesToScroll={1}
-								dots={false}
-								arrows={false}
-								autoplay={true}
-								ref={setSliderRef}
-							>
-								{t<string, UploadFile[]>(
-									'about.weAreImageCarousel',
-									{ returnObjects: true }
-								).map((image) => (
-									<CarouselPicture key={image.id}>
-										<img
-											src={image.url}
-											alt={image.alternativeText ?? ''}
-										/>
-									</CarouselPicture>
-								))}
-							</Slider>
+							<SlickSlider sliderOptions={sliderOptions} data={sliderImages}/>
 						</SliderWrapper>
+
 						<CarouselLine />
 					</CarouselCol>
 				</WeAreRow>
+
 				<ArrowLinkWrapper>
-					<ArrowLink href={'#'}>
-						<ArrowDownIcon
-							src={t('about.arrow.url')}
-							alt={t('about.arrow.alternativeText')}
-						/>
+					<ArrowLink offset={() => 170} href='#QestSkills'>
+						<ArrowDownIcon src={t('about.arrow.url')}  alt={t('about.arrow.alternativeText')} />
 						<span>{t('about.weAreArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
 			</Container>
+
 			<Container>
 				<Headline>{t('about.skillsHeadline')}</Headline>
 
-				<SkillsRow>
+				<SkillsRow id='QestSkills'>
 					<Col mobile={12} desktopSmall={7}>
-						<p>{t('about.skillsDescription')}</p>
-
-						<SkillsList>
-							{t<string, Skill[]>('about.skills', {
-								returnObjects: true,
-							}).map((skill) => (
-								<SkillsListItem key={skill.id}>
-									<SkillHeadline>
-										<ColorText
-											colorHash={skill.titleColorHash}
-										>
-											{skill.title}
-										</ColorText>
-									</SkillHeadline>
-									<SkillDescription>
-										{skill.description}
-									</SkillDescription>
-								</SkillsListItem>
-							))}
-						</SkillsList>
+						<Skills />
 					</Col>
 
 					<Col mobile={12} desktopSmall={5}>
@@ -193,39 +140,17 @@ const AboutUs: React.FC = () => {
 					</Col>
 				</SkillsRow>
 			</Container>
+
 			<Container>
-				<ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
-
-				<ValuesWrapper>
-					{t<string, BrandValue[]>('about.brandValues', {
-						returnObjects: true,
-					}).map((value) => (
-						<ValuesColumn key={value.id}>
-							<ValueHeadlineWrapper>
-								<ValueNumber>
-									{value.backgroundNumber}
-								</ValueNumber>
-
-								<ValueHeadline>{value.headline}</ValueHeadline>
-
-								<ValuePicture>
-									<PictureImg
-										src={value.image?.url}
-										alt={value.image?.alternativeText ?? ''}
-									/>
-								</ValuePicture>
-							</ValueHeadlineWrapper>
-
-							<ValueDescription>
-								{value.description}
-							</ValueDescription>
-						</ValuesColumn>
-					))}
-				</ValuesWrapper>
+				<BrandValues />
 			</Container>
+
 			<Container>
 				<Headline>{t('about.teamHeadline')}</Headline>
+
+				<AboutTeam />
 			</Container>
+
 			<Container>
 				<Headline>{t('about.hqHeadline')}</Headline>
 
@@ -235,29 +160,12 @@ const AboutUs: React.FC = () => {
 					}}
 				/>
 
-				<ResponsiveMasonry
-					columnsCountBreakPoints={{
-						[theme.mediaQueriesNumbers.mobile]: 1,
-						[theme.mediaQueriesNumbers.ipad]: 2,
-						[theme.mediaQueriesNumbers.desktop]: 3,
-					}}
-				>
-					<Masonry>
-						{t<string, UploadFile[]>('about.hqImageGrid', {
-							returnObjects: true,
-						}).map((image) => (
-							<picture key={image.id}>
-								<PictureImg
-									src={image.url}
-									alt={image.alternativeText ?? ''}
-								/>
-							</picture>
-						))}
-					</Masonry>
-				</ResponsiveMasonry>
-
-				<HQWeAreHereRow>
-					<HQWeAreHereCol mobile={12} ipad={6} desktopSmall={4}>
+				<HQGallery>
+					<img src='https://via.placeholder.com/520x350' alt=''/>
+					<img src='https://via.placeholder.com/370x560' alt=''/>
+					<img src='https://via.placeholder.com/350x280' alt=''/>
+					<img src='https://via.placeholder.com/270x380' alt=''/>
+					<HQWeAreHereCol>
 						<HQWeAreHerePicture>
 							<PictureImg
 								src={t('about.hqWeAreHereImage.url')}
@@ -273,13 +181,17 @@ const AboutUs: React.FC = () => {
 							}}
 						/>
 					</HQWeAreHereCol>
+					<img src='https://via.placeholder.com/350x280' alt=''/>
+				</HQGallery>
 
+				<HQWeAreHereRow>
 					<HQCTACol mobile={12} ipad={6} desktopSmall={4}>
 						<ArrowRightIcon />
 						<span>{t('about.hqCTATitle')}</span>
 					</HQCTACol>
 				</HQWeAreHereRow>
 			</Container>
+
 			<Container>
 				<Headline>{t('about.careerHeadline')}</Headline>
 
@@ -297,49 +209,28 @@ const AboutUs: React.FC = () => {
 					/>
 				</CareerCTA>
 			</Container>
+
 			<Container>
 				<Headline>{t('about.blogHeadline')}</Headline>
 				<BlogPostsContainer>
 					{blogPosts.map((post) => (
 						<BlogPostWrapper key={post.link}>
-							<a href={post.link} target="_blank">
-								<BlogPostThumbnail src={post.img} />
-								<BlogPostTitle>
-									{post.title
-										.split(' — ')
-										.map((titleLine, index) => (
-											<div key={index}>{titleLine}</div>
-										))}
-								</BlogPostTitle>
-								<BlogPostSnippet>
-									{post.snippet}
-								</BlogPostSnippet>
-							</a>
+							<BlogPost post={post} />
 						</BlogPostWrapper>
+
 					))}
 				</BlogPostsContainer>
 				<MoreBlogPostsContainer>
-					<MoreBlogPosts href={mediumUrl} target="_blank">
+					<MoreBlogPosts href={mediumUrl} target='_blank'>
 						{t('about.blogReadMore')}
 					</MoreBlogPosts>
 				</MoreBlogPostsContainer>
 			</Container>
+
+			{/*TODO ppremistit na _app opodminkovat na homepage nezbrazovat*/}
+			<Footer />
 		</>
 	)
 }
 
 export default AboutUs
-
-function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
-	const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')
-	const index = numberOrNull(indexAttr)
-
-	if (index !== null) {
-		sliderRef?.slickPause()
-		sliderRef?.slickGoTo(index)
-	}
-}
-
-function resumeSlider(sliderRef: Slider | null) {
-	sliderRef?.slickPlay()
-}

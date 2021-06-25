@@ -1,13 +1,13 @@
 import React from 'react'
 import {BrandValue} from 'gql/generated/types'
+import { PictureImg } from 'components/About/styled'
 import {
-    PictureImg,
     ValueDescription,
     ValueHeadline,
     ValueHeadlineWrapper,
     ValueNumber,
     ValuePicture, ValuesColumn
-} from 'components/About/styled'
+} from './styled'
 
 interface Props {
     value: BrandValue

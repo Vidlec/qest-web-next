@@ -53,12 +53,12 @@ export const HeroContainer = styled(Container)`
 `
 export const HeroHeadline = styled(Headline)`
 	margin: 1rem 0 calc(1.5rem - 0.45rem);
-	font-size: 2rem;
+	font-size: ${({ theme }) => theme.sizes.large};
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		font-size: 3.5rem;
-		max-width: calc(100% - 20rem - 4rem);
-	}
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+      font-size: ${({ theme }) => theme.sizes.extraLarge};
+      max-width: calc(100% - 20rem - 4rem);
+    }
 `
 export const HeroLineWrapper = styled.div`
 	height: 1rem;
@@ -96,10 +96,14 @@ export const ArrowDownIcon = styled.img`
 	margin-bottom: 24px;
 `
 export const WeAreDescription = styled.div`
-	font-size: 2.2rem;
 	letter-spacing: 0;
-	line-height: 2.75rem;
 	margin-bottom: 2rem;
+    font-size: ${({ theme }) => theme.sizes.extraSmall};
+    
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+      font-size: ${({ theme }) => theme.sizes.body};
+      line-height: 2.75rem;
+    }
 `
 export const WeAreRow = styled(Row)`
 	justify-content: space-between;
@@ -119,7 +123,7 @@ export const CarouselPicture = styled.picture`
 		margin: auto;
 		width: 100%;
 
-		@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
 			width: auto;
 		}
 	}
@@ -139,15 +143,24 @@ export const SkillsList = styled.ul`
 	list-style: none;
 `
 export const SkillsListItem = styled.li`
-	margin-bottom: 2rem;
+	
 `
 export const SkillHeadline = styled.h2`
-	font-size: 2rem;
 	margin: 0;
 	line-height: 1;
+    font-size: ${({ theme }) => theme.sizes.body};
+    
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+      font-size: ${({ theme }) => theme.sizes.medium};
+    }
 `
 export const SkillDescription = styled.p`
-	margin: 0;
+	margin: 0 0 2rem 0;
+    font-size: ${({ theme }) => theme.sizes.extraSmall};
+    
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+      font-size: ${({ theme }) => theme.sizes.body};
+    }
 `
 export const TechnologiesCard = styled.div`
 	background-color: black;
@@ -171,61 +184,20 @@ export const TechnologiesDescription = styled.div`
 	font-family: 'sourceCodeVariable';
 	font-size: 1.25rem;
 `
-export const ValuesHeadline = styled(Headline)`
-	margin-bottom: 11.25rem;
-`
-export const ValuesWrapper = styled.div`
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	flex-wrap: wrap;
-`
-export const ValuesColumn = styled.div`
-	width: 100%;
-	margin-bottom: 3rem;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		width: 17.5rem;
-	}
-`
-export const ValueDescription = styled.p`
-	text-align: center;
-`
-export const ValueHeadlineWrapper = styled.div`
-	margin-bottom: 1.8rem;
-	position: relative;
-	display: flex;
-`
-export const ValueNumber = styled.div`
-	color: ${({ theme }) => theme.colors.black};
-	font-size: 13rem;
-	line-height: 1;
-	font-weight: bold;
-`
-export const ValueHeadline = styled.div`
-	letter-spacing: 0;
-	font-weight: bold;
-	font-size: 2.2rem;
-	line-height: 2.3rem;
-	text-align: center;
-	white-space: pre-wrap;
-	z-index: 1;
-	padding-top: 0.8rem;
-	width: 100%;
-	position: absolute;
-`
-export const ValuePicture = styled.picture`
-	position: absolute;
-	right: 0;
-`
 export const HQDescription = styled.div`
 	margin-bottom: 2rem;
+    font-size: ${({ theme }) => theme.sizes.extraSmall};
+    
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+      font-size: ${({ theme }) => theme.sizes.body};
+    }  
 `
 export const HQWeAreHereDescription = styled.div`
-	font-size: 1.5rem;
+    font-size: ${({ theme }) => theme.sizes.extraSmall};
 `
 export const HQWeAreHerePicture = styled.picture``
-export const HQWeAreHereCol = styled(Col)`
+export const HQWeAreHereCol = styled.div`
 	display: flex;
 	align-items: center;
 `
@@ -307,4 +279,22 @@ export const MoreBlogPosts = styled.a`
 	:hover {
 		border-bottom: 1px solid transparent;
 	}
+`
+
+export const HQGallery = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  height: 50vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    &:nth-child(2) {
+      grid-row: span 2 / span 2;
+    }
+  }
 `
