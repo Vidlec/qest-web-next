@@ -28,7 +28,9 @@ import {
 	HQCTACol,
 	BlogPostsContainer,
 	MoreBlogPosts,
-	MoreBlogPostsContainer, BlogPostWrapper, CarouselPicture,
+	MoreBlogPostsContainer,
+	BlogPostWrapper,
+	HQGallery
 } from 'components/About/styled'
 import Headline from 'components/Headline'
 import Footer from 'components/Footer'
@@ -40,6 +42,7 @@ import Skills from 'components/About/Skills'
 import BrandValues from 'components/About/BrandValues'
 import BlogPost from 'components/About/BlogPost'
 import SlickSlider from 'components/Slider'
+import AboutTeam from 'components/About/Team'
 
 import blogPosts from '../../public/posts.json'
 
@@ -56,7 +59,7 @@ const AboutUs: React.FC = () => {
 	const [sliderOptions] = useState(
 		{
 			infinite:true,
-			speed:500,
+			speed: 500,
 			slidesToShow:1,
 			slidesToScroll:1,
 			dots:false,
@@ -82,10 +85,9 @@ const AboutUs: React.FC = () => {
 			<AboutHero />
 
 			<Container>
-				<Headline>{t('about.weAreHeadline')}</Headline>
-
 				<WeAreRow id='weAre'>
 					<Col mobile={12} desktopSmall={7}>
+						<Headline>{t('about.weAreHeadline')}</Headline>
 						<WeAreDescription
 							dangerouslySetInnerHTML={{
 								__html: t('about.weAreDescription'),
@@ -145,6 +147,8 @@ const AboutUs: React.FC = () => {
 
 			<Container>
 				<Headline>{t('about.teamHeadline')}</Headline>
+
+				<AboutTeam />
 			</Container>
 
 			<Container>
@@ -156,29 +160,12 @@ const AboutUs: React.FC = () => {
 					}}
 				/>
 
-				<ResponsiveMasonry
-					columnsCountBreakPoints={{
-						[theme.mediaQueriesNumbers.mobile]: 1,
-						[theme.mediaQueriesNumbers.ipad]: 2,
-						[theme.mediaQueriesNumbers.desktop]: 3,
-					}}
-				>
-					<Masonry>
-						{t<string, UploadFile[]>('about.hqImageGrid', {
-							returnObjects: true,
-						}).map((image) => (
-							<picture key={image.id}>
-								<PictureImg
-									src={image.url}
-									alt={image.alternativeText ?? ''}
-								/>
-							</picture>
-						))}
-					</Masonry>
-				</ResponsiveMasonry>
-
-				<HQWeAreHereRow>
-					<HQWeAreHereCol mobile={12} ipad={6} desktopSmall={4}>
+				<HQGallery>
+					<img src='https://via.placeholder.com/520x350' alt=''/>
+					<img src='https://via.placeholder.com/370x560' alt=''/>
+					<img src='https://via.placeholder.com/350x280' alt=''/>
+					<img src='https://via.placeholder.com/270x380' alt=''/>
+					<HQWeAreHereCol>
 						<HQWeAreHerePicture>
 							<PictureImg
 								src={t('about.hqWeAreHereImage.url')}
@@ -194,7 +181,10 @@ const AboutUs: React.FC = () => {
 							}}
 						/>
 					</HQWeAreHereCol>
+					<img src='https://via.placeholder.com/350x280' alt=''/>
+				</HQGallery>
 
+				<HQWeAreHereRow>
 					<HQCTACol mobile={12} ipad={6} desktopSmall={4}>
 						<ArrowRightIcon />
 						<span>{t('about.hqCTATitle')}</span>

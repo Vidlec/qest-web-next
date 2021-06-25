@@ -75,8 +75,8 @@
       "id": "1",
       "language": "cs",
       "created_at": "2021-04-07T10:02:06.607Z",
-      "updated_at": "2021-06-24T11:09:11.098Z",
-      "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>.",
+      "updated_at": "2021-06-25T07:25:50.786Z",
+      "heroDescription": "Qest je dobrodružství. Kódování je umění, jehož krása  <span style=\"color:#FCC403;\">leží pod povrchem.</span> Jsme badatelé v nekonečném světě oceánu aplikací a informačních systémů. Noříme se <span style=\"color:#FF5451;\">do hlubin</span>, abychom každému z našich klientů přinesli výjimečné řešení. <span style=\"color:#83E1FF;\"> Náš kód</span> má nezaměnitelný rukopis: je precizní, vyladěný, založený na vzájemném porozumění. Elegantním, intuitivním a perfektně fungujícím softwarem poskytujeme uživateli jedinečný zážitek. S hrdostí vytváříme krásu a dokonalost pod hladinou. <span style=\"color:#80F286;\">Co je důležité, je očím neviditelné</span>. ",
       "heroLogo": {
         "url": "https://qest-web-cms-media.s3.amazonaws.com/logo_psychedelic_negative_7552e04b7f.png",
         "alternativeText": "",
@@ -98,6 +98,18 @@
       },
       "valuesHeadline": "HODNOTY",
       "teamHeadline": "NÁŠ TEAM",
+      "teams": [
+        {
+          "name": "Martin Koperniech",
+          "position": "CEO, Founder",
+          "image": {
+            "url": "https://qest-web-cms-media.s3.amazonaws.com/600_77c2db29c3",
+            "alternativeText": "",
+            "__typename": "UploadFile"
+          },
+          "__typename": "Team"
+        }
+      ],
       "hqHeadline": "QEST HQ",
       "hqDescription": "V Qestu se rádi a často pyšníme tím, kde pracujeme. Součástí kanceláří je terasa s posezením, grilem a inspirativním výhledem, relaxační zóna, stolní tenis, Xbox, kuchyňka s kávovarem, chladničkou a dostatečným množstvím občerstvení jako je cola, káva, voda, čaj.\n<br />\n<br />\n<span style=\"color:#FCC403;\">Proč Karlín?</span> V Karlíně to žije a stává se tech centrem hlavního města Prahy. Sdružuje se zde silná IT komunita. Zcela přirozeně se z Karlína stalo startupové centrum, malé pražské Silicon Valley.",
       "careerHeadline": "KARIÉRA",
@@ -138,6 +150,34 @@
           "title": "Weby",
           "description": "Navrhujeme a implementujeme webové aplikace",
           "titleColorHash": "#FCC403",
+          "__typename": "Skill"
+        },
+        {
+          "id": "3",
+          "title": "Design",
+          "description": "Navrhujeme a testujeme design pro aplikace ",
+          "titleColorHash": "#ffb6c3",
+          "__typename": "Skill"
+        },
+        {
+          "id": "4",
+          "title": "iOS",
+          "description": "Zajišťujeme vývoj úspěšných aplikací pro iOS",
+          "titleColorHash": "#80F286",
+          "__typename": "Skill"
+        },
+        {
+          "id": "5",
+          "title": "Android",
+          "description": "Vyvíjíme mobilní aplikace pro Android",
+          "titleColorHash": "#ff5451",
+          "__typename": "Skill"
+        },
+        {
+          "id": "6",
+          "title": "IOT",
+          "description": "Dodáváme klientům (nejen) chytrou domácnost s naší aplikací Home Qest",
+          "titleColorHash": "#bbeeff",
           "__typename": "Skill"
         }
       ],
