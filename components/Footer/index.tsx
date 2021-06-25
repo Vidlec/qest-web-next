@@ -21,7 +21,6 @@ import {
 	Instagram,
 	Linkedin,
 } from '@styled-icons/boxicons-logos'
-import Container from 'components/Container'
 
 const Footer: React.FC = () => {
 	const { t } = useTranslation()
