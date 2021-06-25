@@ -6,7 +6,8 @@ import Header from 'components/Header'
 import { useTheme } from 'styled-components'
 
 const HomePage: React.FC = () => {
-	const isPohone = useWindowSize(useTheme().mediaQueriesNumbers.ipad, 100)
+	const theme = useTheme()
+	const isPohone = useWindowSize(theme.mediaQueriesNumbers.ipad, 100)
 	return (
 		<>
 			{isPohone ? <Header /> : <DesktopHeader />}
