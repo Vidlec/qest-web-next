@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 function throttle(func: Function, duration: number) {
 	let shouldWait = false
@@ -13,7 +13,7 @@ function throttle(func: Function, duration: number) {
 	}
 }
 
-const useScreenSize = (size: number): boolean => {
+const useIsPhone = (size: number, throttleTime: number): boolean => {
 	const [isSize, setIsSize] = useState(false)
 
 	useEffect(() => {
@@ -25,14 +25,14 @@ const useScreenSize = (size: number): boolean => {
 			setIsSize(size > window.innerWidth)
 		}
 
-		const th = throttle(handleResize, 100)
+		const throttledFunction = throttle(handleResize, throttleTime)
 
-		window.addEventListener('resize', th)
+		window.addEventListener('resize', throttledFunction)
 
-		return () => window.removeEventListener('resize', th)
+		return () => window.removeEventListener('resize', throttledFunction)
 	}, [])
 
 	return isSize
 }
 
-export default useScreenSize
+export default useIsPhone
