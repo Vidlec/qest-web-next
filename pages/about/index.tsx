@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Col from 'components/Col'
+import { request } from 'graphql-request'
 import { useTranslation } from 'react-i18next'
-import { UploadFile } from '../../gql/generated/types'
+import { UploadFile, HqGallery } from '../../gql/generated/types'
+import { HQGALLERIES_QUERY } from '../../gql/queries/hqgalleries'
 import Container from 'components/Container'
-import SliderWrapper from 'components/Slider/styled'
+import { SliderWrapper } from 'components/Slider/styled'
 import {
+	ArrowRightWrapper,
 	ArrowDownIcon,
 	ArrowLink,
 	ArrowLinkWrapper,
@@ -24,18 +27,15 @@ import {
 	ArrowRightIcon,
 	HQWeAreHereDescription,
 	HQWeAreHerePicture,
-	HQWeAreHereRow,
-	HQCTACol,
+	ArrowLabel,
 	BlogPostsContainer,
 	MoreBlogPosts,
 	MoreBlogPostsContainer,
 	BlogPostWrapper,
-	HQGallery
+	HQGallery, CarouselPicture
 } from 'components/About/styled'
 import Headline from 'components/Headline'
 import Footer from 'components/Footer'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import theme from 'theme'
 
 import AboutHero from 'components/About/Hero'
 import Skills from 'components/About/Skills'
@@ -46,7 +46,11 @@ import AboutTeam from 'components/About/Team'
 
 import blogPosts from '../../public/posts.json'
 
-const AboutUs: React.FC = () => {
+interface Props {
+	galleries: HqGallery[]
+}
+
+const AboutUs: React.FC<Props> = ({ galleries }) => {
 	const { t } = useTranslation()
 
 	const [sliderImages] = useState(
@@ -65,6 +69,18 @@ const AboutUs: React.FC = () => {
 			dots:false,
 			arrows:false,
 			autoplay:true,
+		}
+	)
+
+	const [HqSliderOptions] = useState(
+		{
+			infinite:true,
+			speed: 500,
+			slidesToShow:1,
+			slidesToScroll:1,
+			dots:false,
+			arrows:false,
+			autoplay:false,
 		}
 	)
 
@@ -98,7 +114,16 @@ const AboutUs: React.FC = () => {
 
 					<CarouselCol mobile={12} desktopSmall={5} desktop={3}>
 						<SliderWrapper>
-							<SlickSlider sliderOptions={sliderOptions} data={sliderImages}/>
+							<SlickSlider sliderOptions={sliderOptions}>
+								{sliderImages.map((image) =>
+									<CarouselPicture key={image.id}>
+										<img
+											src={image.url}
+											alt={image.alternativeText ?? ''}
+										/>
+									</CarouselPicture>
+								)}
+							</SlickSlider>
 						</SliderWrapper>
 
 						<CarouselLine />
@@ -160,36 +185,61 @@ const AboutUs: React.FC = () => {
 					}}
 				/>
 
-				<HQGallery>
-					<img src='https://via.placeholder.com/520x350' alt=''/>
-					<img src='https://via.placeholder.com/370x560' alt=''/>
-					<img src='https://via.placeholder.com/350x280' alt=''/>
-					<img src='https://via.placeholder.com/270x380' alt=''/>
-					<HQWeAreHereCol>
-						<HQWeAreHerePicture>
-							<PictureImg
-								src={t('about.hqWeAreHereImage.url')}
-								alt={t(
-									'about.hqWeAreHereImage.alternativeText'
-								)}
-							/>
-						</HQWeAreHerePicture>
+				<SliderWrapper>
+					<SlickSlider sliderOptions={HqSliderOptions}>
+						<HQGallery>
+							<img src='https://via.placeholder.com/520x350' alt=''/>
+							<img src='https://via.placeholder.com/370x560' alt=''/>
+							<img src='https://via.placeholder.com/350x280' alt=''/>
+							<img src='https://via.placeholder.com/270x380' alt=''/>
+							<HQWeAreHereCol>
+								<HQWeAreHerePicture>
+									<PictureImg
+										src={t('about.hqWeAreHereImage.url')}
+										alt={t(
+											'about.hqWeAreHereImage.alternativeText'
+										)}
+									/>
+								</HQWeAreHerePicture>
 
-						<HQWeAreHereDescription
-							dangerouslySetInnerHTML={{
-								__html: t('about.hqWeAreHereDescription'),
-							}}
-						/>
-					</HQWeAreHereCol>
-					<img src='https://via.placeholder.com/350x280' alt=''/>
-				</HQGallery>
+								<HQWeAreHereDescription
+									dangerouslySetInnerHTML={{
+										__html: t('about.hqWeAreHereDescription'),
+									}}
+								/>
+							</HQWeAreHereCol>
+							<img src='https://via.placeholder.com/350x280' alt=''/>
+						</HQGallery>
+						<HQGallery>
+							<img src='https://via.placeholder.com/520x350' alt=''/>
+							<img src='https://via.placeholder.com/370x560' alt=''/>
+							<img src='https://via.placeholder.com/350x280' alt=''/>
+							<img src='https://via.placeholder.com/270x380' alt=''/>
+							<HQWeAreHereCol>
+								<HQWeAreHerePicture>
+									<PictureImg
+										src={t('about.hqWeAreHereImage.url')}
+										alt={t(
+											'about.hqWeAreHereImage.alternativeText'
+										)}
+									/>
+								</HQWeAreHerePicture>
 
-				<HQWeAreHereRow>
-					<HQCTACol mobile={12} ipad={6} desktopSmall={4}>
-						<ArrowRightIcon />
-						<span>{t('about.hqCTATitle')}</span>
-					</HQCTACol>
-				</HQWeAreHereRow>
+								<HQWeAreHereDescription
+									dangerouslySetInnerHTML={{
+										__html: t('about.hqWeAreHereDescription'),
+									}}
+								/>
+							</HQWeAreHereCol>
+							<img src='https://via.placeholder.com/350x280' alt=''/>
+						</HQGallery>
+					</SlickSlider>
+				</SliderWrapper>
+
+				<ArrowRightWrapper>
+						<ArrowRightIcon src={t('about.arrow.url')}  alt={t('about.arrow.alternativeText')} />
+						<ArrowLabel>{t('about.hqCTATitle')}</ArrowLabel>
+				</ArrowRightWrapper>
 			</Container>
 
 			<Container>
@@ -231,6 +281,14 @@ const AboutUs: React.FC = () => {
 			<Footer />
 		</>
 	)
+}
+
+export const getStaticProps = async () => {
+	const data = await request<HqGallery>(process.env.CMS_GRAPHQL_URL!, HQGALLERIES_QUERY)
+
+	return {
+		props: { galleries: data }
+	}
 }
 
 export default AboutUs

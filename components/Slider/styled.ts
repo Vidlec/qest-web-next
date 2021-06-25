@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import Slider from 'react-slick'
 
-const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div`
 	.slick-list,
 	.slick-slider,
 	.slick-track {
@@ -247,5 +248,3 @@ const SliderWrapper = styled.div`
 		color: ${({ theme }) => theme.colors.black};
 	}
 `
-
-export default SliderWrapper

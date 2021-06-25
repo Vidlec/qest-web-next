@@ -209,11 +209,26 @@ export const HQCTACol = styled(Col)`
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
 `
+
+export const ArrowRightWrapper = styled.button`
+  float: right;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  color: #fff;
+`
+
 export const ArrowRightIcon = styled.img`
 	width: 75px;
 	height: 20px;
 	display: block;
+    margin: 0 0 1rem auto;
 `
+
+export const ArrowLabel = styled.span`
+  font-size: ${({ theme }) => theme.sizes.extraSmall};
+`
+
 export const HQWeAreHereRow = styled(Row)`
 	justify-content: space-between;
 `
@@ -282,7 +297,7 @@ export const MoreBlogPosts = styled.a`
 `
 
 export const HQGallery = styled.div`
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 1rem;
@@ -295,6 +310,11 @@ export const HQGallery = styled.div`
     
     &:nth-child(2) {
       grid-row: span 2 / span 2;
+    }
+
+    &:nth-child(4) {
+      grid-row: span 2 / span 2;
+      padding: 4rem 0 4rem 0;
     }
   }
 `
