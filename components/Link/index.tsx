@@ -7,7 +7,7 @@ export type { LinkColor }
 const Link: React.FC<{ href: string; color?: LinkColor }> = ({
 	href,
 	color,
-    children
+	children,
 }) => {
 	return (
 		<NextLink href={href} passHref>

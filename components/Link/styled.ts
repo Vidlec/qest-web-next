@@ -24,7 +24,7 @@ export const StyledLink = styled.a<{ color?: LinkColor }>`
 		filter: brightness(200%);
 	}
 
-	@media ( min-width: ${({theme}) => theme.mediaQueries.desktop}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		font-size: 1.5rem;
 	}
 `

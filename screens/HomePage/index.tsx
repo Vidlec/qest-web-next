@@ -1,15 +1,15 @@
 import React from 'react'
-import useScreenSize from 'hooks/useScreenSize'
+import useisPhone from 'hooks/useIsPhone'
 import HomePageContent from './HomePageContent'
 import DesktopHeader from './DesktopHeader'
 import theme from 'theme'
 import Header from 'components/Header'
 
 const HomePage: React.FC = () => {
-	const isPohone = useScreenSize(theme.mediaQueriesNumbers.ipad)
+	const isPohone = useisPhone(theme.mediaQueriesNumbers.ipad, 100)
 	return (
 		<>
-			{isPohone ? <Header /> : <DesktopHeader /> }
+			{isPohone ? <Header /> : <DesktopHeader />}
 			<HomePageContent />
 		</>
 	)

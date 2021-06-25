@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
 			<Line />
 			<FooterContainer>
 				<TitleWrapper>
-				<Title>{t('contact.title')}</Title>
-				<FooterHead src={t('contact.footerImg.url')} />
+					<Title>{t('contact.title')}</Title>
+					<FooterHead src={t('contact.footerImg.url')} />
 				</TitleWrapper>
 				<ArticleWrapper>
 					<Column>

@@ -7,7 +7,7 @@ import Portal from 'components/Portal'
 import { MENU_PORTAL_ID } from 'components/Constants'
 
 const DesktopHeader = () => {
-    const { t } = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<Portal portalID={MENU_PORTAL_ID}>

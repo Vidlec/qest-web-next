@@ -7,12 +7,9 @@ import {
 	withTranslation,
 	WithTranslation,
 } from 'react-i18next'
-
 import i18n from '../locale'
 import theme from '../theme'
 import { GlobalStyle } from 'theme/globalStyle'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
 import withRouter from 'next/dist/client/with-router'
 
 class QestWeb extends App<WithTranslation> {
