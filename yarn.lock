@@ -4350,9 +4350,15 @@
     "string-env-interpolation" "1.0.1"
     "tslib" "^2.0.0"
 
+<<<<<<< HEAD
 "graphql-request@^3.3.0", "graphql-request@^3.4.0":
   "resolved" "https://registry.npmjs.org/graphql-request/-/graphql-request-3.4.0.tgz"
   "version" "3.4.0"
+=======
+graphql-request@^3.3.0, graphql-request@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-3.4.0.tgz#3a400cd5511eb3c064b1873afb059196bbea9c2b"
+>>>>>>> WIP
   dependencies:
     "cross-fetch" "^3.0.6"
     "extract-files" "^9.0.0"

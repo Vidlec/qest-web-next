@@ -5052,6 +5052,7 @@ export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_2_Query = (
   { __typename?: 'Query' }
+<<<<<<< HEAD
   & { careerOfferings?: Maybe<Array<Maybe<(
     { __typename?: 'CareerOfferings' }
     & Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug'>
@@ -5062,6 +5063,47 @@ export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_3_Query = (
+=======
+  & { career?: Maybe<(
+    { __typename?: 'Career' }
+    & Pick<Career, 'title' | 'description' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescription' | 'somethingElseContact' | 'careerWhy' | 'careerWhatHeading'>
+    & { technologies?: Maybe<(
+      { __typename?: 'ComponentContentTechnologies' }
+      & Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
+      & { images?: Maybe<Array<Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'id' | 'url' | 'alternativeText'>
+      )>>> }
+    )>, careerPositions?: Maybe<Array<Maybe<(
+      { __typename?: 'CareerOfferings' }
+      & Pick<CareerOfferings, 'title' | 'color' | 'perex'>
+    )>>>, info?: Maybe<Array<Maybe<(
+      { __typename?: 'ComponentContentPictureList' }
+      & Pick<ComponentContentPictureList, 'header' | 'color' | 'description'>
+      & { image?: Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'url' | 'alternativeText'>
+      )> }
+    )>>> }
+  )> }
+);
+
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_3_Query = (
+  { __typename?: 'Query' }
+  & { careerOfferings?: Maybe<Array<Maybe<(
+    { __typename?: 'CareerOfferings' }
+    & Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'perex' | 'color'>
+  )>>> }
+);
+
+export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_4_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { contacts?: Maybe<Array<Maybe<(
     { __typename?: 'Contact' }
@@ -5073,10 +5115,17 @@ export type Unnamed_3_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_4_Query = (
+=======
+export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_5_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { headers?: Maybe<Array<Maybe<(
     { __typename?: 'Header' }
@@ -5088,10 +5137,17 @@ export type Unnamed_4_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_5_Query = (
+=======
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_6_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { homepages?: Maybe<Array<Maybe<(
     { __typename?: 'Homepage' }
@@ -5103,10 +5159,17 @@ export type Unnamed_5_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_6_Query = (
+=======
+export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_7_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { languages?: Maybe<Array<Maybe<(
     { __typename?: 'Language' }
@@ -5114,10 +5177,17 @@ export type Unnamed_6_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_7_Query = (
+=======
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_8_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { menus?: Maybe<Array<Maybe<(
     { __typename?: 'Menu' }
@@ -5125,10 +5195,17 @@ export type Unnamed_7_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_8_Query = (
+=======
+export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_9_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { page404s?: Maybe<Array<Maybe<(
     { __typename?: 'Page404' }
@@ -5140,10 +5217,17 @@ export type Unnamed_8_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_9_Query = (
+=======
+export type Unnamed_10_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_10_Query = (
+>>>>>>> WIP
   { __typename?: 'Query' }
   & { socialNetworks?: Maybe<Array<Maybe<(
     { __typename?: 'SocialNetwork' }

@@ -27,7 +27,11 @@
 		"@styled-icons/boxicons-logos": "^10.23.0",
 		"@types/react-scroll": "^1.8.2",
 		"apollo-boost": "^0.4.9",
+<<<<<<< HEAD
 		"graphql": "^15.5.1",
+=======
+		"graphql": "^15.5.0",
+>>>>>>> WIP
 		"graphql-request": "^3.4.0",
 		"i18next": "^19.9.2",
 		"next": "^10.0.0",
