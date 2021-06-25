@@ -13,7 +13,7 @@ function throttle(func: Function, duration: number) {
 	}
 }
 
-const useIsPhone = (size: number, throttleTime: number): boolean => {
+const useIsWindowSize = (size: number, throttleTime: number): boolean => {
 	const [isSize, setIsSize] = useState(false)
 
 	useEffect(() => {
@@ -35,4 +35,4 @@ const useIsPhone = (size: number, throttleTime: number): boolean => {
 	return isSize
 }
 
-export default useIsPhone
+export default useIsWindowSize
