@@ -71,7 +71,7 @@ const Header: React.FC = () => {
 			{isOpen && (
 				<Portal portalID={MENU_PORTAL_ID}>
 					<MenuWrapper>
-						<MenuCross onClick={handleClose}>🞨</MenuCross>
+						<MenuCross onClick={handleClose}>x</MenuCross>
 						{links.map(
 							(link) =>
 								router.asPath !== link.url && (
