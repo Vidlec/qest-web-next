@@ -5,7 +5,7 @@ import Container from 'components/Container'
 import Row from 'components/Row'
 import { Col404, Img, Heading, Paragraph404, Link404, Text404 } from './styled'
 
-const PageNotFound: React.FC = () => {
+const PageNotFoundContent: React.FC = () => {
 	const { t } = useTranslation()
 
 	return (
@@ -34,4 +34,4 @@ const PageNotFound: React.FC = () => {
 	)
 }
 
-export default PageNotFound
+export default PageNotFoundContent
