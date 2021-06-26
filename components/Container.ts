@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.section`
 	width: 100%;
-	margin: 0 auto 13.8rem auto;
+	margin: 0 auto 8rem auto;
 	padding: 0 1rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {

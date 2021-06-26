@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'components/Container'
 import Headline from 'components/Headline'
 import Col from 'components/Col'
-import Row from 'components/Row'
 import SquareList, { EndHead, ContactUs } from 'components/SquareList'
 import TechnologiesCard from 'components/TechnologiesCard'
 import PictureList from 'components/PictureList'
@@ -12,14 +11,14 @@ import { useTranslation } from 'react-i18next'
 import {
 	Career,
 	UploadFile,
-    ComponentContentPictureList,
+	ComponentContentPictureList,
 	CareerOfferings,
 } from 'gql/generated/types'
-import { LongHeadLine } from './styled'
+import { MarginRow, LongHeadLine, ShowMore, ShowMoreButton } from './styled'
 
 interface Props extends Career {
-    careerPositions: CareerOfferings[]
-    pictureListData: ComponentContentPictureList[]
+	careerPositions: CareerOfferings[]
+	pictureListData: ComponentContentPictureList[]
 }
 
 const Content: React.FC<Props> = ({
@@ -31,17 +30,29 @@ const Content: React.FC<Props> = ({
 	somethingElseHeading,
 	somethingElseDescription,
 	somethingElseContact,
-    careerWhy,
-    careerWhatHeading,
-    pictureListData
+	careerWhy,
+	careerWhyLook,
+	careerWhatHeading,
+	pictureListData,
 }) => {
 	const { t } = useTranslation()
+	const theme = useTheme()
+	const [showMore, setShowMore] = useState(1)
+	let pictureList: ComponentContentPictureList[] = []
+
+	pictureList = [...pictureListData]
+	pictureList.length =
+		pictureList.length - (pictureList.length - 2) * showMore
+
+	const toggleShowMore = () => {
+		setShowMore(showMore ? 0 : 1)
+	}
 
 	return (
 		<Container>
-			<Row>
+			<MarginRow>
 				<Col mobile={12} desktopSmall={7} desktop={8}>
-					<Headline color={useTheme().colors.green}>{title}</Headline>
+					<Headline color={theme.colors.green}>{title}</Headline>
 					<Paragraph
 						dangerouslySetInnerHTML={{
 							__html: description,
@@ -60,7 +71,7 @@ const Content: React.FC<Props> = ({
 						handIsOnMiddle
 					/>
 				</Col>
-			</Row>
+			</MarginRow>
 			<Headline>{careerWho}</Headline>
 			<SquareList squares={careerPositions}>
 				<EndHead>{somethingElseHeading}</EndHead>
@@ -68,13 +79,26 @@ const Content: React.FC<Props> = ({
 				<ContactUs href="#">{somethingElseContact}</ContactUs>
 			</SquareList>
 
-			<Paragraph
-				dangerouslySetInnerHTML={{
-					__html: careerWhy as string,
-				}}
-			/>
+			<Paragraph>
+				{careerWhy}
+				<a href="">{careerWhyLook}</a>
+			</Paragraph>
+
 			<LongHeadLine>{careerWhatHeading}</LongHeadLine>
-			<PictureList items={pictureListData} />
+			<PictureList items={pictureList} />
+			<ShowMore>
+				<ShowMoreButton onClick={toggleShowMore}>
+					{showMore ? (
+						<>
+							{' '}
+							další {pictureListData.length -
+								pictureList.length}{' '}
+						</>
+					) : (
+						<> ukázat méně </>
+					)}
+				</ShowMoreButton>
+			</ShowMore>
 		</Container>
 	)
 }

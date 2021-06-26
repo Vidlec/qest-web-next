@@ -28,6 +28,7 @@ export const theme = {
 		black: '#000',
 		lightGray: '#cccccc',
 		white: '#fff',
+		purple: '#ff00ff'
 	},
 	sizes: {
 		pageTitle: '4.4rem',

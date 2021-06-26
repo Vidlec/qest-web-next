@@ -13,3 +13,15 @@ export const LongHeadLine = styled(Headline)`
 export const MarginRow = styled(Row)`
 	margin: 0 0 6rem 0;
 `
+
+export const ShowMore = styled.div`
+	display: flex;
+	justify-content: center;
+`
+
+export const ShowMoreButton = styled.button`
+	border: none;
+	background: none;
+	color: ${({theme}) => theme.colors.purple};
+	font-size: ${({theme}) => theme.sizes.large};
+`
