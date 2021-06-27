@@ -5,10 +5,7 @@ interface Props {
 	portalID: string
 }
 
-const Portal: React.FC<Props> = ({
-	portalID,
-	children,
-}) => {
+const Portal: React.FC<Props> = ({ portalID, children }) => {
 	const ref = useRef<Element | null>(null)
 	const [_mounted, setMounted] = useState(false)
 

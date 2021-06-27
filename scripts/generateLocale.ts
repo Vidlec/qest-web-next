@@ -160,4 +160,6 @@ const main = async () => {
 
 main()
 	.then(() => console.log('Translations generated successful'))
-	.catch((error) => {console.error(JSON.stringify(error, null, 2))})
+	.catch((error) => {
+		console.error(JSON.stringify(error, null, 2))
+	})
