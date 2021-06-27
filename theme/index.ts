@@ -48,7 +48,7 @@ export const theme = {
 		medium: '2rem',
 		body: '1.6rem',
 		small: '1.4rem',
-		extraSmall: '1.2rem'
+		extraSmall: '1.2rem',
 	},
 	mediaQueriesNumbers,
 	mediaQueries: {
