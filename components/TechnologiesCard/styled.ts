@@ -33,7 +33,7 @@ export const Heading = styled.h5`
 	font-weight: bold;
 `
 
-export const Description = styled.p`
+export const Description = styled.div`
 	margin: 0 0 2rem 0;
 	font-family: 'sourceCodeVariable';
 	font-size: ${({ theme }) => theme.sizes.extraSmall};

@@ -5,7 +5,7 @@ import Col from 'components/Col'
 import SquareList, { EndHead, ContactUs } from 'components/SquareList'
 import TechnologiesCard from 'components/TechnologiesCard'
 import PictureList from 'components/PictureList'
-import Paragraph from 'components/Paragraph'
+import Text from 'components/Text'
 import Link from 'next/link'
 import { useTheme } from 'styled-components'
 import { useTranslation } from 'react-i18next'
@@ -44,7 +44,7 @@ const Content: React.FC<Props> = ({
 			<MarginRow>
 				<Col mobile={12} desktopSmall={7} desktop={8}>
 					<Headline color={theme.colors.green}>{title}</Headline>
-					<Paragraph
+					<Text
 						dangerouslySetInnerHTML={{
 							__html: description,
 						}}

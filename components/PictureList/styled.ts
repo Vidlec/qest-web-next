@@ -42,7 +42,7 @@ export const Heading = styled.h5`
 	}
 `
 
-export const Description = styled.p`
+export const Description = styled.div`
 	margin: 0;
 	text-align: justify;
 	font-size: ${({ theme }) => theme.sizes.small};
