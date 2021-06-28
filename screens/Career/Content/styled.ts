@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Headline from 'components/Headline'
 import Row from 'components/Row'
+import Paragraph from 'components/Paragraph'
 
 export const LongHeadLine = styled(Headline)`
 	@media (max-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
@@ -14,14 +15,9 @@ export const MarginRow = styled(Row)`
 	margin: 0 0 6rem 0;
 `
 
-export const ShowMore = styled.div`
-	display: flex;
-	justify-content: center;
+export const CareerWhy = styled(Paragraph)`
+	margin: 0 0 6rem 0;
 `
-
-export const ShowMoreButton = styled.button`
-	border: none;
-	background: none;
-	color: ${({theme}) => theme.colors.purple};
-	font-size: ${({theme}) => theme.sizes.large};
+export const WhyLink = styled.a`
+	text-decoration: underline;
 `
