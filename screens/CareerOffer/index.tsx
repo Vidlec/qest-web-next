@@ -9,12 +9,11 @@ interface Props {
 }
 
 const CareerOffer: React.FC<Props> = ({ offerArray }) => {
-
-    return (
+	return (
 		<>
-            <Header />
+			<Header />
 			<Content offer={offerArray[0]} />
-            <Footer />
+			<Footer />
 		</>
 	)
 }

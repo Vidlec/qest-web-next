@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const Headline = styled.h1<{color?: string}>`
-	color: ${({ color, theme }) =>  color? color : theme.colors.lightGray};
-	font-size: ${({theme}) => theme.sizes.large};
+const Headline = styled.h1<{ color?: string }>`
+	color: ${({ color, theme }) => (color ? color : theme.colors.lightGray)};
+	font-size: ${({ theme }) => theme.sizes.large};
 	font-weight: bold;
 	letter-spacing: 0;
 	line-height: 1;
@@ -10,7 +10,7 @@ const Headline = styled.h1<{color?: string}>`
 	margin-bottom: 3.6rem;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
-		font-size: ${({theme}) => theme.sizes.pageTitle}
+		font-size: ${({ theme }) => theme.sizes.pageTitle};
 	}
 `
 

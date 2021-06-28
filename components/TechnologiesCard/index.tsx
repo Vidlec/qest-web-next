@@ -3,7 +3,7 @@ import { Card, Picture, Heading, Description, ImageWrapper } from './styled'
 import { useTranslation } from 'react-i18next'
 import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
 
-interface Props extends Omit<ComponentContentTechnologies, "id"> {
+interface Props extends Omit<ComponentContentTechnologies, 'id'> {
 	hand: UploadFile
 	heading?: string
 	__html?: string

@@ -24,7 +24,7 @@ const SquareList: React.FC<Props> = ({ squares, children }) => {
 	return (
 		<Wrapper>
 			{squares.map((s) => (
-				<Link href={`/career/${s.slug}`}  key={s.title}>
+				<Link href={`/career/${s.slug}`} key={s.title}>
 					<Base>
 						<Content>
 							<Title color={s.color as string}>{s.title}</Title>

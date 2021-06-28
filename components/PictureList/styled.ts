@@ -45,11 +45,11 @@ export const Heading = styled.h5`
 export const Description = styled.p`
 	margin: 0;
 	text-align: justify;
-	font-size: ${({theme}) => theme.sizes.small};
+	font-size: ${({ theme }) => theme.sizes.small};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		text-align: left;
-		font-size: ${({theme}) => theme.sizes.medium};
+		font-size: ${({ theme }) => theme.sizes.medium};
 	}
 `
 
@@ -112,7 +112,7 @@ export const ShowMore = styled.div`
 export const ShowMoreButton = styled.button`
 	border: none;
 	background: none;
-	color: ${({theme}) => theme.colors.purple};
-	font-size: ${({theme}) => theme.sizes.large};
+	color: ${({ theme }) => theme.colors.purple};
+	font-size: ${({ theme }) => theme.sizes.large};
 	cursor: pointer;
 `

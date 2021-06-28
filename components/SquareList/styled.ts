@@ -6,14 +6,14 @@ export const Wrapper = styled.div`
 	justify-content: center;
 	width: calc(100% + 3.6rem);
 	margin: -3.6rem 0 6rem -3.6rem;
-	font-size: ${({theme}) => theme.sizes.small};
+	font-size: ${({ theme }) => theme.sizes.small};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		font-size: ${({theme}) => theme.sizes.small};
+		font-size: ${({ theme }) => theme.sizes.small};
 	}
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
-		font-size: ${({theme}) => theme.sizes.medium};	
+		font-size: ${({ theme }) => theme.sizes.medium};
 	}
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
@@ -55,14 +55,14 @@ export const Title = styled.div<{ color: string }>`
 	margin: 0 0 1.6rem 0;
 	color: ${({ color }) => color};
 
-	@media (min-width: ${({theme}) => theme.mediaQueries.ipad}) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		margin: 0 0 3rem 0;
 	}
 `
 
 export const End = styled.div`
 	flex-shrink: 1;
-	width: calc( 80% -3.6rem);
+	width: calc(80% -3.6rem);
 	margin: 3.6rem 0 0 3.6rem;
 	display: flex;
 	justify-content: center;
@@ -70,21 +70,21 @@ export const End = styled.div`
 	align-items: flex-start;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		width: calc( 66.666% - 3.6rem);
+		width: calc(66.666% - 3.6rem);
 	}
 `
 
 export const EndHead = styled.h5`
 	margin: 0 0 3rem 0;
-	font-size: ${({theme}) => theme.sizes.headingSmall};
+	font-size: ${({ theme }) => theme.sizes.headingSmall};
 	color: ${({ theme }) => theme.colors.lightGray};
 `
 
 export const ContactUs = styled.a`
 	color: ${({ theme }) => theme.colors.red};
 	text-decoration: underline;
-	font-size: ${({theme}) => theme.sizes.large};
+	font-size: ${({ theme }) => theme.sizes.large};
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
-		font-size: ${({theme}) => theme.sizes.medium};
+		font-size: ${({ theme }) => theme.sizes.medium};
 	}
 `

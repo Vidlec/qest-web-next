@@ -30,8 +30,8 @@ class QestWeb extends App<WithTranslation> {
 				</Head>
 				<ThemeProvider theme={theme}>
 					<I18nextProvider i18n={i18n}>
-							<GlobalStyle />
-							<Component {...pageProps} />
+						<GlobalStyle />
+						<Component {...pageProps} />
 					</I18nextProvider>
 				</ThemeProvider>
 			</>

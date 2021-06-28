@@ -28,7 +28,7 @@ const CareerPage: React.FC<Props> = ({ career }) => {
 		<>
 			<Header />
 			<Content
-				{ ...career }
+				{...career}
 				careerPositions={careerPositions}
 				pictureListData={pictureListData}
 			/>
