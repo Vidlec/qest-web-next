@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-
 import {
+	Wrapper,
 	Button,
 	ClickText,
 	Logo,
@@ -12,11 +12,11 @@ import {
 } from './styled'
 import Line from 'components/Line'
 
-const HomePageContent: React.FC = () => {
+const HomePage: React.FC = () => {
 	const { t } = useTranslation()
 
 	return (
-		<>
+		<Wrapper>
 			<WrapperLogoTexts>
 				<TextLogo>{t('homepage.descriptionAboveLine')}</TextLogo>
 				<TextLogo>{t('homepage.descriptionBellowLine')}</TextLogo>
@@ -29,8 +29,8 @@ const HomePageContent: React.FC = () => {
 				<Button>8</Button>
 				<ClickText href={'/'}>{t('homepage.clickToStop')}</ClickText>
 			</SlideStopWrapper>
-		</>
+		</Wrapper>
 	)
 }
 
-export default HomePageContent
+export default HomePage

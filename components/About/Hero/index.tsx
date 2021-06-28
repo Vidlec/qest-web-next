@@ -22,10 +22,6 @@ const AboutHero = () => {
 
 	return (
 		<HeroContainer>
-			<SelectLanguageWrapper>
-				<SelectLanguage />
-			</SelectLanguageWrapper>
-
 			<HeroHeadline>
 				<span>{t('about.heroHeadlineTop')}</span>
 				<HeroLineWrapper>

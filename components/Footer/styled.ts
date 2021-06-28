@@ -1,11 +1,15 @@
 import styled from 'styled-components'
+import Container from 'components/Container'
 
 export const Wrapper = styled.footer`
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	position: relative;
-	padding-top: 120px;
+`
+
+export const FooterContainer = styled(Container)`
+	margin-bottom: 3rem;
 `
 
 export const Line = styled.div`
@@ -13,11 +17,11 @@ export const Line = styled.div`
 	height: 0.125rem;
 	width: 100%;
 	position: absolute;
-	top: calc(1.2rem + 120px);
+	top: 1.2rem;
 	box-shadow: 0 0 8px ${({ theme }) => theme.colors.mainFont};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-		top: calc(2.7rem + 120px);
+		top: 2.7rem;
 	}
 `
 
@@ -34,9 +38,13 @@ export const Title = styled.h3`
 export const FooterHead = styled.img`
 	position: absolute;
 	width: 14rem;
-	top: -5.8rem;
+	top: -7.4rem;
 	right: 0;
 	z-index: -1;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		top: -5.8rem;
+	}
 `
 
 export const ArticleWrapper = styled.section`

@@ -1,8 +1,3 @@
-import React from 'react'
-import PageNotFound from 'components/PageNotFound'
+import PageNotFound from 'screens/PageNotFound'
 
-const Custom404: React.FC = () => {
-	return <PageNotFound />
-}
-
-export default Custom404
+export default PageNotFound

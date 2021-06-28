@@ -49,10 +49,11 @@ export const Input = styled.input<{ isValid?: boolean }>`
 	font-size: 1.4rem;
 	background-color: ${({ theme }) => theme.colors.black};
 	color: ${({ theme }) => theme.colors.white};
-	border: solid 2px ${({ isValid, theme }) => (isValid ? 'transparent' : theme.colors.red)};
+	border: solid 2px
+		${({ isValid, theme }) => (isValid ? 'transparent' : theme.colors.red)};
 	padding: 0.5rem 1rem;
 	margin: 0 0 2.6rem 0;
-	
+
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		margin: 0 2rem 2.6rem 0;
 	}

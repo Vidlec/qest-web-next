@@ -10,6 +10,7 @@ import {
 	LabelSpan,
 	WarningMessage,
 } from './styled'
+import Container from 'components/Container'
 
 export const Form: React.FC = () => {
 	const [textAreaInput, setTextAreaInput] = useState('')
@@ -37,8 +38,8 @@ export const Form: React.FC = () => {
 
 	const handleSubmit = async (e: React.SyntheticEvent) => {
 		e.preventDefault()
-		if ( !emailStatus.isValid ||  !nameStatus.isValid ) {
-			return;
+		if (!emailStatus.isValid || !nameStatus.isValid) {
+			return
 		}
 		setIsSending(true)
 		try {
@@ -86,50 +87,52 @@ export const Form: React.FC = () => {
 	const shouldDisplayNameError = !nameStatus.isValid && nameStatus.isTouched
 
 	return (
-		<Wrapper onSubmit={handleSubmit}>
-			<Label htmlFor="textInput">
-				<LabelSpan>{t('contact.formTextLabel')}</LabelSpan>
-			</Label>
-			<TextArea
-				id="textInput"
-				value={textAreaInput}
-				onChange={handleTextChange}
-			/>
-			<Row>
-				<Label>
-					<LabelSpan>{t('contact.formNameLabel')}</LabelSpan>
-					<Input
-						type="text"
-						value={nameInput}
-						onChange={handleNameChange}
-						isValid={!shouldDisplayNameError}
-						onBlur={handleNameBlur}
-					/>
-					{shouldDisplayNameError ? (
-						<WarningMessage>
-							{t('contact.formNameWarning')}
-						</WarningMessage>
-					) : null}
+		<Container>
+			<Wrapper onSubmit={handleSubmit}>
+				<Label htmlFor="textInput">
+					<LabelSpan>{t('contact.formTextLabel')}</LabelSpan>
 				</Label>
-				<Label>
-					<LabelSpan>{t('contact.formEmailLabel')}</LabelSpan>
-					<Input
-						type="text"
-						value={emailInput}
-						onChange={handleEmailChange}
-						isValid={!shouldDisplayEmailError}
-						onBlur={handleEmailBlur}
-					/>
-					{shouldDisplayEmailError ? (
-						<WarningMessage>{emailError}</WarningMessage>
-					) : null}
-				</Label>
-				<Submit
-					type="submit"
-					value={t('contact.formSubmit') as string}
-					disabled={isSending}
+				<TextArea
+					id="textInput"
+					value={textAreaInput}
+					onChange={handleTextChange}
 				/>
-			</Row>
-		</Wrapper>
+				<Row>
+					<Label>
+						<LabelSpan>{t('contact.formNameLabel')}</LabelSpan>
+						<Input
+							type="text"
+							value={nameInput}
+							onChange={handleNameChange}
+							isValid={!shouldDisplayNameError}
+							onBlur={handleNameBlur}
+						/>
+						{shouldDisplayNameError ? (
+							<WarningMessage>
+								{t('contact.formNameWarning')}
+							</WarningMessage>
+						) : null}
+					</Label>
+					<Label>
+						<LabelSpan>{t('contact.formEmailLabel')}</LabelSpan>
+						<Input
+							type="text"
+							value={emailInput}
+							onChange={handleEmailChange}
+							isValid={!shouldDisplayEmailError}
+							onBlur={handleEmailBlur}
+						/>
+						{shouldDisplayEmailError ? (
+							<WarningMessage>{emailError}</WarningMessage>
+						) : null}
+					</Label>
+					<Submit
+						type="submit"
+						value={t('contact.formSubmit') as string}
+						disabled={isSending}
+					/>
+				</Row>
+			</Wrapper>
+		</Container>
 	)
 }
