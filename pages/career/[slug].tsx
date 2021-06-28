@@ -1,13 +1,9 @@
-import React from 'react'
 import { request } from 'graphql-request'
 import { CareerOfferQuery, CareerOfferings, CareerOfferQueryVariables } from 'gql/generated/types'
 import { CAREER_OFFERINGS_QUERY } from 'gql/queries/careerOfferings'
 import { CAREER_OFFER_QUERY } from 'gql/queries/careerOffer'
-import CareerOffer from 'components/CareerOffer'
+import CareerOffer from 'screens/CareerOffer'
 
-interface Props {
-    offerArray: CareerOfferings[]
-}
 interface Params {
     slug: string
 }
@@ -15,9 +11,7 @@ interface Context {
     params: Params
 }
 
-const CareerDetail: React.FC<Props> = ({ offerArray }) => {
-    return <CareerOffer offer={offerArray[0]} />
-}
+export default CareerOffer
 
 export const getStaticPaths = async () => {
     const data = await request(process.env.CMS_GRAPHQL_URL!, CAREER_OFFERINGS_QUERY)
@@ -44,5 +38,3 @@ export const getStaticProps = async (context : Context) => {
         props: { offerArray: data.careerOfferings }
     }
 }
-
-export default CareerDetail
