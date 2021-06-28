@@ -23,12 +23,14 @@ const SquareList: React.FC<Props> = ({ squares, children }) => {
 
 	return (
 		<Wrapper>
-			{squares.map((s) => (
-				<Link href={`/career/${s.slug}`} key={s.title}>
+			{squares.map((square) => (
+				<Link href={`/career/${square.slug}`} key={square.title}>
 					<Base>
 						<Content>
-							<Title color={s.color as string}>{s.title}</Title>
-							<div>{s.perex}</div>
+							<Title color={square.color as string}>
+								{square.title}
+							</Title>
+							<div>{square.perex}</div>
 						</Content>
 					</Base>
 				</Link>
