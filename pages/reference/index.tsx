@@ -1,13 +1,3 @@
-import React from 'react'
-import { ReferencePage } from 'components/Reference'
-
-const Reference: React.FC = () => {
-
-    return (
-        <ReferencePage>
-            textik
-        </ReferencePage>
-    )
-} 
+import Reference from 'screens/Reference'
 
 export default Reference

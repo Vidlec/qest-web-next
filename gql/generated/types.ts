@@ -2814,6 +2814,143 @@ export type DeletePage404Payload = {
 
 export type Products = {
   __typename?: 'Products';
+<<<<<<< HEAD
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name: Scalars['String'];
+  slug: Scalars['String'];
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  localizations?: Maybe<Array<Maybe<Products>>>;
+};
+
+
+export type ProductsLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type ProductsConnection = {
+  __typename?: 'ProductsConnection';
+  values?: Maybe<Array<Maybe<Products>>>;
+  groupBy?: Maybe<ProductsGroupBy>;
+  aggregate?: Maybe<ProductsAggregator>;
+};
+
+export type ProductsAggregator = {
+  __typename?: 'ProductsAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type ProductsGroupBy = {
+  __typename?: 'ProductsGroupBy';
+  id?: Maybe<Array<Maybe<ProductsConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<ProductsConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<ProductsConnectionUpdated_At>>>;
+  name?: Maybe<Array<Maybe<ProductsConnectionName>>>;
+  slug?: Maybe<Array<Maybe<ProductsConnectionSlug>>>;
+  locale?: Maybe<Array<Maybe<ProductsConnectionLocale>>>;
+  published_at?: Maybe<Array<Maybe<ProductsConnectionPublished_At>>>;
+};
+
+export type ProductsConnectionId = {
+  __typename?: 'ProductsConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionCreated_At = {
+  __typename?: 'ProductsConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionUpdated_At = {
+  __typename?: 'ProductsConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionName = {
+  __typename?: 'ProductsConnectionName';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionSlug = {
+  __typename?: 'ProductsConnectionSlug';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionLocale = {
+  __typename?: 'ProductsConnectionLocale';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductsConnectionPublished_At = {
+  __typename?: 'ProductsConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<ProductsConnection>;
+};
+
+export type ProductInput = {
+  name: Scalars['String'];
+  slug: Scalars['String'];
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditProductInput = {
+  name?: Maybe<Scalars['String']>;
+  slug?: Maybe<Scalars['String']>;
+  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
+  locale?: Maybe<Scalars['String']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateProductInput = {
+  data?: Maybe<ProductInput>;
+};
+
+export type CreateProductPayload = {
+  __typename?: 'createProductPayload';
+  product?: Maybe<Products>;
+};
+
+export type UpdateProductInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditProductInput>;
+};
+
+export type UpdateProductPayload = {
+  __typename?: 'updateProductPayload';
+  product?: Maybe<Products>;
+};
+
+export type DeleteProductInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteProductPayload = {
+  __typename?: 'deleteProductPayload';
+  product?: Maybe<Products>;
+};
+
+export type Skill = {
+  __typename?: 'Skill';
+=======
+>>>>>>> rebase(Reference Page)
   id: Scalars['ID'];
   created_at: Scalars['DateTime'];
   updated_at: Scalars['DateTime'];
@@ -3306,6 +3443,129 @@ export type EditTeamInput = {
   position?: Maybe<Scalars['String']>;
   video?: Maybe<Scalars['ID']>;
   sort?: Maybe<Scalars['Int']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type CreateTeamInput = {
+  data?: Maybe<TeamInput>;
+};
+
+export type CreateTeamPayload = {
+  __typename?: 'createTeamPayload';
+  team?: Maybe<Team>;
+};
+
+export type UpdateTeamInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditTeamInput>;
+};
+
+export type UpdateTeamPayload = {
+  __typename?: 'updateTeamPayload';
+  team?: Maybe<Team>;
+};
+
+export type DeleteTeamInput = {
+  where?: Maybe<InputId>;
+};
+
+export type DeleteTeamPayload = {
+  __typename?: 'deleteTeamPayload';
+  team?: Maybe<Team>;
+};
+
+export type Team = {
+  __typename?: 'Team';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  name: Scalars['String'];
+  position: Scalars['String'];
+  image?: Maybe<UploadFile>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type TeamConnection = {
+  __typename?: 'TeamConnection';
+  values?: Maybe<Array<Maybe<Team>>>;
+  groupBy?: Maybe<TeamGroupBy>;
+  aggregate?: Maybe<TeamAggregator>;
+};
+
+export type TeamAggregator = {
+  __typename?: 'TeamAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type TeamGroupBy = {
+  __typename?: 'TeamGroupBy';
+  id?: Maybe<Array<Maybe<TeamConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<TeamConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<TeamConnectionUpdated_At>>>;
+  name?: Maybe<Array<Maybe<TeamConnectionName>>>;
+  position?: Maybe<Array<Maybe<TeamConnectionPosition>>>;
+  image?: Maybe<Array<Maybe<TeamConnectionImage>>>;
+  published_at?: Maybe<Array<Maybe<TeamConnectionPublished_At>>>;
+};
+
+export type TeamConnectionId = {
+  __typename?: 'TeamConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionCreated_At = {
+  __typename?: 'TeamConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionUpdated_At = {
+  __typename?: 'TeamConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionName = {
+  __typename?: 'TeamConnectionName';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionPosition = {
+  __typename?: 'TeamConnectionPosition';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionImage = {
+  __typename?: 'TeamConnectionImage';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamConnectionPublished_At = {
+  __typename?: 'TeamConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<TeamConnection>;
+};
+
+export type TeamInput = {
+  name: Scalars['String'];
+  position: Scalars['String'];
+  image?: Maybe<Scalars['ID']>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditTeamInput = {
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['ID']>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -4095,6 +4355,7 @@ export type DeleteUserPayload = {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export type ComponentContentContact = {
   __typename?: 'ComponentContentContact';
   id: Scalars['ID'];
@@ -4147,24 +4408,64 @@ export type EditComponentContentGalleryImageInput = {
 =======
 export type ComponentContentCareerPosition = {
   __typename?: 'ComponentContentCareerPosition';
+=======
+export type ComponentContentContact = {
+  __typename?: 'ComponentContentContact';
+>>>>>>> rebase(Reference Page)
   id: Scalars['ID'];
-  careerPositionHeading?: Maybe<Scalars['String']>;
-  careerPositionDescription?: Maybe<Scalars['String']>;
-  careerPositionColor?: Maybe<Scalars['String']>;
+  address: Scalars['String'];
+  phoneNumber: Scalars['String'];
+  email: Scalars['String'];
+  ico: Scalars['String'];
+  dic: Scalars['String'];
+  legal: Scalars['String'];
 };
 
-export type ComponentContentCareerPositionInput = {
-  careerPositionHeading?: Maybe<Scalars['String']>;
-  careerPositionDescription?: Maybe<Scalars['String']>;
-  careerPositionColor?: Maybe<Scalars['String']>;
+export type ComponentContentContactInput = {
+  address: Scalars['String'];
+  phoneNumber: Scalars['String'];
+  email: Scalars['String'];
+  ico: Scalars['String'];
+  dic: Scalars['String'];
+  legal: Scalars['String'];
 };
 
-export type EditComponentContentCareerPositionInput = {
+export type EditComponentContentContactInput = {
   id?: Maybe<Scalars['ID']>;
+<<<<<<< HEAD
   careerPositionHeading?: Maybe<Scalars['String']>;
   careerPositionDescription?: Maybe<Scalars['String']>;
   careerPositionColor?: Maybe<Scalars['String']>;
 >>>>>>> feat(reference) conect project list with strapi
+=======
+  address?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  ico?: Maybe<Scalars['String']>;
+  dic?: Maybe<Scalars['String']>;
+  legal?: Maybe<Scalars['String']>;
+};
+
+export type ComponentContentGalleryImage = {
+  __typename?: 'ComponentContentGalleryImage';
+  id: Scalars['ID'];
+  rows?: Maybe<Scalars['Int']>;
+  spacing?: Maybe<Scalars['Int']>;
+  images?: Maybe<UploadFile>;
+};
+
+export type ComponentContentGalleryImageInput = {
+  rows?: Maybe<Scalars['Int']>;
+  spacing?: Maybe<Scalars['Int']>;
+  images?: Maybe<Scalars['ID']>;
+};
+
+export type EditComponentContentGalleryImageInput = {
+  id?: Maybe<Scalars['ID']>;
+  rows?: Maybe<Scalars['Int']>;
+  spacing?: Maybe<Scalars['Int']>;
+  images?: Maybe<Scalars['ID']>;
+>>>>>>> rebase(Reference Page)
 };
 
 export type ComponentContentImage = {
@@ -4322,8 +4623,11 @@ export type ComponentContentTechnologies = {
   id: Scalars['ID'];
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+<<<<<<< HEAD
   floatImage?: Maybe<UploadFile>;
   floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
+=======
+>>>>>>> rebase(Reference Page)
   images?: Maybe<Array<Maybe<UploadFile>>>;
 };
 
@@ -4339,8 +4643,11 @@ export type ComponentContentTechnologyInput = {
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   images?: Maybe<Array<Maybe<Scalars['ID']>>>;
+<<<<<<< HEAD
   floatImage?: Maybe<Scalars['ID']>;
   floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
+=======
+>>>>>>> rebase(Reference Page)
 };
 
 export type EditComponentContentTechnologyInput = {
@@ -4348,8 +4655,11 @@ export type EditComponentContentTechnologyInput = {
   technologies?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   images?: Maybe<Array<Maybe<Scalars['ID']>>>;
+<<<<<<< HEAD
   floatImage?: Maybe<Scalars['ID']>;
   floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
+=======
+>>>>>>> rebase(Reference Page)
 };
 
 export type ComponentNavigationInternalLink = {
@@ -4370,7 +4680,11 @@ export type EditComponentNavigationInternalLinkInput = {
   path?: Maybe<Scalars['String']>;
 };
 
+<<<<<<< HEAD
 export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | CareerOfferings | CareerOfferingsConnection | CareerOfferingsAggregator | CareerOfferingsGroupBy | CareerOfferingsConnectionId | CareerOfferingsConnectionCreated_At | CareerOfferingsConnectionUpdated_At | CareerOfferingsConnectionLanguage | CareerOfferingsConnectionTitle | CareerOfferingsConnectionDescription | CareerOfferingsConnectionCareerTechnologiesTitle | CareerOfferingsConnectionCareerTechnologiesContent | CareerOfferingsConnectionCareerExpectedSkillsTitle | CareerOfferingsConnectionCareerExpectedSkillsContent | CareerOfferingsConnectionCareerOfferTitle | CareerOfferingsConnectionCareerOfferContent | CareerOfferingsConnectionEndTitle | CareerOfferingsConnectionEndContent | CareerOfferingsConnectionEndCta | CareerOfferingsConnectionSlug | CareerOfferingsConnectionColor | CareerOfferingsConnectionPerex | CareerOfferingsConnectionPublished_At | CreateCareerOfferingPayload | UpdateCareerOfferingPayload | DeleteCareerOfferingPayload | Career | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyAggregatorSum | CaseStudyAggregatorAvg | CaseStudyAggregatorMin | CaseStudyAggregatorMax | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionImage | CaseStudyConnectionTitle | CaseStudyConnectionHeight | CaseStudyConnectionSlug | CaseStudyConnectionLocale | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | Footer | UpdateFooterPayload | DeleteFooterPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | HomepageNew | UpdateHomepageNewPayload | DeleteHomepageNewPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | HqGallery | HqGalleryConnection | HqGalleryAggregator | HqGalleryGroupBy | HqGalleryConnectionId | HqGalleryConnectionCreated_At | HqGalleryConnectionUpdated_At | HqGalleryConnectionPublished_At | CreateHqGalleryPayload | UpdateHqGalleryPayload | DeleteHqGalleryPayload | Job | JobConnection | JobAggregator | JobGroupBy | JobConnectionId | JobConnectionCreated_At | JobConnectionUpdated_At | JobConnectionTitle | JobConnectionDescription | JobConnectionCareerTechnologiesTitle | JobConnectionCareerTechnologiesContent | JobConnectionCareerExpectedSkills | JobConnectionCareerExpectedSkillsContent | JobConnectionCareerOfferTitle | JobConnectionCareerOfferContent | JobConnectionEndTitle | JobConnectionEndContent | JobConnectionEndCta | JobConnectionLanguage | JobConnectionSlug | JobConnectionPublished_At | CreateJobPayload | UpdateJobPayload | DeleteJobPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_At | ProductsConnectionUpdated_At | ProductsConnectionName | ProductsConnectionSlug | ProductsConnectionLocale | ProductsConnectionPublished_At | CreateProductPayload | UpdateProductPayload | DeleteProductPayload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | Team | TeamConnection | TeamAggregator | TeamAggregatorSum | TeamAggregatorAvg | TeamAggregatorMin | TeamAggregatorMax | TeamGroupBy | TeamConnectionId | TeamConnectionCreated_At | TeamConnectionUpdated_At | TeamConnectionName | TeamConnectionPosition | TeamConnectionVideo | TeamConnectionSort | TeamConnectionPublished_At | CreateTeamPayload | UpdateTeamPayload | DeleteTeamPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentContentContact | ComponentContentGalleryImage | ComponentContentImage | ComponentContentInfoColumn | ComponentContentPictureList | ComponentContentRichText | ComponentContentSocial | ComponentContentTechnologies | ComponentNavigationInternalLink;
+=======
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | CareerOfferings | CareerOfferingsConnection | CareerOfferingsAggregator | CareerOfferingsGroupBy | CareerOfferingsConnectionId | CareerOfferingsConnectionCreated_At | CareerOfferingsConnectionUpdated_At | CareerOfferingsConnectionLanguage | CareerOfferingsConnectionTitle | CareerOfferingsConnectionDescription | CareerOfferingsConnectionCareerTechnologiesTitle | CareerOfferingsConnectionCareerTechnologiesContent | CareerOfferingsConnectionCareerExpectedSkillsTitle | CareerOfferingsConnectionCareerExpectedSkillsContent | CareerOfferingsConnectionCareerOfferTitle | CareerOfferingsConnectionCareerOfferContent | CareerOfferingsConnectionEndTitle | CareerOfferingsConnectionEndContent | CareerOfferingsConnectionEndCta | CareerOfferingsConnectionSlug | CareerOfferingsConnectionColor | CareerOfferingsConnectionPerex | CareerOfferingsConnectionPublished_At | CreateCareerOfferingPayload | UpdateCareerOfferingPayload | DeleteCareerOfferingPayload | Career | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionTitle | CaseStudyConnectionSubtitle | CaseStudyConnectionAbout | CaseStudyConnectionIndustry | CaseStudyConnectionClient | CaseStudyConnectionSystem | CaseStudyConnectionMainImage | CaseStudyConnectionLanguage | CaseStudyConnectionProjectId | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | Footer | UpdateFooterPayload | DeleteFooterPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | HomepageNew | UpdateHomepageNewPayload | DeleteHomepageNewPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | HqGallery | HqGalleryConnection | HqGalleryAggregator | HqGalleryGroupBy | HqGalleryConnectionId | HqGalleryConnectionCreated_At | HqGalleryConnectionUpdated_At | HqGalleryConnectionPublished_At | CreateHqGalleryPayload | UpdateHqGalleryPayload | DeleteHqGalleryPayload | Job | JobConnection | JobAggregator | JobGroupBy | JobConnectionId | JobConnectionCreated_At | JobConnectionUpdated_At | JobConnectionTitle | JobConnectionDescription | JobConnectionCareerTechnologiesTitle | JobConnectionCareerTechnologiesContent | JobConnectionCareerExpectedSkills | JobConnectionCareerExpectedSkillsContent | JobConnectionCareerOfferTitle | JobConnectionCareerOfferContent | JobConnectionEndTitle | JobConnectionEndContent | JobConnectionEndCta | JobConnectionLanguage | JobConnectionSlug | JobConnectionPublished_At | CreateJobPayload | UpdateJobPayload | DeleteJobPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_At | ProductsConnectionUpdated_At | ProductsConnectionName | ProductsConnectionSlug | ProductsConnectionLocale | ProductsConnectionPublished_At | CreateProductPayload | UpdateProductPayload | DeleteProductPayload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | Team | TeamConnection | TeamAggregator | TeamGroupBy | TeamConnectionId | TeamConnectionCreated_At | TeamConnectionUpdated_At | TeamConnectionName | TeamConnectionPosition | TeamConnectionImage | TeamConnectionPublished_At | CreateTeamPayload | UpdateTeamPayload | DeleteTeamPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentContentContact | ComponentContentGalleryImage | ComponentContentImage | ComponentContentInfoColumn | ComponentContentPictureList | ComponentContentRichText | ComponentContentSocial | ComponentContentTechnologies | ComponentNavigationInternalLink;
+>>>>>>> rebase(Reference Page)
 
 export type InputId = {
   id: Scalars['ID'];
@@ -5073,7 +5387,10 @@ export type Mutation = {
   /** Delete an existing user */
   deleteUser?: Maybe<DeleteUserPayload>;
   createCareerLocalization: Career;
+<<<<<<< HEAD
   createCaseStudyLocalization: CaseStudy;
+=======
+>>>>>>> rebase(Reference Page)
   createFooterLocalization: Footer;
   createHomepageNewLocalization: HomepageNew;
   createProductLocalization: Products;
@@ -5451,11 +5768,14 @@ export type MutationCreateCareerLocalizationArgs = {
 };
 
 
+<<<<<<< HEAD
 export type MutationCreateCaseStudyLocalizationArgs = {
   input: UpdateCaseStudyInput;
 };
 
 
+=======
+>>>>>>> rebase(Reference Page)
 export type MutationCreateFooterLocalizationArgs = {
   input: UpdateFooterInput;
 };
@@ -5735,21 +6055,6 @@ export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_9_Query = (
-  { __typename?: 'Query' }
-  & { references?: Maybe<Array<Maybe<(
-    { __typename?: 'Reference' }
-    & Pick<Reference, 'id' | 'language' | 'title'>
-    & { referenceProjects?: Maybe<Array<Maybe<(
-      { __typename?: 'ComponentContentReferenceProjects' }
-      & Pick<ComponentContentReferenceProjects, 'projectName'>
-    )>>> }
-  )>>> }
-);
-
-export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { socialNetworks?: Maybe<Array<Maybe<(
     { __typename?: 'SocialNetwork' }

@@ -327,18 +327,25 @@
       "Team",
       "TeamConnection",
       "TeamAggregator",
+<<<<<<< HEAD
       "TeamAggregatorSum",
       "TeamAggregatorAvg",
       "TeamAggregatorMin",
       "TeamAggregatorMax",
+=======
+>>>>>>> rebase(Reference Page)
       "TeamGroupBy",
       "TeamConnectionId",
       "TeamConnectionCreated_at",
       "TeamConnectionUpdated_at",
       "TeamConnectionName",
       "TeamConnectionPosition",
+<<<<<<< HEAD
       "TeamConnectionVideo",
       "TeamConnectionSort",
+=======
+      "TeamConnectionImage",
+>>>>>>> rebase(Reference Page)
       "TeamConnectionPublished_at",
       "createTeamPayload",
       "updateTeamPayload",
@@ -423,11 +430,16 @@
       "updateUserPayload",
       "deleteUserPayload",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "ComponentContentContact",
       "ComponentContentGalleryImage",
 =======
       "ComponentContentCareerPosition",
 >>>>>>> feat(reference) conect project list with strapi
+=======
+      "ComponentContentContact",
+      "ComponentContentGalleryImage",
+>>>>>>> rebase(Reference Page)
       "ComponentContentImage",
       "ComponentContentInfoColumn",
       "ComponentContentPictureList",
