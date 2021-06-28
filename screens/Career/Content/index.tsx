@@ -66,7 +66,9 @@ const Content: React.FC<Props> = ({
 			<SquareList squares={careerPositions}>
 				<EndHead>{somethingElseHeading}</EndHead>
 				<p>{somethingElseDescription}</p>
-				<ContactUs href="#">{somethingElseContact}</ContactUs>
+				<Link href="/contacts">
+					<ContactUs>{somethingElseContact}</ContactUs>
+				</Link>
 			</SquareList>
 
 			<CareerWhy>
