@@ -103,3 +103,16 @@ export const ItemInformation = styled.div`
 	width: 100%;
 	flex-shrink: 1;
 `
+
+export const ShowMore = styled.div`
+	display: flex;
+	justify-content: center;
+`
+
+export const ShowMoreButton = styled.button`
+	border: none;
+	background: none;
+	color: ${({theme}) => theme.colors.purple};
+	font-size: ${({theme}) => theme.sizes.large};
+	cursor: pointer;
+`
