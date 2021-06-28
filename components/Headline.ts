@@ -6,8 +6,7 @@ const Headline = styled.h1<{ color?: string }>`
 	font-weight: bold;
 	letter-spacing: 0;
 	line-height: 1;
-	margin-top: 0;
-	margin-bottom: 3.6rem;
+	margin-top: 0 0 3.6rem 0;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		font-size: ${({ theme }) => theme.sizes.pageTitle};
