@@ -5531,7 +5531,7 @@ export type Unnamed_2_Query = (
       )>>> }
     )>, careerPositions?: Maybe<Array<Maybe<(
       { __typename?: 'CareerOfferings' }
-      & Pick<CareerOfferings, 'title' | 'color' | 'perex'>
+      & Pick<CareerOfferings, 'title' | 'color' | 'perex' | 'slug'>
     )>>>, info?: Maybe<Array<Maybe<(
       { __typename?: 'ComponentContentPictureList' }
       & Pick<ComponentContentPictureList, 'header' | 'color' | 'description'>
