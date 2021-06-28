@@ -28,7 +28,7 @@ export const theme = {
 		black: '#000',
 		lightGray: '#cccccc',
 		white: '#fff',
-		purple: '#ff00ff'
+		purple: '#ff00ff',
 	},
 	sizes: {
 		pageTitle: '4.4rem',
@@ -38,7 +38,8 @@ export const theme = {
 		body: '1.6rem',
 		small: '1.4rem',
 		extraSmall: '1.2rem',
-		headingSmall: '2.1875rem'
+		headingSmall: '2.1875rem',
+		BigNumber: '9.375rem',
 	},
 	mediaQueriesNumbers,
 	mediaQueries: {

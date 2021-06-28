@@ -29,22 +29,14 @@ export const Picture = styled.img<{ handIsOnMiddle?: boolean }>`
 `
 export const Heading = styled.h5`
 	margin: 0 0 1rem 0;
-	font-size: 1.8rem;
+	font-size: ${({ theme }) => theme.sizes.body};
 	font-weight: bold;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
-		font-size: 1.5625rem;
-	}
 `
 
 export const Description = styled.p`
 	margin: 0 0 2rem 0;
 	font-family: 'sourceCodeVariable';
-	font-size: 1.3rem;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
-		font-size: 1.25rem;
-	}
+	font-size: ${({ theme }) => theme.sizes.extraSmall};
 `
 export const ImageWrapper = styled.div`
 	width: calc(100% + 4rem);

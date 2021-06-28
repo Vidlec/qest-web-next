@@ -72,7 +72,7 @@ export const ItemIndex = styled.div<{ color: string | undefined }>`
 export const ItemIndexNumber = styled.span`
 	position: absolute;
 	display: block;
-	font-size: 9.375rem;
+	font-size: ${({ theme }) => theme.sizes.BigNumber};
 	text-align: center;
 	line-height: 12rem;
 	left: 0;
