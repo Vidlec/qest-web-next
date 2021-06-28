@@ -57,16 +57,6 @@ interface Props {
 const AboutUs: React.FC<Props> = ({ galleries }) => {
 	const { t } = useTranslation()
 
-	console.log(galleries);
-
-	const test = galleries.map((item, index) => {
-		console.log(item);
-
-		item.galleryCollection.map((item2, index) => {
-			return item2
-		})
-	})
-
 	const [sliderImages] = useState(
 		t<string, UploadFile[]>('about.weAreImageCarousel', {
 			returnObjects: true,
@@ -202,53 +192,35 @@ const AboutUs: React.FC<Props> = ({ galleries }) => {
 						{galleries.map((collection, index) => (
 							<HQGallery>
 								{collection.galleryCollection.map((item, index) => (
-									<img
-										src="https://via.placeholder.com/350x280"
-										alt=""
-									/>
+									<>
+										{index === 4 &&
+										<HQWeAreHereCol>
+											<HQWeAreHerePicture>
+												<PictureImg
+													src={t('about.hqWeAreHereImage.url')}
+													alt={t(
+														'about.hqWeAreHereImage.alternativeText'
+													)}
+												/>
+											</HQWeAreHerePicture>
+
+											<HQWeAreHereDescription
+												dangerouslySetInnerHTML={{
+													__html: t(
+														'about.hqWeAreHereDescription'
+													),
+												}}
+											/>
+										</HQWeAreHereCol>
+										}
+										<img
+											src={item.images.url}
+											alt=""
+										/>
+									</>
 								))}
 							</HQGallery>
 						))}
-						<HQGallery>
-							<img
-								src="https://via.placeholder.com/520x350"
-								alt=""
-							/>
-							<img
-								src="https://via.placeholder.com/370x560"
-								alt=""
-							/>
-							<img
-								src="https://via.placeholder.com/350x280"
-								alt=""
-							/>
-							<img
-								src="https://via.placeholder.com/270x380"
-								alt=""
-							/>
-							<HQWeAreHereCol>
-								<HQWeAreHerePicture>
-									<PictureImg
-										src={t('about.hqWeAreHereImage.url')}
-										alt={t(
-											'about.hqWeAreHereImage.alternativeText'
-										)}
-									/>
-								</HQWeAreHerePicture>
-
-								<HQWeAreHereDescription
-									dangerouslySetInnerHTML={{
-										__html: t(
-											'about.hqWeAreHereDescription'
-										),
-									}}
-								/>
-							</HQWeAreHereCol>
-							<img
-								src="https://via.placeholder.com/350x280"
-								alt=""
-							/>
-						</HQGallery>
 					</SlickSlider>
 				</SliderWrapper>
 			</Container>
