@@ -4,6 +4,8 @@ import {
 	ComponentContentPictureList,
 	CareerOfferings,
 } from 'gql/generated/types'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 import Content from './Content'
 
 export interface Props {
@@ -24,11 +26,13 @@ const CareerPage: React.FC<Props> = ({ career }) => {
 
 	return (
 		<>
+			<Header />
 			<Content
 				{ ...career }
 				careerPositions={careerPositions}
 				pictureListData={pictureListData}
 			/>
+			<Footer />
 		</>
 	)
 }
