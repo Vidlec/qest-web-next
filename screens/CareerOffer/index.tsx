@@ -1,5 +1,5 @@
 import * as React from 'react'
-import CareerContent from './CareerContent'
+import Content from './Content'
 import { CareerOfferings } from 'gql/generated/types'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -13,7 +13,7 @@ const CareerOffer: React.FC<Props> = ({ offerArray }) => {
     return (
 		<>
             <Header />
-			<CareerContent offer={offerArray[0]} />
+			<Content offer={offerArray[0]} />
             <Footer />
 		</>
 	)
