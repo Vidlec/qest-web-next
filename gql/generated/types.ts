@@ -5066,11 +5066,7 @@ export type Unnamed_3_Query = (
 =======
   & { career?: Maybe<(
     { __typename?: 'Career' }
-<<<<<<< HEAD
-    & Pick<Career, 'title' | 'description' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescription' | 'somethingElseContact' | 'careerWhy' | 'careerWhatHeading'>
-=======
     & Pick<Career, 'title' | 'description' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescription' | 'somethingElseContact' | 'careerWhy' | 'careerWhyLook' | 'careerWhatHeading'>
->>>>>>> feat(add) Our Work Link translation
     & { technologies?: Maybe<(
       { __typename?: 'ComponentContentTechnologies' }
       & Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
