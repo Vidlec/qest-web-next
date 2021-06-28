@@ -6,6 +6,11 @@ import Line from 'components/Line'
 import Headline from 'components/Headline'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+export interface StyledProps {
+    spacing: number;
+    rows: number;
+}
+
 export const SelectLanguageWrapper = styled.div`
 	display: flex;
 	justify-content: center;
@@ -50,6 +55,7 @@ export const HeroContainer = styled(Container)`
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+    margin-bottom: 0;
 `
 export const HeroHeadline = styled(Headline)`
 	margin: 1rem 0 calc(1.5rem - 0.45rem);
@@ -86,6 +92,7 @@ export const ArrowLinkWrapper = styled.div`
 	margin: auto;
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		order: 3;
+        margin-top: 0;
 	}
 `
 export const ArrowLink = styled(AnchorLink)`
@@ -197,15 +204,12 @@ export const HQDescription = styled.div`
 export const HQWeAreHereDescription = styled.div`
 	font-size: ${({ theme }) => theme.sizes.extraSmall};
 `
-export const HQWeAreHerePicture = styled.picture``
+export const HQWeAreHerePicture = styled.picture`
+  margin-right: .8rem;
+`
 export const HQWeAreHereCol = styled.div`
 	display: flex;
 	align-items: center;
-`
-export const HQCTACol = styled(Col)`
-	display: flex;
-	flex-direction: column;
-	align-items: end;
 `
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
@@ -217,6 +221,11 @@ export const ArrowRightWrapper = styled.button`
 	background: none;
 	border: 0;
 	color: #fff;
+    margin-top: .8rem;
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      margin-top: -2rem;
+    }
 `
 
 export const ArrowRightIcon = styled.img`
@@ -249,16 +258,25 @@ export const CareerCTA = styled.a`
 `
 export const BlogPostsContainer = styled.div`
 	width: 100%;
-	display: flex;
-	flex-wrap: nowrap;
-	& > * + * {
-		margin-left: 5rem; // The equivalent of gap: 5rem;
-	}
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      display: flex;
+      flex-wrap: nowrap;
+      
+      & > * + * {
+        margin-left: 5rem; // The equivalent of gap: 5rem;
+      }
+    }
 `
 export const BlogPostWrapper = styled.article`
 	flex-grow: 1;
 	flex-shrink: 0;
 	flex-basis: 0;
+    margin-top: 5rem;
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+        margin-top: 0;
+    }
 `
 export const BlogPostThumbnail = styled.div<{ src: string }>`
 	background-image: url(${(props) => props.src});
@@ -271,8 +289,12 @@ export const BlogPostTitle = styled.h2`
 	max-width: 100%;
 	text-align: center;
 	color: ${({ theme }) => theme.colors.blue};
-	margin-top: 3rem;
+	margin-top: 2rem;
 	font-size: 1.5rem;
+
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      margin-top: 3rem;
+    }
 `
 export const BlogPostSnippet = styled.div`
 	max-width: 100%;
@@ -297,23 +319,25 @@ export const MoreBlogPosts = styled.a`
 
 export const HQGallery = styled.div`
 	display: grid !important;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
 	gap: 1rem;
-	height: 50vh;
 
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      height: 50vh;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+    }
+`
 
-		&:nth-child(2) {
-			grid-row: span 2 / span 2;
-		}
-
-		&:nth-child(4) {
-			grid-row: span 2 / span 2;
-			padding: 4rem 0 4rem 0;
-		}
-	}
+export const HQImg = styled.img<StyledProps>`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: span ${props => props.rows} / span ${props => props.rows};
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      padding: ${props => props.spacing}rem 0 ${props => props.spacing}rem 0;
+      grid-row: span ${props => props.rows} / span ${props => props.rows};
+    }
 `
