@@ -14,6 +14,7 @@ import {
 	Page404,
 	SocialNetwork,
 	AboutUs,
+	CareerOfferings
 } from '../gql/generated/types'
 import { MENU_QUERY } from '../gql/queries/menus'
 import { HEADER_QUERY } from '../gql/queries/headers'
@@ -22,6 +23,7 @@ import { CONTACT_QUERY } from '../gql/queries/contacts'
 import { PAGE404_QUERY } from '../gql/queries/page404s'
 import { SOCIAL_NETWORK_QUERY } from '../gql/queries/socialNetworks'
 import { ABOUT_QUERY } from '../gql/queries/aboutuses'
+import { CAREER_OFFERINGS_QUERY } from '../gql/queries/careerOfferings'
 
 type Resources = {
 	homepage: Homepage[]
@@ -30,6 +32,7 @@ type Resources = {
 	contact: Contact[]
 	page404s: Page404[]
 	about: AboutUs[]
+	careerOffering: CareerOfferings[]
 }
 
 const apolloClient = new ApolloClient({
@@ -41,7 +44,7 @@ const apolloClient = new ApolloClient({
 })
 
 const toResource = (
-	{ homepage, menu, header, contact, page404s, about }: Resources,
+	{ homepage, menu, header, contact, page404s, about, careerOffering }: Resources,
 	language: string
 ) => {
 	const translatedHomepage = homepage.find(
@@ -64,6 +67,10 @@ const toResource = (
 
 	const translatedAbout = about.find((about) => about?.language === language)
 
+	const translatedCareerOffering = careerOffering.filter(
+		(item) => item?.language === language
+	)
+
 	return {
 		translation: {
 			homepage: translatedHomepage,
@@ -72,6 +79,7 @@ const toResource = (
 			contact: translatedContact,
 			page404s: translatedPage404,
 			about: translatedAbout,
+			careerOffering: translatedCareerOffering,
 		},
 	}
 }
@@ -86,6 +94,7 @@ const main = async () => {
 		page404s,
 		socialNetworks,
 		about,
+		jobs,
 	] = await Promise.all(
 		[
 			HOMEPAGE_QUERY,
@@ -96,6 +105,7 @@ const main = async () => {
 			PAGE404_QUERY,
 			SOCIAL_NETWORK_QUERY,
 			ABOUT_QUERY,
+			CAREER_OFFERINGS_QUERY,
 		].map(async (query) => apolloClient.query({ query }))
 	)
 
@@ -109,6 +119,7 @@ const main = async () => {
 					contact: contacts.data.contacts,
 					page404s: page404s.data.page404s,
 					about: about.data.aboutuses,
+					careerOffering: jobs.data.careerOfferings,
 				},
 				language.languageCode!
 			)

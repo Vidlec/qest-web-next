@@ -29,6 +29,15 @@ export const theme = {
 		lightGray: '#cccccc',
 		white: '#fff',
 	},
+	sizes: {
+		pageTitle: '4.4rem',
+		extraLarge: '3.5rem',
+		large: '3.2rem',
+		medium: '2rem',
+		body: '1.6rem',
+		small: '1.4rem',
+		extraSmall: '1.2rem'
+	},
 	mediaQueriesNumbers,
 	mediaQueries: {
 		// desktopLarge: '110rem',
