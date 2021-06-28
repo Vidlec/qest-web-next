@@ -90,9 +90,8 @@ const Content: React.FC<Props> = ({
 				<ShowMoreButton onClick={toggleShowMore}>
 					{showMore ? (
 						<>
-							{' '}
 							další {pictureListData.length -
-								pictureList.length}{' '}
+								pictureList.length}
 						</>
 					) : (
 						<> ukázat méně </>

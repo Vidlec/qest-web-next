@@ -19,6 +19,7 @@ export const CAREER_QUERY = gql`
 				title
 				color
 				perex
+				slug
 			}
 			careerWho
 			somethingElseHeading

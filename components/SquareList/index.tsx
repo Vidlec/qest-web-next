@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {
 	Wrapper,
 	Base,
@@ -17,15 +19,19 @@ interface Props {
 }
 
 const SquareList: React.FC<Props> = ({ squares, children }) => {
+	const router = useRouter()
+
 	return (
 		<Wrapper>
 			{squares.map((s) => (
-				<Base key={s.title}>
-					<Content>
-						<Title color={s.color as string}>{s.title}</Title>
-						<div>{s.perex}</div>
-					</Content>
-				</Base>
+				<Link href={`/career/${s.slug}`}  key={s.title}>
+					<Base>
+						<Content>
+							<Title color={s.color as string}>{s.title}</Title>
+							<div>{s.perex}</div>
+						</Content>
+					</Base>
+				</Link>
 			))}
 			<End>{children}</End>
 		</Wrapper>

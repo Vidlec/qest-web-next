@@ -26,6 +26,7 @@ export const Base = styled.div`
 	width: calc(80% - 3.6rem);
 	background-color: ${({ theme }) => theme.colors.black};
 	margin: 3.6rem 0 0 3.6rem;
+	cursor: pointer;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
 		width: calc(50% - 3.6rem);
