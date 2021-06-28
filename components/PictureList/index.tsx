@@ -11,6 +11,8 @@ import {
 	ShowMore,
 	ShowMoreButton,
 } from './styled'
+import useWindowSize from 'hooks/useWindowSize'
+import { useTheme } from 'styled-components'
 
 import { ComponentContentPictureList } from 'gql/generated/types'
 
@@ -20,6 +22,8 @@ interface Props {
 
 const PictureList: React.FC<Props> = ({ items }) => {
 	const [showMore, setShowMore] = useState(false)
+	const theme = useTheme()
+	const isPhone = useWindowSize(theme.mediaQueriesNumbers.desktopSmall, 100)
 
 	const toggleShowMore = () => {
 		setShowMore(!showMore)
@@ -29,7 +33,7 @@ const PictureList: React.FC<Props> = ({ items }) => {
 		<Wrapper>
 			{items.map((item, index) => {
 				if (index > 1) {
-					if (showMore) {
+					if (showMore || !isPhone) {
 						return (
 							<Item key={item.header}>
 								<ItemIndex color={item.color as string}>
@@ -68,15 +72,17 @@ const PictureList: React.FC<Props> = ({ items }) => {
 					)
 				}
 			})}
-			<ShowMore>
-				<ShowMoreButton onClick={toggleShowMore}>
-					{showMore ? (
-						<>ukázat méně</>
-					) : (
-						<>další {items.length - 2}</>
-					)}
-				</ShowMoreButton>
-			</ShowMore>
+			{isPhone && (
+				<ShowMore>
+					<ShowMoreButton onClick={toggleShowMore}>
+						{showMore ? (
+							<>ukázat méně</>
+						) : (
+							<>další {items.length - 2}</>
+						)}
+					</ShowMoreButton>
+				</ShowMore>
+			)}
 		</Wrapper>
 	)
 }
