@@ -1,6 +1,69 @@
 import styled from 'styled-components'
 
 
+
+export const Wrapper = styled.div<{rows: number}>`
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(100, 1fr);
+	grid-auto-flow: row dense;
+	gap: 60px;
+
+	justify-items: center;
+	justify-content: center;
+	align-items: flex-end;
+
+	@media ( min-width: ${({theme}) => theme.mediaQueries.desktop }) {
+		grid-template-columns: repeat(13, 1fr);
+		grid-template-rows: repeat(100, 1fr);
+		gap: 30px;
+	}
+`
+
+
+export const GalleryItemCube = styled.div`
+	width: 100%;
+	height: 100%;
+	grid-column-end: span 4;
+	grid-row-end: span 8;
+	background-color: #0ff;
+`
+
+export const GalleryItemStand = styled.div`
+	width: 100%;
+	height: 100%;
+	grid-column-end: span 4;
+	grid-row-end: span 10;
+	background-color: #f0f;
+`
+
+export const GalleryItemLay = styled.div`
+	width: 100%;
+	height: 100%;
+	grid-column-end: span 5;
+	grid-row-end: span 8;
+	background-color: #ff0;
+`
+
+export const WhiteSpace = styled.div`
+	width: 100%;
+	height: 100%;
+	grid-column-end: span 1;
+	grid-row-end: span 1;
+`
+
+export const Image = styled.img`
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+`
+
+/*
 export const GalleryWrapper = styled.div<{rows: number}>`
 	position: relative;
 	width: 100%;
@@ -47,4 +110,4 @@ export const WhiteSpace = styled.div`
 export const DotSpan = styled.span<{ color: string }>`
 	color: ${({color}) => (color)};
 	margin: 0 1rem;
-`
+`*/

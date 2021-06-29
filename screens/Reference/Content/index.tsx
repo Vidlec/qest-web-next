@@ -2,13 +2,12 @@ import React from 'react'
 import Container from 'components/Container'
 import { ReferenceParagraph } from './ReferenceParagraph'
 import {
-	GalleryWrapper,
-	GridWrapper,
+	Wrapper,
 	GalleryItemCube,
 	GalleryItemStand,
 	GalleryItemLay,
 	WhiteSpace,
-	DotSpan,
+	Image,
 } from './styled'
 import Line from 'components/Line'
 import { useTranslation } from 'react-i18next'
@@ -17,10 +16,10 @@ const Content: React.FC = () => {
 	const { t } = useTranslation()
 
 	const projects: React.ReactElement[] = []
-	const first = ["","","","","","","","",""]
-	const second = [""]
+	const first = ['', '', '', '', '', '', '', '', '']
+	const second = ['']
 
-	console.log( Math.ceil(first.length / 3), Math.ceil(second.length / 3))
+	console.log(Math.ceil(first.length / 3), Math.ceil(second.length / 3))
 
 	return (
 		<Container>
@@ -28,27 +27,44 @@ const Content: React.FC = () => {
 				Our clients include {projects}
 			</ReferenceParagraph>
 			<Line></Line>
-			<GalleryWrapper rows={ Math.ceil(first.length / 3) }>
-				<GridWrapper rows={ Math.ceil(first.length / 3) }>
-					<GalleryItemCube />
-					<GalleryItemStand />
-					<GalleryItemLay />
-					<GalleryItemStand />
-					<WhiteSpace />
-					<GalleryItemCube />
-					<GalleryItemLay />
-					<GalleryItemStand />
-					<GalleryItemLay />
-					<GalleryItemCube />
-				</GridWrapper>
-			</GalleryWrapper>
-			<GalleryWrapper rows={ Math.ceil(second.length / 3 )}>
-				<GridWrapper rows={ Math.ceil(second.length / 3 )}>
-					<GalleryItemCube />
-					<GalleryItemStand />
-					<GalleryItemLay />
-				</GridWrapper>
-			</GalleryWrapper>
+			<Wrapper rows={4}>
+				<GalleryItemCube>
+					<Image src={'https://dummyimage.com/400x400/000/fff'} />
+				</GalleryItemCube>
+				<GalleryItemStand>
+					<Image src={'https://dummyimage.com/400x600/000/fff'} />
+				</GalleryItemStand>
+				<GalleryItemLay>
+					<Image src={'https://dummyimage.com/600x400/000/fff'} />
+				</GalleryItemLay>
+				<GalleryItemCube>
+					<Image src={'https://dummyimage.com/400x400/000/fff'} />
+				</GalleryItemCube>
+				<GalleryItemStand>
+					<Image src={'https://dummyimage.com/400x600/000/fff'} />
+				</GalleryItemStand>
+				<GalleryItemLay>
+					<Image src={'https://dummyimage.com/600x400/000/fff'} />
+				</GalleryItemLay>
+				<GalleryItemCube>
+					<Image src={'https://dummyimage.com/400x400/000/fff'} />
+				</GalleryItemCube>
+				<GalleryItemStand>
+					<Image src={'https://dummyimage.com/400x600/000/fff'} />
+				</GalleryItemStand>
+				<GalleryItemLay>
+					<Image src={'https://dummyimage.com/600x400/000/fff'} />
+				</GalleryItemLay>
+				<GalleryItemCube>
+					<Image src={'https://dummyimage.com/400x400/000/fff'} />
+				</GalleryItemCube>
+				<GalleryItemStand>
+					<Image src={'https://dummyimage.com/400x600/000/fff'} />
+				</GalleryItemStand>
+				<GalleryItemLay>
+					<Image src={'https://dummyimage.com/600x400/000/fff'} />
+				</GalleryItemLay>
+			</Wrapper>
 		</Container>
 	)
 }

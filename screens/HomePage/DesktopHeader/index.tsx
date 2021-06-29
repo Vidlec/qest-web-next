@@ -20,7 +20,7 @@ const DesktopHeader = () => {
 				<SelectLanguage />
 			</Item>
 			<Item position="topRight">
-				<Link href="/" color="pink">
+				<Link href="/reference" color="pink">
 					{t('menu.reference')}
 				</Link>
 			</Item>
