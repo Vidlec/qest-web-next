@@ -32,7 +32,7 @@ export const ABOUT_QUERY = gql`
 			teams {
 				name
 				position
-				image {
+				video {
 					url
 					alternativeText
 				}

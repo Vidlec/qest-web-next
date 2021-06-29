@@ -194,10 +194,10 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
                 <SliderWrapper>
                     <SlickSlider sliderOptions={HqSliderOptions} arrow={true}>
                         {galleries.map((collection, index) => (
-                            <HQGallery key={collection.id}>
+                            <HQGallery key={index}>
                                 {collection.galleryCollection?.map((item, index) => (
                                     <>
-                                        {item?.images === null || item?.spacing === null || item?.rows === null  ?
+                                        {item?.images === null ?
                                         <HQWeAreHereCol>
                                             <HQWeAreHerePicture>
                                                 <PictureImg

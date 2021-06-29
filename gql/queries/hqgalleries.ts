@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost'
 
 export const HQGALLERIES_QUERY = gql`
-	query {
+	query HqGalleries {
 		hqGalleries {
 			galleryCollection {
 				spacing
