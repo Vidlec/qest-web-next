@@ -74,12 +74,13 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
 
     const [HqSliderOptions] = useState({
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
         arrows: false,
         autoplay: false,
+        fade: true
     })
 
     const [
@@ -196,7 +197,7 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
                             <HQGallery key={collection.id}>
                                 {collection.galleryCollection?.map((item, index) => (
                                     <>
-                                        {item?.images === null ?
+                                        {item?.images === null || item?.spacing === null || item?.rows === null  ?
                                         <HQWeAreHereCol>
                                             <HQWeAreHerePicture>
                                                 <PictureImg
@@ -215,7 +216,7 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
                                                 }}
                                             />
                                         </HQWeAreHereCol> :
-                                        <HQImg <any>
+                                        <HQImg
                                             src={item?.images!.url}
                                             spacing={item?.spacing}
                                             rows={item?.rows}

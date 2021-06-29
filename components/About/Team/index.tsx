@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import SliderWrapper from 'components/Slider/styled'
-import SlickSlider from 'components/Slider'
 import { Team } from '../../../gql/generated/types'
 import { useTranslation } from 'react-i18next'
 

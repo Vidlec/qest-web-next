@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import numberOrNull from 'components/numberOrNull'
-import {ArrowLabel, ArrowRightIcon, ArrowRightWrapper} from "components/About/styled";
-import {useTranslation} from "react-i18next";
+import {ArrowLabel, ArrowRightIcon, ArrowRightWrapper} from 'components/About/styled'
+import {useTranslation} from 'react-i18next'
 
 function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
 	const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')

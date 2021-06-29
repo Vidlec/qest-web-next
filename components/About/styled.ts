@@ -7,8 +7,8 @@ import Headline from 'components/Headline'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export interface StyledProps {
-    spacing: number;
-    rows: number;
+    spacing?: number;
+    rows?: number;
 }
 
 export const ColorText = styled.span<{ colorHash: string | null | undefined }>`
@@ -220,16 +220,23 @@ export const HQWeAreHereCol = styled.div`
 `
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
+    font-size: ${({ theme }) => theme.sizes.extraSmall};
+
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+        font-size: ${({ theme }) => theme.sizes.body};
+    }
 `
 
 export const ArrowRightWrapper = styled.button`
-	float: right;
-	cursor: pointer;
-	background: none;
-	border: 0;
-	color: #fff;
+    position: relative;
+    z-index: 1;
+    float: right;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: #fff;
     margin-top: .8rem;
-  
+    
     @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
       margin-top: -2rem;
     }
@@ -251,13 +258,17 @@ export const CareerCTA = styled.a`
 	align-items: center;
 	flex-direction: column;
     cursor: pointer;
-
+  
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		flex-direction: row;
+      
+        span {
+          font-size: ${({ theme }) => theme.sizes.medium};
+        }
 	}
 
 	span {
-		font-size: 2.2rem;
+      font-size: ${({ theme }) => theme.sizes.body};
 		font-weight: bold;
 		color: ${({ theme }) => theme.colors.red};
 		text-decoration: underline;
@@ -329,7 +340,7 @@ export const HQGallery = styled.div`
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-template-rows: repeat(1, minmax(0, 1fr));
 	gap: 1rem;
-
+  
     @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(0, 1fr));

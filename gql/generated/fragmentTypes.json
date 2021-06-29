@@ -1,11 +1,5 @@
 {
   "possibleTypes": {
-    "CaseStudyContentDynamicZone": [
-      "ComponentContentImage",
-      "ComponentContentInfoColumn",
-      "ComponentContentRichText",
-      "ComponentContentTechnologies"
-    ],
     "Morph": [
       "UsersPermissionsMe",
       "UsersPermissionsMeRole",
@@ -127,15 +121,6 @@
       "CaseStudyConnectionId",
       "CaseStudyConnectionCreated_at",
       "CaseStudyConnectionUpdated_at",
-      "CaseStudyConnectionTitle",
-      "CaseStudyConnectionSubtitle",
-      "CaseStudyConnectionAbout",
-      "CaseStudyConnectionIndustry",
-      "CaseStudyConnectionClient",
-      "CaseStudyConnectionSystem",
-      "CaseStudyConnectionMainImage",
-      "CaseStudyConnectionLanguage",
-      "CaseStudyConnectionProjectId",
       "CaseStudyConnectionPublished_at",
       "createCaseStudyPayload",
       "updateCaseStudyPayload",

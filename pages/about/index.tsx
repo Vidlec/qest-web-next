@@ -4,19 +4,15 @@ import {ComponentContentGalleryImage, HqGallery, Maybe, UploadFile} from '../../
 import {HQGALLERIES_QUERY} from '../../gql/queries/hqgalleries'
 
 type HqGalleryQuery = (
-	{ __typename?: 'Query' }
 	& { hqGalleries?: Maybe<Array<Maybe<(
-		{ __typename?: 'HqGallery' }
-		& { galleryCollection?: Maybe<Array<Maybe<(
-			{ __typename?: 'ComponentContentGalleryImage' }
-			& Pick<ComponentContentGalleryImage, 'spacing' | 'rows'>
-			& { images?: Maybe<(
-				{ __typename?: 'UploadFile' }
-				& Pick<UploadFile, 'url' | 'alternativeText' | 'id'>
-				)> }
-			)>>> }
+	& { galleryCollection?: Maybe<Array<Maybe<(
+		& Pick<ComponentContentGalleryImage, 'spacing' | 'rows'>
+		& { images?: Maybe<(
+			& Pick<UploadFile, 'url' | 'alternativeText' | 'id'>
+			)> }
 		)>>> }
-	);
+	)>>> }
+);
 
 export const getStaticProps = async () => {
 	const data = await request<HqGalleryQuery>(
