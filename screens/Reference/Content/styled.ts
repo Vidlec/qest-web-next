@@ -9,7 +9,7 @@ export const Wrapper = styled.div<{rows: number}>`
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(9, 1fr);
-	grid-template-rows: repeat(100, 1fr);
+	grid-template-rows: repeat(9, 1fr);
 	grid-auto-flow: row dense;
 	gap: 60px;
 
@@ -19,7 +19,7 @@ export const Wrapper = styled.div<{rows: number}>`
 
 	@media ( min-width: ${({theme}) => theme.mediaQueries.desktop }) {
 		grid-template-columns: repeat(13, 1fr);
-		grid-template-rows: repeat(100, 1fr);
+		grid-template-rows: repeat(13, 1fr);
 		gap: 30px;
 	}
 `
@@ -29,7 +29,7 @@ export const GalleryItemCube = styled.div`
 	width: 100%;
 	height: 100%;
 	grid-column-end: span 4;
-	grid-row-end: span 8;
+	grid-row-end: span 4;
 	background-color: #0ff;
 `
 
@@ -37,7 +37,7 @@ export const GalleryItemStand = styled.div`
 	width: 100%;
 	height: 100%;
 	grid-column-end: span 4;
-	grid-row-end: span 10;
+	grid-row-end: span 5;
 	background-color: #f0f;
 `
 
@@ -45,7 +45,7 @@ export const GalleryItemLay = styled.div`
 	width: 100%;
 	height: 100%;
 	grid-column-end: span 5;
-	grid-row-end: span 8;
+	grid-row-end: span 4;
 	background-color: #ff0;
 `
 
