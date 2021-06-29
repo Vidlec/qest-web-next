@@ -11,15 +11,6 @@ export interface StyledProps {
     rows: number;
 }
 
-export const SelectLanguageWrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	padding: 3.75rem 2.5rem;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		margin-bottom: 9vh;
-	}
-`
 export const ColorText = styled.span<{ colorHash: string | null | undefined }>`
 	font-size: inherit;
 	color: ${(props) => props.colorHash};
@@ -40,16 +31,23 @@ export const LogoLineWrapper = styled.div`
 `
 export const LogoPicture = styled.picture`
 	display: block;
-	align-self: flex-end;
+	align-self: center;
+    text-align: center;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		max-width: 20rem;
 		position: absolute;
 		transform: translateY(-50%);
+        align-self: flex-end;
+        text-align: right;
 	}
 `
 export const PictureImg = styled.img`
-	width: 100%;
+    width: 70%;
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+      width: 100%;
+    }
 `
 export const HeroContainer = styled(Container)`
 	min-height: 100vh;
@@ -59,7 +57,7 @@ export const HeroContainer = styled(Container)`
 `
 export const HeroHeadline = styled(Headline)`
 	margin: 1rem 0 calc(1.5rem - 0.45rem);
-	font-size: ${({ theme }) => theme.sizes.large};
+	font-size: ${({ theme }) => theme.sizes.body};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
 		font-size: ${({ theme }) => theme.sizes.extraLarge};
@@ -68,6 +66,11 @@ export const HeroHeadline = styled(Headline)`
 `
 export const HeroLineWrapper = styled.div`
 	height: 1rem;
+    margin-top: 1.5rem;
+
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      margin-top: 0;
+    }
 `
 
 export const HeroLine = styled(Line)`
@@ -131,8 +134,12 @@ export const CarouselPicture = styled.picture`
 
 	img {
 		margin: auto;
-		width: 100%;
+		width: 50%;
 
+        @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+          width: 100%;  
+        }
+      
 		@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
 			width: auto;
 		}
@@ -319,10 +326,15 @@ export const MoreBlogPosts = styled.a`
 
 export const HQGallery = styled.div`
 	display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
 	gap: 1rem;
 
+    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+    } 
+  
     @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
       height: 50vh;
       grid-template-columns: repeat(4, minmax(0, 1fr));

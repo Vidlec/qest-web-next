@@ -1,4 +1,6 @@
 import * as React from 'react'
+import useWindowSize from 'hooks/useWindowSize'
+import { useTheme } from 'styled-components'
 import { Form } from 'components/Form'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -50,6 +52,8 @@ interface Props {
 }
 
 const AboutPage: React.FC<Props> = ({ galleries }) => {
+    const { mediaQueriesNumbers } = useTheme()
+    const isPhone = useWindowSize(mediaQueriesNumbers.desktopSmall, 100)
     const { t } = useTranslation()
 
     const [sliderImages] = useState(
@@ -77,8 +81,6 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
         arrows: false,
         autoplay: false,
     })
-
-    console.log(galleries)
 
     const [
         weAreDescriptionRef,
@@ -128,15 +130,17 @@ const AboutPage: React.FC<Props> = ({ galleries }) => {
                     </CarouselCol>
                 </WeAreRow>
 
-                <ArrowLinkWrapper>
-                    <ArrowLink offset={() => 170} href="#QestSkills">
-                        <ArrowDownIcon
-                            src={t('about.arrow.url')}
-                            alt={t('about.arrow.alternativeText')}
-                        />
-                        <span>{t('about.weAreArrowTitle')}</span>
-                    </ArrowLink>
-                </ArrowLinkWrapper>
+                {!isPhone &&
+                    <ArrowLinkWrapper>
+                        <ArrowLink offset={() => 170} href="#QestSkills">
+                            <ArrowDownIcon
+                                src={t('about.arrow.url')}
+                                alt={t('about.arrow.alternativeText')}
+                            />
+                            <span>{t('about.weAreArrowTitle')}</span>
+                        </ArrowLink>
+                    </ArrowLinkWrapper>
+                }
             </Container>
 
             <Container>

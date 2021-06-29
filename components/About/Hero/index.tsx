@@ -1,4 +1,6 @@
 import React from 'react'
+import useWindowSize from 'hooks/useWindowSize'
+import { useTheme } from 'styled-components'
 import {
 	ArrowDownIcon,
 	ArrowLink,
@@ -11,13 +13,13 @@ import {
 	LogoLineWrapper,
 	LogoPicture,
 	PictureImg,
-	SelectLanguageWrapper,
 } from 'components/About/styled'
-import SelectLanguage from 'components/SelectLanguage'
 import Line from 'components/Line'
 import { useTranslation } from 'react-i18next'
 
 const AboutHero = () => {
+	const { mediaQueriesNumbers } = useTheme()
+	const isPhone = useWindowSize(mediaQueriesNumbers.desktopSmall, 100)
 	const { t } = useTranslation()
 
 	return (
@@ -51,15 +53,17 @@ const AboutHero = () => {
 				<Line />
 			</LogoLineWrapper>
 
-			<ArrowLinkWrapper>
-				<ArrowLink offset={() => 170} href="#weAre">
-					<ArrowDownIcon
-						src={t('about.arrow.url')}
-						alt={t('about.arrow.alternativeText')}
-					/>
-					<span>{t('about.heroArrowTitle')}</span>
-				</ArrowLink>
-			</ArrowLinkWrapper>
+			{!isPhone &&
+				<ArrowLinkWrapper>
+					<ArrowLink offset={() => 170} href="#weAre">
+						<ArrowDownIcon
+							src={t('about.arrow.url')}
+							alt={t('about.arrow.alternativeText')}
+						/>
+						<span>{t('about.heroArrowTitle')}</span>
+					</ArrowLink>
+				</ArrowLinkWrapper>
+			}
 		</HeroContainer>
 	)
 }
