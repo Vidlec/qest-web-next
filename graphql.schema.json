@@ -9861,6 +9861,25 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            "name": "slug",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+>>>>>>> feat(generate) generate new types
             "name": "published_at",
             "description": null,
             "args": [],
@@ -10495,7 +10514,43 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "connection",
+=======
+            "name": "height",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CaseStudyConnectionHeight",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "slug",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CaseStudyConnectionSlug",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "published_at",
+>>>>>>> feat(generate) generate new types
             "description": null,
             "args": [],
             "type": {
@@ -10795,6 +10850,44 @@
       {
         "kind": "OBJECT",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        "name": "CaseStudyConnectionSlug",
+        "description": null,
+        "fields": [
+          {
+            "name": "key",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "connection",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyConnection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+>>>>>>> feat(generate) generate new types
         "name": "CaseStudyConnectionPublished_at",
 =======
         "name": "CaseStudyConnectionLanguage",
@@ -11312,6 +11405,7 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "content",
             "description": null,
             "type": {
@@ -11325,6 +11419,17 @@
                   "name": "CaseStudyContentDynamicZoneInput",
                   "ofType": null
                 }
+=======
+            "name": "slug",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+>>>>>>> feat(generate) generate new types
               }
             },
             "defaultValue": null,
@@ -11332,7 +11437,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "language",
+=======
+            "name": "published_at",
+>>>>>>> feat(generate) generate new types
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -11450,6 +11559,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "slug",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "defaultValue": null,
@@ -28072,6 +28193,22 @@
             "deprecationReason": null
           },
           {
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "published_at",
             "description": null,
             "args": [],
@@ -28164,6 +28301,146 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sum",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "TeamAggregatorSum",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "avg",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "TeamAggregatorAvg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "min",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "TeamAggregatorMin",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "max",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "TeamAggregatorMax",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TeamAggregatorSum",
+        "description": null,
+        "fields": [
+          {
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TeamAggregatorAvg",
+        "description": null,
+        "fields": [
+          {
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TeamAggregatorMin",
+        "description": null,
+        "fields": [
+          {
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TeamAggregatorMax",
+        "description": null,
+        "fields": [
+          {
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
               "ofType": null
             },
             "isDeprecated": false,
@@ -28284,6 +28561,25 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            "name": "sort",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "TeamConnectionSort",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+>>>>>>> feat(generate) generate new types
             "name": "published_at",
 =======
             "name": "titleColorHash",
@@ -28707,8 +29003,47 @@
         "name": "SocialNetworkInput",
 =======
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "SkillConnectionId",
 >>>>>>> feat(reference) conect project list with strapi
+=======
+        "name": "TeamConnectionSort",
+        "description": null,
+        "fields": [
+          {
+            "name": "key",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "connection",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "TeamConnection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TeamConnectionPublished_at",
+>>>>>>> feat(generate) generate new types
         "description": null,
         "fields": null,
         "inputFields": [
@@ -28818,6 +29153,25 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            "name": "sort",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+>>>>>>> feat(generate) generate new types
             "name": "published_at",
 =======
             "name": "connection",
@@ -28960,6 +29314,7 @@
 <<<<<<< HEAD
           },
           {
+<<<<<<< HEAD
             "name": "created_by",
 =======
           }
@@ -28977,6 +29332,21 @@
           {
             "name": "key",
 >>>>>>> feat(reference) conect project list with strapi
+=======
+            "name": "sort",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "published_at",
+>>>>>>> feat(generate) generate new types
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -41337,6 +41707,7 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "width",
 =======
             "name": "technologies",
@@ -41350,6 +41721,16 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
+=======
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionSlug",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionPublished_at",
+            "ofType": null
+>>>>>>> feat(generate) generate new types
           },
           {
 <<<<<<< HEAD
@@ -43543,6 +43924,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "username",
             "description": null,
             "args": [],
@@ -43557,6 +43939,31 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+=======
+            "kind": "OBJECT",
+            "name": "TeamAggregatorSum",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TeamAggregatorAvg",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TeamAggregatorMin",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TeamAggregatorMax",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TeamGroupBy",
+            "ofType": null
+>>>>>>> feat(generate) generate new types
           },
           {
             "name": "email",
@@ -43662,6 +44069,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "connection",
             "description": null,
             "args": [],
@@ -43684,6 +44092,17 @@
         "name": "UsersPermissionsUserConnectionCreated_at",
         "description": null,
         "fields": [
+=======
+            "kind": "OBJECT",
+            "name": "TeamConnectionSort",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TeamConnectionPublished_at",
+            "ofType": null
+          },
+>>>>>>> feat(generate) generate new types
           {
             "name": "key",
             "description": null,

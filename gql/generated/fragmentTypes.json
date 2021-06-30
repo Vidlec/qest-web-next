@@ -136,7 +136,11 @@
       "CaseStudyConnectionImage",
       "CaseStudyConnectionTitle",
       "CaseStudyConnectionHeight",
+<<<<<<< HEAD
 >>>>>>> feat(update) types
+=======
+      "CaseStudyConnectionSlug",
+>>>>>>> feat(generate) generate new types
       "CaseStudyConnectionPublished_at",
       "createCaseStudyPayload",
       "updateCaseStudyPayload",
@@ -335,12 +339,18 @@
       "TeamConnection",
       "TeamAggregator",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(generate) generate new types
       "TeamAggregatorSum",
       "TeamAggregatorAvg",
       "TeamAggregatorMin",
       "TeamAggregatorMax",
+<<<<<<< HEAD
 =======
 >>>>>>> rebase(Reference Page)
+=======
+>>>>>>> feat(generate) generate new types
       "TeamGroupBy",
       "TeamConnectionId",
       "TeamConnectionCreated_at",
@@ -351,12 +361,15 @@
 <<<<<<< HEAD
       "TeamConnectionVideo",
       "TeamConnectionSort",
+<<<<<<< HEAD
 =======
       "TeamConnectionImage",
 >>>>>>> rebase(Reference Page)
 =======
       "TeamConnectionVideo",
 >>>>>>> feat(update) types
+=======
+>>>>>>> feat(generate) generate new types
       "TeamConnectionPublished_at",
       "createTeamPayload",
       "updateTeamPayload",
