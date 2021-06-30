@@ -1,18 +1,18 @@
 import * as React from 'react'
 import Content from './Content'
-import { CareerOfferings } from 'gql/generated/types'
+import { CareerOfferings, CareerOfferQuery } from 'gql/generated/types'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-interface Props {
-	offerArray: CareerOfferings[]
+export interface Props {
+	careerOffer: CareerOfferings
 }
 
-const CareerOffer: React.FC<Props> = ({ offerArray }) => {
+const CareerOffer: React.FC<Props> = ({ careerOffer }) => {
 	return (
 		<>
 			<Header />
-			<Content offer={offerArray[0]} />
+			<Content offer={careerOffer} />
 			<Footer />
 		</>
 	)

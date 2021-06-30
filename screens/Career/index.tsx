@@ -3,6 +3,7 @@ import {
 	Career,
 	ComponentContentPictureList,
 	CareerOfferings,
+	CareerQuery,
 } from 'gql/generated/types'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -12,17 +13,18 @@ export interface Props {
 	career: Career
 }
 
-const CareerPage: React.FC<Props> = ({ career }) => {
-	const careerPositions: CareerOfferings[] = []
-	const pictureListData: ComponentContentPictureList[] = []
-
+const CareerPage: React.FC<CareerQuery> = ({ career }) => {
+	console.log(career)
+	const careerPositions: CareerOfferings[] = career?.info ?? []
+	const pictureListData: ComponentContentPictureList[] = career?.careerPositions
+/*
 	career.info?.map((item) => {
 		item && pictureListData.push(item)
 	})
 
 	career.careerPositions?.map((position) => {
 		position && careerPositions.push(position)
-	})
+	})*/
 
 	return (
 		<>

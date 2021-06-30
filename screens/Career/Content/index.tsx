@@ -72,7 +72,7 @@ const Content: React.FC<Props> = ({
 			</SquareList>
 
 			<CareerWhy>
-				{careerWhy}{' '}
+				{careerWhy}
 				<Link href="/reference" passHref>
 					<WhyLink>{careerWhyLook}</WhyLink>
 				</Link>

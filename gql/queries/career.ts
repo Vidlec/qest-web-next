@@ -1,8 +1,11 @@
 import { gql } from 'apollo-boost'
 
 export const CAREER_QUERY = gql`
-	query {
+	query Career {
 		career(locale: "cs") {
+			id
+			created_at
+			updated_at
 			title
 			description
 			technologies {
