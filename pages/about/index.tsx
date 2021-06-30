@@ -1,9 +1,10 @@
-import Content from 'screens/About/Content'
+import AboutPage from 'screens/About'
 import {request} from 'graphql-request'
-import {HqGalleriesQuery} from '../../gql/generated/types'
-import {HQGALLERIES_QUERY} from '../../gql/queries/hqgalleries'
+import {HqGalleriesQuery} from 'gql/generated/types'
+import {HQGALLERIES_QUERY} from 'gql/queries/hqgalleries'
+import {GetStaticProps} from 'next'
 
-export const getStaticProps = async () => {
+export const getStaticProps:GetStaticProps = async () => {
 	const data = await request<HqGalleriesQuery>(
 		process.env.CMS_GRAPHQL_URL!,
 		HQGALLERIES_QUERY
@@ -14,5 +15,4 @@ export const getStaticProps = async () => {
 	}
 }
 
-
-export default Content
+export default AboutPage

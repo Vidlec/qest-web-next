@@ -2,7 +2,6 @@ import * as React from 'react'
 import useWindowSize from 'hooks/useWindowSize'
 import { useTheme } from 'styled-components'
 import { Form } from 'components/Form'
-import Header from 'components/Header'
 import Footer from 'components/Footer'
 import AboutHero from './Hero'
 import Container from 'components/Container'
@@ -87,6 +86,7 @@ const Content: React.FC<Props> = ({ galleries }) => {
                 settings: {
                     speed: 500,
                     fade: false,
+                    adaptiveHeight: true,
                 }
             }
         ],
@@ -106,8 +106,6 @@ const Content: React.FC<Props> = ({ galleries }) => {
 
     return (
         <>
-            <Header />
-
             <AboutHero />
 
             <Container>

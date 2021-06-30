@@ -3,12 +3,17 @@ import { Form } from 'components/Form'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Content from './Content'
+import {HqGallery} from 'gql/generated/types'
 
-const AboutPage: React.FC = () => {
+interface Props {
+    galleries: HqGallery[]
+}
+
+const AboutPage: React.FC<Props> = ({ galleries }) => {
     return (
         <>
             <Header />
-            {Content}
+            <Content galleries={galleries} />
             <Footer />
             <Form />
         </>

@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import Col from 'components/Col'
 import Row from 'components/Row'
-import Container from 'components/Container'
 import Line from 'components/Line'
-import Headline from 'components/Headline'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export interface StyledProps {
@@ -227,11 +225,12 @@ export const HQGallery = styled.div`
 
 export const HQImg = styled.img<StyledProps>`
     width: 100%;
-    height: 100%;
+    height: 60vh;
     object-fit: cover;
     grid-row: span ${props => props.rows} / span ${props => props.rows};
   
     @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      height: 100%;
       padding: ${props => props.spacing}rem 0 ${props => props.spacing}rem 0;
       grid-row: span ${props => props.rows} / span ${props => props.rows};
     }
