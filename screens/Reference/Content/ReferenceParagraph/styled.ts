@@ -1,16 +1,33 @@
 import styled from 'styled-components'
+import { DefaultTheme } from 'styled-components'
+
+export type ItemColor = 'red' | 'pink' | 'yellow' | 'blue' | 'green' | 'default'
+
+const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
+	const colorsMap: Record<ItemColor, string> = {
+		red: theme.colors.red,
+		pink: theme.colors.pink,
+		yellow: theme.colors.yellow,
+		blue: theme.colors.blue,
+		green: theme.colors.green,
+		default: theme.colors.white,
+	}
+
+	return colorsMap[color]
+}
 
 export const Paragraph = styled.p`
-    padding: 100px 0 0 0;
+    padding: 50px 0 0 0;
     margin: 0 0 100px 0;
     font-size: 2rem;
 `
 
-export const ShowMoreButton = styled.button`
-	border: none;
-	padding: none;
-	margin: none;
-	background: none;
-    color: ${({theme}) => theme.colors.mainFont};
-    font-size: 1.4rem;
+export const Item = styled.span<{color: ItemColor}>`
+    
+
+	&::after {
+		content: "✦";
+		color: ${({theme, color}) => getItemColor(theme, color)};
+		padding: 0 1rem;
+	}
 `

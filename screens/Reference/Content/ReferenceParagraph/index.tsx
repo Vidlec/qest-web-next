@@ -1,14 +1,18 @@
 import React from 'react'
-import { Paragraph } from './styled'
+import { Paragraph, Item, ItemColor } from './styled'
 
-export const ReferenceParagraph: React.FC = ({ children }) => {
+interface Props {
+    items: string[]
+}
+
+export const ReferenceParagraph: React.FC<Props> = ({ children, items }) => {
+    const colors: ItemColor[] = ['red', 'yellow', 'pink', 'green', 'blue']
     return (
         <Paragraph>
             {children}
+            {items.map((item, index) => {
+                return(<Item key={item + index} color={colors[index % 5]}>{item}</Item>)
+            })}
         </Paragraph>
 	)
-}
-
-export const ReferenceGallery: React.FC = () => {
-    return <></>
 }
