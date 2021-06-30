@@ -1,8 +1,8 @@
 import React from 'react'
-import AboutSkill from 'components/About/Skills/skill'
+import AboutSkill from './skill'
 import { Skill } from 'gql/generated/types'
 import { useTranslation } from 'react-i18next'
-import { SkillsList, SkillDescription } from 'components/About/styled'
+import { SkillsList, SkillDescription } from './styled'
 
 const Skills = () => {
 	const { t } = useTranslation()

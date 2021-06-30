@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrandValue } from 'gql/generated/types'
-import { PictureImg } from 'components/About/styled'
+import { PictureImg } from '../styled'
 import {
 	ValueDescription,
 	ValueHeadline,

@@ -11,65 +11,22 @@ export interface StyledProps {
     rows?: number;
 }
 
+export const ArrowDownIcon = styled.img`
+	transform: rotate(90deg);
+	width: 49px;
+	margin-bottom: 24px;
+`
+
 export const ColorText = styled.span<{ colorHash: string | null | undefined }>`
 	font-size: inherit;
 	color: ${(props) => props.colorHash};
 `
-export const LogoLineWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: start;
-	justify-content: center;
-	width: 100%;
-	margin-bottom: 3rem;
 
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		order: 1;
-		justify-content: start;
-		margin-bottom: 0;
-	}
-`
-export const LogoPicture = styled.picture`
-	display: block;
-	align-self: center;
-    text-align: center;
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		max-width: 20rem;
-		position: absolute;
-		transform: translateY(-50%);
-        align-self: flex-end;
-        text-align: right;
-	}
-`
 export const PictureImg = styled.img`
     width: 70%;
   
     @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
       width: 100%;
-    }
-`
-export const HeroContainer = styled(Container)`
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-    margin-bottom: 0;
-`
-export const HeroHeadline = styled(Headline)`
-	margin: 1rem 0 calc(1.5rem - 0.45rem);
-	font-size: ${({ theme }) => theme.sizes.body};
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
-		font-size: ${({ theme }) => theme.sizes.extraLarge};
-		max-width: calc(100% - 20rem - 4rem);
-	}
-`
-export const HeroLineWrapper = styled.div`
-	height: 1rem;
-    margin-top: 1.5rem;
-
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: 0;
     }
 `
 
@@ -79,18 +36,6 @@ export const HeroLine = styled(Line)`
 	}
 `
 
-export const HeroDescription = styled.div`
-	max-width: 56.5rem;
-	margin-top: calc(1.5rem + 0.25rem + 0.45rem);
-	margin-bottom: 3rem;
-    line-height: 1.4;
-    font-size: ${({ theme }) => theme.sizes.extraSmall};
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-		order: 2;
-        font-size: ${({ theme }) => theme.sizes.body};
-	}
-`
 export const ArrowLinkWrapper = styled.div`
 	margin: auto;
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
@@ -102,11 +47,6 @@ export const ArrowLink = styled(AnchorLink)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-`
-export const ArrowDownIcon = styled.img`
-	transform: rotate(90deg);
-	width: 49px;
-	margin-bottom: 24px;
 `
 export const WeAreDescription = styled.div`
 	letter-spacing: 0;
@@ -154,29 +94,6 @@ export const SkillsRow = styled(Row)`
 	justify-content: space-between;
 	margin-bottom: 9rem;
 `
-export const SkillsList = styled.ul`
-	margin: 0;
-	padding: 0;
-	list-style: none;
-`
-export const SkillsListItem = styled.li``
-export const SkillHeadline = styled.h2`
-	margin: 0;
-	line-height: 1;
-	font-size: ${({ theme }) => theme.sizes.body};
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
-		font-size: ${({ theme }) => theme.sizes.medium};
-	}
-`
-export const SkillDescription = styled.p`
-	margin: 0 0 2rem 0;
-	font-size: ${({ theme }) => theme.sizes.extraSmall};
-
-	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
-		font-size: ${({ theme }) => theme.sizes.body};
-	}
-`
 export const TechnologiesCard = styled.div`
 	background-color: black;
 	padding: 2rem 4rem 2rem 2rem;
@@ -217,6 +134,12 @@ export const HQWeAreHerePicture = styled.picture`
 export const HQWeAreHereCol = styled.div`
 	display: flex;
 	align-items: center;
+  
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      position: absolute;
+      width: 20vw;
+      margin-top: -7rem;
+    }
 `
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
@@ -225,32 +148,6 @@ export const CareerDescription = styled.div`
     @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
         font-size: ${({ theme }) => theme.sizes.body};
     }
-`
-
-export const ArrowRightWrapper = styled.button`
-    position: relative;
-    z-index: 1;
-    float: right;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    color: #fff;
-    margin-top: .8rem;
-    
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: -2rem;
-    }
-`
-
-export const ArrowRightIcon = styled.img`
-	width: 75px;
-	height: 20px;
-	display: block;
-	margin: 0 0 1rem auto;
-`
-
-export const ArrowLabel = styled.span`
-	font-size: ${({ theme }) => theme.sizes.extraSmall};
 `
 
 export const CareerCTA = styled.a`
@@ -296,32 +193,7 @@ export const BlogPostWrapper = styled.article`
         margin-top: 0;
     }
 `
-export const BlogPostThumbnail = styled.div<{ src: string }>`
-	background-image: url(${(props) => props.src});
-	background-position: center top;
-	background-size: cover;
-	width: 100%;
-	padding-top: 67%;
-`
-export const BlogPostTitle = styled.h2`
-	max-width: 100%;
-	text-align: center;
-	color: ${({ theme }) => theme.colors.blue};
-	margin-top: 2rem;
-	font-size: 1.5rem;
 
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: 3rem;
-    }
-`
-export const BlogPostSnippet = styled.div`
-	max-width: 100%;
-	text-align: center;
-	color: ${({ theme }) => theme.colors.mainFont};
-	margin-top: 1rem;
-	font-size: 1rem;
-	line-height: 1.2rem;
-`
 export const MoreBlogPostsContainer = styled.div`
 	margin-top: 5rem;
 	text-align: center;

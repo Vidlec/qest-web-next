@@ -248,3 +248,29 @@ export const SliderWrapper = styled.div`
 		color: ${({ theme }) => theme.colors.black};
 	}
 `
+
+export const ArrowLabel = styled.span`
+	font-size: ${({ theme }) => theme.sizes.extraSmall};
+`
+
+export const ArrowRightWrapper = styled.button`
+    position: relative;
+    z-index: 1;
+    float: right;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: #fff;
+    margin-top: .8rem;
+    
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+      margin-top: -2rem;
+    }
+`
+
+export const ArrowRightIcon = styled.img`
+	width: 75px;
+	height: 20px;
+	display: block;
+	margin: 0 0 1rem auto;
+`

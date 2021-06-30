@@ -3,7 +3,7 @@ import { ValuesHeadline, ValuesWrapper } from './styled'
 import { BrandValue } from 'gql/generated/types'
 import { useTranslation } from 'react-i18next'
 
-import AboutBrandValue from 'components/About/BrandValues/brandValue'
+import AboutBrandValue from '../BrandValues/brandValue'
 
 const BrandValues = () => {
 	const { t } = useTranslation()

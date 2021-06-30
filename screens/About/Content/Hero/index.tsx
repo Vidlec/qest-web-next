@@ -13,7 +13,7 @@ import {
 	LogoLineWrapper,
 	LogoPicture,
 	PictureImg,
-} from 'components/About/styled'
+} from './styled'
 import Line from 'components/Line'
 import { useTranslation } from 'react-i18next'
 

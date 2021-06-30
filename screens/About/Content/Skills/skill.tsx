@@ -2,10 +2,12 @@ import React from 'react'
 import { Skill } from 'gql/generated/types'
 import {
 	ColorText,
+} from '../styled'
+import {
 	SkillDescription,
 	SkillHeadline,
 	SkillsListItem,
-} from 'components/About/styled'
+} from './styled'
 
 interface Props {
 	skill: Skill

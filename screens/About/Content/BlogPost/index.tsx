@@ -3,8 +3,7 @@ import {
 	BlogPostSnippet,
 	BlogPostThumbnail,
 	BlogPostTitle,
-	BlogPostWrapper,
-} from 'components/About/styled'
+} from './styled'
 
 type Post = {
 	link: string

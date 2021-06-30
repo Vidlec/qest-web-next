@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Team } from '../../../gql/generated/types'
+import { Team } from 'gql/generated/types'
 import { useTranslation } from 'react-i18next'
 
 const AboutTeam = () => {
