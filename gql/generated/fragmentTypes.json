@@ -125,11 +125,18 @@
       "CaseStudyConnectionId",
       "CaseStudyConnectionCreated_at",
       "CaseStudyConnectionUpdated_at",
+<<<<<<< HEAD
       "CaseStudyConnectionImage",
       "CaseStudyConnectionTitle",
       "CaseStudyConnectionHeight",
       "CaseStudyConnectionSlug",
       "CaseStudyConnectionLocale",
+=======
+      "CaseStudyConnectionLanguage",
+      "CaseStudyConnectionImage",
+      "CaseStudyConnectionTitle",
+      "CaseStudyConnectionHeight",
+>>>>>>> feat(update) types
       "CaseStudyConnectionPublished_at",
       "createCaseStudyPayload",
       "updateCaseStudyPayload",
@@ -341,11 +348,15 @@
       "TeamConnectionName",
       "TeamConnectionPosition",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "TeamConnectionVideo",
       "TeamConnectionSort",
 =======
       "TeamConnectionImage",
 >>>>>>> rebase(Reference Page)
+=======
+      "TeamConnectionVideo",
+>>>>>>> feat(update) types
       "TeamConnectionPublished_at",
       "createTeamPayload",
       "updateTeamPayload",

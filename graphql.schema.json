@@ -9788,6 +9788,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "image",
             "description": null,
             "args": [],
@@ -9845,6 +9846,9 @@
           },
           {
             "name": "locale",
+=======
+            "name": "language",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -9856,6 +9860,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "published_at",
             "description": null,
             "args": [],
@@ -9870,12 +9875,21 @@
 =======
               "name": "String",
 >>>>>>> rebase(Reference Page)
+=======
+            "name": "image",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "UploadFile",
+>>>>>>> feat(update) types
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "localizations",
             "description": null,
             "args": [
@@ -9953,6 +9967,9 @@
         "fields": [
           {
             "name": "values",
+=======
+            "name": "title",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -9980,6 +9997,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "aggregate",
             "description": null,
             "args": [],
@@ -10004,11 +10022,15 @@
         "fields": [
           {
             "name": "count",
+=======
+            "name": "height",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+<<<<<<< HEAD
               "ofType": null
             },
             "isDeprecated": false,
@@ -10021,12 +10043,15 @@
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+=======
+>>>>>>> feat(update) types
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "sum",
             "description": null,
             "args": [],
@@ -10064,6 +10089,9 @@
           },
           {
             "name": "max",
+=======
+            "name": "published_at",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -10165,6 +10193,161 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "sum",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyAggregatorSum",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "avg",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyAggregatorAvg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "min",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyAggregatorMin",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "name": "image",
+=======
+            "name": "language",
+=======
+            "name": "title",
+>>>>>>> rebase(Reference Page)
+=======
+            "name": "max",
+>>>>>>> feat(update) types
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyAggregatorMax",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CaseStudyAggregatorSum",
+        "description": null,
+        "fields": [
+          {
+            "name": "height",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CaseStudyAggregatorAvg",
+        "description": null,
+        "fields": [
+          {
+            "name": "height",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CaseStudyAggregatorMin",
+        "description": null,
+        "fields": [
+          {
+            "name": "height",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CaseStudyAggregatorMax",
+        "description": null,
+        "fields": [
+          {
+<<<<<<< HEAD
+            "name": "client",
+>>>>>>> feat(reference) conect project list with strapi
+=======
+            "name": "height",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -10179,6 +10362,7 @@
         "fields": [
           {
             "name": "id",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -10186,127 +10370,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "CaseStudyConnectionId",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "created_at",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionCreated_at",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "updated_at",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionUpdated_at",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
 <<<<<<< HEAD
-<<<<<<< HEAD
-            "name": "image",
-=======
-            "name": "language",
-=======
-            "name": "title",
->>>>>>> rebase(Reference Page)
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionTitle",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "subtitle",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionSubtitle",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "about",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionAbout",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "industry",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionIndustry",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "client",
->>>>>>> feat(reference) conect project list with strapi
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
                 "name": "CaseStudyConnectionImage",
+=======
+                "name": "CaseStudyConnectionId",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -10314,7 +10382,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "title",
+=======
+            "name": "created_at",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -10322,7 +10394,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
                 "name": "CaseStudyConnectionTitle",
+=======
+                "name": "CaseStudyConnectionCreated_at",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -10330,7 +10406,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "height",
+=======
+            "name": "updated_at",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -10338,7 +10418,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
                 "name": "CaseStudyConnectionHeight",
+=======
+                "name": "CaseStudyConnectionUpdated_at",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -10370,7 +10454,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "locale",
+=======
+            "name": "image",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -10378,7 +10466,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
                 "name": "CaseStudyConnectionLocale",
+=======
+                "name": "CaseStudyConnectionImage",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -10386,7 +10478,7 @@
             "deprecationReason": null
           },
           {
-            "name": "published_at",
+            "name": "title",
             "description": null,
             "args": [],
             "type": {
@@ -10394,37 +10486,15 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "CaseStudyConnectionPublished_at",
+                "name": "CaseStudyConnectionTitle",
                 "ofType": null
               }
             },
             "isDeprecated": false,
             "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "CaseStudyConnectionId",
-        "description": null,
-        "fields": [
-          {
-            "name": "key",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "ID",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "connection",
             "description": null,
             "args": [],
@@ -10562,24 +10632,35 @@
         "fields": [
           {
             "name": "key",
+=======
+            "name": "height",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CaseStudyConnectionHeight",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "connection",
+            "name": "published_at",
             "description": null,
             "args": [],
             "type": {
-              "kind": "OBJECT",
-              "name": "CaseStudyConnection",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CaseStudyConnectionPublished_at",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -10592,7 +10673,11 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "CaseStudyConnectionHeight",
+=======
+        "name": "CaseStudyConnectionId",
+>>>>>>> feat(update) types
         "description": null,
         "fields": [
           {
@@ -10601,7 +10686,11 @@
             "args": [],
             "type": {
               "kind": "SCALAR",
+<<<<<<< HEAD
               "name": "Int",
+=======
+              "name": "ID",
+>>>>>>> feat(update) types
               "ofType": null
             },
             "isDeprecated": false,
@@ -10627,77 +10716,11 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "CaseStudyConnectionSlug",
-        "description": null,
-        "fields": [
-          {
-            "name": "key",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "connection",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "CaseStudyConnection",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "CaseStudyConnectionLocale",
-        "description": null,
-        "fields": [
-          {
-            "name": "key",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "connection",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "CaseStudyConnection",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "CaseStudyConnectionPublished_at",
+=======
+        "name": "CaseStudyConnectionCreated_at",
+>>>>>>> feat(update) types
         "description": null,
         "fields": [
           {
@@ -10731,8 +10754,91 @@
         "possibleTypes": null
       },
       {
+        "kind": "OBJECT",
+<<<<<<< HEAD
+        "name": "CaseStudyConnectionLocale",
+=======
+        "name": "CaseStudyConnectionUpdated_at",
+>>>>>>> feat(update) types
+        "description": null,
+        "fields": [
+          {
+            "name": "key",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "connection",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyConnection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+<<<<<<< HEAD
+        "name": "CaseStudyConnectionPublished_at",
+=======
+        "name": "CaseStudyConnectionLanguage",
+>>>>>>> feat(update) types
+        "description": null,
+        "fields": [
+          {
+            "name": "key",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "connection",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CaseStudyConnection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+<<<<<<< HEAD
         "kind": "INPUT_OBJECT",
         "name": "CaseStudyInput",
+=======
+        "kind": "OBJECT",
+        "name": "CaseStudyConnectionImage",
+>>>>>>> feat(update) types
         "description": null,
         "fields": null,
         "inputFields": [
@@ -10840,8 +10946,13 @@
         "possibleTypes": null
       },
       {
+<<<<<<< HEAD
         "kind": "INPUT_OBJECT",
         "name": "CaseStudyInput",
+=======
+        "kind": "OBJECT",
+        "name": "CaseStudyConnectionTitle",
+>>>>>>> feat(update) types
         "description": null,
         "fields": [
           {
@@ -10909,7 +11020,11 @@
         "inputFields": [
 =======
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "ContactConnectionFormName",
+=======
+        "name": "CaseStudyConnectionHeight",
+>>>>>>> feat(update) types
         "description": null,
         "fields": [
 >>>>>>> feat(reference) conect project list with strapi
@@ -10919,7 +11034,11 @@
             "args": [],
             "type": {
               "kind": "SCALAR",
+<<<<<<< HEAD
               "name": "ID",
+=======
+              "name": "Int",
+>>>>>>> feat(update) types
               "ofType": null
             },
             "isDeprecated": false,
@@ -10991,6 +11110,7 @@
         "inputFields": [
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "localizations",
             "description": null,
             "args": [],
@@ -11141,6 +11261,9 @@
           },
           {
             "name": "industry",
+=======
+            "name": "language",
+>>>>>>> feat(update) types
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -11152,31 +11275,7 @@
             "deprecationReason": null
           },
           {
-            "name": "client",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "system",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mainImage",
+            "name": "image",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -11188,6 +11287,31 @@
             "deprecationReason": null
           },
           {
+            "name": "title",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "height",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+<<<<<<< HEAD
             "name": "content",
             "description": null,
             "type": {
@@ -11234,6 +11358,9 @@
           },
           {
             "name": "connection",
+=======
+            "name": "published_at",
+>>>>>>> feat(update) types
             "description": null,
             "type": {
               "kind": "OBJECT",
@@ -11282,110 +11409,6 @@
         "fields": null,
         "inputFields": [
           {
-            "name": "title",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "subtitle",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "about",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "industry",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "client",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "system",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "mainImage",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "ID",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "content",
-            "description": null,
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "CaseStudyContentDynamicZoneInput",
-                  "ofType": null
-                }
-              }
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "language",
             "description": null,
             "type": {
@@ -11398,11 +11421,35 @@
             "deprecationReason": null
           },
           {
-            "name": "projectId",
+            "name": "image",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title",
             "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "height",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "defaultValue": null,
@@ -28009,7 +28056,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "url",
+=======
+            "name": "video",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -28205,10 +28256,14 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "url",
 =======
             "name": "description",
 >>>>>>> feat(reference) conect project list with strapi
+=======
+            "name": "video",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -28216,7 +28271,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
                 "name": "SocialNetworkConnectionUrl",
+=======
+                "name": "TeamConnectionVideo",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -28577,7 +28636,11 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "SocialNetworkConnectionPublished_at",
+=======
+        "name": "TeamConnectionVideo",
+>>>>>>> feat(update) types
         "description": null,
         "fields": [
           {
@@ -28736,7 +28799,11 @@
         "description": null,
         "fields": [
           {
+<<<<<<< HEAD
             "name": "key",
+=======
+            "name": "video",
+>>>>>>> feat(update) types
             "description": null,
             "args": [],
             "type": {
@@ -28868,10 +28935,14 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "published_at",
 =======
             "name": "connection",
 >>>>>>> feat(reference) conect project list with strapi
+=======
+            "name": "video",
+>>>>>>> feat(update) types
             "description": null,
             "type": {
 <<<<<<< HEAD
@@ -36777,11 +36848,19 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "LIST",
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
                 "name": "TechListConnectionCreated_at",
+=======
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -36793,11 +36872,19 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "LIST",
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
                 "name": "TechListConnectionUpdated_at",
+=======
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+>>>>>>> feat(update) types
                 "ofType": null
               }
             },
@@ -36852,9 +36939,19 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "SCALAR",
               "name": "ID",
               "ofType": null
+=======
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+>>>>>>> feat(update) types
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -36887,9 +36984,19 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "SCALAR",
               "name": "DateTime",
               "ofType": null
+=======
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+>>>>>>> feat(update) types
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -41058,6 +41165,7 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "connection",
             "description": null,
             "args": [],
@@ -41169,6 +41277,36 @@
             "isDeprecated": false,
             "deprecationReason": null
 <<<<<<< HEAD
+=======
+            "kind": "OBJECT",
+            "name": "CaseStudyAggregatorSum",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyAggregatorAvg",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyAggregatorMin",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyAggregatorMax",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyGroupBy",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionId",
+            "ofType": null
+>>>>>>> feat(update) types
           },
 =======
           }
@@ -41185,6 +41323,7 @@
         "inputFields": [
 >>>>>>> feat(reference) conect project list with strapi
           {
+<<<<<<< HEAD
             "name": "caption",
             "description": null,
             "type": {
@@ -41268,6 +41407,36 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
+=======
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionCreated_at",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionUpdated_at",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionLanguage",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionImage",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionTitle",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionHeight",
+            "ofType": null
+>>>>>>> feat(update) types
           },
           {
             "name": "mime",
@@ -43598,6 +43767,7 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "connection",
             "description": null,
             "args": [],
@@ -43620,6 +43790,12 @@
         "name": "UsersPermissionsUserConnectionEmail",
         "description": null,
         "fields": [
+=======
+            "kind": "OBJECT",
+            "name": "TeamConnectionVideo",
+            "ofType": null
+          },
+>>>>>>> feat(update) types
           {
             "name": "key",
             "description": null,
