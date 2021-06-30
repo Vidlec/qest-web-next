@@ -17,13 +17,12 @@ const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
 }
 
 export const Paragraph = styled.p`
-    padding: 50px 0 0 0;
     margin: 0 0 100px 0;
     font-size: 2rem;
 `
 
-export const Item = styled.span<{color: ItemColor}>`
-    
+export const Item = styled.a<{color: ItemColor}>`
+	
 
 	&::after {
 		content: "✦";
