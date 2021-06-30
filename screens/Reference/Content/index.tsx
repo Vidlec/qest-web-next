@@ -3,7 +3,7 @@ import { CaseStudy } from 'gql/generated/types'
 import Container from 'components/Container'
 import ReferenceParagraph from './ReferenceParagraph'
 import Masonry from './Masonry'
-import Line from 'components/Line'
+import { ReferenceLine } from './styled'
 
 export interface Props {
 	caseStudies: CaseStudy[]
@@ -16,7 +16,7 @@ const Content: React.FC<Props> = ({ caseStudies }) => {
 			<ReferenceParagraph items={caseStudies}>
 				Our clients include{' '}
 			</ReferenceParagraph>
-			<Line></Line>
+			<ReferenceLine />
 			<Masonry caseStudies={caseStudies} />
 		</Container>
 	)
