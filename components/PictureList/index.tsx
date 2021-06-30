@@ -21,65 +21,58 @@ interface Props {
 }
 
 const PictureList: React.FC<Props> = ({ items }) => {
-	const [showMore, setShowMore] = useState(false)
+	const [shouldShowMore, setShouldShowMore] = useState(false)
 	const theme = useTheme()
 	const isPhone = useWindowSize(theme.mediaQueriesNumbers.desktopSmall, 100)
 
 	const toggleShowMore = () => {
-		setShowMore(!showMore)
+		setShouldShowMore(!shouldShowMore)
 	}
 
 	return (
 		<Wrapper>
 			{items.map((item, index) => {
-				if (index > 1) {
-					if (showMore || !isPhone) {
-						return (
-							<Item key={item.header}>
-								<ItemIndex color={item.color as string}>
-									<ItemIndexNumber>
-										{index + 1}
-									</ItemIndexNumber>
-									<ItemImg src={item.image?.url as string} />
-								</ItemIndex>
-								<ItemInformation>
-									<Heading>{item.header}</Heading>
-									<Description
-										dangerouslySetInnerHTML={{
-											__html: item.description as string,
-										}}
-									/>
-								</ItemInformation>
-							</Item>
-						)
-					}
-				} else {
-					return (
+				if (index > 1 && isPhone) {
+					return shouldShowMore ? (
 						<Item key={item.header}>
-							<ItemIndex color={item.color as string}>
+							<ItemIndex color={item.color!}>
 								<ItemIndexNumber>{index + 1}</ItemIndexNumber>
-								<ItemImg src={item.image?.url as string} />
+								<ItemImg src={item.image?.url} />
 							</ItemIndex>
 							<ItemInformation>
 								<Heading>{item.header}</Heading>
 								<Description
 									dangerouslySetInnerHTML={{
-										__html: item.description as string,
+										__html: item.description!,
 									}}
 								/>
 							</ItemInformation>
 						</Item>
-					)
+					) : null
 				}
+				return (
+					<Item key={item.header}>
+						<ItemIndex color={item.color!}>
+							<ItemIndexNumber>{index + 1}</ItemIndexNumber>
+							<ItemImg src={item.image?.url} />
+						</ItemIndex>
+						<ItemInformation>
+							<Heading>{item.header}</Heading>
+							<Description
+								dangerouslySetInnerHTML={{
+									__html: item.description!,
+								}}
+							/>
+						</ItemInformation>
+					</Item>
+				)
 			})}
 			{isPhone && (
 				<ShowMore>
 					<ShowMoreButton onClick={toggleShowMore}>
-						{showMore ? (
-							<>ukázat méně</>
-						) : (
-							<>další {items.length - 2}</>
-						)}
+						{shouldShowMore
+							? 'ukázat méně'
+							: `další ${items.length - 2}`}
 					</ShowMoreButton>
 				</ShowMore>
 			)}
