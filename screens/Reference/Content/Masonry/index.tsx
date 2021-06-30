@@ -12,9 +12,8 @@ const Masonry: React.FC<Props> = ({caseStudies}) => {
 		<Wrapper>
 			{caseStudies.map((caseStudy) => {
 				return (
-					<Link href={`reference/${caseStudy.title}`} passHref>
+					<Link key={caseStudy?.slug} href={`/reference/${caseStudy.slug}`} passHref>
 						<Item
-							key={caseStudy?.id}
 							height={caseStudy?.height as number}
 						>
 							<Image src={caseStudy?.image?.url} />

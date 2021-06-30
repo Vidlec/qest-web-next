@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 2fr);
 	grid-auto-rows: 1fr;
+	grid-auto-flow: row dense;
 	gap: 40px;
 `
 

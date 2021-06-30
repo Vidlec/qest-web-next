@@ -12,12 +12,10 @@ export interface Props {
 
 const Content: React.FC<Props> = ({ caseStudies }) => {
 	const { t } = useTranslation()
-
-	const list = caseStudies.map((caseStudy) => caseStudy.title as string)
-
+	
 	return (
 		<Container>
-			<ReferenceParagraph items={list}>
+			<ReferenceParagraph items={caseStudies}>
 				Our clients include{' '}
 			</ReferenceParagraph>
 			<Line></Line>
