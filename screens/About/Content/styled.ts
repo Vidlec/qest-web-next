@@ -5,8 +5,8 @@ import Line from 'components/Line'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export interface StyledProps {
-    spacing?: number;
-    rows?: number;
+	spacing?: number
+	rows?: number
 }
 
 export const ArrowDownIcon = styled.img`
@@ -21,11 +21,11 @@ export const ColorText = styled.span<{ colorHash: string | null | undefined }>`
 `
 
 export const PictureImg = styled.img`
-    width: 70%;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-      width: 100%;
-    }
+	width: 70%;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		width: 100%;
+	}
 `
 
 export const HeroLine = styled(Line)`
@@ -38,7 +38,7 @@ export const ArrowLinkWrapper = styled.div`
 	margin: auto;
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		order: 3;
-        margin-top: 0;
+		margin-top: 0;
 	}
 `
 export const ArrowLink = styled(AnchorLink)`
@@ -74,10 +74,10 @@ export const CarouselPicture = styled.picture`
 		margin: auto;
 		width: 50%;
 
-        @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-          width: 100%;  
-        }
-      
+		@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+			width: 100%;
+		}
+
 		@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
 			width: auto;
 		}
@@ -127,47 +127,47 @@ export const HQWeAreHereDescription = styled.div`
 	font-size: ${({ theme }) => theme.sizes.extraSmall};
 `
 export const HQWeAreHerePicture = styled.picture`
-  margin-right: .8rem;
+	margin-right: 0.8rem;
 `
 export const HQWeAreHereCol = styled.div`
 	display: flex;
 	align-items: center;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      position: absolute;
-      width: 20vw;
-      margin-top: -6rem;
-    }
 
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
-        margin-top: -7rem;
-    }
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		position: absolute;
+		width: 20vw;
+		margin-top: -6rem;
+	}
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+		margin-top: -7rem;
+	}
 `
 export const CareerDescription = styled.div`
 	margin-bottom: 2rem;
-    font-size: ${({ theme }) => theme.sizes.extraSmall};
+	font-size: ${({ theme }) => theme.sizes.extraSmall};
 
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-        font-size: ${({ theme }) => theme.sizes.body};
-    }
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		font-size: ${({ theme }) => theme.sizes.body};
+	}
 `
 
 export const CareerCTA = styled.a`
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-    cursor: pointer;
-  
+	cursor: pointer;
+
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		flex-direction: row;
-      
-        span {
-          font-size: ${({ theme }) => theme.sizes.medium};
-        }
+
+		span {
+			font-size: ${({ theme }) => theme.sizes.medium};
+		}
 	}
 
 	span {
-      font-size: ${({ theme }) => theme.sizes.body};
+		font-size: ${({ theme }) => theme.sizes.body};
 		font-weight: bold;
 		color: ${({ theme }) => theme.colors.red};
 		text-decoration: underline;
@@ -175,25 +175,25 @@ export const CareerCTA = styled.a`
 `
 export const BlogPostsContainer = styled.div`
 	width: 100%;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      display: flex;
-      flex-wrap: nowrap;
-      
-      & > * + * {
-        margin-left: 5rem; // The equivalent of gap: 5rem;
-      }
-    }
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		display: flex;
+		flex-wrap: nowrap;
+
+		& > * + * {
+			margin-left: 5rem; // The equivalent of gap: 5rem;
+		}
+	}
 `
 export const BlogPostWrapper = styled.article`
 	flex-grow: 1;
 	flex-shrink: 0;
 	flex-basis: 0;
-    margin-top: 5rem;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-        margin-top: 0;
-    }
+	margin-top: 5rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		margin-top: 0;
+	}
 `
 
 export const MoreBlogPostsContainer = styled.div`
@@ -211,31 +211,32 @@ export const MoreBlogPosts = styled.a`
 
 export const HQGallery = styled.div`
 	display: grid !important;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-template-rows: repeat(1, minmax(0, 1fr));
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	grid-template-rows: repeat(1, minmax(0, 1fr));
 	gap: 1rem;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(2, minmax(0, 1fr));
-    } 
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      height: 50vh;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-template-rows: repeat(4, minmax(0, 1fr));
-    }
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, 1fr));
+	}
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		height: 50vh;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-rows: repeat(4, minmax(0, 1fr));
+	}
 `
 
 export const HQImg = styled.img<StyledProps>`
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    grid-row: span ${props => props.rows} / span ${props => props.rows};
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      height: 100%;
-      padding: ${props => props.spacing}rem 0 ${props => props.spacing}rem 0;
-      grid-row: span ${props => props.rows} / span ${props => props.rows};
-    }
+	width: 100%;
+	height: 60vh;
+	object-fit: cover;
+	grid-row: span ${(props) => props.rows} / span ${(props) => props.rows};
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		height: 100%;
+		padding: ${(props) => props.spacing}rem 0 ${(props) => props.spacing}rem
+			0;
+		grid-row: span ${(props) => props.rows} / span ${(props) => props.rows};
+	}
 `

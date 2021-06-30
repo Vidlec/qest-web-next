@@ -53,7 +53,7 @@ const AboutHero = () => {
 				<Line />
 			</LogoLineWrapper>
 
-			{!isPhone &&
+			{!isPhone && (
 				<ArrowLinkWrapper>
 					<ArrowLink offset={() => 170} href="#weAre">
 						<ArrowDownIcon
@@ -63,7 +63,7 @@ const AboutHero = () => {
 						<span>{t('about.heroArrowTitle')}</span>
 					</ArrowLink>
 				</ArrowLinkWrapper>
-			}
+			)}
 		</HeroContainer>
 	)
 }

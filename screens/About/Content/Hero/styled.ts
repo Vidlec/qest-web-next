@@ -20,7 +20,7 @@ export const ArrowLinkWrapper = styled.div`
 	margin: auto;
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		order: 3;
-        margin-top: 0;
+		margin-top: 0;
 	}
 `
 
@@ -28,7 +28,7 @@ export const HeroContainer = styled(Container)`
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-    margin-bottom: 0;
+	margin-bottom: 0;
 `
 
 export const HeroHeadline = styled(Headline)`
@@ -49,23 +49,23 @@ export const HeroLine = styled(Line)`
 
 export const HeroLineWrapper = styled.div`
 	height: 1rem;
-    margin-top: 1.5rem;
+	margin-top: 1.5rem;
 
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: 0;
-    }
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		margin-top: 0;
+	}
 `
 
 export const HeroDescription = styled.div`
 	max-width: 56.5rem;
 	margin-top: calc(1.5rem + 0.25rem + 0.45rem);
 	margin-bottom: 3rem;
-    line-height: 1.4;
-    font-size: ${({ theme }) => theme.sizes.extraSmall};
+	line-height: 1.4;
+	font-size: ${({ theme }) => theme.sizes.extraSmall};
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		order: 2;
-        font-size: ${({ theme }) => theme.sizes.body};
+		font-size: ${({ theme }) => theme.sizes.body};
 	}
 `
 
@@ -87,21 +87,21 @@ export const LogoLineWrapper = styled.div`
 export const LogoPicture = styled.picture`
 	display: block;
 	align-self: center;
-    text-align: center;
+	text-align: center;
 
 	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
 		max-width: 20rem;
 		position: absolute;
 		transform: translateY(-50%);
-        align-self: flex-end;
-        text-align: right;
+		align-self: flex-end;
+		text-align: right;
 	}
 `
 
 export const PictureImg = styled.img`
-    width: 70%;
-  
-    @media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
-      width: 100%;
-    }
+	width: 70%;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
+		width: 100%;
+	}
 `

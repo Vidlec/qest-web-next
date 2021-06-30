@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Team } from 'gql/generated/types'
 import { useTranslation } from 'react-i18next'
 
+// TODO: Přidat sekci: Náš team
 const AboutTeam = () => {
 	const { t } = useTranslation()
 

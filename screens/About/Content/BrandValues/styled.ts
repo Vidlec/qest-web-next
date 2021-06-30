@@ -45,7 +45,7 @@ export const ValueNumber = styled.div`
 export const ValueHeadline = styled.div`
 	letter-spacing: 0;
 	font-weight: bold;
-	font-size: 2.2rem;
+	font-size: ${({ theme }) => theme.sizes.medium};
 	line-height: 2.3rem;
 	text-align: center;
 	white-space: pre-wrap;

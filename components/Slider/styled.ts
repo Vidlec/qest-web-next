@@ -254,18 +254,18 @@ export const ArrowLabel = styled.span`
 `
 
 export const ArrowRightWrapper = styled.button`
-    position: relative;
-    z-index: 1;
-    float: right;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    color: #fff;
-    margin-top: .8rem;
-    
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: -2rem;
-    }
+	position: relative;
+	z-index: 1;
+	float: right;
+	cursor: pointer;
+	background: none;
+	border: 0;
+	color: #fff;
+	margin-top: 0.8rem;
+
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		margin-top: -2rem;
+	}
 `
 
 export const ArrowRightIcon = styled.img`

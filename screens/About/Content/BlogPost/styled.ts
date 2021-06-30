@@ -24,7 +24,7 @@ export const BlogPostTitle = styled.h2`
 	margin-top: 2rem;
 	font-size: 1.5rem;
 
-    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
-      margin-top: 3rem;
-    }
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+		margin-top: 3rem;
+	}
 `

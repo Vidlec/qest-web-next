@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import numberOrNull from 'components/numberOrNull'
-import {ArrowLabel, ArrowRightIcon, ArrowRightWrapper} from './styled'
-import {useTranslation} from 'react-i18next'
+import { ArrowLabel, ArrowRightIcon, ArrowRightWrapper } from './styled'
+import { useTranslation } from 'react-i18next'
 
 function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
 	const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')
@@ -28,8 +28,8 @@ type SliderOptions = {
 }
 
 interface Props {
-	sliderOptions: SliderOptions,
-	arrow: boolean,
+	sliderOptions: SliderOptions
+	arrow: boolean
 }
 
 const SlickSlider: React.FC<Props> = ({ sliderOptions, arrow, children }) => {
@@ -69,7 +69,7 @@ const SlickSlider: React.FC<Props> = ({ sliderOptions, arrow, children }) => {
 				{children}
 			</Slider>
 
-			{arrow &&
+			{arrow && (
 				<ArrowRightWrapper onClick={() => sliderRef!.slickNext()}>
 					<ArrowRightIcon
 						src={t('about.arrow.url')}
@@ -77,7 +77,7 @@ const SlickSlider: React.FC<Props> = ({ sliderOptions, arrow, children }) => {
 					/>
 					<ArrowLabel>{t('about.hqCTATitle')}</ArrowLabel>
 				</ArrowRightWrapper>
-			}
+			)}
 		</>
 	)
 }

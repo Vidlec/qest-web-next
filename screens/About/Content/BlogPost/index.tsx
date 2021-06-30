@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-	BlogPostSnippet,
-	BlogPostThumbnail,
-	BlogPostTitle,
-} from './styled'
+import { BlogPostSnippet, BlogPostThumbnail, BlogPostTitle } from './styled'
 
 type Post = {
 	link: string

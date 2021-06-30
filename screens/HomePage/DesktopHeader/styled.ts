@@ -11,10 +11,12 @@ export type GetPositions =
 const getPositioning = (position: GetPositions): string => {
 	const positionMap: Record<GetPositions, string> = {
 		topLeft: 'top: 0; left: 0;',
-		topMiddle: 'top: 0; left: 50%; margin-left: -128px; text-align: center;',
+		topMiddle:
+			'top: 0; left: 50%; margin-left: -128px; text-align: center;',
 		topRight: 'top: 0; right: 0; text-align: right;',
 		bottomLeft: 'bottom: 0; left: 0;',
-		bottomMiddle: 'bottom: 0; left: 50%; margin-left: -128px; text-align: center;',
+		bottomMiddle:
+			'bottom: 0; left: 50%; margin-left: -128px; text-align: center;',
 		bottomRight: 'bottom: 0; right: 0; text-align: right;',
 	}
 

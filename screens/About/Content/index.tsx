@@ -1,40 +1,38 @@
 import * as React from 'react'
 import useWindowSize from 'hooks/useWindowSize'
 import { useTheme } from 'styled-components'
-import { Form } from 'components/Form'
-import Footer from 'components/Footer'
 import AboutHero from './Hero'
 import Container from 'components/Container'
 import {
-    ArrowDownIcon,
-    ArrowLink,
-    ArrowLinkWrapper,
-    BlogPostsContainer,
-    BlogPostWrapper,
-    CareerCTA,
-    CareerDescription,
-    CarouselCol,
-    CarouselLine,
-    CarouselPicture,
-    HQDescription,
-    HQGallery,
-    HQWeAreHereCol,
-    HQWeAreHereDescription,
-    HQWeAreHerePicture,
-    MoreBlogPosts,
-    MoreBlogPostsContainer,
-    PictureImg,
-    TechnologiesCard,
-    TechnologiesDescription,
-    TechnologiesPicture,
-    WeAreDescription,
-    WeAreRow,
-    HQImg,
-    SkillsRow,
+	ArrowDownIcon,
+	ArrowLink,
+	ArrowLinkWrapper,
+	BlogPostsContainer,
+	BlogPostWrapper,
+	CareerCTA,
+	CareerDescription,
+	CarouselCol,
+	CarouselLine,
+	CarouselPicture,
+	HQDescription,
+	HQGallery,
+	HQWeAreHereCol,
+	HQWeAreHereDescription,
+	HQWeAreHerePicture,
+	MoreBlogPosts,
+	MoreBlogPostsContainer,
+	PictureImg,
+	TechnologiesCard,
+	TechnologiesDescription,
+	TechnologiesPicture,
+	WeAreDescription,
+	WeAreRow,
+	HQImg,
+	SkillsRow,
 } from './styled'
 import Col from 'components/Col'
 import Headline from 'components/Headline'
-import {SliderWrapper} from 'components/Slider/styled'
+import { SliderWrapper } from 'components/Slider/styled'
 import SlickSlider from 'components/Slider'
 import Skills from './Skills'
 import BrandValues from './BrandValues'
@@ -42,248 +40,243 @@ import AboutTeam from './Team'
 import Link from 'next/link'
 import blogPosts from 'public/posts.json'
 import BlogPost from './BlogPost'
-import {useTranslation} from 'react-i18next'
-import {useEffect, useState} from 'react'
-import {HqGallery, UploadFile} from 'gql/generated/types'
+import { useTranslation } from 'react-i18next'
+import { HqGallery, UploadFile } from 'gql/generated/types'
+
+const mediumUrl = 'https://medium.com/qest'
+const sliderOptions = {
+	infinite: true,
+	speed: 500,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: false,
+	arrows: false,
+	autoplay: true,
+}
+const hqSliderOptions = {
+	infinite: true,
+	speed: 1000,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: false,
+	arrows: false,
+	autoplay: false,
+	fade: true,
+	responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				speed: 500,
+				fade: false,
+				adaptiveHeight: true,
+			},
+		},
+	],
+}
 
 interface Props {
-    galleries: HqGallery[]
+	galleries: HqGallery[]
 }
 
 const Content: React.FC<Props> = ({ galleries }) => {
-    const { mediaQueriesNumbers } = useTheme()
-    const isPhone = useWindowSize(mediaQueriesNumbers.desktopSmall, 100)
-    const { t } = useTranslation()
+	const { mediaQueriesNumbers } = useTheme()
+	const isPhone = useWindowSize(mediaQueriesNumbers.desktopSmall, 100)
+	const { t } = useTranslation()
 
-    const [sliderImages] = useState(
-        t<string, UploadFile[]>('about.weAreImageCarousel', {
-            returnObjects: true,
-        })
-    )
+	const sliderImages = t<string, UploadFile[]>('about.weAreImageCarousel', {
+			returnObjects: true,
+		})
 
-    const [sliderOptions] = useState({
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        autoplay: true,
-    })
+	return (
+		<>
+			<AboutHero />
 
-    const [HqSliderOptions] = useState({
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        autoplay: false,
-        fade: true,
-        responsive: [
-            {
-                breakpoint: mediaQueriesNumbers.desktopSmall,
-                settings: {
-                    speed: 500,
-                    fade: false,
-                    adaptiveHeight: true,
-                }
-            }
-        ],
-    })
+			<Container>
+				<WeAreRow id="weAre">
+					<Col mobile={12} desktopSmall={7}>
+						<Headline>{t('about.weAreHeadline')}</Headline>
+						<WeAreDescription
+							dangerouslySetInnerHTML={{
+								__html: t('about.weAreDescription'),
+							}}
+						/>
+					</Col>
 
-    const [
-        weAreDescriptionRef,
-        setWeAreDescriptionRef,
-    ] = useState<HTMLParagraphElement | null>(null)
+					<CarouselCol mobile={12} desktopSmall={5} desktop={3}>
+						<SliderWrapper>
+							<SlickSlider
+								sliderOptions={sliderOptions}
+								arrow={false}
+							>
+								{sliderImages.map((image) => (
+									<CarouselPicture key={image.id}>
+										<img
+											src={image.url}
+											alt={image.alternativeText ?? ''}
+										/>
+									</CarouselPicture>
+								))}
+							</SlickSlider>
+						</SliderWrapper>
 
-    const mediumUrl = 'https://medium.com/qest'
+						<CarouselLine />
+					</CarouselCol>
+				</WeAreRow>
 
-    useEffect(() => {
-        const descriptionLinks =
-            weAreDescriptionRef?.querySelectorAll('[data-sliderIndex]') ?? []
-    }, [weAreDescriptionRef])
+				{!isPhone && (
+					<ArrowLinkWrapper>
+						<ArrowLink offset={() => 170} href="#QestSkills">
+							<ArrowDownIcon
+								src={t('about.arrow.url')}
+								alt={t('about.arrow.alternativeText')}
+							/>
+							<span>{t('about.weAreArrowTitle')}</span>
+						</ArrowLink>
+					</ArrowLinkWrapper>
+				)}
+			</Container>
 
-    return (
-        <>
-            <AboutHero />
+			<Container>
+				<Headline>{t('about.skillsHeadline')}</Headline>
 
-            <Container>
-                <WeAreRow id="weAre">
-                    <Col mobile={12} desktopSmall={7}>
-                        <Headline>{t('about.weAreHeadline')}</Headline>
-                        <WeAreDescription
-                            dangerouslySetInnerHTML={{
-                                __html: t('about.weAreDescription'),
-                            }}
-                            ref={setWeAreDescriptionRef}
-                        />
-                    </Col>
+				<SkillsRow id="QestSkills">
+					<Col mobile={12} desktopSmall={7}>
+						<Skills />
+					</Col>
 
-                    <CarouselCol mobile={12} desktopSmall={5} desktop={3}>
-                        <SliderWrapper>
-                            <SlickSlider sliderOptions={sliderOptions} arrow={false}>
-                                {sliderImages.map((image) => (
-                                    <CarouselPicture key={image.id}>
-                                        <img
-                                            src={image.url}
-                                            alt={image.alternativeText ?? ''}
-                                        />
-                                    </CarouselPicture>
-                                ))}
-                            </SlickSlider>
-                        </SliderWrapper>
+					<Col mobile={12} desktopSmall={5}>
+						<TechnologiesCard>
+							<TechnologiesPicture>
+								<PictureImg
+									src={t('about.technologiesImage.url')}
+									alt={t(
+										'about.technologiesImage.alternativeText'
+									)}
+								/>
+							</TechnologiesPicture>
+							<TechnologiesDescription
+								dangerouslySetInnerHTML={{
+									__html: t('about.technologiesDescription'),
+								}}
+							/>
+						</TechnologiesCard>
+					</Col>
+				</SkillsRow>
+			</Container>
 
-                        <CarouselLine />
-                    </CarouselCol>
-                </WeAreRow>
+			<Container>
+				<BrandValues />
+			</Container>
 
-                {!isPhone &&
-                <ArrowLinkWrapper>
-                    <ArrowLink offset={() => 170} href="#QestSkills">
-                        <ArrowDownIcon
-                            src={t('about.arrow.url')}
-                            alt={t('about.arrow.alternativeText')}
-                        />
-                        <span>{t('about.weAreArrowTitle')}</span>
-                    </ArrowLink>
-                </ArrowLinkWrapper>
-                }
-            </Container>
+			<Container>
+				<Headline>{t('about.teamHeadline')}</Headline>
 
-            <Container>
-                <Headline>{t('about.skillsHeadline')}</Headline>
+				<AboutTeam />
+			</Container>
 
-                <SkillsRow id="QestSkills">
-                    <Col mobile={12} desktopSmall={7}>
-                        <Skills />
-                    </Col>
+			<Container>
+				<Headline>{t('about.hqHeadline')}</Headline>
 
-                    <Col mobile={12} desktopSmall={5}>
-                        <TechnologiesCard>
-                            <TechnologiesPicture>
-                                <PictureImg
-                                    src={t('about.technologiesImage.url')}
-                                    alt={t(
-                                        'about.technologiesImage.alternativeText'
-                                    )}
-                                />
-                            </TechnologiesPicture>
-                            <TechnologiesDescription
-                                dangerouslySetInnerHTML={{
-                                    __html: t('about.technologiesDescription'),
-                                }}
-                            />
-                        </TechnologiesCard>
-                    </Col>
-                </SkillsRow>
-            </Container>
+				<HQDescription
+					dangerouslySetInnerHTML={{
+						__html: t('about.hqDescription'),
+					}}
+				/>
 
-            <Container>
-                <BrandValues />
-            </Container>
+				<SliderWrapper>
+					{!isPhone ? (
+						<SlickSlider
+							sliderOptions={hqSliderOptions}
+							arrow={true}
+						>
+							{galleries.map((collection, index) => (
+								<HQGallery key={index}>
+									{collection.galleryCollection?.map(
+										(item, index) => (
+											<HQImg
+												key={index}
+												src={item?.images!.url}
+												spacing={item?.spacing}
+												rows={item?.rows}
+											/>
+										)
+									)}
+								</HQGallery>
+							))}
+						</SlickSlider>
+					) : (
+						<SlickSlider
+							sliderOptions={hqSliderOptions}
+							arrow={true}
+						>
+							{galleries[0].galleryCollection?.map(
+								(collection, index) => (
+									<HQImg
+										key={index}
+										src={collection?.images!.url}
+										spacing={collection?.spacing}
+										rows={collection?.rows}
+									/>
+								)
+							)}
+						</SlickSlider>
+					)}
+					<HQWeAreHereCol>
+						<HQWeAreHerePicture>
+							<PictureImg
+								src={t('about.hqWeAreHereImage.url')}
+								alt={t(
+									'about.hqWeAreHereImage.alternativeText'
+								)}
+							/>
+						</HQWeAreHerePicture>
 
-            <Container>
-                <Headline>{t('about.teamHeadline')}</Headline>
+						<HQWeAreHereDescription
+							dangerouslySetInnerHTML={{
+								__html: t('about.hqWeAreHereDescription'),
+							}}
+						/>
+					</HQWeAreHereCol>
+				</SliderWrapper>
+			</Container>
 
-                <AboutTeam />
-            </Container>
+			<Container>
+				<Headline>{t('about.careerHeadline')}</Headline>
 
-            <Container>
-                <Headline>{t('about.hqHeadline')}</Headline>
+				<CareerDescription
+					dangerouslySetInnerHTML={{
+						__html: t('about.careerDescription'),
+					}}
+				/>
 
-                <HQDescription
-                    dangerouslySetInnerHTML={{
-                        __html: t('about.hqDescription'),
-                    }}
-                />
+				<Link href="/career">
+					<CareerCTA>
+						<span>{t('about.careerCTATitle')}</span>
+						<img
+							src={t('about.careerCTAImage.url')}
+							alt={t('about.careerCTAImage.alternativeText')}
+						/>
+					</CareerCTA>
+				</Link>
+			</Container>
 
-                <SliderWrapper>
-                    {!isPhone ?
-                        <SlickSlider sliderOptions={HqSliderOptions} arrow={true}>
-                            {galleries.map((collection, index) => (
-                                <HQGallery key={index}>
-                                    {collection.galleryCollection?.map((item, index) => (
-                                        <HQImg
-                                            key={index}
-                                            src={item?.images!.url}
-                                            spacing={item?.spacing}
-                                            rows={item?.rows}
-                                        />
-                                    ))}
-                                </HQGallery>
-                            ))}
-                        </SlickSlider>
-                        :
-                        <SlickSlider sliderOptions={HqSliderOptions} arrow={true}>
-                            {galleries[0].galleryCollection?.map((collection, index) => (
-                                <HQImg
-                                    key={index}
-                                    src={collection?.images!.url}
-                                    spacing={collection?.spacing}
-                                    rows={collection?.rows}
-                                />
-                            ))}
-                        </SlickSlider>
-                    }
-                    <HQWeAreHereCol>
-                        <HQWeAreHerePicture>
-                            <PictureImg
-                                src={t('about.hqWeAreHereImage.url')}
-                                alt={t(
-                                    'about.hqWeAreHereImage.alternativeText'
-                                )}
-                            />
-                        </HQWeAreHerePicture>
-
-                        <HQWeAreHereDescription
-                            dangerouslySetInnerHTML={{
-                                __html: t(
-                                    'about.hqWeAreHereDescription'
-                                ),
-                            }}
-                        />
-                    </HQWeAreHereCol>
-                </SliderWrapper>
-            </Container>
-
-            <Container>
-                <Headline>{t('about.careerHeadline')}</Headline>
-
-                <CareerDescription
-                    dangerouslySetInnerHTML={{
-                        __html: t('about.careerDescription'),
-                    }}
-                />
-
-                <Link href='/career'>
-                    <CareerCTA>
-                        <span>{t('about.careerCTATitle')}</span>
-                        <img
-                            src={t('about.careerCTAImage.url')}
-                            alt={t('about.careerCTAImage.alternativeText')}
-                        />
-                    </CareerCTA>
-                </Link>
-            </Container>
-
-            <Container>
-                <Headline>{t('about.blogHeadline')}</Headline>
-                <BlogPostsContainer>
-                    {blogPosts.map((post) => (
-                        <BlogPostWrapper key={post.link}>
-                            <BlogPost post={post} />
-                        </BlogPostWrapper>
-                    ))}
-                </BlogPostsContainer>
-                <MoreBlogPostsContainer>
-                    <MoreBlogPosts href={mediumUrl} target="_blank">
-                        {t('about.blogReadMore')}
-                    </MoreBlogPosts>
-                </MoreBlogPostsContainer>
-            </Container>
-        </>
-    )
+			<Container>
+				<Headline>{t('about.blogHeadline')}</Headline>
+				<BlogPostsContainer>
+					{blogPosts.map((post) => (
+						<BlogPostWrapper key={post.link}>
+							<BlogPost post={post} />
+						</BlogPostWrapper>
+					))}
+				</BlogPostsContainer>
+				<MoreBlogPostsContainer>
+					<MoreBlogPosts href={mediumUrl} target="_blank">
+						{t('about.blogReadMore')}
+					</MoreBlogPosts>
+				</MoreBlogPostsContainer>
+			</Container>
+		</>
+	)
 }
 
 export default Content
