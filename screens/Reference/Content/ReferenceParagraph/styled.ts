@@ -18,7 +18,13 @@ const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
 
 export const Paragraph = styled.p`
     margin: 0 0 100px 0;
-    font-size: 2rem;
+    font-size: ${({theme}) => theme.sizes.small};
+	display: flex;
+	flex-wrap: wrap;
+
+	@media ( min-width: ${({theme}) => theme.mediaQueries.mobileLarge} ) {
+		font-size: ${({theme}) => theme.sizes.medium};
+	}
 `
 
 export const Item = styled.a<{color: ItemColor}>`
