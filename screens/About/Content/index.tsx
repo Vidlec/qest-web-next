@@ -282,9 +282,6 @@ const Content: React.FC<Props> = ({ galleries }) => {
                     </MoreBlogPosts>
                 </MoreBlogPostsContainer>
             </Container>
-
-            <Footer />
-            <Form />
         </>
     )
 }

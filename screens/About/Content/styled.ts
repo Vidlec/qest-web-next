@@ -136,7 +136,11 @@ export const HQWeAreHereCol = styled.div`
     @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
       position: absolute;
       width: 20vw;
-      margin-top: -7rem;
+      margin-top: -6rem;
+    }
+
+    @media (min-width: ${({ theme }) => theme.mediaQueries.desktopLarge}) {
+        margin-top: -7rem;
     }
 `
 export const CareerDescription = styled.div`
