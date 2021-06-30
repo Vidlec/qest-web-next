@@ -1,17 +1,17 @@
 import { gql } from 'apollo-boost'
 
 export const CASE_STUDIES_QUERY = gql`
-	query {
+	query CaseStudies {
 		caseStudies {
 			id
 			language
 			title
-            height
+			height
 			slug
 			image {
-                url
-                alternativeText
-            }
+				url
+				alternativeText
+			}
 		}
 	}
 `

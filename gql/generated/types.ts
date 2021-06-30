@@ -6008,10 +6008,10 @@ export type Unnamed_2_Query = (
   )>>> }
 );
 
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+export type CaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = (
+export type CaseStudiesQuery = (
   { __typename?: 'Query' }
   & { caseStudies?: Maybe<Array<Maybe<(
     { __typename?: 'CaseStudy' }
@@ -6023,10 +6023,27 @@ export type Unnamed_3_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
+=======
+export type CaseStudyQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
 
 
-export type Unnamed_4_Query = (
+export type CaseStudyQuery = (
+  { __typename?: 'Query' }
+  & { caseStudies?: Maybe<Array<Maybe<(
+    { __typename?: 'CaseStudy' }
+    & Pick<CaseStudy, 'id' | 'title' | 'slug'>
+  )>>> }
+);
+
+export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+>>>>>>> fix(Reference) fix queries
+
+
+export type Unnamed_3_Query = (
   { __typename?: 'Query' }
   & { contacts?: Maybe<Array<Maybe<(
     { __typename?: 'Contact' }
@@ -6038,10 +6055,10 @@ export type Unnamed_4_Query = (
   )>>> }
 );
 
-export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_5_Query = (
+export type Unnamed_4_Query = (
   { __typename?: 'Query' }
   & { headers?: Maybe<Array<Maybe<(
     { __typename?: 'Header' }
@@ -6053,10 +6070,10 @@ export type Unnamed_5_Query = (
   )>>> }
 );
 
-export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_6_Query = (
+export type Unnamed_5_Query = (
   { __typename?: 'Query' }
   & { homepages?: Maybe<Array<Maybe<(
     { __typename?: 'Homepage' }
@@ -6068,6 +6085,7 @@ export type Unnamed_6_Query = (
   )>>> }
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 export type HqGalleriesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -6091,9 +6109,12 @@ export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 =======
 export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 >>>>>>> feat(update) types
+=======
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+>>>>>>> fix(Reference) fix queries
 
 
-export type Unnamed_7_Query = (
+export type Unnamed_6_Query = (
   { __typename?: 'Query' }
   & { languages?: Maybe<Array<Maybe<(
     { __typename?: 'Language' }
@@ -6101,10 +6122,10 @@ export type Unnamed_7_Query = (
   )>>> }
 );
 
-export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_8_Query = (
+export type Unnamed_7_Query = (
   { __typename?: 'Query' }
   & { menus?: Maybe<Array<Maybe<(
     { __typename?: 'Menu' }
@@ -6112,10 +6133,10 @@ export type Unnamed_8_Query = (
   )>>> }
 );
 
-export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_9_Query = (
+export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { page404s?: Maybe<Array<Maybe<(
     { __typename?: 'Page404' }
@@ -6127,10 +6148,10 @@ export type Unnamed_9_Query = (
   )>>> }
 );
 
-export type Unnamed_10_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_10_Query = (
+export type Unnamed_9_Query = (
   { __typename?: 'Query' }
   & { socialNetworks?: Maybe<Array<Maybe<(
     { __typename?: 'SocialNetwork' }
