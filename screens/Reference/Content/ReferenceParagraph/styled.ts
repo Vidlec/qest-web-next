@@ -17,22 +17,20 @@ const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
 }
 
 export const Paragraph = styled.p`
-    margin: 0 0 100px 0;
-    font-size: ${({theme}) => theme.sizes.small};
+	margin: 0 0 100px 0;
+	font-size: ${({ theme }) => theme.sizes.small};
 	display: flex;
 	flex-wrap: wrap;
 
-	@media ( min-width: ${({theme}) => theme.mediaQueries.mobileLarge} ) {
-		font-size: ${({theme}) => theme.sizes.medium};
+	@media (min-width: ${({ theme }) => theme.mediaQueries.mobileLarge}) {
+		font-size: ${({ theme }) => theme.sizes.medium};
 	}
 `
 
-export const Item = styled.a<{color: ItemColor}>`
-	
-
+export const Item = styled.a<{ color: ItemColor }>`
 	&::after {
-		content: "✦";
-		color: ${({theme, color}) => getItemColor(theme, color)};
+		content: '✦';
+		color: ${({ theme, color }) => getItemColor(theme, color)};
 		padding: 0 1rem;
 	}
 `

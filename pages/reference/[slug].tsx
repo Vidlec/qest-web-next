@@ -29,12 +29,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps: GetStaticProps<CaseStudyQuery, {slug: string}> = async (context) => {
+export const getStaticProps: GetStaticProps<
+	CaseStudyQuery,
+	{ slug: string }
+> = async (context) => {
 	const slug = context.params?.slug
 
-    if ( !slug ) {
-        return { notFound: true }
-    }
+	if (!slug) {
+		return { notFound: true }
+	}
 
 	const props = await request<CaseStudyQuery, CaseStudyQueryVariables>(
 		process.env.CMS_GRAPHQL_URL!,

@@ -8,8 +8,7 @@ export interface Props {
 	caseStudies: CaseStudy[]
 }
 
-const Reference: React.FC<Props> = ({caseStudies}) => {
-
+const Reference: React.FC<Props> = ({ caseStudies }) => {
 	return (
 		<>
 			<Header />

@@ -15,7 +15,11 @@ const ReferenceParagraph: React.FC<Props> = ({ children, items }) => {
 			{children}
 			{items.map((item, index) => {
 				return (
-					<Link  key={item.slug} href={`/reference/${item.slug}`} passHref>
+					<Link
+						key={item.slug}
+						href={`/reference/${item.slug}`}
+						passHref
+					>
 						<Item color={colors[index % items.length]}>
 							{item.title}
 						</Item>

@@ -9,11 +9,11 @@ export const Wrapper = styled.div`
 	grid-auto-flow: row dense;
 	gap: 40px;
 
-	@media ( min-width: ${({theme}) => theme.mediaQueries.ipad }) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.ipad}) {
 		grid-template-columns: repeat(2, 2fr);
 	}
 
-	@media ( min-width: ${({theme}) => theme.mediaQueries.desktop }) {
+	@media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
 		grid-template-columns: repeat(3, 1fr);
 	}
 `
