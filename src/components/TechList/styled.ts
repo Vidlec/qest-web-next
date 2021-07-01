@@ -3,5 +3,5 @@ import styled from 'styled-components'
 export const List = styled.ul``
 
 export const ListItem = styled.li`
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 `

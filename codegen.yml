@@ -1,18 +1,18 @@
 overwrite: true
 schema:
-    - 'https://cms-dev.web.qestapp.net/graphql'
+  - 'https://cms-dev.web.qestapp.net/graphql'
 documents: './src/gql/**/*.ts'
 generates:
-    ./src/gql/generated/types.ts:
-        plugins:
-            - 'typescript'
-            - 'typescript-operations'
-        config:
-            immutableTypes: true
-            skipTypename: true
-    ./graphql.schema.json:
-        plugins:
-            - 'introspection'
-    ./src/gql/generated/fragmentTypes.json:
-        plugins:
-            - fragment-matcher
+  ./src/gql/generated/types.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+    config:
+      immutableTypes: true
+      skipTypename: true
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'
+  ./src/gql/generated/fragmentTypes.json:
+    plugins:
+      - fragment-matcher

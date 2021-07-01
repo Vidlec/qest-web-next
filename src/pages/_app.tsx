@@ -7,21 +7,21 @@ import { GlobalStyle } from 'theme/globalStyle'
 import theme from '../theme'
 
 const QestWeb: React.FC<AppProps> = (props) => {
-    const { Component, pageProps } = props
+  const { Component, pageProps } = props
 
-    return (
-        <>
-            <Head>
-                <title>Qest</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="description" />
-            </Head>
-            <ThemeProvider theme={theme}>
-                <GlobalStyle />
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </>
-    )
+  return (
+    <>
+      <Head>
+        <title>Qest</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="description" />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  )
 }
 
 export default appWithTranslation(QestWeb)

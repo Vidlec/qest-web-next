@@ -4,13 +4,13 @@ import Footer from 'components/Footer'
 import PageNotFoundContent from './PageNotFoundContent'
 
 const PageNotFound: React.FC = () => {
-    return (
-        <>
-            <Header />
-            <PageNotFoundContent />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <PageNotFoundContent />
+      <Footer />
+    </>
+  )
 }
 
 export default PageNotFound

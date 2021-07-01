@@ -6,14 +6,14 @@ import DesktopHeader from './DesktopHeader'
 import HomePageContent from './HomePageContent'
 
 const HomePage: React.FC = () => {
-    const theme = useTheme()
-    const isPohone = useWindowSize(theme.mediaQueriesNumbers.ipad, 100)
-    return (
-        <>
-            {isPohone ? <Header /> : <DesktopHeader />}
-            <HomePageContent />
-        </>
-    )
+  const theme = useTheme()
+  const isPohone = useWindowSize(theme.mediaQueriesNumbers.ipad, 100)
+  return (
+    <>
+      {isPohone ? <Header /> : <DesktopHeader />}
+      <HomePageContent />
+    </>
+  )
 }
 
 export default HomePage

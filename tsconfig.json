@@ -16,18 +16,9 @@
     "sourceMap": true,
     "target": "es6",
     "strict": true,
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "types": [
-      "@types/node"
-    ],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "typeRoots": ["node_modules/@types"],
+    "types": ["@types/node"],
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "isolatedModules": true,
@@ -35,36 +26,15 @@
     "rootDir": ".",
     "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "components/*"
-      ],
-      "gql/*": [
-        "gql/*"
-      ],
-      "pages/*": [
-        "pages/*"
-      ],
-      "theme/*": [
-        "theme/*"
-      ],
-      "constants/*": [
-        "constants/*"
-      ],
-      "utils/*": [
-        "utils/*"
-      ],
-      "screens/*": [
-        "screens/*"
-      ]
+      "components/*": ["components/*"],
+      "gql/*": ["gql/*"],
+      "pages/*": ["pages/*"],
+      "theme/*": ["theme/*"],
+      "constants/*": ["constants/*"],
+      "utils/*": ["utils/*"],
+      "screens/*": ["screens/*"]
     }
   },
-  "exclude": [
-    "./node_modules/**/*",
-    "cdk.out"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["./node_modules/**/*", "cdk.out"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

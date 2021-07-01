@@ -1,0 +1,106 @@
+{
+  "about": {
+    "heroHeadlineTop": "missing - cs.common.heroHeadlineTop",
+    "heroHeadlineBottom": "missing - cs.common.heroHeadlineBottom",
+    "heroDescription": "missing - cs.common.heroDescription",
+    "heroLogo": {
+      "url": "missing - cs.common.url",
+      "alternativeText": "missing - cs.common.alternativeText"
+    },
+    "arrow": {
+      "url": "missing - cs.common.url",
+      "alternativeText": "missing - cs.common.alternativeText"
+    },
+    "heroArrowTitle": "missing - cs.common.heroArrowTitle",
+    "weAreHeadline": "missing - cs.common.weAreHeadline",
+    "weAreDescription": "missing - cs.common.weAreDescription",
+    "weAreArrowTitle": "missing - cs.common.weAreArrowTitle",
+    "skillsHeadline": "missing - cs.common.skillsHeadline",
+    "skillsDescription": "missing - cs.common.skillsDescription",
+    "technologiesImage": {
+      "url": "missing - cs.common.url",
+      "alternativeText": "missing - cs.common.alternativeText"
+    },
+    "technologiesDescription": "missing - cs.common.technologiesDescription",
+    "valuesHeadline": "missing - cs.common.valuesHeadline",
+    "teamHeadline": "missing - cs.common.teamHeadline",
+    "hqHeadline": "missing - cs.common.hqHeadline",
+    "hqDescription": "missing - cs.common.hqDescription",
+    "hqWeAreHereImage": {
+      "url": "missing - cs.common.url",
+      "alternativeText": "missing - cs.common.alternativeText"
+    },
+    "hqWeAreHereDescription": "missing - cs.common.hqWeAreHereDescription",
+    "hqCTATitle": "missing - cs.common.hqCTATitle",
+    "careerHeadline": "missing - cs.common.careerHeadline",
+    "careerDescription": "missing - cs.common.careerDescription",
+    "careerCTATitle": "missing - cs.common.careerCTATitle",
+    "careerCTAImage": {
+      "url": "missing - cs.common.url",
+      "alternativeText": "missing - cs.common.alternativeText"
+    },
+    "blogHeadline": "missing - cs.common.blogHeadline",
+    "blogReadMore": "missing - cs.common.blogReadMore"
+  },
+  "contact": {
+    "title": "missing - cs.common.title",
+    "footerImg": {
+      "url": "missing - cs.common.url"
+    },
+    "email": "missing - cs.common.email",
+    "phoneNumber": "missing - cs.common.phoneNumber",
+    "address": "missing - cs.common.address",
+    "taxIdentificationNumbers": "missing - cs.common.taxIdentificationNumbers",
+    "taxIdentificationDescription": "missing - cs.common.taxIdentificationDescription",
+    "formInvalidEmailWarning": "missing - cs.common.formInvalidEmailWarning",
+    "formEmailWarning": "missing - cs.common.formEmailWarning",
+    "formTextLabel": "missing - cs.common.formTextLabel",
+    "formNameLabel": "missing - cs.common.formNameLabel",
+    "formNameWarning": "missing - cs.common.formNameWarning",
+    "formEmailLabel": "missing - cs.common.formEmailLabel",
+    "formSubmit": "missing - cs.common.formSubmit"
+  },
+  "socialNetworkUrls": {
+    "Facebook": {
+      "url": "missing - cs.common.url"
+    },
+    "Twitter": {
+      "url": "missing - cs.common.url"
+    },
+    "Instagram": {
+      "url": "missing - cs.common.url"
+    },
+    "Linkedin": {
+      "url": "missing - cs.common.url"
+    }
+  },
+  "menu": {
+    "homePage": "missing - cs.common.homePage",
+    "aboutUs": "missing - cs.common.aboutUs",
+    "career": "missing - cs.common.career",
+    "reference": "missing - cs.common.reference",
+    "contact": "missing - cs.common.contact",
+    "menu": "missing - cs.common.menu"
+  },
+  "header": {
+    "logo": {
+      "url": "missing - cs.common.url"
+    }
+  },
+  "careers": {
+    "title": "missing - cs.common.title",
+    "careerDescription": "missing - cs.common.careerDescription",
+    "technologiesHeading": "missing - cs.common.technologiesHeading",
+    "technologies": "missing - cs.common.technologies",
+    "careerWho": "missing - cs.common.careerWho",
+    "careerWhy": "missing - cs.common.careerWhy",
+    "careerWhatHeading": "missing - cs.common.careerWhatHeading"
+  },
+  "linksLabels": {
+    "aboutUs": "O nás",
+    "reference": "Reference",
+    "career": "Kariéra",
+    "contact": "Kontakt",
+    "homePage": "Hlavní stránka"
+  }
+}

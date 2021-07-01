@@ -1,15 +1,19 @@
+import NextLink, { LinkProps } from 'next/link'
 import React from 'react'
-import NextLink from 'next/link'
-import { StyledLink, LinkColor } from './styled'
+import { LinkColor, StyledLink } from './styled'
 
 export type { LinkColor }
 
-const Link: React.FC<{ href: string; color?: LinkColor }> = ({ href, color, children }) => {
-    return (
-        <NextLink href={href} passHref>
-            <StyledLink color={color}>{children}</StyledLink>
-        </NextLink>
-    )
+const Link: React.FC<LinkProps & { color?: LinkColor }> = ({
+  color,
+  children,
+  ...nextLinkProps
+}) => {
+  return (
+    <NextLink {...nextLinkProps} passHref>
+      <StyledLink color={color}>{children}</StyledLink>
+    </NextLink>
+  )
 }
 
 export default Link

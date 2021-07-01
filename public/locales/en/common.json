@@ -1,0 +1,106 @@
+{
+  "about": {
+    "heroHeadlineTop": "missing - en.common.heroHeadlineTop",
+    "heroHeadlineBottom": "missing - en.common.heroHeadlineBottom",
+    "heroDescription": "missing - en.common.heroDescription",
+    "heroLogo": {
+      "url": "missing - en.common.url",
+      "alternativeText": "missing - en.common.alternativeText"
+    },
+    "arrow": {
+      "url": "missing - en.common.url",
+      "alternativeText": "missing - en.common.alternativeText"
+    },
+    "heroArrowTitle": "missing - en.common.heroArrowTitle",
+    "weAreHeadline": "missing - en.common.weAreHeadline",
+    "weAreDescription": "missing - en.common.weAreDescription",
+    "weAreArrowTitle": "missing - en.common.weAreArrowTitle",
+    "skillsHeadline": "missing - en.common.skillsHeadline",
+    "skillsDescription": "missing - en.common.skillsDescription",
+    "technologiesImage": {
+      "url": "missing - en.common.url",
+      "alternativeText": "missing - en.common.alternativeText"
+    },
+    "technologiesDescription": "missing - en.common.technologiesDescription",
+    "valuesHeadline": "missing - en.common.valuesHeadline",
+    "teamHeadline": "missing - en.common.teamHeadline",
+    "hqHeadline": "missing - en.common.hqHeadline",
+    "hqDescription": "missing - en.common.hqDescription",
+    "hqWeAreHereImage": {
+      "url": "missing - en.common.url",
+      "alternativeText": "missing - en.common.alternativeText"
+    },
+    "hqWeAreHereDescription": "missing - en.common.hqWeAreHereDescription",
+    "hqCTATitle": "missing - en.common.hqCTATitle",
+    "careerHeadline": "missing - en.common.careerHeadline",
+    "careerDescription": "missing - en.common.careerDescription",
+    "careerCTATitle": "missing - en.common.careerCTATitle",
+    "careerCTAImage": {
+      "url": "missing - en.common.url",
+      "alternativeText": "missing - en.common.alternativeText"
+    },
+    "blogHeadline": "missing - en.common.blogHeadline",
+    "blogReadMore": "missing - en.common.blogReadMore"
+  },
+  "contact": {
+    "title": "missing - en.common.title",
+    "footerImg": {
+      "url": "missing - en.common.url"
+    },
+    "email": "missing - en.common.email",
+    "phoneNumber": "missing - en.common.phoneNumber",
+    "address": "missing - en.common.address",
+    "taxIdentificationNumbers": "missing - en.common.taxIdentificationNumbers",
+    "taxIdentificationDescription": "missing - en.common.taxIdentificationDescription",
+    "formInvalidEmailWarning": "missing - en.common.formInvalidEmailWarning",
+    "formEmailWarning": "missing - en.common.formEmailWarning",
+    "formTextLabel": "missing - en.common.formTextLabel",
+    "formNameLabel": "missing - en.common.formNameLabel",
+    "formNameWarning": "missing - en.common.formNameWarning",
+    "formEmailLabel": "missing - en.common.formEmailLabel",
+    "formSubmit": "missing - en.common.formSubmit"
+  },
+  "socialNetworkUrls": {
+    "Facebook": {
+      "url": "missing - en.common.url"
+    },
+    "Twitter": {
+      "url": "missing - en.common.url"
+    },
+    "Instagram": {
+      "url": "missing - en.common.url"
+    },
+    "Linkedin": {
+      "url": "missing - en.common.url"
+    }
+  },
+  "menu": {
+    "homePage": "missing - en.common.homePage",
+    "aboutUs": "missing - en.common.aboutUs",
+    "career": "missing - en.common.career",
+    "reference": "missing - en.common.reference",
+    "contact": "missing - en.common.contact",
+    "menu": "missing - en.common.menu"
+  },
+  "header": {
+    "logo": {
+      "url": "missing - en.common.url"
+    }
+  },
+  "careers": {
+    "title": "missing - en.common.title",
+    "careerDescription": "missing - en.common.careerDescription",
+    "technologiesHeading": "missing - en.common.technologiesHeading",
+    "technologies": "missing - en.common.technologies",
+    "careerWho": "missing - en.common.careerWho",
+    "careerWhy": "missing - en.common.careerWhy",
+    "careerWhatHeading": "missing - en.common.careerWhatHeading"
+  },
+  "linksLabels": {
+    "aboutUs": "About us",
+    "reference": "Reference",
+    "career": "Career",
+    "contact": "Contact",
+    "homePage": "Home Page"
+  }
+}
