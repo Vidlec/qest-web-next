@@ -1,9 +1,19 @@
-import fs from 'fs'
 import Parser from 'rss-parser'
 
 const postCount = 3
 
-const fetchMediumPosts = async () => {
+// TODO: Use type guards
+export type MediumPost = {
+    creator: string
+    title: string
+    link: string
+    date: string
+    img: string
+    snippet: string
+}
+
+// TODO: Refactor this ugly function
+export const fetchMediumPosts = async (): Promise<MediumPost[]> => {
     const parser = new Parser()
 
     const feed = await parser.parseURL('https://medium.com/feed/qest')
@@ -14,10 +24,10 @@ const fetchMediumPosts = async () => {
 
         if (post) {
             posts.push({
-                creator: post.creator,
-                title: post.title || '',
-                link: post.link,
-                date: new Date(post.isoDate || ''),
+                creator: post.creator ?? '',
+                title: post.title ?? '',
+                link: post.link ?? '',
+                date: post.isoDate ?? '',
                 img: post['content:encoded'].match(
                     /(?<=(<img[^>]+src="))([^"\s]+)(?!"[^>]*\/z)/g
                 )[0],
@@ -25,7 +35,5 @@ const fetchMediumPosts = async () => {
             })
         }
     }
-    fs.writeFile('./public/posts.json', JSON.stringify(posts), () => ({}))
+    return posts
 }
-
-fetchMediumPosts()

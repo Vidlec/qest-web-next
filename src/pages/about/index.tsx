@@ -48,15 +48,16 @@ import Container from 'components/Container'
 import Headline from 'components/Headline'
 import numberOrNull from 'components/numberOrNull'
 import SliderWrapper from 'components/Slider/styled'
+import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import React, { useEffect, useState } from 'react'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Slider from 'react-slick'
 import theme from 'theme'
-import blogPosts from '../../../public/posts.json'
+import { fetchMediumPosts, MediumPost } from 'utils/data/fetchMediumPosts'
 import { BrandValue, Skill, UploadFile } from '../../gql/generated/types'
 
-const AboutUs: React.FC = () => {
+const AboutUs: React.FC<{ posts: MediumPost[] }> = ({ posts }) => {
     const { t } = useTranslation()
 
     const [sliderRef, setSliderRef] = useState<Slider | null>(null)
@@ -114,7 +115,7 @@ const AboutUs: React.FC = () => {
                             >
                                 {t<string, UploadFile[]>('about.weAreImageCarousel', {
                                     returnObjects: true,
-                                }).map((image) => (
+                                })?.map?.((image) => (
                                     <CarouselPicture key={image.id}>
                                         <img src={image.url} alt={image.alternativeText ?? ''} />
                                     </CarouselPicture>
@@ -144,7 +145,7 @@ const AboutUs: React.FC = () => {
                         <SkillsList>
                             {t<string, Skill[]>('about.skills', {
                                 returnObjects: true,
-                            }).map((skill) => (
+                            })?.map?.((skill) => (
                                 <SkillsListItem key={skill.id}>
                                     <SkillHeadline>
                                         <ColorText colorHash={skill.titleColorHash}>
@@ -180,7 +181,7 @@ const AboutUs: React.FC = () => {
                 <ValuesWrapper>
                     {t<string, BrandValue[]>('about.brandValues', {
                         returnObjects: true,
-                    }).map((value) => (
+                    })?.map?.((value) => (
                         <ValuesColumn key={value.id}>
                             <ValueHeadlineWrapper>
                                 <ValueNumber>{value.backgroundNumber}</ValueNumber>
@@ -222,7 +223,7 @@ const AboutUs: React.FC = () => {
                     <Masonry>
                         {t<string, UploadFile[]>('about.hqImageGrid', {
                             returnObjects: true,
-                        }).map((image) => (
+                        })?.map?.((image) => (
                             <picture key={image.id}>
                                 <PictureImg src={image.url} alt={image.alternativeText ?? ''} />
                             </picture>
@@ -272,9 +273,9 @@ const AboutUs: React.FC = () => {
             <Container>
                 <Headline>{t('about.blogHeadline')}</Headline>
                 <BlogPostsContainer>
-                    {blogPosts.map((post) => (
+                    {posts.map((post) => (
                         <BlogPostWrapper key={post.link}>
-                            <a href={post.link} target="_blank">
+                            <a href={post.link} target="_blank" rel="noreferrer">
                                 <BlogPostThumbnail src={post.img} />
                                 <BlogPostTitle>
                                     {post.title.split(' — ').map((titleLine, index) => (
@@ -297,6 +298,18 @@ const AboutUs: React.FC = () => {
 }
 
 export default AboutUs
+
+export const getStaticProps: GetStaticProps<{ posts: MediumPost[] }> = async () => {
+    const posts = await fetchMediumPosts()
+
+    console.log(posts)
+
+    return {
+        props: {
+            posts,
+        },
+    }
+}
 
 function moveSlickToIndex(e: Event, sliderRef: Slider | null) {
     const indexAttr = (e.target as HTMLElement).getAttribute('data-sliderIndex')

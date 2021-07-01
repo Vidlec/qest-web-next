@@ -6,10 +6,10 @@
         "node": ">=14 <=15.8.0"
     },
     "scripts": {
-        "dev": "npm run posts:fetch && next dev",
+        "dev": "next dev",
         "generate:types": "graphql-codegen --config codegen.yml",
         "generate:locale": "i18next-scanner --config generate-locale.config.js",
-        "build": "npm run posts:fetch && next build",
+        "build": "next build",
         "deploy:dev": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackDev' --progress events --require-approval never",
         "deploy:prod": "cdk --app 'ts-node -r dotenv/config -T aws/bin/deploy.ts dotenv_config_path=.env' deploy 'QestWebAppStackProd' --progress events --require-approval never",
         "start": "next start",
@@ -19,7 +19,6 @@
         "prettier:fix": "prettier --write .",
         "ts:check": "tsc",
         "test": "npm-run-all -l -p ts:check lint prettier",
-        "posts:fetch": "ts-node -P tsconfig.node.json -T scripts/fetchMediumPosts",
         "code:fix": "npm-run-all -l -p lint:fix prettier:fix",
         "prepare": "husky install"
     },
