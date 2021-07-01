@@ -46,3 +46,5 @@ jspm_packages
 cdk.context.json
 .serverless_nextjs
 .vscode
+
+public/posts.json

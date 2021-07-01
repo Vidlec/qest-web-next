@@ -19,7 +19,7 @@
         "prettier:fix": "prettier --write .",
         "ts:check": "tsc",
         "test": "npm-run-all -l -p ts:check lint prettier",
-        "posts:fetch": "ts-node -r dotenv/config -P tsconfig.generate.json -T  scripts/fetchMediumPosts dotenv_config_path=.env",
+        "posts:fetch": "ts-node -P tsconfig.node.json -T scripts/fetchMediumPosts",
         "code:fix": "npm-run-all -l -p lint:fix prettier:fix",
         "prepare": "husky install"
     },
