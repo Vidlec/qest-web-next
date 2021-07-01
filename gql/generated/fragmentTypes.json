@@ -125,29 +125,11 @@
       "CaseStudyConnectionId",
       "CaseStudyConnectionCreated_at",
       "CaseStudyConnectionUpdated_at",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "CaseStudyConnectionImage",
       "CaseStudyConnectionTitle",
       "CaseStudyConnectionHeight",
       "CaseStudyConnectionSlug",
       "CaseStudyConnectionLocale",
-=======
-      "CaseStudyConnectionLanguage",
-=======
->>>>>>> WIP
-      "CaseStudyConnectionImage",
-      "CaseStudyConnectionTitle",
-      "CaseStudyConnectionHeight",
-<<<<<<< HEAD
->>>>>>> feat(update) types
-=======
-      "CaseStudyConnectionSlug",
-<<<<<<< HEAD
->>>>>>> feat(generate) generate new types
-=======
-      "CaseStudyConnectionLocale",
->>>>>>> WIP
       "CaseStudyConnectionPublished_at",
       "createCaseStudyPayload",
       "updateCaseStudyPayload",
@@ -345,38 +327,18 @@
       "Team",
       "TeamConnection",
       "TeamAggregator",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> feat(generate) generate new types
       "TeamAggregatorSum",
       "TeamAggregatorAvg",
       "TeamAggregatorMin",
       "TeamAggregatorMax",
-<<<<<<< HEAD
-=======
->>>>>>> rebase(Reference Page)
-=======
->>>>>>> feat(generate) generate new types
       "TeamGroupBy",
       "TeamConnectionId",
       "TeamConnectionCreated_at",
       "TeamConnectionUpdated_at",
       "TeamConnectionName",
       "TeamConnectionPosition",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "TeamConnectionVideo",
       "TeamConnectionSort",
-<<<<<<< HEAD
-=======
-      "TeamConnectionImage",
->>>>>>> rebase(Reference Page)
-=======
-      "TeamConnectionVideo",
->>>>>>> feat(update) types
-=======
->>>>>>> feat(generate) generate new types
       "TeamConnectionPublished_at",
       "createTeamPayload",
       "updateTeamPayload",
@@ -460,17 +422,8 @@
       "createUserPayload",
       "updateUserPayload",
       "deleteUserPayload",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "ComponentContentContact",
       "ComponentContentGalleryImage",
-=======
-      "ComponentContentCareerPosition",
->>>>>>> feat(reference) conect project list with strapi
-=======
-      "ComponentContentContact",
-      "ComponentContentGalleryImage",
->>>>>>> rebase(Reference Page)
       "ComponentContentImage",
       "ComponentContentInfoColumn",
       "ComponentContentPictureList",
