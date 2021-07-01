@@ -126,6 +126,7 @@
       "CaseStudyConnectionCreated_at",
       "CaseStudyConnectionUpdated_at",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "CaseStudyConnectionImage",
       "CaseStudyConnectionTitle",
       "CaseStudyConnectionHeight",
@@ -133,6 +134,8 @@
       "CaseStudyConnectionLocale",
 =======
       "CaseStudyConnectionLanguage",
+=======
+>>>>>>> WIP
       "CaseStudyConnectionImage",
       "CaseStudyConnectionTitle",
       "CaseStudyConnectionHeight",
@@ -140,7 +143,11 @@
 >>>>>>> feat(update) types
 =======
       "CaseStudyConnectionSlug",
+<<<<<<< HEAD
 >>>>>>> feat(generate) generate new types
+=======
+      "CaseStudyConnectionLocale",
+>>>>>>> WIP
       "CaseStudyConnectionPublished_at",
       "createCaseStudyPayload",
       "updateCaseStudyPayload",

@@ -9789,6 +9789,7 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "image",
             "description": null,
             "args": [],
@@ -9802,6 +9803,9 @@
           },
           {
             "name": "title",
+=======
+            "name": "image",
+>>>>>>> WIP
             "description": null,
             "args": [],
             "type": {
@@ -9821,9 +9825,19 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null
+=======
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+>>>>>>> WIP
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -9879,7 +9893,22 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
 >>>>>>> feat(generate) generate new types
+=======
+            "name": "locale",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+>>>>>>> WIP
             "name": "published_at",
             "description": null,
             "args": [],
@@ -9909,6 +9938,9 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> WIP
             "name": "localizations",
             "description": null,
             "args": [
@@ -10451,6 +10483,7 @@
           {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "slug",
 =======
             "name": "address",
@@ -10458,6 +10491,9 @@
 =======
             "name": "language",
 >>>>>>> rebase(Reference Page)
+=======
+            "name": "image",
+>>>>>>> WIP
             "description": null,
             "args": [],
             "type": {
@@ -10465,7 +10501,11 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
                 "name": "CaseStudyConnectionSlug",
+=======
+                "name": "CaseStudyConnectionImage",
+>>>>>>> WIP
                 "ofType": null
               }
             },
@@ -10473,11 +10513,15 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
 <<<<<<< HEAD
             "name": "locale",
 =======
             "name": "image",
 >>>>>>> feat(update) types
+=======
+            "name": "title",
+>>>>>>> WIP
             "description": null,
             "args": [],
             "type": {
@@ -10485,38 +10529,22 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
+<<<<<<< HEAD
 <<<<<<< HEAD
                 "name": "CaseStudyConnectionLocale",
 =======
                 "name": "CaseStudyConnectionImage",
 >>>>>>> feat(update) types
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "title",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "CaseStudyConnectionTitle",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            "name": "connection",
 =======
+                "name": "CaseStudyConnectionTitle",
+>>>>>>> WIP
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "height",
             "description": null,
             "args": [],
@@ -10533,7 +10561,15 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "name": "connection",
+=======
+            "name": "height",
+=======
             "name": "slug",
+>>>>>>> WIP
             "description": null,
             "args": [],
             "type": {
@@ -10542,6 +10578,22 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "CaseStudyConnectionSlug",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locale",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "CaseStudyConnectionLocale",
                 "ofType": null
               }
             },
@@ -10682,7 +10734,11 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
         "name": "CaseStudyConnectionTitle",
+=======
+        "name": "CaseStudyConnectionImage",
+>>>>>>> WIP
         "description": null,
         "fields": [
           {
@@ -10693,6 +10749,7 @@
             "description": null,
             "args": [],
             "type": {
+<<<<<<< HEAD
               "kind": "LIST",
               "name": null,
               "ofType": {
@@ -10700,6 +10757,11 @@
                 "name": "CaseStudyConnectionHeight",
                 "ofType": null
               }
+=======
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+>>>>>>> WIP
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -10729,10 +10791,14 @@
       {
         "kind": "OBJECT",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "name": "CaseStudyConnectionHeight",
 =======
         "name": "CaseStudyConnectionId",
 >>>>>>> feat(update) types
+=======
+        "name": "CaseStudyConnectionTitle",
+>>>>>>> WIP
         "description": null,
         "fields": [
           {
@@ -10741,11 +10807,15 @@
             "args": [],
             "type": {
               "kind": "SCALAR",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "name": "Int",
 =======
               "name": "ID",
 >>>>>>> feat(update) types
+=======
+              "name": "String",
+>>>>>>> WIP
               "ofType": null
             },
             "isDeprecated": false,
@@ -10771,11 +10841,15 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "name": "CaseStudyConnectionSlug",
 =======
         "name": "CaseStudyConnectionCreated_at",
 >>>>>>> feat(update) types
+=======
+        "name": "CaseStudyConnectionHeight",
+>>>>>>> WIP
         "description": null,
         "fields": [
           {
@@ -10784,7 +10858,11 @@
             "args": [],
             "type": {
               "kind": "SCALAR",
+<<<<<<< HEAD
               "name": "DateTime",
+=======
+              "name": "Int",
+>>>>>>> WIP
               "ofType": null
             },
             "isDeprecated": false,
@@ -10810,11 +10888,15 @@
       },
       {
         "kind": "OBJECT",
+<<<<<<< HEAD
 <<<<<<< HEAD
         "name": "CaseStudyConnectionLocale",
 =======
         "name": "CaseStudyConnectionUpdated_at",
 >>>>>>> feat(update) types
+=======
+        "name": "CaseStudyConnectionSlug",
+>>>>>>> WIP
         "description": null,
         "fields": [
           {
@@ -10823,7 +10905,11 @@
             "args": [],
             "type": {
               "kind": "SCALAR",
+<<<<<<< HEAD
               "name": "DateTime",
+=======
+              "name": "String",
+>>>>>>> WIP
               "ofType": null
             },
             "isDeprecated": false,
@@ -10851,8 +10937,12 @@
         "kind": "OBJECT",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         "name": "CaseStudyConnectionSlug",
+=======
+        "name": "CaseStudyConnectionLocale",
+>>>>>>> WIP
         "description": null,
         "fields": [
           {
@@ -11204,6 +11294,7 @@
           {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "localizations",
             "description": null,
             "args": [],
@@ -11368,6 +11459,8 @@
             "deprecationReason": null
           },
           {
+=======
+>>>>>>> WIP
             "name": "image",
             "description": null,
             "type": {
@@ -11383,9 +11476,13 @@
             "name": "title",
             "description": null,
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -11438,8 +11535,39 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "language",
 =======
+=======
+            "name": "localizations",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locale",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+>>>>>>> WIP
             "name": "published_at",
 >>>>>>> feat(generate) generate new types
             "description": null,
@@ -11518,18 +11646,6 @@
         "fields": null,
         "inputFields": [
           {
-            "name": "language",
-            "description": null,
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "image",
             "description": null,
             "type": {
@@ -11567,6 +11683,34 @@
           },
           {
             "name": "slug",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "localizations",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locale",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -37541,7 +37685,35 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
             "name": "updated_by",
+=======
+            "name": "floatImage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "UploadFile",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "floatImageOnMiddle",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "images",
+>>>>>>> WIP
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -37605,6 +37777,30 @@
             "type": {
               "kind": "SCALAR",
               "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "floatImage",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "floatImageOnMiddle",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             },
             "defaultValue": null,
@@ -37732,6 +37928,30 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InputID",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "floatImage",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "ID",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "floatImageOnMiddle",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             },
             "defaultValue": null,
@@ -40056,6 +40276,7 @@
         "fields": null,
         "inputFields": [
           {
+<<<<<<< HEAD
             "name": "pictureListHeading",
             "description": null,
             "type": {
@@ -40078,6 +40299,11 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+=======
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionImage",
+            "ofType": null
+>>>>>>> WIP
           },
           {
 <<<<<<< HEAD
@@ -40144,6 +40370,7 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "width",
 =======
             "name": "pictureListHeading",
@@ -40161,6 +40388,16 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+=======
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionLocale",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CaseStudyConnectionPublished_at",
+            "ofType": null
+>>>>>>> WIP
           },
           {
 <<<<<<< HEAD
@@ -52720,6 +52957,18 @@
                 "defaultValue": null,
                 "isDeprecated": false,
                 "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
               }
             ],
             "type": {
@@ -52780,6 +53029,18 @@
                 "type": {
                   "kind": "SCALAR",
                   "name": "JSON",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -57741,6 +58002,9 @@
           },
           {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> WIP
             "name": "createCaseStudyLocalization",
             "description": null,
             "args": [
@@ -57774,8 +58038,11 @@
             "deprecationReason": null
           },
           {
+<<<<<<< HEAD
 =======
 >>>>>>> rebase(Reference Page)
+=======
+>>>>>>> WIP
             "name": "createFooterLocalization",
             "description": null,
             "args": [
