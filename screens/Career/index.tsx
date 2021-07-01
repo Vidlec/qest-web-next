@@ -15,10 +15,18 @@ import Col from 'components/Col'
 import Headline from 'components/Headline'
 import Text from 'components/Text'
 import TechnologiesCard from 'components/TechnologiesCard'
-import SquareList, { EndHead, ContactUs } from './_components/SquareList'
+import SquareList, {
+	StyledEndHead,
+	StyledContactUs,
+} from './_components/SquareList'
 import PictureList from './_components/PictureList'
 
-import { MarginRow, LongHeadLine, CareerWhy, WhyLink } from './styled'
+import {
+	StyledMarginRow,
+	StyledLongHeadLine,
+	StyledCareerWhy,
+	StyledWhyLink,
+} from './styled'
 
 const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 	const theme = useTheme()
@@ -28,7 +36,7 @@ const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 		<>
 			<Header />
 			<Container>
-				<MarginRow>
+				<StyledMarginRow>
 					<Col mobile={12} desktopSmall={7} desktop={8}>
 						<Headline color={theme.colors.green}>
 							{career?.title}
@@ -55,26 +63,32 @@ const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 							handIsOnMiddle
 						/>
 					</Col>
-				</MarginRow>
+				</StyledMarginRow>
 				<Headline>{career?.careerWho}</Headline>
 				<SquareList
 					squares={career?.careerPositions as CareerOfferings[]}
 				>
-					<EndHead>{career?.somethingElseHeading}</EndHead>
+					<StyledEndHead>
+						{career?.somethingElseHeading}
+					</StyledEndHead>
 					<p>{career?.somethingElseDescription}</p>
 					<Link href="/contacts">
-						<ContactUs>{career?.somethingElseContact}</ContactUs>
+						<StyledContactUs>
+							{career?.somethingElseContact}
+						</StyledContactUs>
 					</Link>
 				</SquareList>
 
-				<CareerWhy>
+				<StyledCareerWhy>
 					{career?.careerWhy}
 					<Link href="/reference" passHref>
-						<WhyLink>{career?.careerWhyLook}</WhyLink>
+						<StyledWhyLink>{career?.careerWhyLook}</StyledWhyLink>
 					</Link>
-				</CareerWhy>
+				</StyledCareerWhy>
 
-				<LongHeadLine>{career?.careerWhatHeading}</LongHeadLine>
+				<StyledLongHeadLine>
+					{career?.careerWhatHeading}
+				</StyledLongHeadLine>
 				<PictureList
 					items={career?.info as ComponentContentPictureList[]}
 				/>

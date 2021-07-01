@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import {
-	Wrapper,
-	Item,
-	Heading,
-	Description,
-	ItemIndex,
-	ItemIndexNumber,
-	ItemInformation,
-	ItemImg,
-	ShowMore,
-	ShowMoreButton,
+	StyledWrapper,
+	StyledItem,
+	StyledHeading,
+	StyledDescription,
+	StyledItemIndex,
+	StyledItemIndexNumber,
+	StyledItemInformation,
+	StyledItemImg,
+	StyledShowMore,
+	StyledShowMoreButton,
 } from './styled'
 import useWindowSize from 'hooks/useWindowSize'
 import { useTheme } from 'styled-components'
@@ -30,53 +30,57 @@ const PictureList: React.FC<Props> = ({ items }) => {
 	}
 
 	return (
-		<Wrapper>
+		<StyledWrapper>
 			{items.map((item, index) => {
 				if (index > 1 && isPhone) {
 					return shouldShowMore ? (
-						<Item key={item.header}>
-							<ItemIndex color={item.color!}>
-								<ItemIndexNumber>{index + 1}</ItemIndexNumber>
-								<ItemImg src={item.image?.url} />
-							</ItemIndex>
-							<ItemInformation>
-								<Heading>{item.header}</Heading>
-								<Description
+						<StyledItem key={item.header}>
+							<StyledItemIndex color={item.color!}>
+								<StyledItemIndexNumber>
+									{index + 1}
+								</StyledItemIndexNumber>
+								<StyledItemImg src={item.image?.url} />
+							</StyledItemIndex>
+							<StyledItemInformation>
+								<StyledHeading>{item.header}</StyledHeading>
+								<StyledDescription
 									dangerouslySetInnerHTML={{
 										__html: item.description!,
 									}}
 								/>
-							</ItemInformation>
-						</Item>
+							</StyledItemInformation>
+						</StyledItem>
 					) : null
 				}
 				return (
-					<Item key={item.header}>
-						<ItemIndex color={item.color!}>
-							<ItemIndexNumber>{index + 1}</ItemIndexNumber>
-							<ItemImg src={item.image?.url} />
-						</ItemIndex>
-						<ItemInformation>
-							<Heading>{item.header}</Heading>
-							<Description
+					<StyledItem key={item.header}>
+						<StyledItemIndex color={item.color!}>
+							<StyledItemIndexNumber>
+								{index + 1}
+							</StyledItemIndexNumber>
+							<StyledItemImg src={item.image?.url} />
+						</StyledItemIndex>
+						<StyledItemInformation>
+							<StyledHeading>{item.header}</StyledHeading>
+							<StyledDescription
 								dangerouslySetInnerHTML={{
 									__html: item.description!,
 								}}
 							/>
-						</ItemInformation>
-					</Item>
+						</StyledItemInformation>
+					</StyledItem>
 				)
 			})}
 			{isPhone && (
-				<ShowMore>
-					<ShowMoreButton onClick={toggleShowMore}>
+				<StyledShowMore>
+					<StyledShowMoreButton onClick={toggleShowMore}>
 						{shouldShowMore
 							? 'ukázat méně'
 							: `další ${items.length - 2}`}
-					</ShowMoreButton>
-				</ShowMore>
+					</StyledShowMoreButton>
+				</StyledShowMore>
 			)}
-		</Wrapper>
+		</StyledWrapper>
 	)
 }
 

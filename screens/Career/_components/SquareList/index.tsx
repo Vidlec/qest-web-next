@@ -2,17 +2,17 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
-	Wrapper,
-	Base,
-	Content,
-	End,
-	Title,
-	EndHead,
-	ContactUs,
+	StyledWrapper,
+	StyledBase,
+	StyledContent,
+	StyledEnd,
+	StyledTitle,
+	StyledEndHead,
+	StyledContactUs,
 } from './styled'
 import { CareerOfferings } from 'gql/generated/types'
 
-export { EndHead, ContactUs }
+export { StyledEndHead, StyledContactUs }
 
 interface Props {
 	squares: CareerOfferings[]
@@ -22,21 +22,21 @@ const SquareList: React.FC<Props> = ({ squares, children }) => {
 	const router = useRouter()
 
 	return (
-		<Wrapper>
+		<StyledWrapper>
 			{squares.map((square) => (
 				<Link href={`/career/${square.slug}`} key={square.title}>
-					<Base>
-						<Content>
-							<Title color={square.color as string}>
+					<StyledBase>
+						<StyledContent>
+							<StyledTitle color={square.color as string}>
 								{square.title}
-							</Title>
+							</StyledTitle>
 							<div>{square.perex}</div>
-						</Content>
-					</Base>
+						</StyledContent>
+					</StyledBase>
 				</Link>
 			))}
-			<End>{children}</End>
-		</Wrapper>
+			<StyledEnd>{children}</StyledEnd>
+		</StyledWrapper>
 	)
 }
 

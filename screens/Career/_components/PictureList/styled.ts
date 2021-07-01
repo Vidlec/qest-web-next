@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div``
+export const StyledWrapper = styled.div``
 
-export const Item = styled.div`
+export const StyledItem = styled.div`
 	font-size: ${({ theme }) => theme.sizes.medium};
 	display: flex;
 	flex-direction: column;
@@ -16,7 +16,7 @@ export const Item = styled.div`
 		flex-direction: row;
 	}
 `
-export const Heading = styled.h5`
+export const StyledHeading = styled.h5`
 	position: absolute;
 	display: block;
 	margin: 0 0 0 -50%;
@@ -42,7 +42,7 @@ export const Heading = styled.h5`
 	}
 `
 
-export const Description = styled.div`
+export const StyledDescription = styled.div`
 	margin: 0;
 	text-align: justify;
 	font-size: ${({ theme }) => theme.sizes.small};
@@ -53,7 +53,7 @@ export const Description = styled.div`
 	}
 `
 
-export const ItemIndex = styled.div<{ color: string | undefined }>`
+export const StyledItemIndex = styled.div<{ color: string | undefined }>`
 	position: relative;
 	color: ${({ color }) => color};
 
@@ -69,7 +69,7 @@ export const ItemIndex = styled.div<{ color: string | undefined }>`
 	}
 `
 
-export const ItemIndexNumber = styled.span`
+export const StyledItemIndexNumber = styled.span`
 	position: absolute;
 	display: block;
 	font-size: ${({ theme }) => theme.sizes.BigNumber};
@@ -86,7 +86,7 @@ export const ItemIndexNumber = styled.span`
 	}
 `
 
-export const ItemImg = styled.img`
+export const StyledItemImg = styled.img`
 	margin: 0 0 0 2rem;
 	max-height: 13.1rem;
 	max-width: 100%;
@@ -98,18 +98,18 @@ export const ItemImg = styled.img`
 	}
 `
 
-export const ItemInformation = styled.div`
+export const StyledItemInformation = styled.div`
 	position: relative;
 	width: 100%;
 	flex-shrink: 1;
 `
 
-export const ShowMore = styled.div`
+export const StyledShowMore = styled.div`
 	display: flex;
 	justify-content: center;
 `
 
-export const ShowMoreButton = styled.button`
+export const StyledShowMoreButton = styled.button`
 	border: none;
 	background: none;
 	color: ${({ theme }) => theme.colors.purple};

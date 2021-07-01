@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const StyledWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 	}
 `
 
-export const Base = styled.div`
+export const StyledBase = styled.div`
 	position: relative;
 	width: calc(80% - 3.6rem);
 	background-color: ${({ theme }) => theme.colors.black};
@@ -39,7 +39,7 @@ export const Base = styled.div`
 	}
 `
 
-export const Content = styled.div`
+export const StyledContent = styled.div`
 	width: 100%;
 	height: 100%;
 	padding: 2.6rem;
@@ -51,7 +51,7 @@ export const Content = styled.div`
 	}
 `
 
-export const Title = styled.div<{ color: string }>`
+export const StyledTitle = styled.div<{ color: string }>`
 	margin: 0 0 1.6rem 0;
 	color: ${({ color }) => color};
 
@@ -60,7 +60,7 @@ export const Title = styled.div<{ color: string }>`
 	}
 `
 
-export const End = styled.div`
+export const StyledEnd = styled.div`
 	flex-shrink: 1;
 	width: calc(80% -3.6rem);
 	margin: 3.6rem 0 0 3.6rem;
@@ -74,13 +74,13 @@ export const End = styled.div`
 	}
 `
 
-export const EndHead = styled.h5`
+export const StyledEndHead = styled.h5`
 	margin: 0 0 3rem 0;
 	font-size: ${({ theme }) => theme.sizes.headingSmall};
 	color: ${({ theme }) => theme.colors.lightGray};
 `
 
-export const ContactUs = styled.a`
+export const StyledContactUs = styled.a`
 	color: ${({ theme }) => theme.colors.red};
 	text-decoration: underline;
 	font-size: ${({ theme }) => theme.sizes.large};

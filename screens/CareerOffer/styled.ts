@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import Paragraph from 'components/Paragraph'
 
-export const SubTitle = styled.h2`
+export const StyledSubTitle = styled.h2`
 	text-transform: uppercase;
 `
 
-export const Content = styled.div`
+export const StyledContent = styled.div`
 	font-size: ${({ theme }) => theme.sizes.extraSmall};
 	margin: 0 0 1rem 0;
 
@@ -14,7 +14,7 @@ export const Content = styled.div`
 	}
 `
 
-export const Link = styled.a`
+export const StyledLink = styled.a`
 	color: ${({ theme }) => theme.colors.green};
 	padding: 0 0.5rem 0.1rem 0;
 	height: 35px;
@@ -22,11 +22,11 @@ export const Link = styled.a`
 	border-bottom: solid 0.13rem;
 `
 
-export const Technologies = styled(Paragraph)`
+export const StyledTechnologies = styled(Paragraph)`
 	color: ${({ theme }) => theme.colors.green};
 `
 
-export const List = styled.ul`
+export const StyledList = styled.ul`
 	list-style: none;
 	padding-left: 0;
 
@@ -37,6 +37,6 @@ export const List = styled.ul`
 	}
 `
 
-export const Block = styled.div`
+export const StyledBlock = styled.div`
 	padding-bottom: 1.4rem;
 `
