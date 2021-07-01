@@ -39,13 +39,15 @@ export const getStaticProps: GetStaticProps<
 		return { notFound: true }
 	}
 
-	const props = await request<CaseStudyQuery, CaseStudyQueryVariables>(
+	const data = await request<CaseStudyQuery, CaseStudyQueryVariables>(
 		process.env.CMS_GRAPHQL_URL!,
 		CASE_STUDY_QUERY,
 		{ slug }
 	)
 
+	console.log(data, data.caseStudies, data.caseStudies![0])
+
 	return {
-		props,
+		data,
 	}
 }
