@@ -1,4 +1,4 @@
-import Reference from 'screens/Reference'
+import Reference from 'screens/CaseStudies'
 import { request } from 'graphql-request'
 import { GetStaticProps } from 'next'
 import { CASE_STUDIES_QUERY } from 'gql/queries/caseStudies'
