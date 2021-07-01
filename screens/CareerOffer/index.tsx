@@ -11,24 +11,23 @@ import {
 	StyledContent,
 } from './styled'
 import Container from 'components/Container'
-import Headline from 'components/Headline'
+import Headline, {ItemColor} from 'components/Headline'
 import Row from 'components/Row'
 import Col from 'components/Col'
-import { useTheme } from 'styled-components'
 
 export interface Props {
 	careerOffer: CareerOfferings
 }
 
 const CareerOffer: React.FC<Props> = ({ careerOffer }) => {
-	const { colors } = useTheme()
+	const colors: ItemColor[] = ['red', 'yellow', 'pink', 'green', 'blue']
 
 	return (
 		<>
 			<Header />
 			<Container>
 				<StyledBlock>
-					<Headline color={colors.green}>
+					<Headline color={colors[3]}>
 						{careerOffer.title}
 					</Headline>
 					<StyledContent
