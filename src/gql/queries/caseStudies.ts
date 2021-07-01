@@ -1,16 +1,16 @@
-import { gql } from 'apollo-boost'
+import { gql } from 'graphql-request'
 
 export const CASE_STUDIES_QUERY = gql`
-	query CaseStudies {
-		caseStudies {
-			id
-			title
-			height
-			slug
-			image {
-				url
-				alternativeText
-			}
-		}
-	}
+  query CaseStudies {
+    caseStudies {
+      id
+      title
+      height
+      slug
+      image {
+        url
+        alternativeText
+      }
+    }
+  }
 `

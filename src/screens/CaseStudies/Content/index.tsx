@@ -6,20 +6,17 @@ import Masonry from './Masonry'
 import { ReferenceLine } from './styled'
 
 export interface Props {
-	caseStudies: CaseStudy[]
+  caseStudies: CaseStudy[]
 }
 
 const Content: React.FC<Props> = ({ caseStudies }) => {
-
-	return (
-		<Container>
-			<ReferenceParagraph items={caseStudies}>
-				Our clients include{' '}
-			</ReferenceParagraph>
-			<ReferenceLine />
-			<Masonry caseStudies={caseStudies} />
-		</Container>
-	)
+  return (
+    <Container>
+      <ReferenceParagraph items={caseStudies}>Our clients include </ReferenceParagraph>
+      <ReferenceLine />
+      <Masonry caseStudies={caseStudies} />
+    </Container>
+  )
 }
 
 export default Content

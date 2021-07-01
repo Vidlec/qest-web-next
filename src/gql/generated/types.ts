@@ -1084,6 +1084,8 @@ export type ComponentContentTechnologies = {
   readonly id: Scalars['ID'];
   readonly technologies?: Maybe<Scalars['String']>;
   readonly description?: Maybe<Scalars['String']>;
+  readonly floatImage?: Maybe<UploadFile>;
+  readonly floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
   readonly images?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
 };
 
@@ -1099,6 +1101,8 @@ export type ComponentContentTechnologyInput = {
   readonly technologies?: Maybe<Scalars['String']>;
   readonly description?: Maybe<Scalars['String']>;
   readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly floatImage?: Maybe<Scalars['ID']>;
+  readonly floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
 };
 
 export type ComponentNavigationInternalLink = {
@@ -4605,6 +4609,8 @@ export type EditComponentContentTechnologyInput = {
   readonly technologies?: Maybe<Scalars['String']>;
   readonly description?: Maybe<Scalars['String']>;
   readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly floatImage?: Maybe<Scalars['ID']>;
+  readonly floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
 };
 
 export type EditComponentNavigationInternalLinkInput = {
@@ -5067,28 +5073,65 @@ export type UpdateWebhookPayload = {
   readonly webhook?: Maybe<Webhook>;
 };
 
+export type SkillFragment = Pick<Skill, 'id' | 'title' | 'description' | 'titleColorHash'>;
+
+export type BrandValueFragment = (
+  Pick<BrandValue, 'id' | 'headline' | 'backgroundNumber' | 'description'>
+  & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
+);
+
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_1_Query = { readonly aboutuses?: Maybe<ReadonlyArray<Maybe<(
     Pick<AboutUs, 'id' | 'language' | 'created_at' | 'updated_at' | 'heroDescription' | 'heroHeadlineTop' | 'heroHeadlineBottom' | 'heroArrowTitle' | 'weAreHeadline' | 'weAreDescription' | 'weAreArrowTitle' | 'skillsHeadline' | 'skillsDescription' | 'technologiesDescription' | 'valuesHeadline' | 'teamHeadline' | 'hqHeadline' | 'hqDescription' | 'careerHeadline' | 'careerDescription' | 'careerCTATitle' | 'blogHeadline' | 'blogReadMore' | 'published_at' | 'hqCTATitle' | 'hqWeAreHereDescription'>
-    & { readonly heroLogo?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly technologiesImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly careerCTAImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly skills?: Maybe<ReadonlyArray<Maybe<Pick<Skill, 'id' | 'title' | 'description' | 'titleColorHash'>>>>, readonly brandValues?: Maybe<ReadonlyArray<Maybe<(
-      Pick<BrandValue, 'id' | 'headline' | 'backgroundNumber' | 'description'>
-      & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-    )>>>, readonly hqImageGrid?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly hqWeAreHereImage?: Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>, readonly arrow?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
+    & { readonly heroLogo?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly technologiesImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly careerCTAImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly skills?: Maybe<ReadonlyArray<Maybe<SkillFragment>>>, readonly brandValues?: Maybe<ReadonlyArray<Maybe<BrandValueFragment>>>, readonly hqImageGrid?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly hqWeAreHereImage?: Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>, readonly arrow?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
   )>>> };
+
+export type CareerQueryVariables = Exact<{
+  locale?: Maybe<Scalars['String']>;
+}>;
+
+
+export type CareerQuery = { readonly career?: Maybe<(
+    Pick<Career, 'id' | 'created_at' | 'updated_at' | 'title' | 'description' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescription' | 'somethingElseContact' | 'careerWhy' | 'careerWhyLook' | 'careerWhatHeading'>
+    & { readonly technologies?: Maybe<(
+      Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
+      & { readonly images?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>> }
+    )>, readonly careerPositions?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'title' | 'color' | 'perex' | 'slug'>>>>, readonly info?: Maybe<ReadonlyArray<Maybe<(
+      Pick<ComponentContentPictureList, 'id' | 'header' | 'color' | 'description'>
+      & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
+    )>>> }
+  )> };
+
+export type CareerOfferFragment = Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'description' | 'careerTechnologiesTitle' | 'careerTechnologiesContent' | 'careerExpectedSkillsTitle' | 'careerExpectedSkillsContent' | 'careerOfferTitle' | 'careerOfferContent' | 'endTitle' | 'endContent' | 'endCTA'>;
 
 export type CareerOfferQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type CareerOfferQuery = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'description' | 'careerTechnologiesTitle' | 'careerTechnologiesContent' | 'careerExpectedSkillsTitle' | 'careerExpectedSkillsContent' | 'careerOfferTitle' | 'careerOfferContent' | 'endTitle' | 'endContent' | 'endCTA'>>>> };
+export type CareerOfferQuery = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<CareerOfferFragment>>> };
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug'>>>> };
+export type Unnamed_2_Query = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'perex' | 'color'>>>> };
+
+export type CaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CaseStudiesQuery = { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<(
+    Pick<CaseStudy, 'id' | 'title' | 'height' | 'slug'>
+    & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
+  )>>> };
+
+export type CaseStudyQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type CaseStudyQuery = { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<Pick<CaseStudy, 'id' | 'title' | 'slug'>>>> };
 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5113,6 +5156,16 @@ export type Unnamed_5_Query = { readonly homepages?: Maybe<ReadonlyArray<Maybe<(
     Pick<Homepage, 'id' | 'language' | 'clickToStop' | 'descriptionAboveLine' | 'descriptionBellowLine'>
     & { readonly logo?: Maybe<Pick<UploadFile, 'url'>> }
   )>>> };
+
+export type HqGalleryFragment = { readonly galleryCollection?: Maybe<ReadonlyArray<Maybe<(
+    Pick<ComponentContentGalleryImage, 'spacing' | 'rows'>
+    & { readonly images?: Maybe<Pick<UploadFile, 'url' | 'alternativeText' | 'id'>> }
+  )>>> };
+
+export type HqGalleriesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HqGalleriesQuery = { readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<HqGalleryFragment>>> };
 
 export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -1,24 +1,45 @@
-import PictureImg from 'components/PictureImg'
+import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
 import React from 'react'
-import { Card, Description, Heading, Picture } from './styled'
+import {
+  StyledCard,
+  StyledDescription,
+  StyledHeading,
+  StyledImageWrapper,
+  StyledPicture,
+} from './styled'
 
-interface Props {
-  src: string
-  alt: string
+interface Props extends Omit<ComponentContentTechnologies, 'id' | 'created_at' | 'updated_at'> {
+  floatImage: UploadFile
   heading?: string
   __html?: string
   handIsOnMiddle?: boolean
 }
 
-const TechnologiesCard: React.FC<Props> = ({ src, alt, handIsOnMiddle, heading, __html }) => {
+const TechnologiesCard: React.FC<Props> = ({
+  floatImage,
+  handIsOnMiddle,
+  technologies,
+  description,
+  images,
+}) => {
   return (
-    <Card>
-      <Picture handIsOnMiddle={handIsOnMiddle}>
-        <PictureImg src={src} alt={alt} />
-      </Picture>
-      {heading ? <Heading>{heading}</Heading> : null}
-      {__html ? <Description dangerouslySetInnerHTML={{ __html: __html }} /> : null}
-    </Card>
+    <StyledCard>
+      <StyledPicture
+        handIsOnMiddle={handIsOnMiddle}
+        src={floatImage.url}
+        alt={floatImage.alternativeText as string}
+      />
+
+      {technologies && <StyledHeading>{technologies}</StyledHeading>}
+      {description && <StyledDescription dangerouslySetInnerHTML={{ __html: description }} />}
+      {images && (
+        <StyledImageWrapper>
+          {images.map((img) => (
+            <img key={img?.id} src={img?.url} alt={img?.caption ?? ''} />
+          ))}
+        </StyledImageWrapper>
+      )}
+    </StyledCard>
   )
 }
 

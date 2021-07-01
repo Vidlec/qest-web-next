@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div`
   .slick-list,
   .slick-slider,
   .slick-track {
@@ -90,8 +90,6 @@ const SliderWrapper = styled.div`
   .slick-arrow.slick-hidden {
     display: none;
   }
-
-  @charset 'UTF-8';
 
   .slick-dots,
   .slick-next,
@@ -248,4 +246,28 @@ const SliderWrapper = styled.div`
   }
 `
 
-export default SliderWrapper
+export const ArrowLabel = styled.span`
+  font-size: ${({ theme }) => theme.sizes.extraSmall};
+`
+
+export const ArrowRightWrapper = styled.button`
+  position: relative;
+  z-index: 1;
+  float: right;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  color: #fff;
+  margin-top: 0.8rem;
+
+  @media (min-width: ${({ theme }) => theme.mediaQueries.desktopSmall}) {
+    margin-top: -2rem;
+  }
+`
+
+export const ArrowRightIcon = styled.img`
+  width: 75px;
+  height: 20px;
+  display: block;
+  margin: 0 0 1rem auto;
+`

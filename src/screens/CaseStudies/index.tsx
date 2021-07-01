@@ -5,17 +5,17 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 export interface Props {
-	caseStudies: CaseStudy[]
+  caseStudies: CaseStudy[]
 }
 
 const Reference: React.FC<Props> = ({ caseStudies }) => {
-	return (
-		<>
-			<Header />
-			<Content caseStudies={caseStudies} />
-			<Footer />
-		</>
-	)
+  return (
+    <>
+      <Header />
+      <Content caseStudies={caseStudies} />
+      <Footer />
+    </>
+  )
 }
 
 export default Reference

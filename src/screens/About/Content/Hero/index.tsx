@@ -1,3 +1,8 @@
+import Line from 'components/Line'
+import { useTranslation } from 'next-i18next'
+import React from 'react'
+import { useTheme } from 'styled-components'
+import useWindowSize from 'utils/hooks/useWindowSize'
 import {
   ArrowDownIcon,
   ArrowLink,
@@ -10,12 +15,11 @@ import {
   LogoLineWrapper,
   LogoPicture,
   PictureImg,
-} from 'components/About/styled'
-import Line from 'components/Line'
-import { useTranslation } from 'next-i18next'
-import React from 'react'
+} from './styled'
 
-const AboutHero = () => {
+const AboutHero: React.FC = () => {
+  const { mediaQueriesNumbers } = useTheme()
+  const isPhone = useWindowSize(mediaQueriesNumbers.desktopSmall, 100)
   const { t } = useTranslation()
 
   return (
@@ -42,12 +46,14 @@ const AboutHero = () => {
         <Line />
       </LogoLineWrapper>
 
-      <ArrowLinkWrapper>
-        <ArrowLink href={'#'}>
-          <ArrowDownIcon src={t('about.arrow.url')} alt={t('about.arrow.alternativeText')} />
-          <span>{t('about.heroArrowTitle')}</span>
-        </ArrowLink>
-      </ArrowLinkWrapper>
+      {!isPhone && (
+        <ArrowLinkWrapper>
+          <ArrowLink offset={() => 170} href="#weAre">
+            <ArrowDownIcon src={t('about.arrow.url')} alt={t('about.arrow.alternativeText')} />
+            <span>{t('about.heroArrowTitle')}</span>
+          </ArrowLink>
+        </ArrowLinkWrapper>
+      )}
     </HeroContainer>
   )
 }

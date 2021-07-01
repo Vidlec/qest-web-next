@@ -1,23 +1,18 @@
-import * as React from 'react'
+import Footer from 'components/Footer'
 import { Form } from 'components/Form'
 import Header from 'components/Header'
-import Footer from 'components/Footer'
-import Content from './Content'
-import { HqGallery } from 'gql/generated/types'
+import * as React from 'react'
+import Content, { AboutPageProps } from './Content'
 
-interface Props {
-	galleries: HqGallery[]
-}
-
-const AboutPage: React.FC<Props> = ({ galleries }) => {
-	return (
-		<>
-			<Header />
-			<Content galleries={galleries} />
-			<Footer />
-			<Form />
-		</>
-	)
+const AboutPage: React.FC<AboutPageProps> = (props) => {
+  return (
+    <>
+      <Header />
+      <Content {...props} />
+      <Footer />
+      <Form />
+    </>
+  )
 }
 
 export default AboutPage

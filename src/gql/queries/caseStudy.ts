@@ -1,11 +1,11 @@
-import { gql } from 'apollo-boost'
+import { gql } from 'graphql-request'
 
 export const CASE_STUDY_QUERY = gql`
-	query CaseStudy($slug: String!) {
-		caseStudies(where: { slug: $slug }) {
-			id
-			title
-			slug
-		}
-	}
+  query CaseStudy($slug: String!) {
+    caseStudies(where: { slug: $slug }) {
+      id
+      title
+      slug
+    }
+  }
 `

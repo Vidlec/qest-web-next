@@ -1,49 +1,16 @@
-import Col from 'components/Col'
-import Container from 'components/Container'
-import Headline from 'components/Headline'
-import Paragraph from 'components/Paragraph'
-import Row from 'components/Row'
-import TechnologiesCard from 'components/TechnologiesCard'
-import { useTranslation } from 'next-i18next'
-import React from 'react'
-import theme from 'theme'
+import { gqlUrl } from 'constants/config'
+import { CareerQuery, CareerQueryVariables } from 'gql/generated/types'
+import { CAREER_QUERY } from 'gql/queries/career'
+import request from 'graphql-request'
+import { GetStaticProps } from 'next'
+import CareerPage from 'screens/Career'
 
-const Career: React.FC = () => {
-  const { t } = useTranslation()
+export default CareerPage
 
-  return (
-    <>
-      <Container>
-        <Row>
-          <Col mobile={12} desktopSmall={7} desktop={8}>
-            <Headline color={theme.colors.green}>{t('careers.title')}</Headline>
-            <Paragraph
-              dangerouslySetInnerHTML={{
-                __html: t('careers.careerDescription'),
-              }}
-            />
-          </Col>
-          <Col>
-            <TechnologiesCard
-              src={t('about.technologiesImage.url')}
-              alt={t('about.technologiesImage.alternativeText')}
-              heading={t('careers.technologiesHeading')}
-              __html={t('careers.technologies')}
-              handIsOnMiddle
-            />
-          </Col>
-        </Row>
-      </Container>
-      <Container>
-        <Headline>{t('careers.careerWho')}</Headline>
+export const getStaticProps: GetStaticProps<CareerQuery> = async (context) => {
+  const props = await request<CareerQuery, CareerQueryVariables>(gqlUrl, CAREER_QUERY, {
+    locale: context.locale,
+  })
 
-        <Paragraph dangerouslySetInnerHTML={{ __html: t('careers.careerWhy') }} />
-      </Container>
-      <Container>
-        <Headline>{t('careers.careerWhatHeading')}</Headline>
-      </Container>
-    </>
-  )
+  return { props }
 }
-
-export default Career

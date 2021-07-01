@@ -7,6 +7,8 @@ export const CAREER_OFFERINGS_QUERY = gql`
       language
       title
       slug
+      perex
+      color
     }
   }
 `

@@ -1,5 +1,27 @@
 import { gql } from 'graphql-request'
 
+const Skill = gql`
+  fragment Skill on Skill {
+    id
+    title
+    description
+    titleColorHash
+  }
+`
+
+const BrandValue = gql`
+  fragment BrandValue on BrandValue {
+    id
+    headline
+    backgroundNumber
+    image {
+      url
+      alternativeText
+    }
+    description
+  }
+`
+
 export const ABOUT_QUERY = gql`
   query {
     aboutuses {
@@ -47,20 +69,10 @@ export const ABOUT_QUERY = gql`
         alternativeText
       }
       skills {
-        id
-        title
-        description
-        titleColorHash
+        ...Skill
       }
       brandValues {
-        id
-        headline
-        backgroundNumber
-        image {
-          url
-          alternativeText
-        }
-        description
+        ...BrandValue
       }
       hqImageGrid {
         id
@@ -80,4 +92,6 @@ export const ABOUT_QUERY = gql`
       }
     }
   }
+  ${Skill}
+  ${BrandValue}
 `

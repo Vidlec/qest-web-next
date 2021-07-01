@@ -1,28 +1,28 @@
+import { BrandValueFragment } from 'gql/generated/types'
+import { useTranslation } from 'next-i18next'
 import React from 'react'
-import { ValuesHeadline, ValuesWrapper } from './styled'
-import { BrandValue } from 'gql/generated/types'
-import { useTranslation } from 'react-i18next'
-
 import AboutBrandValue from '../BrandValues/brandValue'
+import { ValuesHeadline, ValuesWrapper } from './styled'
 
-const BrandValues = () => {
-	const { t } = useTranslation()
+interface Props {
+  brandValues: BrandValueFragment[]
+}
+const BrandValues: React.FC<Props> = ({ brandValues }) => {
+  const { t } = useTranslation()
 
-	return (
-		<>
-			<ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
+  return (
+    <>
+      <ValuesHeadline>{t('about.valuesHeadline')}</ValuesHeadline>
 
-			<ValuesWrapper>
-				{t<string, BrandValue[]>('about.brandValues', {
-					returnObjects: true,
-				}).map((value) => (
-					<div key={value.id}>
-						<AboutBrandValue value={value} />
-					</div>
-				))}
-			</ValuesWrapper>
-		</>
-	)
+      <ValuesWrapper>
+        {brandValues.map((value) => (
+          <div key={value.id}>
+            <AboutBrandValue value={value} />
+          </div>
+        ))}
+      </ValuesWrapper>
+    </>
+  )
 }
 
 export default BrandValues

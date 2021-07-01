@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const StyledCard = styled.div`
   color: ${({ theme }) => theme.colors.green};
   background-color: black;
   padding: 2rem 4rem 2rem 2rem;
   position: relative;
 `
-export const Picture = styled.picture<{ handIsOnMiddle?: boolean }>`
+export const StyledPicture = styled.img<{ handIsOnMiddle?: boolean }>`
   position: absolute;
   right: 1rem;
-  top: calc(100% - 3rem);
+  top: calc(50% - 6.25rem);
+  height: 12.5rem;
 
   @media (min-width: ${({ theme }) => theme.mediaQueries.desktop}) {
     ${({ handIsOnMiddle }) =>
@@ -26,14 +27,20 @@ export const Picture = styled.picture<{ handIsOnMiddle?: boolean }>`
     top: unset;
   }
 `
-export const Heading = styled.h5`
+export const StyledHeading = styled.h5`
   margin: 0 0 1rem 0;
-  font-size: 1.6rem;
+  font-size: ${({ theme }) => theme.sizes.body};
   font-weight: bold;
 `
 
-export const Description = styled.div`
-  margin: 0;
+export const StyledDescription = styled.div`
+  margin: 0 0 2rem 0;
   font-family: 'sourceCodeVariable';
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.sizes.extraSmall};
+`
+export const StyledImageWrapper = styled.div`
+  width: calc(100% + 4rem);
+  margin: 0 -3rem 0 -1rem;
+  display: flex;
+  justify-content: space-between;
 `

@@ -1,27 +1,28 @@
+import { SkillFragment } from 'gql/generated/types'
+import { useTranslation } from 'next-i18next'
 import React from 'react'
 import AboutSkill from './skill'
-import { Skill } from 'gql/generated/types'
-import { useTranslation } from 'react-i18next'
-import { SkillsList, SkillDescription } from './styled'
+import { SkillDescription, SkillsList } from './styled'
 
-const Skills = () => {
-	const { t } = useTranslation()
+interface Props {
+  skills: SkillFragment[]
+}
 
-	return (
-		<>
-			<SkillDescription>{t('about.skillsDescription')}</SkillDescription>
+const Skills: React.FC<Props> = ({ skills }) => {
+  const { t } = useTranslation()
 
-			<SkillsList>
-				{t<string, Skill[]>('about.skills', {
-					returnObjects: true,
-				}).map((skill) => (
-					<div key={skill.id}>
-						<AboutSkill skill={skill} />
-					</div>
-				))}
-			</SkillsList>
-		</>
-	)
+  return (
+    <>
+      <SkillDescription>{t('about.skillsDescription')}</SkillDescription>
+      <SkillsList>
+        {skills.map((skill) => (
+          <div key={skill.id}>
+            <AboutSkill skill={skill} />
+          </div>
+        ))}
+      </SkillsList>
+    </>
+  )
 }
 
 export default Skills
