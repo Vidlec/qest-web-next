@@ -76,7 +76,7 @@ export const StyledEnd = styled.div`
 
 export const StyledEndHead = styled.h5`
 	margin: 0 0 3rem 0;
-	font-size: ${({ theme }) => theme.sizes.headingSmall};
+	font-size: ${({ theme }) => theme.sizes.small};
 	color: ${({ theme }) => theme.colors.lightGray};
 `
 

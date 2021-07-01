@@ -38,7 +38,7 @@ const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 			<Container>
 				<StyledMarginRow>
 					<Col mobile={12} desktopSmall={7} desktop={8}>
-						<Headline color={theme.colors.green}>
+						<Headline color={'green'}>
 							{career?.title}
 						</Headline>
 						<Text
@@ -64,7 +64,7 @@ const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 						/>
 					</Col>
 				</StyledMarginRow>
-				<Headline>{career?.careerWho}</Headline>
+				<Headline color={'default'}>{career?.careerWho}</Headline>
 				<SquareList
 					squares={career?.careerPositions as CareerOfferings[]}
 				>
@@ -86,7 +86,7 @@ const CareerPage: React.FC<CareerQuery> = ({ career }) => {
 					</Link>
 				</StyledCareerWhy>
 
-				<StyledLongHeadLine>
+				<StyledLongHeadLine color={'default'}>
 					{career?.careerWhatHeading}
 				</StyledLongHeadLine>
 				<PictureList
