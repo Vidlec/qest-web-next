@@ -1,5 +1,5 @@
 import request from 'graphql-request'
-import CareerPage, { Props as CareerProps } from 'screens/Career'
+import CareerPage from 'screens/Career'
 import { CAREER_QUERY } from 'gql/queries/career'
 import { GetStaticProps } from 'next'
 import { CareerQuery } from 'gql/generated/types'
