@@ -4,7 +4,7 @@ import {
 	CaseStudy,
 	CaseStudyQueryVariables,
 } from 'gql/generated/types'
-import CaseStudyPage from 'screens/CaseStudy'
+import CaseStudyPage, { Props as CSQuery } from 'screens/CaseStudy'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { CASE_STUDIES_QUERY } from 'gql/queries/caseStudies'
 import { CASE_STUDY_QUERY } from 'gql/queries/caseStudy'
@@ -29,10 +29,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	}
 }
 
-export const getStaticProps: GetStaticProps<
-	CaseStudyQuery,
-	{ slug: string }
-> = async (context) => {
+export const getStaticProps: GetStaticProps<CSQuery, { slug: string }> = async (
+	context
+) => {
 	const slug = context.params?.slug
 
 	if (!slug) {
@@ -45,9 +44,13 @@ export const getStaticProps: GetStaticProps<
 		{ slug }
 	)
 
-	console.log(data, data.caseStudies, data.caseStudies![0])
-
-	return {
-		data,
+	if ( data.caseStudies![0] ) {
+		return {
+			props: {
+				caseStudy: data.caseStudies![0] as CaseStudy
+			}
+		}
 	}
+
+	return { notFound: true }
 }

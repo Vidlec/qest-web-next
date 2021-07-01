@@ -1,10 +1,14 @@
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 import * as React from 'react'
-import { CaseStudyQuery } from 'gql/generated/types'
+import { CaseStudy } from 'gql/generated/types'
 
-const CaseStudyPage: React.FC<CaseStudyQuery> = ({caseStudies}) => {
-    const caseStudy = caseStudies![0]
+export interface Props {
+    caseStudy: CaseStudy
+}
+
+const CaseStudyPage: React.FC<Props> = ({caseStudy}) => {
+
     return (
         <>
             <Header />
