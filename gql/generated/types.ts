@@ -5560,10 +5560,10 @@ export type CareerQuery = (
       )>>> }
     )>, careerPositions?: Maybe<Array<Maybe<(
       { __typename?: 'CareerOfferings' }
-      & Pick<CareerOfferings, 'title' | 'color' | 'perex' | 'slug'>
+      & Pick<CareerOfferings, 'id' | 'title' | 'color' | 'perex' | 'slug'>
     )>>>, info?: Maybe<Array<Maybe<(
       { __typename?: 'ComponentContentPictureList' }
-      & Pick<ComponentContentPictureList, 'header' | 'color' | 'description'>
+      & Pick<ComponentContentPictureList, 'id' | 'header' | 'color' | 'description'>
       & { image?: Maybe<(
         { __typename?: 'UploadFile' }
         & Pick<UploadFile, 'url' | 'alternativeText'>

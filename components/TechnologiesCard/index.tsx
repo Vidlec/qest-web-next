@@ -3,15 +3,15 @@ import { Card, Picture, Heading, Description, ImageWrapper } from './styled'
 import { useTranslation } from 'react-i18next'
 import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
 
-interface Props extends Omit<ComponentContentTechnologies, 'id'> {
-	hand: UploadFile
+interface Props extends Omit<ComponentContentTechnologies, 'id' | 'created_at' | 'updated_at'> {
+	floatImage: UploadFile
 	heading?: string
 	__html?: string
 	handIsOnMiddle?: boolean
 }
 
 const TechnologiesCard: React.FC<Props> = ({
-	hand,
+	floatImage,
 	handIsOnMiddle,
 	technologies,
 	description,
@@ -23,8 +23,8 @@ const TechnologiesCard: React.FC<Props> = ({
 		<Card>
 			<Picture
 				handIsOnMiddle={handIsOnMiddle}
-				src={hand.url}
-				alt={hand.alternativeText as string}
+				src={floatImage.url}
+				alt={floatImage.alternativeText as string}
 			/>
 
 			{technologies && <Heading>{technologies}</Heading>}

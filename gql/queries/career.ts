@@ -19,6 +19,7 @@ export const CAREER_QUERY = gql`
 				}
 			}
 			careerPositions {
+				id
 				title
 				color
 				perex
@@ -32,6 +33,7 @@ export const CAREER_QUERY = gql`
 			careerWhyLook
 			careerWhatHeading
 			info {
+				id
 				header
 				color
 				description
