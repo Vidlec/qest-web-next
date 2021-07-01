@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 import { DefaultTheme } from 'styled-components'
 
-//TODO: make color optional
-
 export type ItemColor = 'red' | 'pink' | 'yellow' | 'blue' | 'green' | 'default'
 
-const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
+const getItemColor = (theme: DefaultTheme, color?: ItemColor): string => {
     const colorsMap: Record<ItemColor, string> = {
         red: theme.colors.red,
         pink: theme.colors.pink,
@@ -15,10 +13,10 @@ const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
         default: theme.colors.white,
     }
 
-    return colorsMap[color]
+    return color? colorsMap[color]: colorsMap.default
 }
 
-const Headline = styled.h1<{ color: ItemColor }>`
+const Headline = styled.h1<{ color?: ItemColor }>`
 	color: ${({ theme, color }) => getItemColor(theme, color)};
 	font-size: ${({ theme }) => theme.sizes.large};
 	font-weight: bold;
