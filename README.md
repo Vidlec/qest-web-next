@@ -6,11 +6,11 @@ This page describes information about Qest web.
 
 -   two environments: development and production
 -   current URLs:
-    -   development: https://dev.web.qestapp.net
-    -   production: https://web.qestapp.net
--   git: https://dev.azure.com/qest/Qest/_git/qest-web-react-2.0
--   PR pipeline (trigger when master branch change): https://dev.azure.com/qest/Qest/_build?definitionId=241
--   Release pipeline (trigger when master branch change for deploy dev, prod has to be approved): https://dev.azure.com/qest/Qest/_release?_a=releases&view=mine&definitionId=124
+    -   development: <https://dev.web.qestapp.net>
+    -   production: <https://web.qestapp.net>
+-   git: <https://dev.azure.com/qest/Qest/_git/qest-web-react-2.0>
+-   PR pipeline (trigger when master branch change): <https://dev.azure.com/qest/Qest/_build?definitionId=241>
+-   Release pipeline (trigger when master branch change for deploy dev, prod has to be approved): <https://dev.azure.com/qest/Qest/_release?_a=releases&view=mine&definitionId=124>
 -   framework: Next.js
 -   language: TypeScript
 -   type: static web - build at CICD
@@ -44,4 +44,4 @@ We can reuse certificate and hosted zone from CMS of web (its arn is filled at a
     -   there is generated authToken for simple secure EP
     -   controller create POST call into TFS (with credentials from envs)
     -   TFS runs release pipeline
-    -   note: there is duplication of pipeline for deploy production (because I do not find solution how to trigger explicitly second stage via REST API): https://dev.azure.com/qest/Qest/_release?view=all&_a=releases&definitionId=126
+    -   note: there is duplication of pipeline for deploy production (because I do not find solution how to trigger explicitly second stage via REST API): <https://dev.azure.com/qest/Qest/_release?view=all&_a=releases&definitionId=126>

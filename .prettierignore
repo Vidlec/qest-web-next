@@ -3,3 +3,7 @@ build/
 coverage/
 node_modules/
 tsconfig.json
+
+# Ignore generated files
+graphql.schema.json
+src/**/generated

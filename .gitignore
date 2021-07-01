@@ -45,3 +45,4 @@ jspm_packages
 .DS_Store
 cdk.context.json
 .serverless_nextjs
+.vscode
