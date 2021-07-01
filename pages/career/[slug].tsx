@@ -55,9 +55,14 @@ export const getStaticProps: GetStaticProps<
 
 	const careerOffer = data.careerOfferings![0] as CareerOfferings
 
-	return {
-		props: {
-			careerOffer: careerOffer
+	if ( careerOffer ) {
+		return {
+			props: {
+				careerOffer: careerOffer
+			}
 		}
 	}
+	
+	return { notFound: true }
+	
 }
