@@ -1,10 +1,8 @@
 import React from 'react'
-import { useTheme } from 'styled-components'
 import { CareerOfferings } from 'gql/generated/types'
 import { Block, Link, List, Technologies, SubTitle, Content } from './styled'
 import Container from 'components/Container'
-import Headline from 'components/Headline'
-import theme from 'theme/index'
+import Headline, { ItemColor } from 'components/Headline'
 import Row from 'components/Row'
 import Col from 'components/Col'
 
@@ -13,13 +11,13 @@ type Props = {
 }
 
 const CareerOffer: React.FC<Props> = ({ offer }) => {
-	const { colors } = useTheme()
+	const colors: ItemColor[] = ['red', 'yellow', 'pink', 'green', 'blue']
 
 	return (
 		<>
 			<Container>
 				<Block>
-					<Headline color={colors.green}>{offer.title}</Headline>
+					<Headline color={colors[3]}>{offer.title}</Headline>
 					<Content
 						dangerouslySetInnerHTML={{
 							__html: offer.description as string,

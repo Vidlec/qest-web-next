@@ -16,6 +16,7 @@ const Portal: React.FC<Props> = ({ portalID, children }) => {
 		setMounted(true)
 
 		return () => {
+			// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 			ref.current ? portalRoot?.removeChild(ref.current) : null
 		}
 	}, [portalID])
