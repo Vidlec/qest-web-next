@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
-const Headline = styled.h1<{ color?: string }>`
-	color: ${({ color, theme }) => (color ? color : theme.colors.lightGray)};
+interface Props {
+    color: string
+}
+
+const Headline = styled.h1<Props>`
+	color: ${(props) => props.color}
 	font-size: ${({ theme }) => theme.sizes.body};
 	font-weight: bold;
 	letter-spacing: 0;
