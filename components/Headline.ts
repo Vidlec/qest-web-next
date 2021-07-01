@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { DefaultTheme } from 'styled-components'
 
+//TODO: make color optional
+
 export type ItemColor = 'red' | 'pink' | 'yellow' | 'blue' | 'green' | 'default'
 
 const getItemColor = (theme: DefaultTheme, color: ItemColor): string => {
