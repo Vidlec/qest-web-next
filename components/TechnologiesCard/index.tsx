@@ -1,9 +1,19 @@
 import React from 'react'
-import { Card, Picture, Heading, Description, ImageWrapper } from './styled'
+import {
+	StyledCard,
+	StyledPicture,
+	StyledHeading,
+	StyledDescription,
+	StyledImageWrapper,
+} from './styled'
 import { useTranslation } from 'react-i18next'
 import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
 
-interface Props extends Omit<ComponentContentTechnologies, 'id' | 'created_at' | 'updated_at'> {
+interface Props
+	extends Omit<
+		ComponentContentTechnologies,
+		'id' | 'created_at' | 'updated_at'
+	> {
 	floatImage: UploadFile
 	heading?: string
 	__html?: string
@@ -20,21 +30,21 @@ const TechnologiesCard: React.FC<Props> = ({
 	const { t } = useTranslation()
 
 	return (
-		<Card>
-			<Picture
+		<StyledCard>
+			<StyledPicture
 				handIsOnMiddle={handIsOnMiddle}
 				src={floatImage.url}
 				alt={floatImage.alternativeText as string}
 			/>
 
-			{technologies && <Heading>{technologies}</Heading>}
+			{technologies && <StyledHeading>{technologies}</StyledHeading>}
 			{description && (
-				<Description
+				<StyledDescription
 					dangerouslySetInnerHTML={{ __html: description }}
 				/>
 			)}
 			{images && (
-				<ImageWrapper>
+				<StyledImageWrapper>
 					{images.map((image) => (
 						<img
 							key={image?.id}
@@ -42,9 +52,9 @@ const TechnologiesCard: React.FC<Props> = ({
 							alt={image?.url}
 						/>
 					))}
-				</ImageWrapper>
+				</StyledImageWrapper>
 			)}
-		</Card>
+		</StyledCard>
 	)
 }
 
