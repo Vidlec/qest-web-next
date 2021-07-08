@@ -9,7 +9,6 @@ generates:
       - 'typescript-operations'
     config:
       immutableTypes: true
-      skipTypename: true
   ./graphql.schema.json:
     plugins:
       - 'introspection'

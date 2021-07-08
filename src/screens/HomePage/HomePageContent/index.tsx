@@ -18,17 +18,17 @@ const HomePage: React.FC = () => {
   return (
     <Wrapper>
       <WrapperLogoTexts>
-        <TextLogo>{t('homePage:descriptionAboveLine')}</TextLogo>
-        <TextLogo>{t('homePage:descriptionBellowLine')}</TextLogo>
+        <TextLogo>{t('homepage:descriptionAboveLine')}</TextLogo>
+        <TextLogo>{t('homepage:descriptionBellowLine')}</TextLogo>
       </WrapperLogoTexts>
       <Logo>
         {/** TODO: Use static image */}
-        <PictureLogo src={t('homePage:logo.url')} alt="qest logo" />
+        <PictureLogo src={t('homepage:logo.url')} alt="qest logo" />
         <Line />
       </Logo>
       <SlideStopWrapper>
         <Button>8</Button>
-        <ClickText href={'/'}>{t('homePage:clickToStopText')}</ClickText>
+        <ClickText href={'/'}>{t('homepage:clickToStopText')}</ClickText>
       </SlideStopWrapper>
     </Wrapper>
   )

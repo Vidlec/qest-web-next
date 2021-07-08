@@ -231,7 +231,7 @@ const Content: React.FC<AboutPageProps> = ({ galleries, posts }) => {
           }}
         />
 
-        <Link href="/career">
+        <Link href="/career" passHref>
           <CareerCTA>
             <span>{t('about.careerCTATitle')}</span>
             <img

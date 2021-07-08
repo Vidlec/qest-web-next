@@ -13,6 +13,8 @@ export type Scalars = {
   Date: any;
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: any;
+  /** Input type for dynamic zone content of DynamicTest */
+  DynamicTestContentDynamicZoneInput: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: any;
   /** The `Long` scalar type represents 52-bit integers */
@@ -23,7 +25,76 @@ export type Scalars = {
   Upload: any;
 };
 
+export type About = {
+  readonly __typename?: 'About';
+  readonly id: Scalars['ID'];
+  readonly created_at: Scalars['DateTime'];
+  readonly updated_at: Scalars['DateTime'];
+  readonly brandValues?: Maybe<ReadonlyArray<Maybe<ComponentAboutUsBrandValue>>>;
+  readonly locale?: Maybe<Scalars['String']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<HqGallery>>>;
+  readonly imageCarousel?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
+  readonly skills?: Maybe<ReadonlyArray<Maybe<Skill>>>;
+  readonly teams?: Maybe<ReadonlyArray<Maybe<Team>>>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<About>>>;
+};
+
+
+export type AboutHqGalleriesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type AboutImageCarouselArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type AboutSkillsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type AboutTeamsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type AboutLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type AboutInput = {
+  readonly brandValues?: Maybe<ReadonlyArray<Maybe<ComponentAboutUsBrandValueInput>>>;
+  readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly imageCarousel?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly skills?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly teams?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly created_by?: Maybe<Scalars['ID']>;
+  readonly updated_by?: Maybe<Scalars['ID']>;
+};
+
 export type AboutUs = {
+  readonly __typename?: 'AboutUs';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -103,172 +174,206 @@ export type AboutUsTeamsArgs = {
 };
 
 export type AboutUsAggregator = {
+  readonly __typename?: 'AboutUsAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type AboutUsConnection = {
+  readonly __typename?: 'AboutUsConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<AboutUs>>>;
   readonly groupBy?: Maybe<AboutUsGroupBy>;
   readonly aggregate?: Maybe<AboutUsAggregator>;
 };
 
 export type AboutUsConnectionArrow = {
+  readonly __typename?: 'AboutUsConnectionArrow';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionBlogHeadline = {
+  readonly __typename?: 'AboutUsConnectionBlogHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionBlogReadMore = {
+  readonly __typename?: 'AboutUsConnectionBlogReadMore';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionCareerCtaImage = {
+  readonly __typename?: 'AboutUsConnectionCareerCTAImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionCareerCtaTitle = {
+  readonly __typename?: 'AboutUsConnectionCareerCTATitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionCareerDescription = {
+  readonly __typename?: 'AboutUsConnectionCareerDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionCareerHeadline = {
+  readonly __typename?: 'AboutUsConnectionCareerHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionCreated_At = {
+  readonly __typename?: 'AboutUsConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHeroArrowTitle = {
+  readonly __typename?: 'AboutUsConnectionHeroArrowTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHeroDescription = {
+  readonly __typename?: 'AboutUsConnectionHeroDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHeroHeadlineBottom = {
+  readonly __typename?: 'AboutUsConnectionHeroHeadlineBottom';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHeroHeadlineTop = {
+  readonly __typename?: 'AboutUsConnectionHeroHeadlineTop';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHeroLogo = {
+  readonly __typename?: 'AboutUsConnectionHeroLogo';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHqCtaTitle = {
+  readonly __typename?: 'AboutUsConnectionHqCTATitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHqDescription = {
+  readonly __typename?: 'AboutUsConnectionHqDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHqHeadline = {
+  readonly __typename?: 'AboutUsConnectionHqHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHqWeAreHereDescription = {
+  readonly __typename?: 'AboutUsConnectionHqWeAreHereDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionHqWeAreHereImage = {
+  readonly __typename?: 'AboutUsConnectionHqWeAreHereImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionId = {
+  readonly __typename?: 'AboutUsConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionLanguage = {
+  readonly __typename?: 'AboutUsConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionPublished_At = {
+  readonly __typename?: 'AboutUsConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionSkillsDescription = {
+  readonly __typename?: 'AboutUsConnectionSkillsDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionSkillsHeadline = {
+  readonly __typename?: 'AboutUsConnectionSkillsHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionTeamHeadline = {
+  readonly __typename?: 'AboutUsConnectionTeamHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionTechnologiesDescription = {
+  readonly __typename?: 'AboutUsConnectionTechnologiesDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionTechnologiesImage = {
+  readonly __typename?: 'AboutUsConnectionTechnologiesImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionUpdated_At = {
+  readonly __typename?: 'AboutUsConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionValuesHeadline = {
+  readonly __typename?: 'AboutUsConnectionValuesHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionWeAreArrowTitle = {
+  readonly __typename?: 'AboutUsConnectionWeAreArrowTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionWeAreDescription = {
+  readonly __typename?: 'AboutUsConnectionWeAreDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsConnectionWeAreHeadline = {
+  readonly __typename?: 'AboutUsConnectionWeAreHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<AboutUsConnection>;
 };
 
 export type AboutUsGroupBy = {
+  readonly __typename?: 'AboutUsGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<AboutUsConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<AboutUsConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<AboutUsConnectionUpdated_At>>>;
@@ -341,15 +446,16 @@ export type AboutUsInput = {
 };
 
 export type AboutWeAreImageCarousel = {
+  readonly __typename?: 'AboutWeAreImageCarousel';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
   readonly published_at?: Maybe<Scalars['DateTime']>;
-  readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
+  readonly images?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
 };
 
 
-export type AboutWeAreImageCarouselWeAreImageCarouselArgs = {
+export type AboutWeAreImageCarouselImagesArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -357,13 +463,14 @@ export type AboutWeAreImageCarouselWeAreImageCarouselArgs = {
 };
 
 export type AboutWeAreImageCarouselInput = {
-  readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type AdminUser = {
+  readonly __typename?: 'AdminUser';
   readonly id: Scalars['ID'];
   readonly username?: Maybe<Scalars['String']>;
   readonly firstname: Scalars['String'];
@@ -371,6 +478,7 @@ export type AdminUser = {
 };
 
 export type BrandValue = {
+  readonly __typename?: 'BrandValue';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -382,6 +490,7 @@ export type BrandValue = {
 };
 
 export type BrandValueAggregator = {
+  readonly __typename?: 'BrandValueAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
   readonly sum?: Maybe<BrandValueAggregatorSum>;
@@ -391,68 +500,82 @@ export type BrandValueAggregator = {
 };
 
 export type BrandValueAggregatorAvg = {
+  readonly __typename?: 'BrandValueAggregatorAvg';
   readonly backgroundNumber?: Maybe<Scalars['Float']>;
 };
 
 export type BrandValueAggregatorMax = {
+  readonly __typename?: 'BrandValueAggregatorMax';
   readonly backgroundNumber?: Maybe<Scalars['Float']>;
 };
 
 export type BrandValueAggregatorMin = {
+  readonly __typename?: 'BrandValueAggregatorMin';
   readonly backgroundNumber?: Maybe<Scalars['Float']>;
 };
 
 export type BrandValueAggregatorSum = {
+  readonly __typename?: 'BrandValueAggregatorSum';
   readonly backgroundNumber?: Maybe<Scalars['Float']>;
 };
 
 export type BrandValueConnection = {
+  readonly __typename?: 'BrandValueConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<BrandValue>>>;
   readonly groupBy?: Maybe<BrandValueGroupBy>;
   readonly aggregate?: Maybe<BrandValueAggregator>;
 };
 
 export type BrandValueConnectionBackgroundNumber = {
+  readonly __typename?: 'BrandValueConnectionBackgroundNumber';
   readonly key?: Maybe<Scalars['Int']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionCreated_At = {
+  readonly __typename?: 'BrandValueConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionDescription = {
+  readonly __typename?: 'BrandValueConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionHeadline = {
+  readonly __typename?: 'BrandValueConnectionHeadline';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionId = {
+  readonly __typename?: 'BrandValueConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionImage = {
+  readonly __typename?: 'BrandValueConnectionImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionPublished_At = {
+  readonly __typename?: 'BrandValueConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueConnectionUpdated_At = {
+  readonly __typename?: 'BrandValueConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<BrandValueConnection>;
 };
 
 export type BrandValueGroupBy = {
+  readonly __typename?: 'BrandValueGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<BrandValueConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<BrandValueConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<BrandValueConnectionUpdated_At>>>;
@@ -474,28 +597,27 @@ export type BrandValueInput = {
 };
 
 export type Career = {
+  readonly __typename?: 'Career';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
-  readonly title: Scalars['String'];
-  readonly description: Scalars['String'];
-  readonly technologies?: Maybe<ComponentContentTechnologies>;
-  readonly careerWho?: Maybe<Scalars['String']>;
-  readonly somethingElseHeading?: Maybe<Scalars['String']>;
-  readonly somethingElseDescription?: Maybe<Scalars['String']>;
-  readonly somethingElseContact?: Maybe<Scalars['String']>;
-  readonly careerWhy?: Maybe<Scalars['String']>;
-  readonly careerWhatHeading?: Maybe<Scalars['String']>;
-  readonly info?: Maybe<ReadonlyArray<Maybe<ComponentContentPictureList>>>;
-  readonly careerWhyLook?: Maybe<Scalars['String']>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly careerPositions?: Maybe<ReadonlyArray<Maybe<CareerOfferings>>>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<Career>>>;
 };
 
 
 export type CareerCareerPositionsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type CareerTechnologiesArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
@@ -511,18 +633,8 @@ export type CareerLocalizationsArgs = {
 };
 
 export type CareerInput = {
-  readonly title: Scalars['String'];
-  readonly description: Scalars['String'];
-  readonly technologies?: Maybe<ComponentContentTechnologyInput>;
-  readonly careerWho?: Maybe<Scalars['String']>;
   readonly careerPositions?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
-  readonly somethingElseHeading?: Maybe<Scalars['String']>;
-  readonly somethingElseDescription?: Maybe<Scalars['String']>;
-  readonly somethingElseContact?: Maybe<Scalars['String']>;
-  readonly careerWhy?: Maybe<Scalars['String']>;
-  readonly careerWhatHeading?: Maybe<Scalars['String']>;
-  readonly info?: Maybe<ReadonlyArray<Maybe<ComponentContentPictureListInput>>>;
-  readonly careerWhyLook?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
@@ -546,12 +658,15 @@ export type CareerOfferingInput = {
   readonly slug: Scalars['String'];
   readonly color?: Maybe<Scalars['String']>;
   readonly perex?: Maybe<Scalars['String']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type CareerOfferings = {
+  readonly __typename?: 'CareerOfferings';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -570,116 +685,154 @@ export type CareerOfferings = {
   readonly slug: Scalars['String'];
   readonly color?: Maybe<Scalars['String']>;
   readonly perex?: Maybe<Scalars['String']>;
+  readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<CareerOfferings>>>;
+};
+
+
+export type CareerOfferingsLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 export type CareerOfferingsAggregator = {
+  readonly __typename?: 'CareerOfferingsAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type CareerOfferingsConnection = {
+  readonly __typename?: 'CareerOfferingsConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<CareerOfferings>>>;
   readonly groupBy?: Maybe<CareerOfferingsGroupBy>;
   readonly aggregate?: Maybe<CareerOfferingsAggregator>;
 };
 
 export type CareerOfferingsConnectionCareerExpectedSkillsContent = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerExpectedSkillsContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCareerExpectedSkillsTitle = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerExpectedSkillsTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCareerOfferContent = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerOfferContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCareerOfferTitle = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerOfferTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCareerTechnologiesContent = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerTechnologiesContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCareerTechnologiesTitle = {
+  readonly __typename?: 'CareerOfferingsConnectionCareerTechnologiesTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionColor = {
+  readonly __typename?: 'CareerOfferingsConnectionColor';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionCreated_At = {
+  readonly __typename?: 'CareerOfferingsConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionDescription = {
+  readonly __typename?: 'CareerOfferingsConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionEndCta = {
+  readonly __typename?: 'CareerOfferingsConnectionEndCTA';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionEndContent = {
+  readonly __typename?: 'CareerOfferingsConnectionEndContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionEndTitle = {
+  readonly __typename?: 'CareerOfferingsConnectionEndTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionId = {
+  readonly __typename?: 'CareerOfferingsConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionLanguage = {
+  readonly __typename?: 'CareerOfferingsConnectionLanguage';
+  readonly key?: Maybe<Scalars['String']>;
+  readonly connection?: Maybe<CareerOfferingsConnection>;
+};
+
+export type CareerOfferingsConnectionLocale = {
+  readonly __typename?: 'CareerOfferingsConnectionLocale';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionPerex = {
+  readonly __typename?: 'CareerOfferingsConnectionPerex';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionPublished_At = {
+  readonly __typename?: 'CareerOfferingsConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionSlug = {
+  readonly __typename?: 'CareerOfferingsConnectionSlug';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionTitle = {
+  readonly __typename?: 'CareerOfferingsConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsConnectionUpdated_At = {
+  readonly __typename?: 'CareerOfferingsConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CareerOfferingsConnection>;
 };
 
 export type CareerOfferingsGroupBy = {
+  readonly __typename?: 'CareerOfferingsGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionUpdated_At>>>;
@@ -698,10 +851,12 @@ export type CareerOfferingsGroupBy = {
   readonly slug?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionSlug>>>;
   readonly color?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionColor>>>;
   readonly perex?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionPerex>>>;
+  readonly locale?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionLocale>>>;
   readonly published_at?: Maybe<ReadonlyArray<Maybe<CareerOfferingsConnectionPublished_At>>>;
 };
 
 export type CaseStudy = {
+  readonly __typename?: 'CaseStudy';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -709,6 +864,8 @@ export type CaseStudy = {
   readonly title: Scalars['String'];
   readonly height?: Maybe<Scalars['Int']>;
   readonly slug: Scalars['String'];
+  readonly technologies?: Maybe<ComponentContentTechnoologiesTest>;
+  readonly case_study?: Maybe<CaseStudy>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<CaseStudy>>>;
@@ -723,6 +880,7 @@ export type CaseStudyLocalizationsArgs = {
 };
 
 export type CaseStudyAggregator = {
+  readonly __typename?: 'CaseStudyAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
   readonly sum?: Maybe<CaseStudyAggregatorSum>;
@@ -732,73 +890,100 @@ export type CaseStudyAggregator = {
 };
 
 export type CaseStudyAggregatorAvg = {
+  readonly __typename?: 'CaseStudyAggregatorAvg';
   readonly height?: Maybe<Scalars['Float']>;
 };
 
 export type CaseStudyAggregatorMax = {
+  readonly __typename?: 'CaseStudyAggregatorMax';
   readonly height?: Maybe<Scalars['Float']>;
 };
 
 export type CaseStudyAggregatorMin = {
+  readonly __typename?: 'CaseStudyAggregatorMin';
   readonly height?: Maybe<Scalars['Float']>;
 };
 
 export type CaseStudyAggregatorSum = {
+  readonly __typename?: 'CaseStudyAggregatorSum';
   readonly height?: Maybe<Scalars['Float']>;
 };
 
 export type CaseStudyConnection = {
+  readonly __typename?: 'CaseStudyConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<CaseStudy>>>;
   readonly groupBy?: Maybe<CaseStudyGroupBy>;
   readonly aggregate?: Maybe<CaseStudyAggregator>;
 };
 
+export type CaseStudyConnectionCase_Study = {
+  readonly __typename?: 'CaseStudyConnectionCase_study';
+  readonly key?: Maybe<Scalars['ID']>;
+  readonly connection?: Maybe<CaseStudyConnection>;
+};
+
 export type CaseStudyConnectionCreated_At = {
+  readonly __typename?: 'CaseStudyConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionHeight = {
+  readonly __typename?: 'CaseStudyConnectionHeight';
   readonly key?: Maybe<Scalars['Int']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionId = {
+  readonly __typename?: 'CaseStudyConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionImage = {
+  readonly __typename?: 'CaseStudyConnectionImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionLocale = {
+  readonly __typename?: 'CaseStudyConnectionLocale';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionPublished_At = {
+  readonly __typename?: 'CaseStudyConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionSlug = {
+  readonly __typename?: 'CaseStudyConnectionSlug';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
+export type CaseStudyConnectionTechnologies = {
+  readonly __typename?: 'CaseStudyConnectionTechnologies';
+  readonly key?: Maybe<Scalars['ID']>;
+  readonly connection?: Maybe<CaseStudyConnection>;
+};
+
 export type CaseStudyConnectionTitle = {
+  readonly __typename?: 'CaseStudyConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyConnectionUpdated_At = {
+  readonly __typename?: 'CaseStudyConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyConnection>;
 };
 
 export type CaseStudyGroupBy = {
+  readonly __typename?: 'CaseStudyGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionUpdated_At>>>;
@@ -806,6 +991,8 @@ export type CaseStudyGroupBy = {
   readonly title?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionTitle>>>;
   readonly height?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionHeight>>>;
   readonly slug?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionSlug>>>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionTechnologies>>>;
+  readonly case_study?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionCase_Study>>>;
   readonly locale?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionLocale>>>;
   readonly published_at?: Maybe<ReadonlyArray<Maybe<CaseStudyConnectionPublished_At>>>;
 };
@@ -815,6 +1002,8 @@ export type CaseStudyInput = {
   readonly title: Scalars['String'];
   readonly height?: Maybe<Scalars['Int']>;
   readonly slug: Scalars['String'];
+  readonly technologies: ComponentContentTechnoologiesTestInput;
+  readonly case_study?: Maybe<Scalars['ID']>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
@@ -823,6 +1012,7 @@ export type CaseStudyInput = {
 };
 
 export type CaseStudyMeta = {
+  readonly __typename?: 'CaseStudyMeta';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -839,82 +1029,98 @@ export type CaseStudyMeta = {
 };
 
 export type CaseStudyMetaAggregator = {
+  readonly __typename?: 'CaseStudyMetaAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type CaseStudyMetaConnection = {
+  readonly __typename?: 'CaseStudyMetaConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<CaseStudyMeta>>>;
   readonly groupBy?: Maybe<CaseStudyMetaGroupBy>;
   readonly aggregate?: Maybe<CaseStudyMetaAggregator>;
 };
 
 export type CaseStudyMetaConnectionClient = {
+  readonly __typename?: 'CaseStudyMetaConnectionClient';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionCreated_At = {
+  readonly __typename?: 'CaseStudyMetaConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionFooterText = {
+  readonly __typename?: 'CaseStudyMetaConnectionFooterText';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionId = {
+  readonly __typename?: 'CaseStudyMetaConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionIndustry = {
+  readonly __typename?: 'CaseStudyMetaConnectionIndustry';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionLanguage = {
+  readonly __typename?: 'CaseStudyMetaConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionNextProject = {
+  readonly __typename?: 'CaseStudyMetaConnectionNextProject';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionPreviousProject = {
+  readonly __typename?: 'CaseStudyMetaConnectionPreviousProject';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionPublished_At = {
+  readonly __typename?: 'CaseStudyMetaConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionSystem = {
+  readonly __typename?: 'CaseStudyMetaConnectionSystem';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionTechnologies = {
+  readonly __typename?: 'CaseStudyMetaConnectionTechnologies';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionUpdated_At = {
+  readonly __typename?: 'CaseStudyMetaConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaConnectionWriteUs = {
+  readonly __typename?: 'CaseStudyMetaConnectionWriteUs';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<CaseStudyMetaConnection>;
 };
 
 export type CaseStudyMetaGroupBy = {
+  readonly __typename?: 'CaseStudyMetaGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<CaseStudyMetaConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<CaseStudyMetaConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<CaseStudyMetaConnectionUpdated_At>>>;
@@ -945,7 +1151,68 @@ export type CaseStudyMetaInput = {
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
+export type ComponentAboutUsBrandValue = {
+  readonly __typename?: 'ComponentAboutUsBrandValue';
+  readonly id: Scalars['ID'];
+  readonly headline: Scalars['String'];
+  readonly backgroundNumber: Scalars['Int'];
+  readonly image?: Maybe<UploadFile>;
+  readonly description: Scalars['String'];
+};
+
+export type ComponentAboutUsBrandValueInput = {
+  readonly headline: Scalars['String'];
+  readonly backgroundNumber: Scalars['Int'];
+  readonly image?: Maybe<Scalars['ID']>;
+  readonly description: Scalars['String'];
+};
+
+export type ComponentCaseStudySpecificationInput = {
+  readonly area: Scalars['String'];
+  readonly client: Scalars['String'];
+  readonly system: Scalars['String'];
+};
+
+export type ComponentCaseStudySpecifications = {
+  readonly __typename?: 'ComponentCaseStudySpecifications';
+  readonly id: Scalars['ID'];
+  readonly area: Scalars['String'];
+  readonly client: Scalars['String'];
+  readonly system: Scalars['String'];
+};
+
+export type ComponentCaseStudyTechnologiesBox = {
+  readonly __typename?: 'ComponentCaseStudyTechnologiesBox';
+  readonly id: Scalars['ID'];
+  readonly description?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<ComponentContentTechnologiesList>>>;
+};
+
+export type ComponentCaseStudyTechnologiesBoxInput = {
+  readonly description?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<ComponentContentTechnologiesListInput>>;
+};
+
+export type ComponentContentCarousel = {
+  readonly __typename?: 'ComponentContentCarousel';
+  readonly id: Scalars['ID'];
+  readonly images?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
+};
+
+
+export type ComponentContentCarouselImagesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type ComponentContentCarouselInput = {
+  readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+};
+
 export type ComponentContentContact = {
+  readonly __typename?: 'ComponentContentContact';
   readonly id: Scalars['ID'];
   readonly address: Scalars['String'];
   readonly phoneNumber: Scalars['String'];
@@ -965,6 +1232,7 @@ export type ComponentContentContactInput = {
 };
 
 export type ComponentContentGalleryImage = {
+  readonly __typename?: 'ComponentContentGalleryImage';
   readonly id: Scalars['ID'];
   readonly rows: Scalars['Int'];
   readonly spacing: Scalars['Int'];
@@ -978,6 +1246,7 @@ export type ComponentContentGalleryImageInput = {
 };
 
 export type ComponentContentImage = {
+  readonly __typename?: 'ComponentContentImage';
   readonly id: Scalars['ID'];
   readonly widthPercent?: Maybe<Scalars['Float']>;
   readonly image?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
@@ -997,6 +1266,7 @@ export type ComponentContentImageInput = {
 };
 
 export type ComponentContentInfoColumn = {
+  readonly __typename?: 'ComponentContentInfoColumn';
   readonly id: Scalars['ID'];
   readonly number?: Maybe<Scalars['String']>;
   readonly title?: Maybe<Scalars['String']>;
@@ -1022,6 +1292,7 @@ export type ComponentContentInfoColumnInput = {
 };
 
 export type ComponentContentPictureList = {
+  readonly __typename?: 'ComponentContentPictureList';
   readonly id: Scalars['ID'];
   readonly header?: Maybe<Scalars['String']>;
   readonly color?: Maybe<Scalars['String']>;
@@ -1037,6 +1308,7 @@ export type ComponentContentPictureListInput = {
 };
 
 export type ComponentContentRichText = {
+  readonly __typename?: 'ComponentContentRichText';
   readonly id: Scalars['ID'];
   readonly title?: Maybe<Scalars['String']>;
   readonly desciption?: Maybe<Scalars['String']>;
@@ -1065,7 +1337,32 @@ export type ComponentContentRichTextInput = {
   readonly widthPercent?: Maybe<Scalars['Float']>;
 };
 
+export type ComponentContentScreenshot = {
+  readonly __typename?: 'ComponentContentScreenshot';
+  readonly id: Scalars['ID'];
+  readonly media?: Maybe<UploadFile>;
+};
+
+export type ComponentContentScreenshotInput = {
+  readonly media?: Maybe<Scalars['ID']>;
+};
+
+export type ComponentContentSection = {
+  readonly __typename?: 'ComponentContentSection';
+  readonly id: Scalars['ID'];
+  readonly heading: Scalars['String'];
+  readonly number?: Maybe<Scalars['Int']>;
+  readonly text: Scalars['String'];
+};
+
+export type ComponentContentSectionInput = {
+  readonly heading: Scalars['String'];
+  readonly number?: Maybe<Scalars['Int']>;
+  readonly text: Scalars['String'];
+};
+
 export type ComponentContentSocial = {
+  readonly __typename?: 'ComponentContentSocial';
   readonly id: Scalars['ID'];
   readonly facebook: Scalars['String'];
   readonly linkedIn: Scalars['String'];
@@ -1080,7 +1377,20 @@ export type ComponentContentSocialInput = {
   readonly twitter: Scalars['String'];
 };
 
+export type ComponentContentSubSection = {
+  readonly __typename?: 'ComponentContentSubSection';
+  readonly id: Scalars['ID'];
+  readonly header: Scalars['String'];
+  readonly text: Scalars['String'];
+};
+
+export type ComponentContentSubSectionInput = {
+  readonly header: Scalars['String'];
+  readonly text: Scalars['String'];
+};
+
 export type ComponentContentTechnologies = {
+  readonly __typename?: 'ComponentContentTechnologies';
   readonly id: Scalars['ID'];
   readonly technologies?: Maybe<Scalars['String']>;
   readonly description?: Maybe<Scalars['String']>;
@@ -1097,6 +1407,26 @@ export type ComponentContentTechnologiesImagesArgs = {
   where?: Maybe<Scalars['JSON']>;
 };
 
+export type ComponentContentTechnologiesList = {
+  readonly __typename?: 'ComponentContentTechnologiesList';
+  readonly id: Scalars['ID'];
+  readonly label?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<TechList>>>;
+};
+
+
+export type ComponentContentTechnologiesListTechnologiesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type ComponentContentTechnologiesListInput = {
+  readonly label?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+};
+
 export type ComponentContentTechnologyInput = {
   readonly technologies?: Maybe<Scalars['String']>;
   readonly description?: Maybe<Scalars['String']>;
@@ -1105,7 +1435,30 @@ export type ComponentContentTechnologyInput = {
   readonly floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
 };
 
+export type ComponentContentTechnoologiesTest = {
+  readonly __typename?: 'ComponentContentTechnoologiesTest';
+  readonly id: Scalars['ID'];
+  readonly title: Scalars['String'];
+  readonly description?: Maybe<Scalars['String']>;
+  readonly tech_lists?: Maybe<ReadonlyArray<Maybe<TechList>>>;
+};
+
+
+export type ComponentContentTechnoologiesTestTech_ListsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type ComponentContentTechnoologiesTestInput = {
+  readonly title: Scalars['String'];
+  readonly description?: Maybe<Scalars['String']>;
+  readonly tech_lists?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+};
+
 export type ComponentNavigationInternalLink = {
+  readonly __typename?: 'ComponentNavigationInternalLink';
   readonly id: Scalars['ID'];
   readonly label: Scalars['String'];
   readonly path: Scalars['String'];
@@ -1117,6 +1470,7 @@ export type ComponentNavigationInternalLinkInput = {
 };
 
 export type Contact = {
+  readonly __typename?: 'Contact';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1142,127 +1496,152 @@ export type Contact = {
 };
 
 export type ContactAggregator = {
+  readonly __typename?: 'ContactAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type ContactConnection = {
+  readonly __typename?: 'ContactConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Contact>>>;
   readonly groupBy?: Maybe<ContactGroupBy>;
   readonly aggregate?: Maybe<ContactAggregator>;
 };
 
 export type ContactConnectionAddress = {
+  readonly __typename?: 'ContactConnectionAddress';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionCreated_At = {
+  readonly __typename?: 'ContactConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionEmail = {
+  readonly __typename?: 'ContactConnectionEmail';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFooterImg = {
+  readonly __typename?: 'ContactConnectionFooterImg';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormEmail = {
+  readonly __typename?: 'ContactConnectionFormEmail';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormEmailLabel = {
+  readonly __typename?: 'ContactConnectionFormEmailLabel';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormEmailWarning = {
+  readonly __typename?: 'ContactConnectionFormEmailWarning';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormInvalidEmailWarning = {
+  readonly __typename?: 'ContactConnectionFormInvalidEmailWarning';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormName = {
+  readonly __typename?: 'ContactConnectionFormName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormNameLabel = {
+  readonly __typename?: 'ContactConnectionFormNameLabel';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormNameWarning = {
+  readonly __typename?: 'ContactConnectionFormNameWarning';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormSubmit = {
+  readonly __typename?: 'ContactConnectionFormSubmit';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormText = {
+  readonly __typename?: 'ContactConnectionFormText';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionFormTextLabel = {
+  readonly __typename?: 'ContactConnectionFormTextLabel';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionId = {
+  readonly __typename?: 'ContactConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionLanguage = {
+  readonly __typename?: 'ContactConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionPhoneNumber = {
+  readonly __typename?: 'ContactConnectionPhoneNumber';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionPublished_At = {
+  readonly __typename?: 'ContactConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionTaxIdentificationDescription = {
+  readonly __typename?: 'ContactConnectionTaxIdentificationDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionTaxIdentificationNumbers = {
+  readonly __typename?: 'ContactConnectionTaxIdentificationNumbers';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionTitle = {
+  readonly __typename?: 'ContactConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactConnectionUpdated_At = {
+  readonly __typename?: 'ContactConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ContactConnection>;
 };
 
 export type ContactGroupBy = {
+  readonly __typename?: 'ContactGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<ContactConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<ContactConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<ContactConnectionUpdated_At>>>;
@@ -1313,6 +1692,45 @@ export type ContactInput = {
 
 
 
+export type DynamicTest = {
+  readonly __typename?: 'DynamicTest';
+  readonly id: Scalars['ID'];
+  readonly created_at: Scalars['DateTime'];
+  readonly updated_at: Scalars['DateTime'];
+  readonly Title: Scalars['String'];
+  readonly slug: Scalars['String'];
+  readonly description: Scalars['String'];
+  readonly logo?: Maybe<UploadFile>;
+  readonly content: ReadonlyArray<Maybe<DynamicTestContentDynamicZone>>;
+  readonly locale?: Maybe<Scalars['String']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<DynamicTest>>>;
+};
+
+
+export type DynamicTestLocalizationsArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
+};
+
+export type DynamicTestContentDynamicZone = ComponentContentSection | ComponentContentSubSection | ComponentContentCarousel | ComponentContentScreenshot | ComponentCaseStudyTechnologiesBox | ComponentCaseStudySpecifications;
+
+
+export type DynamicTestInput = {
+  readonly Title: Scalars['String'];
+  readonly slug: Scalars['String'];
+  readonly description: Scalars['String'];
+  readonly logo?: Maybe<Scalars['ID']>;
+  readonly content: ReadonlyArray<Scalars['DynamicTestContentDynamicZoneInput']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly created_by?: Maybe<Scalars['ID']>;
+  readonly updated_by?: Maybe<Scalars['ID']>;
+};
+
 export type FileInfoInput = {
   readonly name?: Maybe<Scalars['String']>;
   readonly alternativeText?: Maybe<Scalars['String']>;
@@ -1340,6 +1758,7 @@ export type FileInput = {
 };
 
 export type Footer = {
+  readonly __typename?: 'Footer';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1371,6 +1790,7 @@ export type FooterInput = {
 };
 
 export type Header = {
+  readonly __typename?: 'Header';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1382,57 +1802,68 @@ export type Header = {
 };
 
 export type HeaderAggregator = {
+  readonly __typename?: 'HeaderAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type HeaderConnection = {
+  readonly __typename?: 'HeaderConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Header>>>;
   readonly groupBy?: Maybe<HeaderGroupBy>;
   readonly aggregate?: Maybe<HeaderAggregator>;
 };
 
 export type HeaderConnectionCreated_At = {
+  readonly __typename?: 'HeaderConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionDescription = {
+  readonly __typename?: 'HeaderConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionId = {
+  readonly __typename?: 'HeaderConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionLanguage = {
+  readonly __typename?: 'HeaderConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionLogo = {
+  readonly __typename?: 'HeaderConnectionLogo';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionPublished_At = {
+  readonly __typename?: 'HeaderConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionTitle = {
+  readonly __typename?: 'HeaderConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderConnectionUpdated_At = {
+  readonly __typename?: 'HeaderConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HeaderConnection>;
 };
 
 export type HeaderGroupBy = {
+  readonly __typename?: 'HeaderGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<HeaderConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<HeaderConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<HeaderConnectionUpdated_At>>>;
@@ -1454,6 +1885,7 @@ export type HeaderInput = {
 };
 
 export type Homepage = {
+  readonly __typename?: 'Homepage';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1466,62 +1898,74 @@ export type Homepage = {
 };
 
 export type HomepageAggregator = {
+  readonly __typename?: 'HomepageAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type HomepageConnection = {
+  readonly __typename?: 'HomepageConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Homepage>>>;
   readonly groupBy?: Maybe<HomepageGroupBy>;
   readonly aggregate?: Maybe<HomepageAggregator>;
 };
 
 export type HomepageConnectionClickToStop = {
+  readonly __typename?: 'HomepageConnectionClickToStop';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionCreated_At = {
+  readonly __typename?: 'HomepageConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionDescriptionAboveLine = {
+  readonly __typename?: 'HomepageConnectionDescriptionAboveLine';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionDescriptionBellowLine = {
+  readonly __typename?: 'HomepageConnectionDescriptionBellowLine';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionId = {
+  readonly __typename?: 'HomepageConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionLanguage = {
+  readonly __typename?: 'HomepageConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionLogo = {
+  readonly __typename?: 'HomepageConnectionLogo';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionPublished_At = {
+  readonly __typename?: 'HomepageConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageConnectionUpdated_At = {
+  readonly __typename?: 'HomepageConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HomepageConnection>;
 };
 
 export type HomepageGroupBy = {
+  readonly __typename?: 'HomepageGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<HomepageConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<HomepageConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<HomepageConnectionUpdated_At>>>;
@@ -1545,6 +1989,7 @@ export type HomepageInput = {
 };
 
 export type HomepageNew = {
+  readonly __typename?: 'HomepageNew';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1586,6 +2031,7 @@ export type HomepageNewInput = {
 };
 
 export type HqGallery = {
+  readonly __typename?: 'HqGallery';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1594,37 +2040,44 @@ export type HqGallery = {
 };
 
 export type HqGalleryAggregator = {
+  readonly __typename?: 'HqGalleryAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type HqGalleryConnection = {
+  readonly __typename?: 'HqGalleryConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<HqGallery>>>;
   readonly groupBy?: Maybe<HqGalleryGroupBy>;
   readonly aggregate?: Maybe<HqGalleryAggregator>;
 };
 
 export type HqGalleryConnectionCreated_At = {
+  readonly __typename?: 'HqGalleryConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HqGalleryConnection>;
 };
 
 export type HqGalleryConnectionId = {
+  readonly __typename?: 'HqGalleryConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<HqGalleryConnection>;
 };
 
 export type HqGalleryConnectionPublished_At = {
+  readonly __typename?: 'HqGalleryConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HqGalleryConnection>;
 };
 
 export type HqGalleryConnectionUpdated_At = {
+  readonly __typename?: 'HqGalleryConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<HqGalleryConnection>;
 };
 
 export type HqGalleryGroupBy = {
+  readonly __typename?: 'HqGalleryGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<HqGalleryConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<HqGalleryConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<HqGalleryConnectionUpdated_At>>>;
@@ -1632,13 +2085,14 @@ export type HqGalleryGroupBy = {
 };
 
 export type HqGalleryInput = {
-  readonly galleryCollection?: Maybe<ReadonlyArray<Maybe<ComponentContentGalleryImageInput>>>;
+  readonly galleryCollection?: Maybe<ReadonlyArray<ComponentContentGalleryImageInput>>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type I18NLocale = {
+  readonly __typename?: 'I18NLocale';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1652,6 +2106,7 @@ export type InputId = {
 
 
 export type Job = {
+  readonly __typename?: 'Job';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1672,102 +2127,122 @@ export type Job = {
 };
 
 export type JobAggregator = {
+  readonly __typename?: 'JobAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type JobConnection = {
+  readonly __typename?: 'JobConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Job>>>;
   readonly groupBy?: Maybe<JobGroupBy>;
   readonly aggregate?: Maybe<JobAggregator>;
 };
 
 export type JobConnectionCareerExpectedSkills = {
+  readonly __typename?: 'JobConnectionCareerExpectedSkills';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCareerExpectedSkillsContent = {
+  readonly __typename?: 'JobConnectionCareerExpectedSkillsContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCareerOfferContent = {
+  readonly __typename?: 'JobConnectionCareerOfferContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCareerOfferTitle = {
+  readonly __typename?: 'JobConnectionCareerOfferTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCareerTechnologiesContent = {
+  readonly __typename?: 'JobConnectionCareerTechnologiesContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCareerTechnologiesTitle = {
+  readonly __typename?: 'JobConnectionCareerTechnologiesTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionCreated_At = {
+  readonly __typename?: 'JobConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionDescription = {
+  readonly __typename?: 'JobConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionEndCta = {
+  readonly __typename?: 'JobConnectionEndCTA';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionEndContent = {
+  readonly __typename?: 'JobConnectionEndContent';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionEndTitle = {
+  readonly __typename?: 'JobConnectionEndTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionId = {
+  readonly __typename?: 'JobConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionLanguage = {
+  readonly __typename?: 'JobConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionPublished_At = {
+  readonly __typename?: 'JobConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionSlug = {
+  readonly __typename?: 'JobConnectionSlug';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionTitle = {
+  readonly __typename?: 'JobConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobConnectionUpdated_At = {
+  readonly __typename?: 'JobConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<JobConnection>;
 };
 
 export type JobGroupBy = {
+  readonly __typename?: 'JobGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<JobConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<JobConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<JobConnectionUpdated_At>>>;
@@ -1807,6 +2282,7 @@ export type JobInput = {
 };
 
 export type Language = {
+  readonly __typename?: 'Language';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1816,47 +2292,56 @@ export type Language = {
 };
 
 export type LanguageAggregator = {
+  readonly __typename?: 'LanguageAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type LanguageConnection = {
+  readonly __typename?: 'LanguageConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Language>>>;
   readonly groupBy?: Maybe<LanguageGroupBy>;
   readonly aggregate?: Maybe<LanguageAggregator>;
 };
 
 export type LanguageConnectionCreated_At = {
+  readonly __typename?: 'LanguageConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageConnectionDisplayName = {
+  readonly __typename?: 'LanguageConnectionDisplayName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageConnectionId = {
+  readonly __typename?: 'LanguageConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageConnectionLanguageCode = {
+  readonly __typename?: 'LanguageConnectionLanguageCode';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageConnectionPublished_At = {
+  readonly __typename?: 'LanguageConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageConnectionUpdated_At = {
+  readonly __typename?: 'LanguageConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<LanguageConnection>;
 };
 
 export type LanguageGroupBy = {
+  readonly __typename?: 'LanguageGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<LanguageConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<LanguageConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<LanguageConnectionUpdated_At>>>;
@@ -1882,6 +2367,7 @@ export type LocaleInput = {
 
 
 export type Menu = {
+  readonly __typename?: 'Menu';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -1896,72 +2382,86 @@ export type Menu = {
 };
 
 export type MenuAggregator = {
+  readonly __typename?: 'MenuAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type MenuConnection = {
+  readonly __typename?: 'MenuConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Menu>>>;
   readonly groupBy?: Maybe<MenuGroupBy>;
   readonly aggregate?: Maybe<MenuAggregator>;
 };
 
 export type MenuConnectionAboutUs = {
+  readonly __typename?: 'MenuConnectionAboutUs';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionCareer = {
+  readonly __typename?: 'MenuConnectionCareer';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionContact = {
+  readonly __typename?: 'MenuConnectionContact';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionCreated_At = {
+  readonly __typename?: 'MenuConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionHomePage = {
+  readonly __typename?: 'MenuConnectionHomePage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionId = {
+  readonly __typename?: 'MenuConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionLanguage = {
+  readonly __typename?: 'MenuConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionMenu = {
+  readonly __typename?: 'MenuConnectionMenu';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionPublished_At = {
+  readonly __typename?: 'MenuConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionReference = {
+  readonly __typename?: 'MenuConnectionReference';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuConnectionUpdated_At = {
+  readonly __typename?: 'MenuConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<MenuConnection>;
 };
 
 export type MenuGroupBy = {
+  readonly __typename?: 'MenuGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<MenuConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<MenuConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<MenuConnectionUpdated_At>>>;
@@ -1988,14 +2488,17 @@ export type MenuInput = {
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | CareerOfferings | CareerOfferingsConnection | CareerOfferingsAggregator | CareerOfferingsGroupBy | CareerOfferingsConnectionId | CareerOfferingsConnectionCreated_At | CareerOfferingsConnectionUpdated_At | CareerOfferingsConnectionLanguage | CareerOfferingsConnectionTitle | CareerOfferingsConnectionDescription | CareerOfferingsConnectionCareerTechnologiesTitle | CareerOfferingsConnectionCareerTechnologiesContent | CareerOfferingsConnectionCareerExpectedSkillsTitle | CareerOfferingsConnectionCareerExpectedSkillsContent | CareerOfferingsConnectionCareerOfferTitle | CareerOfferingsConnectionCareerOfferContent | CareerOfferingsConnectionEndTitle | CareerOfferingsConnectionEndContent | CareerOfferingsConnectionEndCta | CareerOfferingsConnectionSlug | CareerOfferingsConnectionColor | CareerOfferingsConnectionPerex | CareerOfferingsConnectionPublished_At | CreateCareerOfferingPayload | UpdateCareerOfferingPayload | DeleteCareerOfferingPayload | Career | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyAggregatorSum | CaseStudyAggregatorAvg | CaseStudyAggregatorMin | CaseStudyAggregatorMax | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionImage | CaseStudyConnectionTitle | CaseStudyConnectionHeight | CaseStudyConnectionSlug | CaseStudyConnectionLocale | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | Footer | UpdateFooterPayload | DeleteFooterPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | HomepageNew | UpdateHomepageNewPayload | DeleteHomepageNewPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | HqGallery | HqGalleryConnection | HqGalleryAggregator | HqGalleryGroupBy | HqGalleryConnectionId | HqGalleryConnectionCreated_At | HqGalleryConnectionUpdated_At | HqGalleryConnectionPublished_At | CreateHqGalleryPayload | UpdateHqGalleryPayload | DeleteHqGalleryPayload | Job | JobConnection | JobAggregator | JobGroupBy | JobConnectionId | JobConnectionCreated_At | JobConnectionUpdated_At | JobConnectionTitle | JobConnectionDescription | JobConnectionCareerTechnologiesTitle | JobConnectionCareerTechnologiesContent | JobConnectionCareerExpectedSkills | JobConnectionCareerExpectedSkillsContent | JobConnectionCareerOfferTitle | JobConnectionCareerOfferContent | JobConnectionEndTitle | JobConnectionEndContent | JobConnectionEndCta | JobConnectionLanguage | JobConnectionSlug | JobConnectionPublished_At | CreateJobPayload | UpdateJobPayload | DeleteJobPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_At | ProductsConnectionUpdated_At | ProductsConnectionName | ProductsConnectionSlug | ProductsConnectionLocale | ProductsConnectionPublished_At | CreateProductPayload | UpdateProductPayload | DeleteProductPayload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | Team | TeamConnection | TeamAggregator | TeamAggregatorSum | TeamAggregatorAvg | TeamAggregatorMin | TeamAggregatorMax | TeamGroupBy | TeamConnectionId | TeamConnectionCreated_At | TeamConnectionUpdated_At | TeamConnectionName | TeamConnectionPosition | TeamConnectionVideo | TeamConnectionSort | TeamConnectionPublished_At | CreateTeamPayload | UpdateTeamPayload | DeleteTeamPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentContentContact | ComponentContentGalleryImage | ComponentContentImage | ComponentContentInfoColumn | ComponentContentPictureList | ComponentContentRichText | ComponentContentSocial | ComponentContentTechnologies | ComponentNavigationInternalLink;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | AboutUs | AboutUsConnection | AboutUsAggregator | AboutUsGroupBy | AboutUsConnectionId | AboutUsConnectionCreated_At | AboutUsConnectionUpdated_At | AboutUsConnectionLanguage | AboutUsConnectionHeroDescription | AboutUsConnectionHeroLogo | AboutUsConnectionHeroHeadlineTop | AboutUsConnectionHeroHeadlineBottom | AboutUsConnectionHeroArrowTitle | AboutUsConnectionWeAreHeadline | AboutUsConnectionWeAreDescription | AboutUsConnectionWeAreArrowTitle | AboutUsConnectionSkillsHeadline | AboutUsConnectionSkillsDescription | AboutUsConnectionTechnologiesDescription | AboutUsConnectionTechnologiesImage | AboutUsConnectionValuesHeadline | AboutUsConnectionTeamHeadline | AboutUsConnectionHqHeadline | AboutUsConnectionCareerHeadline | AboutUsConnectionCareerCtaTitle | AboutUsConnectionCareerCtaImage | AboutUsConnectionBlogHeadline | AboutUsConnectionHqDescription | AboutUsConnectionCareerDescription | AboutUsConnectionHqWeAreHereDescription | AboutUsConnectionHqWeAreHereImage | AboutUsConnectionHqCtaTitle | AboutUsConnectionBlogReadMore | AboutUsConnectionArrow | AboutUsConnectionPublished_At | CreateAboutUsPayload | UpdateAboutUsPayload | DeleteAboutUsPayload | AboutWeAreImageCarousel | UpdateAboutWeAreImageCarouselPayload | DeleteAboutWeAreImageCarouselPayload | About | UpdateAboutPayload | DeleteAboutPayload | BrandValue | BrandValueConnection | BrandValueAggregator | BrandValueAggregatorSum | BrandValueAggregatorAvg | BrandValueAggregatorMin | BrandValueAggregatorMax | BrandValueGroupBy | BrandValueConnectionId | BrandValueConnectionCreated_At | BrandValueConnectionUpdated_At | BrandValueConnectionHeadline | BrandValueConnectionBackgroundNumber | BrandValueConnectionImage | BrandValueConnectionDescription | BrandValueConnectionPublished_At | CreateBrandValuePayload | UpdateBrandValuePayload | DeleteBrandValuePayload | CareerOfferings | CareerOfferingsConnection | CareerOfferingsAggregator | CareerOfferingsGroupBy | CareerOfferingsConnectionId | CareerOfferingsConnectionCreated_At | CareerOfferingsConnectionUpdated_At | CareerOfferingsConnectionLanguage | CareerOfferingsConnectionTitle | CareerOfferingsConnectionDescription | CareerOfferingsConnectionCareerTechnologiesTitle | CareerOfferingsConnectionCareerTechnologiesContent | CareerOfferingsConnectionCareerExpectedSkillsTitle | CareerOfferingsConnectionCareerExpectedSkillsContent | CareerOfferingsConnectionCareerOfferTitle | CareerOfferingsConnectionCareerOfferContent | CareerOfferingsConnectionEndTitle | CareerOfferingsConnectionEndContent | CareerOfferingsConnectionEndCta | CareerOfferingsConnectionSlug | CareerOfferingsConnectionColor | CareerOfferingsConnectionPerex | CareerOfferingsConnectionLocale | CareerOfferingsConnectionPublished_At | CreateCareerOfferingPayload | UpdateCareerOfferingPayload | DeleteCareerOfferingPayload | Career | UpdateCareerPayload | DeleteCareerPayload | CaseStudyMeta | CaseStudyMetaConnection | CaseStudyMetaAggregator | CaseStudyMetaGroupBy | CaseStudyMetaConnectionId | CaseStudyMetaConnectionCreated_At | CaseStudyMetaConnectionUpdated_At | CaseStudyMetaConnectionIndustry | CaseStudyMetaConnectionClient | CaseStudyMetaConnectionSystem | CaseStudyMetaConnectionTechnologies | CaseStudyMetaConnectionPreviousProject | CaseStudyMetaConnectionNextProject | CaseStudyMetaConnectionFooterText | CaseStudyMetaConnectionWriteUs | CaseStudyMetaConnectionLanguage | CaseStudyMetaConnectionPublished_At | CreateCaseStudyMetaPayload | UpdateCaseStudyMetaPayload | DeleteCaseStudyMetaPayload | CaseStudy | CaseStudyConnection | CaseStudyAggregator | CaseStudyAggregatorSum | CaseStudyAggregatorAvg | CaseStudyAggregatorMin | CaseStudyAggregatorMax | CaseStudyGroupBy | CaseStudyConnectionId | CaseStudyConnectionCreated_At | CaseStudyConnectionUpdated_At | CaseStudyConnectionImage | CaseStudyConnectionTitle | CaseStudyConnectionHeight | CaseStudyConnectionSlug | CaseStudyConnectionTechnologies | CaseStudyConnectionCase_Study | CaseStudyConnectionLocale | CaseStudyConnectionPublished_At | CreateCaseStudyPayload | UpdateCaseStudyPayload | DeleteCaseStudyPayload | Contact | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnectionId | ContactConnectionCreated_At | ContactConnectionUpdated_At | ContactConnectionLanguage | ContactConnectionTitle | ContactConnectionAddress | ContactConnectionTaxIdentificationNumbers | ContactConnectionTaxIdentificationDescription | ContactConnectionEmail | ContactConnectionPhoneNumber | ContactConnectionFormName | ContactConnectionFormText | ContactConnectionFormEmail | ContactConnectionFormNameWarning | ContactConnectionFormEmailWarning | ContactConnectionFormSubmit | ContactConnectionFormInvalidEmailWarning | ContactConnectionFormTextLabel | ContactConnectionFormNameLabel | ContactConnectionFormEmailLabel | ContactConnectionFooterImg | ContactConnectionPublished_At | CreateContactPayload | UpdateContactPayload | DeleteContactPayload | DynamicTest | UpdateDynamicTestPayload | DeleteDynamicTestPayload | Footer | UpdateFooterPayload | DeleteFooterPayload | Header | HeaderConnection | HeaderAggregator | HeaderGroupBy | HeaderConnectionId | HeaderConnectionCreated_At | HeaderConnectionUpdated_At | HeaderConnectionTitle | HeaderConnectionDescription | HeaderConnectionLanguage | HeaderConnectionLogo | HeaderConnectionPublished_At | CreateHeaderPayload | UpdateHeaderPayload | DeleteHeaderPayload | HomepageNew | UpdateHomepageNewPayload | DeleteHomepageNewPayload | Homepage | HomepageConnection | HomepageAggregator | HomepageGroupBy | HomepageConnectionId | HomepageConnectionCreated_At | HomepageConnectionUpdated_At | HomepageConnectionLanguage | HomepageConnectionClickToStop | HomepageConnectionDescriptionAboveLine | HomepageConnectionDescriptionBellowLine | HomepageConnectionLogo | HomepageConnectionPublished_At | CreateHomepagePayload | UpdateHomepagePayload | DeleteHomepagePayload | HqGallery | HqGalleryConnection | HqGalleryAggregator | HqGalleryGroupBy | HqGalleryConnectionId | HqGalleryConnectionCreated_At | HqGalleryConnectionUpdated_At | HqGalleryConnectionPublished_At | CreateHqGalleryPayload | UpdateHqGalleryPayload | DeleteHqGalleryPayload | Job | JobConnection | JobAggregator | JobGroupBy | JobConnectionId | JobConnectionCreated_At | JobConnectionUpdated_At | JobConnectionTitle | JobConnectionDescription | JobConnectionCareerTechnologiesTitle | JobConnectionCareerTechnologiesContent | JobConnectionCareerExpectedSkills | JobConnectionCareerExpectedSkillsContent | JobConnectionCareerOfferTitle | JobConnectionCareerOfferContent | JobConnectionEndTitle | JobConnectionEndContent | JobConnectionEndCta | JobConnectionLanguage | JobConnectionSlug | JobConnectionPublished_At | CreateJobPayload | UpdateJobPayload | DeleteJobPayload | Language | LanguageConnection | LanguageAggregator | LanguageGroupBy | LanguageConnectionId | LanguageConnectionCreated_At | LanguageConnectionUpdated_At | LanguageConnectionLanguageCode | LanguageConnectionDisplayName | LanguageConnectionPublished_At | CreateLanguagePayload | UpdateLanguagePayload | DeleteLanguagePayload | Menu | MenuConnection | MenuAggregator | MenuGroupBy | MenuConnectionId | MenuConnectionCreated_At | MenuConnectionUpdated_At | MenuConnectionMenu | MenuConnectionHomePage | MenuConnectionReference | MenuConnectionAboutUs | MenuConnectionCareer | MenuConnectionContact | MenuConnectionLanguage | MenuConnectionPublished_At | CreateMenuPayload | UpdateMenuPayload | DeleteMenuPayload | Page404 | Page404Connection | Page404Aggregator | Page404GroupBy | Page404ConnectionId | Page404ConnectionCreated_At | Page404ConnectionUpdated_At | Page404ConnectionImage | Page404ConnectionHeading | Page404ConnectionDescription | Page404ConnectionLink | Page404ConnectionLanguage | Page404ConnectionBgText | Page404ConnectionPublished_At | CreatePage404Payload | UpdatePage404Payload | DeletePage404Payload | Products | ProductsConnection | ProductsAggregator | ProductsGroupBy | ProductsConnectionId | ProductsConnectionCreated_At | ProductsConnectionUpdated_At | ProductsConnectionName | ProductsConnectionSlug | ProductsConnectionLocale | ProductsConnectionPublished_At | CreateProductPayload | UpdateProductPayload | DeleteProductPayload | Skill | SkillConnection | SkillAggregator | SkillGroupBy | SkillConnectionId | SkillConnectionCreated_At | SkillConnectionUpdated_At | SkillConnectionTitle | SkillConnectionDescription | SkillConnectionTitleColorHash | SkillConnectionPublished_At | CreateSkillPayload | UpdateSkillPayload | DeleteSkillPayload | SocialNetwork | SocialNetworkConnection | SocialNetworkAggregator | SocialNetworkGroupBy | SocialNetworkConnectionId | SocialNetworkConnectionCreated_At | SocialNetworkConnectionUpdated_At | SocialNetworkConnectionName | SocialNetworkConnectionUrl | SocialNetworkConnectionPublished_At | CreateSocialNetworkPayload | UpdateSocialNetworkPayload | DeleteSocialNetworkPayload | Team | TeamConnection | TeamAggregator | TeamAggregatorSum | TeamAggregatorAvg | TeamAggregatorMin | TeamAggregatorMax | TeamGroupBy | TeamConnectionId | TeamConnectionCreated_At | TeamConnectionUpdated_At | TeamConnectionName | TeamConnectionPosition | TeamConnectionVideo | TeamConnectionSort | TeamConnectionPublished_At | CreateTeamPayload | UpdateTeamPayload | DeleteTeamPayload | TechList | TechListConnection | TechListAggregator | TechListGroupBy | TechListConnectionId | TechListConnectionCreated_At | TechListConnectionUpdated_At | TechListConnectionName | TechListConnectionPublished_At | CreateTechListPayload | UpdateTechListPayload | DeleteTechListPayload | Webhook | WebhookConnection | WebhookAggregator | WebhookGroupBy | WebhookConnectionId | WebhookConnectionCreated_At | WebhookConnectionUpdated_At | WebhookConnectionName | WebhookConnectionPublished_At | CreateWebhookPayload | UpdateWebhookPayload | DeleteWebhookPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentAboutUsBrandValue | ComponentCaseStudySpecifications | ComponentCaseStudyTechnologiesBox | ComponentContentCarousel | ComponentContentContact | ComponentContentGalleryImage | ComponentContentImage | ComponentContentInfoColumn | ComponentContentPictureList | ComponentContentRichText | ComponentContentScreenshot | ComponentContentSection | ComponentContentSocial | ComponentContentSubSection | ComponentContentTechnologiesList | ComponentContentTechnologies | ComponentContentTechnoologiesTest | ComponentNavigationInternalLink;
 
 export type Mutation = {
+  readonly __typename?: 'Mutation';
   readonly createAboutUs?: Maybe<CreateAboutUsPayload>;
   readonly updateAboutUs?: Maybe<UpdateAboutUsPayload>;
   readonly deleteAboutUs?: Maybe<DeleteAboutUsPayload>;
   readonly updateAboutWeAreImageCarousel?: Maybe<UpdateAboutWeAreImageCarouselPayload>;
   readonly deleteAboutWeAreImageCarousel?: Maybe<DeleteAboutWeAreImageCarouselPayload>;
+  readonly updateAbout?: Maybe<UpdateAboutPayload>;
+  readonly deleteAbout?: Maybe<DeleteAboutPayload>;
   readonly createBrandValue?: Maybe<CreateBrandValuePayload>;
   readonly updateBrandValue?: Maybe<UpdateBrandValuePayload>;
   readonly deleteBrandValue?: Maybe<DeleteBrandValuePayload>;
@@ -2013,6 +2516,8 @@ export type Mutation = {
   readonly createContact?: Maybe<CreateContactPayload>;
   readonly updateContact?: Maybe<UpdateContactPayload>;
   readonly deleteContact?: Maybe<DeleteContactPayload>;
+  readonly updateDynamicTest?: Maybe<UpdateDynamicTestPayload>;
+  readonly deleteDynamicTest?: Maybe<DeleteDynamicTestPayload>;
   readonly updateFooter?: Maybe<UpdateFooterPayload>;
   readonly deleteFooter?: Maybe<DeleteFooterPayload>;
   readonly createHeader?: Maybe<CreateHeaderPayload>;
@@ -2070,8 +2575,11 @@ export type Mutation = {
   readonly updateUser?: Maybe<UpdateUserPayload>;
   /** Delete an existing user */
   readonly deleteUser?: Maybe<DeleteUserPayload>;
+  readonly createAboutLocalization: About;
+  readonly createCareerOfferingLocalization: CareerOfferings;
   readonly createCareerLocalization: Career;
   readonly createCaseStudyLocalization: CaseStudy;
+  readonly createDynamicTestLocalization: DynamicTest;
   readonly createFooterLocalization: Footer;
   readonly createHomepageNewLocalization: HomepageNew;
   readonly createProductLocalization: Products;
@@ -2103,6 +2611,17 @@ export type MutationDeleteAboutUsArgs = {
 
 export type MutationUpdateAboutWeAreImageCarouselArgs = {
   input?: Maybe<UpdateAboutWeAreImageCarouselInput>;
+};
+
+
+export type MutationUpdateAboutArgs = {
+  input?: Maybe<UpdateAboutInput>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationDeleteAboutArgs = {
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -2189,6 +2708,17 @@ export type MutationUpdateContactArgs = {
 
 export type MutationDeleteContactArgs = {
   input?: Maybe<DeleteContactInput>;
+};
+
+
+export type MutationUpdateDynamicTestArgs = {
+  input?: Maybe<UpdateDynamicTestInput>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationDeleteDynamicTestArgs = {
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -2444,6 +2974,16 @@ export type MutationDeleteUserArgs = {
 };
 
 
+export type MutationCreateAboutLocalizationArgs = {
+  input: UpdateAboutInput;
+};
+
+
+export type MutationCreateCareerOfferingLocalizationArgs = {
+  input: UpdateCareerOfferingInput;
+};
+
+
 export type MutationCreateCareerLocalizationArgs = {
   input: UpdateCareerInput;
 };
@@ -2451,6 +2991,11 @@ export type MutationCreateCareerLocalizationArgs = {
 
 export type MutationCreateCaseStudyLocalizationArgs = {
   input: UpdateCaseStudyInput;
+};
+
+
+export type MutationCreateDynamicTestLocalizationArgs = {
+  input: UpdateDynamicTestInput;
 };
 
 
@@ -2521,6 +3066,7 @@ export type MutationEmailConfirmationArgs = {
 };
 
 export type Page404 = {
+  readonly __typename?: 'Page404';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -2534,67 +3080,80 @@ export type Page404 = {
 };
 
 export type Page404Aggregator = {
+  readonly __typename?: 'Page404Aggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type Page404Connection = {
+  readonly __typename?: 'Page404Connection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Page404>>>;
   readonly groupBy?: Maybe<Page404GroupBy>;
   readonly aggregate?: Maybe<Page404Aggregator>;
 };
 
 export type Page404ConnectionBgText = {
+  readonly __typename?: 'Page404ConnectionBgText';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionCreated_At = {
+  readonly __typename?: 'Page404ConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionDescription = {
+  readonly __typename?: 'Page404ConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionHeading = {
+  readonly __typename?: 'Page404ConnectionHeading';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionId = {
+  readonly __typename?: 'Page404ConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionImage = {
+  readonly __typename?: 'Page404ConnectionImage';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionLanguage = {
+  readonly __typename?: 'Page404ConnectionLanguage';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionLink = {
+  readonly __typename?: 'Page404ConnectionLink';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionPublished_At = {
+  readonly __typename?: 'Page404ConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404ConnectionUpdated_At = {
+  readonly __typename?: 'Page404ConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<Page404Connection>;
 };
 
 export type Page404GroupBy = {
+  readonly __typename?: 'Page404GroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<Page404ConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<Page404ConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<Page404ConnectionUpdated_At>>>;
@@ -2630,6 +3189,7 @@ export type ProductInput = {
 };
 
 export type Products = {
+  readonly __typename?: 'Products';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -2649,52 +3209,62 @@ export type ProductsLocalizationsArgs = {
 };
 
 export type ProductsAggregator = {
+  readonly __typename?: 'ProductsAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type ProductsConnection = {
+  readonly __typename?: 'ProductsConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Products>>>;
   readonly groupBy?: Maybe<ProductsGroupBy>;
   readonly aggregate?: Maybe<ProductsAggregator>;
 };
 
 export type ProductsConnectionCreated_At = {
+  readonly __typename?: 'ProductsConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionId = {
+  readonly __typename?: 'ProductsConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionLocale = {
+  readonly __typename?: 'ProductsConnectionLocale';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionName = {
+  readonly __typename?: 'ProductsConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionPublished_At = {
+  readonly __typename?: 'ProductsConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionSlug = {
+  readonly __typename?: 'ProductsConnectionSlug';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsConnectionUpdated_At = {
+  readonly __typename?: 'ProductsConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<ProductsConnection>;
 };
 
 export type ProductsGroupBy = {
+  readonly __typename?: 'ProductsGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<ProductsConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<ProductsConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<ProductsConnectionUpdated_At>>>;
@@ -2710,10 +3280,12 @@ export enum PublicationState {
 }
 
 export type Query = {
+  readonly __typename?: 'Query';
   readonly aboutUs?: Maybe<AboutUs>;
   readonly aboutuses?: Maybe<ReadonlyArray<Maybe<AboutUs>>>;
   readonly aboutusesConnection?: Maybe<AboutUsConnection>;
   readonly aboutWeAreImageCarousel?: Maybe<AboutWeAreImageCarousel>;
+  readonly about?: Maybe<About>;
   readonly brandValue?: Maybe<BrandValue>;
   readonly brandValues?: Maybe<ReadonlyArray<Maybe<BrandValue>>>;
   readonly brandValuesConnection?: Maybe<BrandValueConnection>;
@@ -2730,6 +3302,7 @@ export type Query = {
   readonly contact?: Maybe<Contact>;
   readonly contacts?: Maybe<ReadonlyArray<Maybe<Contact>>>;
   readonly contactsConnection?: Maybe<ContactConnection>;
+  readonly dynamicTest?: Maybe<DynamicTest>;
   readonly footer?: Maybe<Footer>;
   readonly header?: Maybe<Header>;
   readonly headers?: Maybe<ReadonlyArray<Maybe<Header>>>;
@@ -2812,6 +3385,12 @@ export type QueryAboutWeAreImageCarouselArgs = {
 };
 
 
+export type QueryAboutArgs = {
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
 export type QueryBrandValueArgs = {
   id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
@@ -2847,6 +3426,7 @@ export type QueryCareerOfferingsArgs = {
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
   publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -2855,6 +3435,7 @@ export type QueryCareerOfferingsConnectionArgs = {
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -2932,6 +3513,12 @@ export type QueryContactsConnectionArgs = {
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
+};
+
+
+export type QueryDynamicTestArgs = {
+  publicationState?: Maybe<PublicationState>;
+  locale?: Maybe<Scalars['String']>;
 };
 
 
@@ -3321,6 +3908,7 @@ export type RoleInput = {
 };
 
 export type Skill = {
+  readonly __typename?: 'Skill';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3331,52 +3919,62 @@ export type Skill = {
 };
 
 export type SkillAggregator = {
+  readonly __typename?: 'SkillAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type SkillConnection = {
+  readonly __typename?: 'SkillConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Skill>>>;
   readonly groupBy?: Maybe<SkillGroupBy>;
   readonly aggregate?: Maybe<SkillAggregator>;
 };
 
 export type SkillConnectionCreated_At = {
+  readonly __typename?: 'SkillConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionDescription = {
+  readonly __typename?: 'SkillConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionId = {
+  readonly __typename?: 'SkillConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionPublished_At = {
+  readonly __typename?: 'SkillConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionTitle = {
+  readonly __typename?: 'SkillConnectionTitle';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionTitleColorHash = {
+  readonly __typename?: 'SkillConnectionTitleColorHash';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillConnectionUpdated_At = {
+  readonly __typename?: 'SkillConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SkillConnection>;
 };
 
 export type SkillGroupBy = {
+  readonly __typename?: 'SkillGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<SkillConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<SkillConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<SkillConnectionUpdated_At>>>;
@@ -3396,6 +3994,7 @@ export type SkillInput = {
 };
 
 export type SocialNetwork = {
+  readonly __typename?: 'SocialNetwork';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3405,47 +4004,56 @@ export type SocialNetwork = {
 };
 
 export type SocialNetworkAggregator = {
+  readonly __typename?: 'SocialNetworkAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type SocialNetworkConnection = {
+  readonly __typename?: 'SocialNetworkConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<SocialNetwork>>>;
   readonly groupBy?: Maybe<SocialNetworkGroupBy>;
   readonly aggregate?: Maybe<SocialNetworkAggregator>;
 };
 
 export type SocialNetworkConnectionCreated_At = {
+  readonly __typename?: 'SocialNetworkConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkConnectionId = {
+  readonly __typename?: 'SocialNetworkConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkConnectionName = {
+  readonly __typename?: 'SocialNetworkConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkConnectionPublished_At = {
+  readonly __typename?: 'SocialNetworkConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkConnectionUpdated_At = {
+  readonly __typename?: 'SocialNetworkConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkConnectionUrl = {
+  readonly __typename?: 'SocialNetworkConnectionUrl';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<SocialNetworkConnection>;
 };
 
 export type SocialNetworkGroupBy = {
+  readonly __typename?: 'SocialNetworkGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<SocialNetworkConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<SocialNetworkConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<SocialNetworkConnectionUpdated_At>>>;
@@ -3463,6 +4071,7 @@ export type SocialNetworkInput = {
 };
 
 export type Team = {
+  readonly __typename?: 'Team';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3474,6 +4083,7 @@ export type Team = {
 };
 
 export type TeamAggregator = {
+  readonly __typename?: 'TeamAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
   readonly sum?: Maybe<TeamAggregatorSum>;
@@ -3483,68 +4093,82 @@ export type TeamAggregator = {
 };
 
 export type TeamAggregatorAvg = {
+  readonly __typename?: 'TeamAggregatorAvg';
   readonly sort?: Maybe<Scalars['Float']>;
 };
 
 export type TeamAggregatorMax = {
+  readonly __typename?: 'TeamAggregatorMax';
   readonly sort?: Maybe<Scalars['Float']>;
 };
 
 export type TeamAggregatorMin = {
+  readonly __typename?: 'TeamAggregatorMin';
   readonly sort?: Maybe<Scalars['Float']>;
 };
 
 export type TeamAggregatorSum = {
+  readonly __typename?: 'TeamAggregatorSum';
   readonly sort?: Maybe<Scalars['Float']>;
 };
 
 export type TeamConnection = {
+  readonly __typename?: 'TeamConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Team>>>;
   readonly groupBy?: Maybe<TeamGroupBy>;
   readonly aggregate?: Maybe<TeamAggregator>;
 };
 
 export type TeamConnectionCreated_At = {
+  readonly __typename?: 'TeamConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionId = {
+  readonly __typename?: 'TeamConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionName = {
+  readonly __typename?: 'TeamConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionPosition = {
+  readonly __typename?: 'TeamConnectionPosition';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionPublished_At = {
+  readonly __typename?: 'TeamConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionSort = {
+  readonly __typename?: 'TeamConnectionSort';
   readonly key?: Maybe<Scalars['Int']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionUpdated_At = {
+  readonly __typename?: 'TeamConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamConnectionVideo = {
+  readonly __typename?: 'TeamConnectionVideo';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<TeamConnection>;
 };
 
 export type TeamGroupBy = {
+  readonly __typename?: 'TeamGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<TeamConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<TeamConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<TeamConnectionUpdated_At>>>;
@@ -3566,6 +4190,7 @@ export type TeamInput = {
 };
 
 export type TechList = {
+  readonly __typename?: 'TechList';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3574,42 +4199,50 @@ export type TechList = {
 };
 
 export type TechListAggregator = {
+  readonly __typename?: 'TechListAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type TechListConnection = {
+  readonly __typename?: 'TechListConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<TechList>>>;
   readonly groupBy?: Maybe<TechListGroupBy>;
   readonly aggregate?: Maybe<TechListAggregator>;
 };
 
 export type TechListConnectionCreated_At = {
+  readonly __typename?: 'TechListConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TechListConnection>;
 };
 
 export type TechListConnectionId = {
+  readonly __typename?: 'TechListConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<TechListConnection>;
 };
 
 export type TechListConnectionName = {
+  readonly __typename?: 'TechListConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<TechListConnection>;
 };
 
 export type TechListConnectionPublished_At = {
+  readonly __typename?: 'TechListConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TechListConnection>;
 };
 
 export type TechListConnectionUpdated_At = {
+  readonly __typename?: 'TechListConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<TechListConnection>;
 };
 
 export type TechListGroupBy = {
+  readonly __typename?: 'TechListGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<TechListConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<TechListConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<TechListConnectionUpdated_At>>>;
@@ -3627,6 +4260,7 @@ export type TechListInput = {
 
 
 export type UploadFile = {
+  readonly __typename?: 'UploadFile';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3656,6 +4290,7 @@ export type UploadFileRelatedArgs = {
 };
 
 export type UploadFileAggregator = {
+  readonly __typename?: 'UploadFileAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
   readonly sum?: Maybe<UploadFileAggregatorSum>;
@@ -3665,121 +4300,144 @@ export type UploadFileAggregator = {
 };
 
 export type UploadFileAggregatorAvg = {
+  readonly __typename?: 'UploadFileAggregatorAvg';
   readonly width?: Maybe<Scalars['Float']>;
   readonly height?: Maybe<Scalars['Float']>;
   readonly size?: Maybe<Scalars['Float']>;
 };
 
 export type UploadFileAggregatorMax = {
+  readonly __typename?: 'UploadFileAggregatorMax';
   readonly width?: Maybe<Scalars['Float']>;
   readonly height?: Maybe<Scalars['Float']>;
   readonly size?: Maybe<Scalars['Float']>;
 };
 
 export type UploadFileAggregatorMin = {
+  readonly __typename?: 'UploadFileAggregatorMin';
   readonly width?: Maybe<Scalars['Float']>;
   readonly height?: Maybe<Scalars['Float']>;
   readonly size?: Maybe<Scalars['Float']>;
 };
 
 export type UploadFileAggregatorSum = {
+  readonly __typename?: 'UploadFileAggregatorSum';
   readonly width?: Maybe<Scalars['Float']>;
   readonly height?: Maybe<Scalars['Float']>;
   readonly size?: Maybe<Scalars['Float']>;
 };
 
 export type UploadFileConnection = {
+  readonly __typename?: 'UploadFileConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<UploadFile>>>;
   readonly groupBy?: Maybe<UploadFileGroupBy>;
   readonly aggregate?: Maybe<UploadFileAggregator>;
 };
 
 export type UploadFileConnectionAlternativeText = {
+  readonly __typename?: 'UploadFileConnectionAlternativeText';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionCaption = {
+  readonly __typename?: 'UploadFileConnectionCaption';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionCreated_At = {
+  readonly __typename?: 'UploadFileConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionExt = {
+  readonly __typename?: 'UploadFileConnectionExt';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionFormats = {
+  readonly __typename?: 'UploadFileConnectionFormats';
   readonly key?: Maybe<Scalars['JSON']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionHash = {
+  readonly __typename?: 'UploadFileConnectionHash';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionHeight = {
+  readonly __typename?: 'UploadFileConnectionHeight';
   readonly key?: Maybe<Scalars['Int']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionId = {
+  readonly __typename?: 'UploadFileConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionMime = {
+  readonly __typename?: 'UploadFileConnectionMime';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionName = {
+  readonly __typename?: 'UploadFileConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionPreviewUrl = {
+  readonly __typename?: 'UploadFileConnectionPreviewUrl';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionProvider = {
+  readonly __typename?: 'UploadFileConnectionProvider';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionProvider_Metadata = {
+  readonly __typename?: 'UploadFileConnectionProvider_metadata';
   readonly key?: Maybe<Scalars['JSON']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionSize = {
+  readonly __typename?: 'UploadFileConnectionSize';
   readonly key?: Maybe<Scalars['Float']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionUpdated_At = {
+  readonly __typename?: 'UploadFileConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionUrl = {
+  readonly __typename?: 'UploadFileConnectionUrl';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileConnectionWidth = {
+  readonly __typename?: 'UploadFileConnectionWidth';
   readonly key?: Maybe<Scalars['Int']>;
   readonly connection?: Maybe<UploadFileConnection>;
 };
 
 export type UploadFileGroupBy = {
+  readonly __typename?: 'UploadFileGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<UploadFileConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<UploadFileConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<UploadFileConnectionUpdated_At>>>;
@@ -3814,6 +4472,7 @@ export type UserInput = {
 };
 
 export type UserPermissionsPasswordPayload = {
+  readonly __typename?: 'UserPermissionsPasswordPayload';
   readonly ok: Scalars['Boolean'];
 };
 
@@ -3824,11 +4483,13 @@ export type UsersPermissionsLoginInput = {
 };
 
 export type UsersPermissionsLoginPayload = {
+  readonly __typename?: 'UsersPermissionsLoginPayload';
   readonly jwt?: Maybe<Scalars['String']>;
   readonly user: UsersPermissionsMe;
 };
 
 export type UsersPermissionsMe = {
+  readonly __typename?: 'UsersPermissionsMe';
   readonly id: Scalars['ID'];
   readonly username: Scalars['String'];
   readonly email: Scalars['String'];
@@ -3838,6 +4499,7 @@ export type UsersPermissionsMe = {
 };
 
 export type UsersPermissionsMeRole = {
+  readonly __typename?: 'UsersPermissionsMeRole';
   readonly id: Scalars['ID'];
   readonly name: Scalars['String'];
   readonly description?: Maybe<Scalars['String']>;
@@ -3845,6 +4507,7 @@ export type UsersPermissionsMeRole = {
 };
 
 export type UsersPermissionsPermission = {
+  readonly __typename?: 'UsersPermissionsPermission';
   readonly id: Scalars['ID'];
   readonly type: Scalars['String'];
   readonly controller: Scalars['String'];
@@ -3861,6 +4524,7 @@ export type UsersPermissionsRegisterInput = {
 };
 
 export type UsersPermissionsRole = {
+  readonly __typename?: 'UsersPermissionsRole';
   readonly id: Scalars['ID'];
   readonly name: Scalars['String'];
   readonly description?: Maybe<Scalars['String']>;
@@ -3886,37 +4550,44 @@ export type UsersPermissionsRoleUsersArgs = {
 };
 
 export type UsersPermissionsRoleAggregator = {
+  readonly __typename?: 'UsersPermissionsRoleAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type UsersPermissionsRoleConnection = {
+  readonly __typename?: 'UsersPermissionsRoleConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<UsersPermissionsRole>>>;
   readonly groupBy?: Maybe<UsersPermissionsRoleGroupBy>;
   readonly aggregate?: Maybe<UsersPermissionsRoleAggregator>;
 };
 
 export type UsersPermissionsRoleConnectionDescription = {
+  readonly __typename?: 'UsersPermissionsRoleConnectionDescription';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionId = {
+  readonly __typename?: 'UsersPermissionsRoleConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionName = {
+  readonly __typename?: 'UsersPermissionsRoleConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleConnectionType = {
+  readonly __typename?: 'UsersPermissionsRoleConnectionType';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsRoleConnection>;
 };
 
 export type UsersPermissionsRoleGroupBy = {
+  readonly __typename?: 'UsersPermissionsRoleGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<UsersPermissionsRoleConnectionId>>>;
   readonly name?: Maybe<ReadonlyArray<Maybe<UsersPermissionsRoleConnectionName>>>;
   readonly description?: Maybe<ReadonlyArray<Maybe<UsersPermissionsRoleConnectionDescription>>>;
@@ -3924,6 +4595,7 @@ export type UsersPermissionsRoleGroupBy = {
 };
 
 export type UsersPermissionsUser = {
+  readonly __typename?: 'UsersPermissionsUser';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -3936,62 +4608,74 @@ export type UsersPermissionsUser = {
 };
 
 export type UsersPermissionsUserAggregator = {
+  readonly __typename?: 'UsersPermissionsUserAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type UsersPermissionsUserConnection = {
+  readonly __typename?: 'UsersPermissionsUserConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<UsersPermissionsUser>>>;
   readonly groupBy?: Maybe<UsersPermissionsUserGroupBy>;
   readonly aggregate?: Maybe<UsersPermissionsUserAggregator>;
 };
 
 export type UsersPermissionsUserConnectionBlocked = {
+  readonly __typename?: 'UsersPermissionsUserConnectionBlocked';
   readonly key?: Maybe<Scalars['Boolean']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionConfirmed = {
+  readonly __typename?: 'UsersPermissionsUserConnectionConfirmed';
   readonly key?: Maybe<Scalars['Boolean']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionCreated_At = {
+  readonly __typename?: 'UsersPermissionsUserConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionEmail = {
+  readonly __typename?: 'UsersPermissionsUserConnectionEmail';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionId = {
+  readonly __typename?: 'UsersPermissionsUserConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionProvider = {
+  readonly __typename?: 'UsersPermissionsUserConnectionProvider';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionRole = {
+  readonly __typename?: 'UsersPermissionsUserConnectionRole';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionUpdated_At = {
+  readonly __typename?: 'UsersPermissionsUserConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserConnectionUsername = {
+  readonly __typename?: 'UsersPermissionsUserConnectionUsername';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<UsersPermissionsUserConnection>;
 };
 
 export type UsersPermissionsUserGroupBy = {
+  readonly __typename?: 'UsersPermissionsUserGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<UsersPermissionsUserConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<UsersPermissionsUserConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<UsersPermissionsUserConnectionUpdated_At>>>;
@@ -4004,6 +4688,7 @@ export type UsersPermissionsUserGroupBy = {
 };
 
 export type Webhook = {
+  readonly __typename?: 'Webhook';
   readonly id: Scalars['ID'];
   readonly created_at: Scalars['DateTime'];
   readonly updated_at: Scalars['DateTime'];
@@ -4012,42 +4697,50 @@ export type Webhook = {
 };
 
 export type WebhookAggregator = {
+  readonly __typename?: 'WebhookAggregator';
   readonly count?: Maybe<Scalars['Int']>;
   readonly totalCount?: Maybe<Scalars['Int']>;
 };
 
 export type WebhookConnection = {
+  readonly __typename?: 'WebhookConnection';
   readonly values?: Maybe<ReadonlyArray<Maybe<Webhook>>>;
   readonly groupBy?: Maybe<WebhookGroupBy>;
   readonly aggregate?: Maybe<WebhookAggregator>;
 };
 
 export type WebhookConnectionCreated_At = {
+  readonly __typename?: 'WebhookConnectionCreated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<WebhookConnection>;
 };
 
 export type WebhookConnectionId = {
+  readonly __typename?: 'WebhookConnectionId';
   readonly key?: Maybe<Scalars['ID']>;
   readonly connection?: Maybe<WebhookConnection>;
 };
 
 export type WebhookConnectionName = {
+  readonly __typename?: 'WebhookConnectionName';
   readonly key?: Maybe<Scalars['String']>;
   readonly connection?: Maybe<WebhookConnection>;
 };
 
 export type WebhookConnectionPublished_At = {
+  readonly __typename?: 'WebhookConnectionPublished_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<WebhookConnection>;
 };
 
 export type WebhookConnectionUpdated_At = {
+  readonly __typename?: 'WebhookConnectionUpdated_at';
   readonly key?: Maybe<Scalars['DateTime']>;
   readonly connection?: Maybe<WebhookConnection>;
 };
 
 export type WebhookGroupBy = {
+  readonly __typename?: 'WebhookGroupBy';
   readonly id?: Maybe<ReadonlyArray<Maybe<WebhookConnectionId>>>;
   readonly created_at?: Maybe<ReadonlyArray<Maybe<WebhookConnectionCreated_At>>>;
   readonly updated_at?: Maybe<ReadonlyArray<Maybe<WebhookConnectionUpdated_At>>>;
@@ -4067,6 +4760,7 @@ export type CreateAboutUsInput = {
 };
 
 export type CreateAboutUsPayload = {
+  readonly __typename?: 'createAboutUsPayload';
   readonly aboutUs?: Maybe<AboutUs>;
 };
 
@@ -4075,6 +4769,7 @@ export type CreateBrandValueInput = {
 };
 
 export type CreateBrandValuePayload = {
+  readonly __typename?: 'createBrandValuePayload';
   readonly brandValue?: Maybe<BrandValue>;
 };
 
@@ -4083,6 +4778,7 @@ export type CreateCareerOfferingInput = {
 };
 
 export type CreateCareerOfferingPayload = {
+  readonly __typename?: 'createCareerOfferingPayload';
   readonly careerOffering?: Maybe<CareerOfferings>;
 };
 
@@ -4095,10 +4791,12 @@ export type CreateCaseStudyMetaInput = {
 };
 
 export type CreateCaseStudyMetaPayload = {
+  readonly __typename?: 'createCaseStudyMetaPayload';
   readonly caseStudyMeta?: Maybe<CaseStudyMeta>;
 };
 
 export type CreateCaseStudyPayload = {
+  readonly __typename?: 'createCaseStudyPayload';
   readonly caseStudy?: Maybe<CaseStudy>;
 };
 
@@ -4107,6 +4805,7 @@ export type CreateContactInput = {
 };
 
 export type CreateContactPayload = {
+  readonly __typename?: 'createContactPayload';
   readonly contact?: Maybe<Contact>;
 };
 
@@ -4115,6 +4814,7 @@ export type CreateHeaderInput = {
 };
 
 export type CreateHeaderPayload = {
+  readonly __typename?: 'createHeaderPayload';
   readonly header?: Maybe<Header>;
 };
 
@@ -4123,6 +4823,7 @@ export type CreateHomepageInput = {
 };
 
 export type CreateHomepagePayload = {
+  readonly __typename?: 'createHomepagePayload';
   readonly homepage?: Maybe<Homepage>;
 };
 
@@ -4131,6 +4832,7 @@ export type CreateHqGalleryInput = {
 };
 
 export type CreateHqGalleryPayload = {
+  readonly __typename?: 'createHqGalleryPayload';
   readonly hqGallery?: Maybe<HqGallery>;
 };
 
@@ -4139,6 +4841,7 @@ export type CreateJobInput = {
 };
 
 export type CreateJobPayload = {
+  readonly __typename?: 'createJobPayload';
   readonly job?: Maybe<Job>;
 };
 
@@ -4147,6 +4850,7 @@ export type CreateLanguageInput = {
 };
 
 export type CreateLanguagePayload = {
+  readonly __typename?: 'createLanguagePayload';
   readonly language?: Maybe<Language>;
 };
 
@@ -4155,6 +4859,7 @@ export type CreateMenuInput = {
 };
 
 export type CreateMenuPayload = {
+  readonly __typename?: 'createMenuPayload';
   readonly menu?: Maybe<Menu>;
 };
 
@@ -4163,6 +4868,7 @@ export type CreatePage404Input = {
 };
 
 export type CreatePage404Payload = {
+  readonly __typename?: 'createPage404Payload';
   readonly page404?: Maybe<Page404>;
 };
 
@@ -4171,6 +4877,7 @@ export type CreateProductInput = {
 };
 
 export type CreateProductPayload = {
+  readonly __typename?: 'createProductPayload';
   readonly product?: Maybe<Products>;
 };
 
@@ -4179,6 +4886,7 @@ export type CreateRoleInput = {
 };
 
 export type CreateRolePayload = {
+  readonly __typename?: 'createRolePayload';
   readonly role?: Maybe<UsersPermissionsRole>;
 };
 
@@ -4187,6 +4895,7 @@ export type CreateSkillInput = {
 };
 
 export type CreateSkillPayload = {
+  readonly __typename?: 'createSkillPayload';
   readonly skill?: Maybe<Skill>;
 };
 
@@ -4195,6 +4904,7 @@ export type CreateSocialNetworkInput = {
 };
 
 export type CreateSocialNetworkPayload = {
+  readonly __typename?: 'createSocialNetworkPayload';
   readonly socialNetwork?: Maybe<SocialNetwork>;
 };
 
@@ -4203,6 +4913,7 @@ export type CreateTeamInput = {
 };
 
 export type CreateTeamPayload = {
+  readonly __typename?: 'createTeamPayload';
   readonly team?: Maybe<Team>;
 };
 
@@ -4211,6 +4922,7 @@ export type CreateTechListInput = {
 };
 
 export type CreateTechListPayload = {
+  readonly __typename?: 'createTechListPayload';
   readonly techList?: Maybe<TechList>;
 };
 
@@ -4219,6 +4931,7 @@ export type CreateUserInput = {
 };
 
 export type CreateUserPayload = {
+  readonly __typename?: 'createUserPayload';
   readonly user?: Maybe<UsersPermissionsUser>;
 };
 
@@ -4227,7 +4940,13 @@ export type CreateWebhookInput = {
 };
 
 export type CreateWebhookPayload = {
+  readonly __typename?: 'createWebhookPayload';
   readonly webhook?: Maybe<Webhook>;
+};
+
+export type DeleteAboutPayload = {
+  readonly __typename?: 'deleteAboutPayload';
+  readonly about?: Maybe<About>;
 };
 
 export type DeleteAboutUsInput = {
@@ -4235,10 +4954,12 @@ export type DeleteAboutUsInput = {
 };
 
 export type DeleteAboutUsPayload = {
+  readonly __typename?: 'deleteAboutUsPayload';
   readonly aboutUs?: Maybe<AboutUs>;
 };
 
 export type DeleteAboutWeAreImageCarouselPayload = {
+  readonly __typename?: 'deleteAboutWeAreImageCarouselPayload';
   readonly aboutWeAreImageCarousel?: Maybe<AboutWeAreImageCarousel>;
 };
 
@@ -4247,6 +4968,7 @@ export type DeleteBrandValueInput = {
 };
 
 export type DeleteBrandValuePayload = {
+  readonly __typename?: 'deleteBrandValuePayload';
   readonly brandValue?: Maybe<BrandValue>;
 };
 
@@ -4255,10 +4977,12 @@ export type DeleteCareerOfferingInput = {
 };
 
 export type DeleteCareerOfferingPayload = {
+  readonly __typename?: 'deleteCareerOfferingPayload';
   readonly careerOffering?: Maybe<CareerOfferings>;
 };
 
 export type DeleteCareerPayload = {
+  readonly __typename?: 'deleteCareerPayload';
   readonly career?: Maybe<Career>;
 };
 
@@ -4271,10 +4995,12 @@ export type DeleteCaseStudyMetaInput = {
 };
 
 export type DeleteCaseStudyMetaPayload = {
+  readonly __typename?: 'deleteCaseStudyMetaPayload';
   readonly caseStudyMeta?: Maybe<CaseStudyMeta>;
 };
 
 export type DeleteCaseStudyPayload = {
+  readonly __typename?: 'deleteCaseStudyPayload';
   readonly caseStudy?: Maybe<CaseStudy>;
 };
 
@@ -4283,7 +5009,13 @@ export type DeleteContactInput = {
 };
 
 export type DeleteContactPayload = {
+  readonly __typename?: 'deleteContactPayload';
   readonly contact?: Maybe<Contact>;
+};
+
+export type DeleteDynamicTestPayload = {
+  readonly __typename?: 'deleteDynamicTestPayload';
+  readonly dynamicTest?: Maybe<DynamicTest>;
 };
 
 export type DeleteFileInput = {
@@ -4291,10 +5023,12 @@ export type DeleteFileInput = {
 };
 
 export type DeleteFilePayload = {
+  readonly __typename?: 'deleteFilePayload';
   readonly file?: Maybe<UploadFile>;
 };
 
 export type DeleteFooterPayload = {
+  readonly __typename?: 'deleteFooterPayload';
   readonly footer?: Maybe<Footer>;
 };
 
@@ -4303,6 +5037,7 @@ export type DeleteHeaderInput = {
 };
 
 export type DeleteHeaderPayload = {
+  readonly __typename?: 'deleteHeaderPayload';
   readonly header?: Maybe<Header>;
 };
 
@@ -4311,10 +5046,12 @@ export type DeleteHomepageInput = {
 };
 
 export type DeleteHomepageNewPayload = {
+  readonly __typename?: 'deleteHomepageNewPayload';
   readonly homepageNew?: Maybe<HomepageNew>;
 };
 
 export type DeleteHomepagePayload = {
+  readonly __typename?: 'deleteHomepagePayload';
   readonly homepage?: Maybe<Homepage>;
 };
 
@@ -4323,6 +5060,7 @@ export type DeleteHqGalleryInput = {
 };
 
 export type DeleteHqGalleryPayload = {
+  readonly __typename?: 'deleteHqGalleryPayload';
   readonly hqGallery?: Maybe<HqGallery>;
 };
 
@@ -4331,6 +5069,7 @@ export type DeleteJobInput = {
 };
 
 export type DeleteJobPayload = {
+  readonly __typename?: 'deleteJobPayload';
   readonly job?: Maybe<Job>;
 };
 
@@ -4339,6 +5078,7 @@ export type DeleteLanguageInput = {
 };
 
 export type DeleteLanguagePayload = {
+  readonly __typename?: 'deleteLanguagePayload';
   readonly language?: Maybe<Language>;
 };
 
@@ -4347,6 +5087,7 @@ export type DeleteMenuInput = {
 };
 
 export type DeleteMenuPayload = {
+  readonly __typename?: 'deleteMenuPayload';
   readonly menu?: Maybe<Menu>;
 };
 
@@ -4355,6 +5096,7 @@ export type DeletePage404Input = {
 };
 
 export type DeletePage404Payload = {
+  readonly __typename?: 'deletePage404Payload';
   readonly page404?: Maybe<Page404>;
 };
 
@@ -4363,6 +5105,7 @@ export type DeleteProductInput = {
 };
 
 export type DeleteProductPayload = {
+  readonly __typename?: 'deleteProductPayload';
   readonly product?: Maybe<Products>;
 };
 
@@ -4371,6 +5114,7 @@ export type DeleteRoleInput = {
 };
 
 export type DeleteRolePayload = {
+  readonly __typename?: 'deleteRolePayload';
   readonly role?: Maybe<UsersPermissionsRole>;
 };
 
@@ -4379,6 +5123,7 @@ export type DeleteSkillInput = {
 };
 
 export type DeleteSkillPayload = {
+  readonly __typename?: 'deleteSkillPayload';
   readonly skill?: Maybe<Skill>;
 };
 
@@ -4387,6 +5132,7 @@ export type DeleteSocialNetworkInput = {
 };
 
 export type DeleteSocialNetworkPayload = {
+  readonly __typename?: 'deleteSocialNetworkPayload';
   readonly socialNetwork?: Maybe<SocialNetwork>;
 };
 
@@ -4395,6 +5141,7 @@ export type DeleteTeamInput = {
 };
 
 export type DeleteTeamPayload = {
+  readonly __typename?: 'deleteTeamPayload';
   readonly team?: Maybe<Team>;
 };
 
@@ -4403,6 +5150,7 @@ export type DeleteTechListInput = {
 };
 
 export type DeleteTechListPayload = {
+  readonly __typename?: 'deleteTechListPayload';
   readonly techList?: Maybe<TechList>;
 };
 
@@ -4411,6 +5159,7 @@ export type DeleteUserInput = {
 };
 
 export type DeleteUserPayload = {
+  readonly __typename?: 'deleteUserPayload';
   readonly user?: Maybe<UsersPermissionsUser>;
 };
 
@@ -4419,7 +5168,21 @@ export type DeleteWebhookInput = {
 };
 
 export type DeleteWebhookPayload = {
+  readonly __typename?: 'deleteWebhookPayload';
   readonly webhook?: Maybe<Webhook>;
+};
+
+export type EditAboutInput = {
+  readonly brandValues?: Maybe<ReadonlyArray<Maybe<EditComponentAboutUsBrandValueInput>>>;
+  readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly imageCarousel?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly skills?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly teams?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly created_by?: Maybe<Scalars['ID']>;
+  readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type EditAboutUsInput = {
@@ -4461,7 +5224,7 @@ export type EditAboutUsInput = {
 };
 
 export type EditAboutWeAreImageCarouselInput = {
-  readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
@@ -4478,18 +5241,8 @@ export type EditBrandValueInput = {
 };
 
 export type EditCareerInput = {
-  readonly title?: Maybe<Scalars['String']>;
-  readonly description?: Maybe<Scalars['String']>;
-  readonly technologies?: Maybe<EditComponentContentTechnologyInput>;
-  readonly careerWho?: Maybe<Scalars['String']>;
   readonly careerPositions?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
-  readonly somethingElseHeading?: Maybe<Scalars['String']>;
-  readonly somethingElseDescription?: Maybe<Scalars['String']>;
-  readonly somethingElseContact?: Maybe<Scalars['String']>;
-  readonly careerWhy?: Maybe<Scalars['String']>;
-  readonly careerWhatHeading?: Maybe<Scalars['String']>;
-  readonly info?: Maybe<ReadonlyArray<Maybe<EditComponentContentPictureListInput>>>;
-  readonly careerWhyLook?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
@@ -4513,6 +5266,8 @@ export type EditCareerOfferingInput = {
   readonly slug?: Maybe<Scalars['String']>;
   readonly color?: Maybe<Scalars['String']>;
   readonly perex?: Maybe<Scalars['String']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
@@ -4523,6 +5278,8 @@ export type EditCaseStudyInput = {
   readonly title?: Maybe<Scalars['String']>;
   readonly height?: Maybe<Scalars['Int']>;
   readonly slug?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<EditComponentContentTechnoologiesTestInput>;
+  readonly case_study?: Maybe<Scalars['ID']>;
   readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
@@ -4543,6 +5300,32 @@ export type EditCaseStudyMetaInput = {
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditComponentAboutUsBrandValueInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly headline?: Maybe<Scalars['String']>;
+  readonly backgroundNumber?: Maybe<Scalars['Int']>;
+  readonly image?: Maybe<Scalars['ID']>;
+  readonly description?: Maybe<Scalars['String']>;
+};
+
+export type EditComponentCaseStudySpecificationInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly area?: Maybe<Scalars['String']>;
+  readonly client?: Maybe<Scalars['String']>;
+  readonly system?: Maybe<Scalars['String']>;
+};
+
+export type EditComponentCaseStudyTechnologiesBoxInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly description?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<EditComponentContentTechnologiesListInput>>>;
+};
+
+export type EditComponentContentCarouselInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
 };
 
 export type EditComponentContentContactInput = {
@@ -4596,12 +5379,36 @@ export type EditComponentContentRichTextInput = {
   readonly widthPercent?: Maybe<Scalars['Float']>;
 };
 
+export type EditComponentContentScreenshotInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly media?: Maybe<Scalars['ID']>;
+};
+
+export type EditComponentContentSectionInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly heading?: Maybe<Scalars['String']>;
+  readonly number?: Maybe<Scalars['Int']>;
+  readonly text?: Maybe<Scalars['String']>;
+};
+
 export type EditComponentContentSocialInput = {
   readonly id?: Maybe<Scalars['ID']>;
   readonly facebook?: Maybe<Scalars['String']>;
   readonly linkedIn?: Maybe<Scalars['String']>;
   readonly instagram?: Maybe<Scalars['String']>;
   readonly twitter?: Maybe<Scalars['String']>;
+};
+
+export type EditComponentContentSubSectionInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly header?: Maybe<Scalars['String']>;
+  readonly text?: Maybe<Scalars['String']>;
+};
+
+export type EditComponentContentTechnologiesListInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly label?: Maybe<Scalars['String']>;
+  readonly technologies?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
 };
 
 export type EditComponentContentTechnologyInput = {
@@ -4611,6 +5418,13 @@ export type EditComponentContentTechnologyInput = {
   readonly images?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
   readonly floatImage?: Maybe<Scalars['ID']>;
   readonly floatImageOnMiddle?: Maybe<Scalars['Boolean']>;
+};
+
+export type EditComponentContentTechnoologiesTestInput = {
+  readonly id?: Maybe<Scalars['ID']>;
+  readonly title?: Maybe<Scalars['String']>;
+  readonly description?: Maybe<Scalars['String']>;
+  readonly tech_lists?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
 };
 
 export type EditComponentNavigationInternalLinkInput = {
@@ -4638,6 +5452,19 @@ export type EditContactInput = {
   readonly formNameLabel?: Maybe<Scalars['String']>;
   readonly formEmailLabel?: Maybe<Scalars['String']>;
   readonly footerImg?: Maybe<Scalars['ID']>;
+  readonly published_at?: Maybe<Scalars['DateTime']>;
+  readonly created_by?: Maybe<Scalars['ID']>;
+  readonly updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditDynamicTestInput = {
+  readonly Title?: Maybe<Scalars['String']>;
+  readonly slug?: Maybe<Scalars['String']>;
+  readonly description?: Maybe<Scalars['String']>;
+  readonly logo?: Maybe<Scalars['ID']>;
+  readonly content: ReadonlyArray<Scalars['DynamicTestContentDynamicZoneInput']>;
+  readonly localizations?: Maybe<ReadonlyArray<Maybe<Scalars['ID']>>>;
+  readonly locale?: Maybe<Scalars['String']>;
   readonly published_at?: Maybe<Scalars['DateTime']>;
   readonly created_by?: Maybe<Scalars['ID']>;
   readonly updated_by?: Maybe<Scalars['ID']>;
@@ -4852,12 +5679,22 @@ export type EditWebhookInput = {
   readonly updated_by?: Maybe<Scalars['ID']>;
 };
 
+export type UpdateAboutInput = {
+  readonly data?: Maybe<EditAboutInput>;
+};
+
+export type UpdateAboutPayload = {
+  readonly __typename?: 'updateAboutPayload';
+  readonly about?: Maybe<About>;
+};
+
 export type UpdateAboutUsInput = {
   readonly where?: Maybe<InputId>;
   readonly data?: Maybe<EditAboutUsInput>;
 };
 
 export type UpdateAboutUsPayload = {
+  readonly __typename?: 'updateAboutUsPayload';
   readonly aboutUs?: Maybe<AboutUs>;
 };
 
@@ -4866,6 +5703,7 @@ export type UpdateAboutWeAreImageCarouselInput = {
 };
 
 export type UpdateAboutWeAreImageCarouselPayload = {
+  readonly __typename?: 'updateAboutWeAreImageCarouselPayload';
   readonly aboutWeAreImageCarousel?: Maybe<AboutWeAreImageCarousel>;
 };
 
@@ -4875,6 +5713,7 @@ export type UpdateBrandValueInput = {
 };
 
 export type UpdateBrandValuePayload = {
+  readonly __typename?: 'updateBrandValuePayload';
   readonly brandValue?: Maybe<BrandValue>;
 };
 
@@ -4888,10 +5727,12 @@ export type UpdateCareerOfferingInput = {
 };
 
 export type UpdateCareerOfferingPayload = {
+  readonly __typename?: 'updateCareerOfferingPayload';
   readonly careerOffering?: Maybe<CareerOfferings>;
 };
 
 export type UpdateCareerPayload = {
+  readonly __typename?: 'updateCareerPayload';
   readonly career?: Maybe<Career>;
 };
 
@@ -4906,10 +5747,12 @@ export type UpdateCaseStudyMetaInput = {
 };
 
 export type UpdateCaseStudyMetaPayload = {
+  readonly __typename?: 'updateCaseStudyMetaPayload';
   readonly caseStudyMeta?: Maybe<CaseStudyMeta>;
 };
 
 export type UpdateCaseStudyPayload = {
+  readonly __typename?: 'updateCaseStudyPayload';
   readonly caseStudy?: Maybe<CaseStudy>;
 };
 
@@ -4919,7 +5762,17 @@ export type UpdateContactInput = {
 };
 
 export type UpdateContactPayload = {
+  readonly __typename?: 'updateContactPayload';
   readonly contact?: Maybe<Contact>;
+};
+
+export type UpdateDynamicTestInput = {
+  readonly data?: Maybe<EditDynamicTestInput>;
+};
+
+export type UpdateDynamicTestPayload = {
+  readonly __typename?: 'updateDynamicTestPayload';
+  readonly dynamicTest?: Maybe<DynamicTest>;
 };
 
 export type UpdateFooterInput = {
@@ -4927,6 +5780,7 @@ export type UpdateFooterInput = {
 };
 
 export type UpdateFooterPayload = {
+  readonly __typename?: 'updateFooterPayload';
   readonly footer?: Maybe<Footer>;
 };
 
@@ -4936,6 +5790,7 @@ export type UpdateHeaderInput = {
 };
 
 export type UpdateHeaderPayload = {
+  readonly __typename?: 'updateHeaderPayload';
   readonly header?: Maybe<Header>;
 };
 
@@ -4949,10 +5804,12 @@ export type UpdateHomepageNewInput = {
 };
 
 export type UpdateHomepageNewPayload = {
+  readonly __typename?: 'updateHomepageNewPayload';
   readonly homepageNew?: Maybe<HomepageNew>;
 };
 
 export type UpdateHomepagePayload = {
+  readonly __typename?: 'updateHomepagePayload';
   readonly homepage?: Maybe<Homepage>;
 };
 
@@ -4962,6 +5819,7 @@ export type UpdateHqGalleryInput = {
 };
 
 export type UpdateHqGalleryPayload = {
+  readonly __typename?: 'updateHqGalleryPayload';
   readonly hqGallery?: Maybe<HqGallery>;
 };
 
@@ -4971,6 +5829,7 @@ export type UpdateJobInput = {
 };
 
 export type UpdateJobPayload = {
+  readonly __typename?: 'updateJobPayload';
   readonly job?: Maybe<Job>;
 };
 
@@ -4980,6 +5839,7 @@ export type UpdateLanguageInput = {
 };
 
 export type UpdateLanguagePayload = {
+  readonly __typename?: 'updateLanguagePayload';
   readonly language?: Maybe<Language>;
 };
 
@@ -4989,6 +5849,7 @@ export type UpdateMenuInput = {
 };
 
 export type UpdateMenuPayload = {
+  readonly __typename?: 'updateMenuPayload';
   readonly menu?: Maybe<Menu>;
 };
 
@@ -4998,6 +5859,7 @@ export type UpdatePage404Input = {
 };
 
 export type UpdatePage404Payload = {
+  readonly __typename?: 'updatePage404Payload';
   readonly page404?: Maybe<Page404>;
 };
 
@@ -5007,6 +5869,7 @@ export type UpdateProductInput = {
 };
 
 export type UpdateProductPayload = {
+  readonly __typename?: 'updateProductPayload';
   readonly product?: Maybe<Products>;
 };
 
@@ -5016,6 +5879,7 @@ export type UpdateRoleInput = {
 };
 
 export type UpdateRolePayload = {
+  readonly __typename?: 'updateRolePayload';
   readonly role?: Maybe<UsersPermissionsRole>;
 };
 
@@ -5025,6 +5889,7 @@ export type UpdateSkillInput = {
 };
 
 export type UpdateSkillPayload = {
+  readonly __typename?: 'updateSkillPayload';
   readonly skill?: Maybe<Skill>;
 };
 
@@ -5034,6 +5899,7 @@ export type UpdateSocialNetworkInput = {
 };
 
 export type UpdateSocialNetworkPayload = {
+  readonly __typename?: 'updateSocialNetworkPayload';
   readonly socialNetwork?: Maybe<SocialNetwork>;
 };
 
@@ -5043,6 +5909,7 @@ export type UpdateTeamInput = {
 };
 
 export type UpdateTeamPayload = {
+  readonly __typename?: 'updateTeamPayload';
   readonly team?: Maybe<Team>;
 };
 
@@ -5052,6 +5919,7 @@ export type UpdateTechListInput = {
 };
 
 export type UpdateTechListPayload = {
+  readonly __typename?: 'updateTechListPayload';
   readonly techList?: Maybe<TechList>;
 };
 
@@ -5061,6 +5929,7 @@ export type UpdateUserInput = {
 };
 
 export type UpdateUserPayload = {
+  readonly __typename?: 'updateUserPayload';
   readonly user?: Maybe<UsersPermissionsUser>;
 };
 
@@ -5070,122 +5939,339 @@ export type UpdateWebhookInput = {
 };
 
 export type UpdateWebhookPayload = {
+  readonly __typename?: 'updateWebhookPayload';
   readonly webhook?: Maybe<Webhook>;
 };
 
-export type SkillFragment = Pick<Skill, 'id' | 'title' | 'description' | 'titleColorHash'>;
+export type SkillFragment = (
+  { readonly __typename?: 'Skill' }
+  & Pick<Skill, 'id' | 'title' | 'description' | 'titleColorHash'>
+);
 
 export type BrandValueFragment = (
-  Pick<BrandValue, 'id' | 'headline' | 'backgroundNumber' | 'description'>
-  & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
+  { readonly __typename?: 'BrandValue' }
+  & Pick<BrandValue, 'id' | 'headline' | 'backgroundNumber' | 'description'>
+  & { readonly image?: Maybe<(
+    { readonly __typename?: 'UploadFile' }
+    & Pick<UploadFile, 'url' | 'alternativeText'>
+  )> }
 );
 
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { readonly aboutuses?: Maybe<ReadonlyArray<Maybe<(
-    Pick<AboutUs, 'id' | 'language' | 'created_at' | 'updated_at' | 'heroDescription' | 'heroHeadlineTop' | 'heroHeadlineBottom' | 'heroArrowTitle' | 'weAreHeadline' | 'weAreDescription' | 'weAreArrowTitle' | 'skillsHeadline' | 'skillsDescription' | 'technologiesDescription' | 'valuesHeadline' | 'teamHeadline' | 'hqHeadline' | 'hqDescription' | 'careerHeadline' | 'careerDescription' | 'careerCTATitle' | 'blogHeadline' | 'blogReadMore' | 'published_at' | 'hqCTATitle' | 'hqWeAreHereDescription'>
-    & { readonly heroLogo?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly technologiesImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly careerCTAImage?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>>, readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly skills?: Maybe<ReadonlyArray<Maybe<SkillFragment>>>, readonly brandValues?: Maybe<ReadonlyArray<Maybe<BrandValueFragment>>>, readonly hqImageGrid?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>>, readonly hqWeAreHereImage?: Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>, readonly arrow?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-  )>>> };
+export type Unnamed_1_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly aboutuses?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'AboutUs' }
+    & Pick<AboutUs, 'id' | 'language' | 'created_at' | 'updated_at' | 'heroDescription' | 'heroHeadlineTop' | 'heroHeadlineBottom' | 'heroArrowTitle' | 'weAreHeadline' | 'weAreDescription' | 'weAreArrowTitle' | 'skillsHeadline' | 'skillsDescription' | 'technologiesDescription' | 'valuesHeadline' | 'teamHeadline' | 'hqHeadline' | 'hqDescription' | 'careerHeadline' | 'careerDescription' | 'careerCTATitle' | 'blogHeadline' | 'blogReadMore' | 'published_at' | 'hqCTATitle' | 'hqWeAreHereDescription'>
+    & { readonly heroLogo?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )>, readonly technologiesImage?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )>, readonly careerCTAImage?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )>, readonly weAreImageCarousel?: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'id' | 'url' | 'alternativeText'>
+    )>>>, readonly skills?: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'Skill' }
+      & SkillFragment
+    )>>>, readonly brandValues?: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'BrandValue' }
+      & BrandValueFragment
+    )>>>, readonly hqImageGrid?: Maybe<ReadonlyArray<Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'id' | 'url' | 'alternativeText'>
+    )>>>, readonly hqWeAreHereImage?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'id' | 'url' | 'alternativeText'>
+    )>, readonly arrow?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )> }
+  )>>> }
+);
 
-export type CareerQueryVariables = Exact<{
-  locale?: Maybe<Scalars['String']>;
-}>;
+export type CareerPositionsFragment = (
+  { readonly __typename?: 'CareerOfferings' }
+  & Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'perex' | 'color'>
+);
+
+export type CareerPageFragment = (
+  { readonly __typename?: 'Career' }
+  & { readonly careerPositions?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'CareerOfferings' }
+    & CareerPositionsFragment
+  )>>> }
+);
+
+export type CareerQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CareerQuery = { readonly career?: Maybe<(
-    Pick<Career, 'id' | 'created_at' | 'updated_at' | 'title' | 'description' | 'careerWho' | 'somethingElseHeading' | 'somethingElseDescription' | 'somethingElseContact' | 'careerWhy' | 'careerWhyLook' | 'careerWhatHeading'>
-    & { readonly technologies?: Maybe<(
-      Pick<ComponentContentTechnologies, 'id' | 'technologies' | 'description'>
-      & { readonly images?: Maybe<ReadonlyArray<Maybe<Pick<UploadFile, 'id' | 'url' | 'alternativeText'>>>> }
-    )>, readonly careerPositions?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'title' | 'color' | 'perex' | 'slug'>>>>, readonly info?: Maybe<ReadonlyArray<Maybe<(
-      Pick<ComponentContentPictureList, 'id' | 'header' | 'color' | 'description'>
-      & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-    )>>> }
-  )> };
+export type CareerQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly career?: Maybe<(
+    { readonly __typename?: 'Career' }
+    & CareerPageFragment
+  )> }
+);
 
-export type CareerOfferFragment = Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'description' | 'careerTechnologiesTitle' | 'careerTechnologiesContent' | 'careerExpectedSkillsTitle' | 'careerExpectedSkillsContent' | 'careerOfferTitle' | 'careerOfferContent' | 'endTitle' | 'endContent' | 'endCTA'>;
+export type CareerOfferFragment = (
+  { readonly __typename?: 'CareerOfferings' }
+  & Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'description' | 'careerTechnologiesTitle' | 'careerTechnologiesContent' | 'careerExpectedSkillsTitle' | 'careerExpectedSkillsContent' | 'careerOfferTitle' | 'careerOfferContent' | 'endTitle' | 'endContent' | 'endCTA'>
+);
 
 export type CareerOfferQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type CareerOfferQuery = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<CareerOfferFragment>>> };
+export type CareerOfferQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'CareerOfferings' }
+    & CareerOfferFragment
+  )>>> }
+);
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'perex' | 'color'>>>> };
+export type Unnamed_2_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly careerOfferings?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'CareerOfferings' }
+    & Pick<CareerOfferings, 'id' | 'language' | 'title' | 'slug' | 'perex' | 'color'>
+  )>>> }
+);
 
 export type CaseStudiesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CaseStudiesQuery = { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<(
-    Pick<CaseStudy, 'id' | 'title' | 'height' | 'slug'>
-    & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-  )>>> };
+export type CaseStudiesQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'CaseStudy' }
+    & Pick<CaseStudy, 'id' | 'title' | 'height' | 'slug'>
+    & { readonly image?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )> }
+  )>>> }
+);
 
 export type CaseStudyQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type CaseStudyQuery = { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<Pick<CaseStudy, 'id' | 'title' | 'slug'>>>> };
+export type CaseStudyQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly caseStudies?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'CaseStudy' }
+    & Pick<CaseStudy, 'id' | 'title' | 'slug'>
+  )>>> }
+);
 
 export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = { readonly contacts?: Maybe<ReadonlyArray<Maybe<(
-    Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'formSubmit' | 'formTextLabel' | 'formNameLabel' | 'formEmailLabel' | 'formNameWarning' | 'formEmailWarning' | 'formInvalidEmailWarning'>
-    & { readonly footerImg?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-  )>>> };
+export type Unnamed_3_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly contacts?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Contact' }
+    & Pick<Contact, 'id' | 'language' | 'title' | 'address' | 'taxIdentificationNumbers' | 'taxIdentificationDescription' | 'email' | 'phoneNumber' | 'formSubmit' | 'formTextLabel' | 'formNameLabel' | 'formEmailLabel' | 'formNameWarning' | 'formEmailWarning' | 'formInvalidEmailWarning'>
+    & { readonly footerImg?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )> }
+  )>>> }
+);
+
+export type SpecificationsFragment = (
+  { readonly __typename: 'ComponentCaseStudySpecifications' }
+  & Pick<ComponentCaseStudySpecifications, 'area' | 'system' | 'client'>
+);
+
+export type TechFragment = (
+  { readonly __typename?: 'TechList' }
+  & Pick<TechList, 'name'>
+);
+
+export type TechInfoFragment = (
+  { readonly __typename?: 'ComponentContentTechnologiesList' }
+  & Pick<ComponentContentTechnologiesList, 'id' | 'label'>
+  & { readonly technologies?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'TechList' }
+    & TechFragment
+  )>>> }
+);
+
+export type TechnologiesBoxFragment = (
+  { readonly __typename: 'ComponentCaseStudyTechnologiesBox' }
+  & Pick<ComponentCaseStudyTechnologiesBox, 'description'>
+  & { readonly technologies?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'ComponentContentTechnologiesList' }
+    & TechInfoFragment
+  )>>> }
+);
+
+export type SectionFragment = (
+  { readonly __typename: 'ComponentContentSection' }
+  & Pick<ComponentContentSection, 'heading' | 'number' | 'text'>
+);
+
+export type SubSectionFragment = (
+  { readonly __typename: 'ComponentContentSubSection' }
+  & Pick<ComponentContentSubSection, 'header' | 'text'>
+);
+
+export type CarouselFragment = (
+  { readonly __typename: 'ComponentContentCarousel' }
+  & { readonly images?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'UploadFile' }
+    & Pick<UploadFile, 'url'>
+  )>>> }
+);
+
+export type DynamicTestPageFragment = (
+  { readonly __typename?: 'DynamicTest' }
+  & Pick<DynamicTest, 'Title' | 'description'>
+  & { readonly logo?: Maybe<(
+    { readonly __typename?: 'UploadFile' }
+    & Pick<UploadFile, 'url'>
+  )>, readonly content: ReadonlyArray<Maybe<(
+    { readonly __typename?: 'ComponentContentSection' }
+    & SectionFragment
+  ) | (
+    { readonly __typename?: 'ComponentContentSubSection' }
+    & SubSectionFragment
+  ) | (
+    { readonly __typename?: 'ComponentContentCarousel' }
+    & CarouselFragment
+  ) | { readonly __typename?: 'ComponentContentScreenshot' } | (
+    { readonly __typename?: 'ComponentCaseStudyTechnologiesBox' }
+    & TechnologiesBoxFragment
+  ) | (
+    { readonly __typename?: 'ComponentCaseStudySpecifications' }
+    & SpecificationsFragment
+  )>> }
+);
+
+export type DynamicTestQueryVariables = Exact<{
+  locale?: Maybe<Scalars['String']>;
+}>;
+
+
+export type DynamicTestQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly dynamicTest?: Maybe<(
+    { readonly __typename?: 'DynamicTest' }
+    & DynamicTestPageFragment
+  )> }
+);
 
 export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_4_Query = { readonly headers?: Maybe<ReadonlyArray<Maybe<(
-    Pick<Header, 'id' | 'language' | 'title' | 'description'>
-    & { readonly logo?: Maybe<Pick<UploadFile, 'url'>> }
-  )>>> };
+export type Unnamed_4_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly headers?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Header' }
+    & Pick<Header, 'id' | 'language' | 'title' | 'description'>
+    & { readonly logo?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url'>
+    )> }
+  )>>> }
+);
 
 export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_5_Query = { readonly homepages?: Maybe<ReadonlyArray<Maybe<(
-    Pick<Homepage, 'id' | 'language' | 'clickToStop' | 'descriptionAboveLine' | 'descriptionBellowLine'>
-    & { readonly logo?: Maybe<Pick<UploadFile, 'url'>> }
-  )>>> };
+export type Unnamed_5_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly homepages?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Homepage' }
+    & Pick<Homepage, 'id' | 'language' | 'clickToStop' | 'descriptionAboveLine' | 'descriptionBellowLine'>
+    & { readonly logo?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url'>
+    )> }
+  )>>> }
+);
 
-export type HqGalleryFragment = { readonly galleryCollection?: Maybe<ReadonlyArray<Maybe<(
-    Pick<ComponentContentGalleryImage, 'spacing' | 'rows'>
-    & { readonly images?: Maybe<Pick<UploadFile, 'url' | 'alternativeText' | 'id'>> }
-  )>>> };
+export type HqGalleryFragment = (
+  { readonly __typename?: 'HqGallery' }
+  & { readonly galleryCollection?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'ComponentContentGalleryImage' }
+    & Pick<ComponentContentGalleryImage, 'spacing' | 'rows'>
+    & { readonly images?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText' | 'id'>
+    )> }
+  )>>> }
+);
 
 export type HqGalleriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HqGalleriesQuery = { readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<HqGalleryFragment>>> };
+export type HqGalleriesQuery = (
+  { readonly __typename?: 'Query' }
+  & { readonly hqGalleries?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'HqGallery' }
+    & HqGalleryFragment
+  )>>> }
+);
 
 export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_6_Query = { readonly languages?: Maybe<ReadonlyArray<Maybe<Pick<Language, 'id' | 'languageCode' | 'displayName'>>>> };
+export type Unnamed_6_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly languages?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Language' }
+    & Pick<Language, 'id' | 'languageCode' | 'displayName'>
+  )>>> }
+);
 
 export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_7_Query = { readonly menus?: Maybe<ReadonlyArray<Maybe<Pick<Menu, 'id' | 'aboutUs' | 'career' | 'contact' | 'homePage' | 'language' | 'menu' | 'reference'>>>> };
+export type Unnamed_7_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly menus?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Menu' }
+    & Pick<Menu, 'id' | 'aboutUs' | 'career' | 'contact' | 'homePage' | 'language' | 'menu' | 'reference'>
+  )>>> }
+);
 
 export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_8_Query = { readonly page404s?: Maybe<ReadonlyArray<Maybe<(
-    Pick<Page404, 'id' | 'language' | 'heading' | 'description' | 'link' | 'bgText'>
-    & { readonly image?: Maybe<Pick<UploadFile, 'url' | 'alternativeText'>> }
-  )>>> };
+export type Unnamed_8_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly page404s?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'Page404' }
+    & Pick<Page404, 'id' | 'language' | 'heading' | 'description' | 'link' | 'bgText'>
+    & { readonly image?: Maybe<(
+      { readonly __typename?: 'UploadFile' }
+      & Pick<UploadFile, 'url' | 'alternativeText'>
+    )> }
+  )>>> }
+);
 
 export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_9_Query = { readonly socialNetworks?: Maybe<ReadonlyArray<Maybe<Pick<SocialNetwork, 'id' | 'name' | 'url'>>>> };
+export type Unnamed_9_Query = (
+  { readonly __typename?: 'Query' }
+  & { readonly socialNetworks?: Maybe<ReadonlyArray<Maybe<(
+    { readonly __typename?: 'SocialNetwork' }
+    & Pick<SocialNetwork, 'id' | 'name' | 'url'>
+  )>>> }
+);

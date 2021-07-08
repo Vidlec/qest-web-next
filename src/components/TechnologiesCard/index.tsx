@@ -1,5 +1,7 @@
 import { ComponentContentTechnologies, UploadFile } from 'gql/generated/types'
+import Image from 'next/image'
 import React from 'react'
+import { isDefined } from 'utils/isDefined'
 import {
   StyledCard,
   StyledDescription,
@@ -34,8 +36,12 @@ const TechnologiesCard: React.FC<Props> = ({
       {description && <StyledDescription dangerouslySetInnerHTML={{ __html: description }} />}
       {images && (
         <StyledImageWrapper>
-          {images.map((img) => (
-            <img key={img?.id} src={img?.url} alt={img?.caption ?? ''} />
+          {images.filter(isDefined).map(({ id, url, height, width, caption }) => (
+            <Image
+              key={id}
+              src={{ src: url, height: height ?? 0, width: width ?? 0 }}
+              alt={caption ?? ''}
+            />
           ))}
         </StyledImageWrapper>
       )}

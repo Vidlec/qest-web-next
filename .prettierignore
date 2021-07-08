@@ -6,3 +6,6 @@ node_modules/
 # Ignore generated files
 graphql.schema.json
 src/**/generated
+dist
+.next
+.husky

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 const Portal: React.FC<Props> = ({ portalID, children }) => {
   const ref = useRef<Element | null>(null)
-  const [_mounted, setMounted] = useState(false)
+  const [, setMounted] = useState(false)
 
   useEffect(() => {
     ref.current = document?.createElement('div')

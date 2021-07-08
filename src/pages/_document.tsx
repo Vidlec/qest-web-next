@@ -7,7 +7,6 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document<DocumentInitialProps & { styleTags: string }> {
@@ -37,7 +36,7 @@ export default class MyDocument extends Document<DocumentInitialProps & { styleT
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <Html>
         <Head>{this.props.styleTags}</Head>

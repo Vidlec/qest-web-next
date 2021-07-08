@@ -1,47 +1,30 @@
 import { gql } from 'graphql-request'
 
-export const CAREER_QUERY = gql`
-  query Career($locale: String) {
-    career(locale: $locale) {
-      id
-      created_at
-      updated_at
-      title
-      description
-      technologies {
-        id
-        technologies
-        description
-        images {
-          id
-          url
-          alternativeText
-        }
-      }
-      careerPositions {
-        id
-        title
-        color
-        perex
-        slug
-      }
-      careerWho
-      somethingElseHeading
-      somethingElseDescription
-      somethingElseContact
-      careerWhy
-      careerWhyLook
-      careerWhatHeading
-      info {
-        id
-        header
-        color
-        description
-        image {
-          url
-          alternativeText
-        }
-      }
+const CareerPositions = gql`
+  fragment CareerPositions on CareerOfferings {
+    id
+    language
+    title
+    slug
+    perex
+    color
+  }
+`
+
+const CareerPage = gql`
+  fragment CareerPage on Career {
+    careerPositions {
+      ...CareerPositions
     }
   }
+  ${CareerPositions}
+`
+
+export const CAREER_PAGE_QUERY = gql`
+  query Career {
+    career {
+      ...CareerPage
+    }
+  }
+  ${CareerPage}
 `
